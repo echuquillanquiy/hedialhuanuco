@@ -1,14 +1,9 @@
 <div>
-    <table style="margin-top: -40px; width: 100%">
+    <table style="margin-top: -90px; width: 100%">
 
         <tr>
             <td colspan="10" style="font-size: 0.7rem; text-align: center">
                 <h4 style="margin-top: 90px">FICHA DE PRESCRIPCION Y EVOLUCIÓN DE LA SESIÓN DE HEMODIALISIS</h4>
-            </td>
-
-
-            <td colspan="2" style="font-size: 0.5rem; border: #0a0c0d dashed 1px; padding: 20px 50px 0px 0px; text-align: center">
-                <p style="margin-top: 90px; margin-left: 10px; margin-right: -20px"> Coloque el adhesivo del Código de Barras y/o Lote de Dializador</p>
             </td>
         </tr>
 
@@ -30,7 +25,7 @@
                 <td width="250px" style="border-bottom: solid 1px; font-size: 0.7rem; text-transform:uppercase;">{{ $order->patient->code }}</td>
 
                 <td style="width: 6%; font-size: 0.7rem"><strong>N° de historia clinica: </strong></td>
-                <td style="border:solid 1px; text-align: center; font-size: 0.7rem;" width="50px">{{ $order->nurse->hcl }}</td>
+                <td style="border:solid 1px; text-align: center; font-size: 0.7rem;" width="50px">{{ $order->patient->dni }}</td>
 
                 <td style="font-size: 0.7rem"><strong>Fecha: </strong></td>
                 <td style="border: solid 1px; padding: 2px; font-size: 0.7rem; text-align: center" width="76px">{{ $date }}</td>
