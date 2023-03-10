@@ -1,4 +1,4 @@
-<div style="background-image: url({{ asset('img/brand/logo_hysdialisis.png') }}); background-repeat: no-repeat; background-position: center; opacity: 0.2">
+<div>
     <table style="margin-top: -40px; width: 100%">
 
         <tr>
