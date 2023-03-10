@@ -1,4 +1,4 @@
-@extends('layouts.panel')
+﻿@extends('layouts.panel')
 
 @section('content')
 
@@ -78,23 +78,66 @@
     <table class="table align-items-center table-flush">
       <thead class="thead-light">
         <tr>
-          <th scope="col">id</th>
           <th scope="col">Nombres y Apellidos</th>
+	<th scope="col">Opciones</th>
+	     <th scope="col">DNI</th>
+	     <th scope="col">HD Inicio</th>
+	     <th scope="col">HD Fin</th>
+	     <th scope="col">Hierro</th>
+	     <th scope="col">Epo2000</th>
+	     <th scope="col">Epo4000</th>
+	     <th scope="col">Vit B12</th>
           <th scope="col">Sala</th>
           <th scope="col">Turno</th>
-          <th>Fecha de Creación</th>
-          <th scope="col">Opciones</th>
+          <th>Fecha de CreaciÃ³n</th>
+          
         </tr>
       </thead>
       <tbody>
         @foreach ($nurses as $nurse)
         <tr>
-          <th scope="row">
-            {{$nurse->id}}
-          </th>
-          <th scope="row">
+
+	  <th scope="row">
             {{$nurse->patient}}
           </th>
+
+<td>
+            
+            <form action="{{ url('/nurses/'.$nurse->id) }}" method="POST">
+              @csrf
+              @method('DELETE')
+
+              <a href="{{ url('/nurses/'.$nurse->id.'/edit') }}" class="btn btn-sm btn-success">Registrar</a>
+            </form>
+          </td>
+
+          <th scope="row">
+            {{$nurse->order->patient->dni}}
+          </th>
+
+          <th scope="row">
+            {{$nurse->hr}}
+          </th>
+
+
+          <th scope="row">
+            {{$nurse->hr8}}
+          </th>
+
+	  <th scope="row">
+            @if ($nurse->iron > 0) 1 @else 0 @endif
+          </th>
+
+<th scope="row">
+            @if ($nurse->epo2000 > 0) 1 @else 0 @endif
+          </th>
+<th scope="row">
+            @if ($nurse->epo4000  > 0) 1 @else 0 @endif
+          </th>
+<th scope="row">
+            @if ($nurse->hidroxi  > 0) 1 @else 0 @endif
+          </th>
+
           <td>
             {{$nurse->room}}
           </td>
@@ -102,17 +145,9 @@
             {{$nurse->shift}}
           </td>
           <td>
-            {{$nurse->created_at}}
+	    {{ \Carbon\Carbon::parse($nurse->created_at)->format('d/m/Y')}}
           </td>
-          <td>
-            
-            <form action="{{ url('/nurses/'.$nurse->id) }}" method="POST">
-              @csrf
-              @method('DELETE')
-
-              <a href="{{ url('/nurses/'.$nurse->id.'/edit') }}" class="btn btn-sm btn-primary">Editar</a>
-            </form>
-          </td>
+          
         </tr>
         @endforeach
       </tbody>
