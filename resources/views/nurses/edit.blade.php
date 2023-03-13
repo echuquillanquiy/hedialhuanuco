@@ -199,6 +199,7 @@
 
             <div class="tab-pane fade" id="nurse" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
 
+                <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
               <div class="row text-center">
                 <div class="form-group col-sm-12 col-lg-2">
                   <label for="hcl">H.CL</label>

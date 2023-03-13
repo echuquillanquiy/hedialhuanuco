@@ -41,13 +41,11 @@
 
     <div class="row">
 
-
-            <div class="form-group col-sm-12 col-lg-2">
-                <label for="start_hour">Hora Inicial</label>
-                <input type="time" name="start_hour" class="form-control" value="{{ old('start_hour', $medical->start_hour) }}">
-            </div>
-
-
+        <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+        <div class="form-group col-sm-12 col-lg-2">
+            <label for="start_hour">Hora Inicial</label>
+            <input type="time" name="start_hour" class="form-control" value="{{ old('start_hour', $medical->start_hour) }}">
+        </div>
 
       <div class="form-group col-sm-12 col-lg-3">
         <label for="start_weight">Peso Inicial</label>

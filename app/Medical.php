@@ -34,13 +34,19 @@ class Medical extends Model
         'indications',
         'start_hour',
         'end_hour',
-        'signal'
+        'signal',
+        'user_id'
 
     ];
 
     public function order()
     {
         return $this->belongsTo(Order::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 
     public function scopePatient($query, $patient)

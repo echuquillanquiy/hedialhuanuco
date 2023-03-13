@@ -59,10 +59,10 @@
             <div class="input-group-prepend">
             <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
             </div>
-            <input class="form-control datepicker" placeholder="Seleccionar fecha" 
-                id="created_at" name="created_at" type="text" 
-                value="{{ old('date', date('Y-m-d')) }}" 
-                data-date-format="yyyy-mm-dd" 
+            <input class="form-control datepicker" placeholder="Seleccionar fecha"
+                id="created_at" name="created_at" type="text"
+                value="{{ old('date', date('Y-m-d')) }}"
+                data-date-format="yyyy-mm-dd"
                 >
           </div>
         </div>
@@ -72,7 +72,7 @@
       <button class="btn btn-info btn-sm" type="submit">Buscar</button>
     </form>
   </div>
-  
+
   <div class="table-responsive">
     <!-- Projects table -->
     <table class="table align-items-center table-flush">
@@ -90,7 +90,8 @@
           <th scope="col">Sala</th>
           <th scope="col">Turno</th>
           <th>Fecha de CreaciÃ³n</th>
-          
+            <th>Licenciado</th>
+
         </tr>
       </thead>
       <tbody>
@@ -98,11 +99,11 @@
         <tr>
 
 	  <th scope="row">
-            {{$nurse->patient}}
+            {{ \Illuminate\Support\Str::limit($nurse->patient, 25) }}
           </th>
 
 <td>
-            
+
             <form action="{{ url('/nurses/'.$nurse->id) }}" method="POST">
               @csrf
               @method('DELETE')
@@ -147,7 +148,10 @@
           <td>
 	    {{ \Carbon\Carbon::parse($nurse->created_at)->format('d/m/Y')}}
           </td>
-          
+            <td>
+                {{ \Illuminate\Support\Str::limit($nurse->user->name, 20 )}}
+            </td>
+
         </tr>
         @endforeach
       </tbody>

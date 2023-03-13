@@ -17,7 +17,7 @@ class User extends Authenticatable
      */
 
     protected $fillable = [
-        'name', 'email', 'password', 'dni', 'code_specialty', 'rne', 'role'
+        'name', 'email', 'password', 'dni', 'code_specialty', 'rne', 'role', 'image'
     ];
 
     /**
@@ -55,5 +55,7 @@ class User extends Authenticatable
         if($dni)
             return $query->where('dni', 'LIKE', "%$dni%");
     }
+
+
 
 }

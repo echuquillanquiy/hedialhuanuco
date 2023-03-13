@@ -76,8 +76,8 @@
         </div>
 
           <div class="form-group col-sm-12 col-lg-4">
-              <label for="rne">SUBIR FIRMA</label>
-              <input type="file" name="rne" class="form-control" value="{{ old('sign') }}" accept=".jpg, .jpeg, .png">
+              <label for="image">SUBIR FIRMA</label>
+              <input type="file" name="image" class="form-control" value="{{ old('image') }}" accept=".jpg, .jpeg, .png">
           </div>
 
       </div>
