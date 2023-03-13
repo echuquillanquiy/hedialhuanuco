@@ -52,7 +52,7 @@
               <option value="logistica">Logistica</option>
           </select>
         </div>
-        </div>      
+        </div>
 
       <div class="row">
         <div class="form-group col-sm-12 col-lg-3">
@@ -74,6 +74,12 @@
           <label for="password">Contraseña</label>
           <input type="text" name="password" class="form-control" value="{{ str_random(8) }}" >
         </div>
+
+          <div class="form-group col-sm-12 col-lg-4">
+              <label for="rne">SUBIR FIRMA</label>
+              <input type="file" name="rne" class="form-control" value="{{ old('sign') }}" accept=".jpg, .jpeg, .png">
+          </div>
+
       </div>
 	  	<button type="submit" class="btn btn-primary">Guardar</button>
 	  </form>
