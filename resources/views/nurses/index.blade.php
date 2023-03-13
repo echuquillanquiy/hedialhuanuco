@@ -148,7 +148,7 @@
           <td>
 	    {{ \Carbon\Carbon::parse($nurse->created_at)->format('d/m/Y')}}
           </td>
-            @if($nurse->user->name)
+            @if($nurse->user_id)
                 <td>
                     {{ \Illuminate\Support\Str::limit($nurse->user->name, 20 )}}
                 </td>
