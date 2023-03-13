@@ -124,7 +124,7 @@ class MedicalController extends Controller
             'dializer.min' => 'El campo dializador debe tener mínimo 5 carácteres',
             'bircarbonat.min' => 'El campo Bicarbonatodebe tener mínimo 2 carácteres',
             'na_in_solution.min' => 'El campo Calcio en solución debe tener mínimo 2 carácteres',
-            'user.required' => 'El usuario es requerido.'
+            'user_id.required' => 'El usuario es requerido.'
 
         ];
 

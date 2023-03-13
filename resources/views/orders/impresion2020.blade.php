@@ -162,12 +162,16 @@
                 <br>
                 <br>
                 <br>
+                <br>
+                <br>
               __________________________
               <br>
               Médico que Inicia HD
             </td>
             <td colspan="4" style="font-size: 0.6rem; text-align: center">
               <br>
+                <br>
+                <br>
                 <br>
                 <br>
                 <br>
