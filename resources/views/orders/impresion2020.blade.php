@@ -424,7 +424,7 @@
 
             <tr>
                 <td>
-                    <img src="{{ asset('/storage/firmas/2.jpg') }}" alt="">
+                    <img src="{{ asset($order->user->image) }}" alt="">
                 </td>
 
                 <td>
