@@ -417,14 +417,20 @@
         <table width="100%" style="text-align:center; margin-top:0px">
       <tr>
         <td style="font-size: 0.6rem">ENFERMERA(O) QUE INICIA LA DIALISIS</td>
-          <td>
-              <img src="{{ asset($order->user->image) }}" alt="">
-          </td>
+
         <td style="font-size: 0.6rem">ENFERMERA(O) QUE FINALIZA LA DIALISIS</td>
-          <td>
-              <img src="{{ asset($order->user->image) }}" alt="">
-          </td>
+
       </tr>
+
+            <tr>
+                <td>
+                    <img src="{{ asset($order->user->id) }}" alt="">
+                </td>
+
+                <td>
+                    <img src="{{ asset($order->user->id) }}" alt="">
+                </td>
+            </tr>
 
     </table>
 </div>
