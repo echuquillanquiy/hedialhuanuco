@@ -153,7 +153,7 @@
                     {{ \Illuminate\Support\Str::limit($nurse->user->name, 20 )}}
                 </td>
             @else
-                actualizar orden
+                <td>actualizar orden</td>
             @endif
 
 
