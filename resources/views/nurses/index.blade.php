@@ -89,7 +89,7 @@
 	     <th scope="col">Vit B12</th>
           <th scope="col">Sala</th>
           <th scope="col">Turno</th>
-          <th>Fecha de CreaciÃ³n</th>
+          <th>Fecha de Creacion</th>
             <th>Licenciado</th>
 
         </tr>
@@ -99,7 +99,7 @@
         <tr>
 
 	  <th scope="row">
-            {{ \Illuminate\Support\Str::limit($nurse->patient, 25) }}
+            {{ \Illuminate\Support\Str::limit($nurse->patient, 20) }}
           </th>
 
 <td>
@@ -108,7 +108,7 @@
               @csrf
               @method('DELETE')
 
-              <a href="{{ url('/nurses/'.$nurse->id.'/edit') }}" class="btn btn-sm btn-success">Registrar</a>
+              <a href="{{ url('/nurses/'.$nurse->id.'/edit') }}" class="btn btn-sm btn-success">Llenar</a>
             </form>
           </td>
 
@@ -125,17 +125,17 @@
             {{$nurse->hr8}}
           </th>
 
-	  <th scope="row">
+	    <th scope="row">
             @if ($nurse->iron > 0) 1 @else 0 @endif
           </th>
 
-<th scope="row">
+        <th scope="row">
             @if ($nurse->epo2000 > 0) 1 @else 0 @endif
           </th>
-<th scope="row">
+        <th scope="row">
             @if ($nurse->epo4000  > 0) 1 @else 0 @endif
           </th>
-<th scope="row">
+        <th scope="row">
             @if ($nurse->hidroxi  > 0) 1 @else 0 @endif
           </th>
 
