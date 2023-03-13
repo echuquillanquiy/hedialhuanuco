@@ -50,10 +50,10 @@
             <div class="input-group-prepend">
             <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
             </div>
-            <input class="form-control datepicker" placeholder="Seleccionar fecha" 
-                id="created_at" name="created_at" type="text" 
-                value="{{ old('date', date('Y-m-d')) }}" 
-                data-date-format="yyyy-mm-dd" 
+            <input class="form-control datepicker" placeholder="Seleccionar fecha"
+                id="created_at" name="created_at" type="text"
+                value="{{ old('date', date('Y-m-d')) }}"
+                data-date-format="yyyy-mm-dd"
                 >
           </div>
         </div>
@@ -63,7 +63,7 @@
       <button class="btn btn-info btn-sm" type="submit">Buscar</button>
     </form>
   </div>
-  
+
   <div class="table-responsive">
     <!-- Projects table -->
     <table class="table align-items-center table-flush">
@@ -73,6 +73,7 @@
           <th scope="col">Nombres y Apellidos</th>
           <th scope="col">Sala</th>
           <th scope="col">Turno</th>
+          <th scope="col">HORAS HD</th>
           <th>Fecha de Creación</th>
           <th scope="col">Opciones</th>
         </tr>
@@ -92,6 +93,9 @@
           <td>
             {{$medical->shift}}
           </td>
+            <td>
+                <button class="btn btn-info btn-md">{{ $medical->hour_hd }}</button>
+            </td>
           <td>
             {{$medical->created_at}}
           </td>
