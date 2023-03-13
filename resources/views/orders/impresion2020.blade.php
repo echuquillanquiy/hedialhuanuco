@@ -424,11 +424,11 @@
 
             <tr>
                 <td>
-                    <img src="{{ asset($order->user->id) }}" alt="">
+                    <img src="{{ asset('/storage/firmas/2.jpg') }}" alt="">
                 </td>
 
                 <td>
-                    <img src="{{ asset($order->user->id) }}" alt="">
+                    <img src="{{ asset('/storage/firmas/2.jpg') }}" alt="">
                 </td>
             </tr>
 
