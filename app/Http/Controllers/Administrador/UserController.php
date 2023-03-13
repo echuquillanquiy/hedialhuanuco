@@ -7,8 +7,10 @@ use App\User;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\UsersExport;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 use App\Http\Controllers\Controller;
+use ZipStream\File;
 
 class UserController extends Controller
 {
@@ -18,7 +20,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function exportExcel() 
+    public function exportExcel()
     {
         return Excel::download(new UsersExport, 'user-list.xlsx');
     }
@@ -34,7 +36,7 @@ class UserController extends Controller
             ->email($email)
             ->dni($dni)
             ->paginate(25);
-        
+
         return view('users.index', compact('users'));
     }
 
@@ -71,15 +73,21 @@ class UserController extends Controller
             'email' => 'unique:users|required|email',
             'dni' => 'required|unique:users|digits:8',
             'code_specialty' => 'unique:users||min:3',
-            'role' => 'required|min:3'
+            'role' => 'required|min:3',
+            'image' => 'image|max:2048'
         ];
 
         $this->validate($request, $rules, $messages);
 
+        $firmas = $request->file('image')->store('public/firmas');
+        $url = Storage::url($firmas);
+
         User::create(
+
             $request->only('name', 'email', 'dni', 'code_specialty', 'rne', 'role')
             + [
-                'password' => bcrypt($request->input('password'))
+                'password' => bcrypt($request->input('password')),
+                'image' => $url
             ]
         );
 
@@ -119,7 +127,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
         $messages = [
             'dni.digits' => 'El DNI debe tener 8 digitos.',
             'code_specialty.min' => 'El código debe tener como mínimo 3 digitos.',
@@ -130,16 +138,17 @@ class UserController extends Controller
             'email' => 'required|email',
             'dni' => 'nullable|digits:8',
             'code_specialty' => 'nullable|min:5',
-            'role' => 'required|min:3'
+            'role' => 'required|min:3',
+            'image' => 'max:2048'
         ];
 
         $this->validate($request, $rules, $messages);
 
         $user = User::findOrFail($id);
 
-        $data = $request->only('name', 'email', 'dni', 'code_specialty', 'rne', 'role');
+        $data = $request->only('name', 'email', 'dni', 'code_specialty', 'rne', 'role', 'image');
         $password = $request->input('password');
-        if ($password) 
+        if ($password)
             $data ['password'] = bcrypt($password);
 
         $user->fill($data);

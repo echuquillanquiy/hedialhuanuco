@@ -58,7 +58,7 @@
           <label for="dni">DNI</label>
           <input type="text" name="dni" class="form-control" value="{{ old('dni', $user->dni) }}">
         </div>
-        </div>      
+        </div>
 
       <div class="row">
 
@@ -77,6 +77,11 @@
           <input type="text" name="password" class="form-control" value="" >
           <p>Ingrese un valor sólo si desea modificar la contraseña</p>
         </div>
+
+          <div class="form-group col-sm-12 col-lg-4 mt--5">
+              <label for="image">SUBIR FIRMA</label>
+              <input type="file" name="image" class="form-control" value="{{ old('image') }}" accept=".jpg, .jpeg, .png">
+          </div>
 
       </div>
 	  	<button type="submit" class="btn btn-primary">Guardar</button>

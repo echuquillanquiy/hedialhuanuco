@@ -43,7 +43,7 @@
             <label for="email">Correo</label>
             <input type="text" name="email" class="form-control" value="{{ old('email') }}">
           </div>
-        </div> 
+        </div>
 
         <div class="col-lg-4">
           <div class="form-group">
@@ -56,7 +56,7 @@
       <button class="btn btn-info btn-sm" type="submit">Buscar</button>
     </form>
   </div>
-  
+
 
   <div class="table-responsive">
     <!-- Projects table -->
@@ -66,6 +66,7 @@
           <th scope="col">Nombres</th>
           <th scope="col">Correo</th>
           <th scope="col">DNI</th>
+            <th scope="col">FIRMA</th>
           <th scope="col">Opciones</th>
         </tr>
       </thead>
@@ -81,6 +82,10 @@
           <td>
             {{$user->dni}}
           </td>
+
+            <td>
+                <img src="{{ asset($user->image) }}" class="img-fluid" height=120" width="250"></img>
+            </td>
           <td>
 
             <form action="{{ url('/users/'.$user->id) }}" method="POST">
