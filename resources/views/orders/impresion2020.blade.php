@@ -155,15 +155,23 @@
             </tr>
 
             <tr>
+                @if($order->medical->user_id)
+                    <td colspan="4" style="text-align: center">
+                        <img src="{{ asset($order->medical->user->image) }}" alt="">
+                    </td>
+                @else
+                    <p>AQUI VA SELLO DEL MEDICO</p>
+                @endif
 
-                <td colspan="4" style="text-align: center">
-                    <img src="{{ asset($order->medical->user->image) }}" alt="">
-                </td>
 
 
-                <td colspan="4" style="text-align: center">
-                    <img src="{{ asset($order->medical->user->image) }}" alt="">
-                </td>
+                    @if($order->medical->user_id)
+                        <td colspan="4" style="text-align: center">
+                            <img src="{{ asset($order->medical->user->image) }}" alt="">
+                        </td>
+                    @else
+                        <p>AQUI VA SELLO DEL MEDICO</p>
+                    @endif
             </tr>
 
           <tr>
@@ -420,13 +428,22 @@
       </tr>
 
             <tr>
-                <td>
-                    <img src="{{ asset($order->nurse->user->image) }}" alt="">
-                </td>
+                @if($order->nurse->user_id)
+                    <td>
+                        <img src="{{ asset($order->nurse->user->image) }}" alt="">
+                    </td>
+                @else
+                    <td>aqui va firma del licenciado</td>
+                @endif
 
-                <td>
-                    <img src="{{ asset($order->nurse->user->image) }}" alt="">
-                </td>
+
+                    @if($order->nurse->user_id)
+                        <td>
+                            <img src="{{ asset($order->nurse->user->image) }}" alt="">
+                        </td>
+                    @else
+                        <td>aqui va firma del licenciado</td>
+                    @endif
             </tr>
 
     </table>
