@@ -148,9 +148,14 @@
           <td>
 	    {{ \Carbon\Carbon::parse($nurse->created_at)->format('d/m/Y')}}
           </td>
-            <td>
-                {{ \Illuminate\Support\Str::limit($nurse->user->name, 20 )}}
-            </td>
+            @if($nurse->user->name)
+                <td>
+                    {{ \Illuminate\Support\Str::limit($nurse->user->name, 20 )}}
+                </td>
+            @else
+                actualizar orden
+            @endif
+
 
         </tr>
         @endforeach
