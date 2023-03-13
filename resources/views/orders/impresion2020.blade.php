@@ -151,35 +151,28 @@
                 <td style="font-size: 0.5rem; border-bottom: 1px solid; width: 8%; text-align: center">{{ $order->medical->membrane }}</td>
                 <td></td>
                 <td></td>
+
+            </tr>
+
+            <tr>
+
+                <td colspan="4" style="text-align: center">
+                    <img src="{{ asset($order->medical->user->image) }}" alt="">
+                </td>
+
+
+                <td colspan="4" style="text-align: center">
+                    <img src="{{ asset($order->medical->user->image) }}" alt="">
+                </td>
             </tr>
 
           <tr>
             <td colspan="4" style="font-size: 0.6rem; text-align: center;">
-              <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-              __________________________
-              <br>
+
               Médico que Inicia HD
             </td>
             <td colspan="4" style="font-size: 0.6rem; text-align: center">
-              <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-              __________________________
-              <br>
+
               Médico que Finaliza HD
             </td>
           </tr>
