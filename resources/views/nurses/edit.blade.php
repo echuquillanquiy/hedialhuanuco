@@ -260,7 +260,7 @@
 
                 <div class="form-group col-sm-12 col-lg-2">
                   <label for="end_weight">Peso Final</label>
-                  <input type="text" name="end_weight" class="form-control" value="{{ old('end_weight', $nurse->end_weight) }}">
+                  <input type="text" name="end_weight" class="form-control" value="{{ old('end_weight', $nurse->order->medical->dry_weight) }}">
                 </div>
 
                 <div class="form-group col-sm-12 col-lg-2">
