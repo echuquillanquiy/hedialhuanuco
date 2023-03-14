@@ -1,5 +1,5 @@
 <div>
-    <table style="margin-top: -90px; width: 100%">
+    <table style="margin-top: -100px; width: 100%">
 
         <tr>
             <td colspan="10" style="font-size: 0.7rem; text-align: center">
@@ -430,7 +430,7 @@
             <tr>
                 @if($order->nurse->user_id)
                     <td>
-                        <img src="{{ asset($order->nurse->user->image) }}" alt="">
+                        <img src="{{ asset($order->nurse->user->image) }}" width="180" height="100" alt="">
                     </td>
                 @else
                     <td>aqui va firma del licenciado</td>
@@ -439,7 +439,7 @@
 
                     @if($order->nurse->user_id)
                         <td>
-                            <img src="{{ asset($order->nurse->user->image) }}" alt="">
+                            <img src="{{ asset($order->nurse->user->image) }}" width="180" height="100" alt="">
                         </td>
                     @else
                         <td>aqui va firma del licenciado</td>
