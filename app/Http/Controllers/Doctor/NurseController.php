@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Doctor;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Nurse;
@@ -62,7 +63,7 @@ class NurseController extends Controller
 
         if ($existsNursesToday) {
             $notification = 'Este paciente ya tiene un parte de enfermeria registrada hoy. Intente nuevamente mañana.';
-            return redirect('/medicals/')->with(compact('notification'));            
+            return redirect('/medicals/')->with(compact('notification'));
         }
 
         Nurse::create($request->all());

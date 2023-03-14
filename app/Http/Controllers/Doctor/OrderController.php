@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Doctor;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
@@ -100,7 +101,15 @@ class OrderController extends Controller
             'shift' => $order->shift->name,
         ];
 
-        $nurse = $order->nurse()->create($orders_data);
+        $data_nurse = [
+            'order_id' => $order->id,
+            'patient' => $order->patient->name,
+            'room' => $order->room->name,
+            'shift' => $order->shift->name,
+            'hr' => Carbon::now()->addMinutes(30)->format('H:i'),
+        ];
+
+        $nurse = $order->nurse()->create($data_nurse);
         $medical = $order->medical()->create($orders_data);
         $notification = 'La orden fue creada correctamente.';
         return back()->with(compact('notification'));

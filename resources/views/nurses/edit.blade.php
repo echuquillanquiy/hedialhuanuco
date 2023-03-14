@@ -383,7 +383,7 @@
               <div class="row text-center">
                 <div class="form-group col-sm-12 col-lg-1">
                   <label for="hr">HR</label>
-                  <input type="text" name="hr" class="form-control" value="{{ old('hr', $nurse->hr) }}">
+                  <input type="text" name="hr" id="hr" class="form-control" value="{{ old('hr', $nurse->hr) }}">
                 </div>
 
                 @if($nurse->pa == null)
@@ -440,9 +440,18 @@
               </div>
 
               <div class="row text-center">
-                <div class="form-group col-sm-12 col-lg-1">
-                  <input type="text" name="hr2" class="form-control" value="{{ old('hr2', $nurse->hr2) }}">
-                </div>
+
+                  @if($nurse->hr2)
+                      <div class="form-group col-sm-12 col-lg-1">
+                          <input type="text" name="hr2" class="form-control" value="{{ $nurse->hr2 }}">
+                      </div>
+                  @else
+                      <div class="form-group col-sm-12 col-lg-1">
+                          <input type="text" name="hr2" class="form-control" value="{{ \Carbon\Carbon::parse($nurse->hr)->addMinutes(30)->format('H:i') }}">
+                      </div>
+                  @endif
+
+
 
                 <div class="form-group col-sm-12 col-lg-1">
                   <input type="text" name="pa2" class="form-control" value="{{ old('pa2', $nurse->pa2) }}">
@@ -482,9 +491,15 @@
               </div>
 
               <div class="row text-center">
-                <div class="form-group col-sm-12 col-lg-1">
-                  <input type="text" name="hr3" class="form-control" value="{{ old('hr3', $nurse->hr3) }}">
-                </div>
+                  @if($nurse->hr3)
+                      <div class="form-group col-sm-12 col-lg-1">
+                          <input type="text" name="hr3" class="form-control" value="{{ $nurse->hr3 }}">
+                      </div>
+                  @else
+                      <div class="form-group col-sm-12 col-lg-1">
+                          <input type="text" name="hr3" class="form-control" value="{{ \Carbon\Carbon::parse($nurse->hr)->addHour(1)->format('H:i') }}">
+                      </div>
+                  @endif
 
                 <div class="form-group col-sm-12 col-lg-1">
                   <input type="text" name="pa3" class="form-control" value="{{ old('pa3', $nurse->pa3) }}">
@@ -524,9 +539,15 @@
               </div>
 
               <div class="row text-center">
-                <div class="form-group col-sm-12 col-lg-1">
-                  <input type="text" name="hr4" class="form-control" value="{{ old('hr4', $nurse->hr4) }}">
-                </div>
+                  @if($nurse->hr4)
+                      <div class="form-group col-sm-12 col-lg-1">
+                          <input type="text" name="hr4" class="form-control" value="{{ old('hr4', $nurse->hr4) }}">
+                      </div>
+                  @else
+                      <div class="form-group col-sm-12 col-lg-1">
+                          <input type="text" name="hr4" class="form-control" value="{{ \Carbon\Carbon::parse($nurse->hr)->addMinutes(90)->format('H:i') }}">
+                      </div>
+                  @endif
 
                 <div class="form-group col-sm-12 col-lg-1">
                   <input type="text" name="pa4" class="form-control" value="{{ old('pa4', $nurse->pa4) }}">
@@ -566,9 +587,15 @@
               </div>
 
               <div class="row text-center">
-                <div class="form-group col-sm-12 col-lg-1">
-                  <input type="text" name="hr5" class="form-control" value="{{ old('hr5', $nurse->hr5) }}">
-                </div>
+                  @if($nurse->hr5)
+                      <div class="form-group col-sm-12 col-lg-1">
+                          <input type="text" name="hr5" class="form-control" value="{{ old('hr5', $nurse->hr5) }}">
+                      </div>
+                  @else
+                      <div class="form-group col-sm-12 col-lg-1">
+                          <input type="text" name="hr5" class="form-control" value="{{ \Carbon\Carbon::parse($nurse->hr)->addHour(2)->format('H:i') }}">
+                      </div>
+                  @endif
 
                 <div class="form-group col-sm-12 col-lg-1">
                   <input type="text" name="pa5" class="form-control" value="{{ old('pa5', $nurse->pa5) }}">
@@ -608,9 +635,15 @@
               </div>
 
               <div class="row text-center">
-                <div class="form-group col-sm-12 col-lg-1">
-                  <input type="text" name="hr6" class="form-control" value="{{ old('hr6' , $nurse->hr6) }}">
-                </div>
+                  @if($nurse->hr6)
+                      <div class="form-group col-sm-12 col-lg-1">
+                          <input type="text" name="hr6" class="form-control" value="{{ old('hr6', $nurse->hr6) }}">
+                      </div>
+                  @else
+                      <div class="form-group col-sm-12 col-lg-1">
+                          <input type="text" name="hr6" class="form-control" value="{{ \Carbon\Carbon::parse($nurse->hr)->addMinutes(150)->format('H:i') }}">
+                      </div>
+                  @endif
 
                 <div class="form-group col-sm-12 col-lg-1">
                   <input type="text" name="pa6" class="form-control" value="{{ old('pa6' , $nurse->pa6) }}">
@@ -650,9 +683,15 @@
               </div>
 
               <div class="row text-center">
-                <div class="form-group col-sm-12 col-lg-1">
-                  <input type="text" name="hr7" class="form-control" value="{{ old('hr7', $nurse->hr7) }}">
-                </div>
+                  @if($nurse->hr7)
+                      <div class="form-group col-sm-12 col-lg-1">
+                          <input type="text" name="hr7" class="form-control" value="{{ $nurse->hr7 }}">
+                      </div>
+                  @else
+                      <div class="form-group col-sm-12 col-lg-1">
+                          <input type="text" name="hr7" class="form-control" value="{{ \Carbon\Carbon::parse($nurse->hr)->addHour(3)->format('H:i') }}">
+                      </div>
+                  @endif
 
                 <div class="form-group col-sm-12 col-lg-1">
                   <input type="text" name="pa7" class="form-control" value="{{ old('pa7', $nurse->pa7) }}">
@@ -692,9 +731,41 @@
               </div>
 
                 <div class="row text-center">
-                    <div class="form-group col-sm-12 col-lg-1">
-                        <input type="text" name="hr8" class="form-control" value="{{ old('hr8', $nurse->hr8) }}">
-                    </div>
+
+                    @if($nurse->order->medical->hour_hd == '3.5')
+                        @if($nurse->hr8)
+                            <div class="form-group col-sm-12 col-lg-1">
+                                <input type="text" name="hr8" class="form-control" value="{{ old('hr8', $nurse->hr8) }}">
+                            </div>
+                        @else
+                            <div class="form-group col-sm-12 col-lg-1">
+                                <input type="text" name="hr8" class="form-control" value="{{ \Carbon\Carbon::parse($nurse->hr)->addMinutes(210)->format('H:i') }}">
+                            </div>
+                        @endif
+
+                    @elseif($nurse->order->medical->hour_hd == '3.75')
+                        @if($nurse->hr8)
+                            <div class="form-group col-sm-12 col-lg-1">
+                                <input type="text" name="hr8" class="form-control" value="{{ old('hr8', $nurse->hr8) }}">
+                            </div>
+                        @else
+                            <div class="form-group col-sm-12 col-lg-1">
+                                <input type="text" name="hr8" class="form-control" value="{{ \Carbon\Carbon::parse($nurse->hr)->addMinutes(225)->format('H:i') }}">
+                            </div>
+                        @endif
+                    @else
+                        @if($nurse->hr8)
+                            <div class="form-group col-sm-12 col-lg-1">
+                                <input type="text" name="hr8" class="form-control" value="{{ old('hr8', $nurse->hr8) }}">
+                            </div>
+                        @else
+                            <div class="form-group col-sm-12 col-lg-1">
+                                <input type="text" name="hr8" class="form-control" value="{{ \Carbon\Carbon::parse($nurse->hr)->addMinutes(195)->format('H:i') }}">
+                            </div>
+                        @endif
+                    @endif
+
+
 
                     <div class="form-group col-sm-12 col-lg-1">
                         <input type="text" name="pa8" class="form-control" value="{{ old('pa8', $nurse->pa8) }}">
@@ -747,4 +818,5 @@
 
 @section('scripts')
 <script src="{{ asset('vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
+
 @endsection
