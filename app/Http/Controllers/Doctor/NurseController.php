@@ -95,22 +95,36 @@ class NurseController extends Controller
 
         $generados = $nurse->where('patient', $nurse->patient)->count();
 
-        if ($generados == 1)
+        if ($nurse->hd == null)
         {
-            $nurse->nhd = 1;
-        }
-        else
-            $nurse->nhd = $generados;
-
-        $dayWeek = Carbon::now()->dayOfWeek;
-
-        if ($dayWeek == 1 || 3 || 5)
-        {
-            $nurse->others = "L - M - V";
+            if ($generados == 1)
+            {
+                $nurse->nhd = 1;
+            }
+            else
+                $nurse->nhd = $generados;
         } else
         {
-            $nurse->others = "M - J - S";
+            $nurse->nhd = $nurse->nhd;
         }
+
+
+        $dayWeek = Carbon::parse($nurse->created_at)->dayOfWeek;
+
+        if ($nurse->others == null)
+        {
+            if ($dayWeek == 1 || $dayWeek == 3 || $dayWeek == 5)
+            {
+                $nurse->others = "L - M - V";
+            } else
+            {
+                $nurse->others = "M - J - S";
+            }
+        } else
+        {
+            $nurse->others = $nurse->others;
+        }
+
 
 
         return view('nurses.edit', compact('nurse'));
