@@ -92,6 +92,27 @@ class NurseController extends Controller
     public function edit($id)
     {
         $nurse = Nurse::findOrFail($id);
+
+        $generados = $nurse->where('patient', $nurse->patient)->count();
+
+        if ($generados == 1)
+        {
+            $nurse->nhd = 1;
+        }
+        else
+            $nurse->nhd = $generados;
+
+        $dayWeek = Carbon::now()->dayOfWeek;
+
+        if ($dayWeek == 1 || 3 || 5)
+        {
+            $nurse->others = "L - M - V";
+        } else
+        {
+            $nurse->others = "M - J - S";
+        }
+
+
         return view('nurses.edit', compact('nurse'));
     }
 

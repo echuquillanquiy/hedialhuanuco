@@ -130,6 +130,7 @@ class Nurse extends Model
       'user_id'
 ];
 
+
      public function order()
     {
         return $this->belongsTo(Order::class);

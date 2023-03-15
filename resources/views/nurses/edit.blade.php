@@ -205,7 +205,7 @@
               <div class="row text-center">
                 <div class="form-group col-sm-12 col-lg-2">
                   <label for="hcl">H.CL</label>
-                  <input type="text" name="hcl" class="form-control" value="{{ old('hcl', $nurse->hcl) }}">
+                  <input type="text" name="hcl" class="form-control" value="{{ old('hcl', $nurse->order->patient->dni) }}" readonly>
                 </div>
 
                 <div class="form-group col-sm-12 col-lg-2">
@@ -271,8 +271,6 @@
                           <input type="text" name="end_weight" class="form-control" value="{{ old('end_weight', $nurse->order->medical->dry_weight) }}">
                       </div>
                   @endif
-
-
 
                 <div class="form-group col-sm-12 col-lg-2">
                   <label for="machine">N° de Maquina</label>
