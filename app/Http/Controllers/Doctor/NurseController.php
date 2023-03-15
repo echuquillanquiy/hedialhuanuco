@@ -160,11 +160,12 @@ class NurseController extends Controller
         $patient = $nurse->patient;
         $fecha = Carbon::now();
         $ultimo = $nurse->where('patient', $patient)->whereDate('created_at', '!=', $fecha)->latest()->first();
-        if ($ultimo->nhd == null)
+
+        if ($ultimo->nhd)
         {
-            $utl = $ultimo->nhd = 1;
-        } else {
             $ult = $ultimo->nhd += 1;
+        } else {
+            $nurse->nhd = 0;
         }
 
         return view('nurses.edit', compact('nurse', 'ult'));
