@@ -95,18 +95,18 @@ class NurseController extends Controller
 
         $generados = $nurse->where('patient', $nurse->patient)->count();
 
-        if ($nurse->hd == null)
+        /*if ($nurse->hd == null)
         {
             if ($generados == 1)
             {
-                $nurse->nhd = 1;
+                $nurse->nhd = '';
             }
             else
                 $nurse->nhd = $generados;
         } else
         {
-            $nurse->nhd = $nurse->nhd;
-        }
+            $nurse->nhd;
+        }*/
 
 
         $dayWeek = Carbon::parse($nurse->created_at)->dayOfWeek;
