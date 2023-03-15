@@ -94,7 +94,7 @@ class NurseController extends Controller
     {
         $nurse = Nurse::findOrFail($id);
 
-        $generados = $nurse->where('patient', $nurse->patient)->count();
+        //$generados = $nurse->where('patient', $nurse->patient)->count();
 
         /*if ($nurse->hd == null)
         {
@@ -108,7 +108,6 @@ class NurseController extends Controller
         {
             $nurse->nhd;
         }*/
-
 
         $dayWeek = Carbon::parse($nurse->created_at)->dayOfWeek;
 
@@ -158,9 +157,12 @@ class NurseController extends Controller
             }
         }
 
+        $patient = $nurse->patient;
+        $fecha = Carbon::now();
+        $ultimo = $nurse->where('patient', $patient)->whereDate('created_at', '!=', $fecha)->latest()->first();
+        $ult = $ultimo->nhd += 1;
 
-
-        return view('nurses.edit', compact('nurse'));
+        return view('nurses.edit', compact('nurse', 'ult'));
     }
 
     /**
