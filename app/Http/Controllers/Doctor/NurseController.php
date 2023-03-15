@@ -9,6 +9,7 @@ use App\Nurse;
 use App\Medical;
 use App\Room;
 use App\Shift;
+use Monolog\Handler\IFTTTHandler;
 
 class NurseController extends Controller
 {
@@ -123,6 +124,38 @@ class NurseController extends Controller
         } else
         {
             $nurse->others = $nurse->others;
+        }
+
+        if (!$nurse->hr)
+        {
+            $nurse->hr2 = $nurse->hr2;
+            $nurse->hr3 = $nurse->hr3;
+            $nurse->hr4 = $nurse->hr4;
+            $nurse->hr5 = $nurse->hr5;
+            $nurse->hr6 = $nurse->hr6;
+            $nurse->hr7 = $nurse->hr7;
+            $nurse->hr8 = $nurse->hr8;
+        } else
+        {
+            $nurse->hr2 = Carbon::parse($nurse->hr)->addMinutes(30)->format('H:i');
+            $nurse->hr3 = Carbon::parse($nurse->hr)->addHour(1)->format('H:i');
+            $nurse->hr4 = Carbon::parse($nurse->hr)->addMinutes(90)->format('H:i');
+            $nurse->hr5 = Carbon::parse($nurse->hr)->addHour(2)->format('H:i');
+            $nurse->hr6 = Carbon::parse($nurse->hr)->addMinutes(150)->format('H:i');
+            $nurse->hr7 = Carbon::parse($nurse->hr)->addHour(3)->format('H:i');
+
+            if ($nurse->order->medical->hour_hd == '3.15')
+                {
+                    $nurse->hr8 = Carbon::parse($nurse->hr)->addMinutes(195)->format('H:i');
+                }
+            elseif ($nurse->order->medical->hour_hd == '3.75')
+                {
+                    $nurse->hr8 = Carbon::parse($nurse->hr)->addMinutes(225)->format('H:i');
+                }
+            else
+            {
+                $nurse->hr8 = Carbon::parse($nurse->hr)->addMinutes(210)->format('H:i');
+            }
         }
 
 
