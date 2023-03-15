@@ -215,7 +215,7 @@
 
                 <div class="form-group col-sm-12 col-lg-2">
                   <label for="nhd">N° HD</label>
-                  @if($nurse->nhd)
+                    @if($nurse->nhd)
                         <input type="text" name="nhd" class="form-control" value="{{ $nurse->nhd }}">
                     @else
                         <input type="text" name="nhd" class="form-control" value="{{ old('nhd', $ult) }}">
