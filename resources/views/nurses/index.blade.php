@@ -122,7 +122,11 @@
 
 
           <th scope="row">
-            {{$nurse->hr8}}
+              @if($nurse->hr8 == '-' || $nurse->hr8 == null)
+                  {{$nurse->hr7}}
+              @else
+                  {{$nurse->hr8}}
+              @endif
           </th>
 
 	    <th scope="row">
