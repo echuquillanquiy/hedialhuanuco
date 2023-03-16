@@ -142,7 +142,7 @@ class NurseController extends Controller
                 $nurse->hr2 = $nurse->hr2;
 
             if (!$nurse->hr3)
-                $nurse->hr3 = Carbon::parse($nurse->hr)->addMinutes(30)->format('H:i');
+                $nurse->hr3 = Carbon::parse($nurse->hr)->addHour(1)->format('H:i');
             else
                 $nurse->hr3 = $nurse->hr3;
 
