@@ -134,7 +134,8 @@ class NurseController extends Controller
             $nurse->hr6 = $nurse->hr6;
             $nurse->hr7 = $nurse->hr7;
             $nurse->hr8 = $nurse->hr8;
-        } else
+        }
+        else
         {
             if (!$nurse->hr2)
                 $nurse->hr2 = Carbon::parse($nurse->hr)->addMinutes(30)->format('H:i');
@@ -182,9 +183,16 @@ class NurseController extends Controller
 
         $patient = $nurse->patient;
         $fecha = Carbon::now();
-        $ultimo = $nurse->where('patient', $patient)->whereDate('created_at', '!=', $fecha)->latest()->first();
-        $ult = $ultimo ? $ultimo->nhd : 0;
-        $nurse->nhd = $ult + 1;
+        if (!$nurse->nhd)
+        {
+            $ultimo = $nurse->where('patient', $patient)->whereDate('created_at', '!=', $fecha)->latest()->first();
+            $ult = $ultimo ? $ultimo->nhd : 0;
+            $nurse->nhd = $ult + 1;
+        }
+        else
+        {
+            $nurse->nhd = $nurse->nhd;
+        }
 
         return view('nurses.edit', compact('nurse', 'ult'));
     }
