@@ -194,7 +194,7 @@ class NurseController extends Controller
             $nurse->nhd = $nurse->nhd;
         }
 
-        return view('nurses.edit', compact('nurse', 'ult'));
+        return view('nurses.edit', compact('nurse'));
     }
 
     /**
