@@ -136,12 +136,35 @@ class NurseController extends Controller
             $nurse->hr8 = $nurse->hr8;
         } else
         {
-            $nurse->hr2 = Carbon::parse($nurse->hr)->addMinutes(30)->format('H:i');
-            $nurse->hr3 = Carbon::parse($nurse->hr)->addHour(1)->format('H:i');
-            $nurse->hr4 = Carbon::parse($nurse->hr)->addMinutes(90)->format('H:i');
-            $nurse->hr5 = Carbon::parse($nurse->hr)->addHour(2)->format('H:i');
-            $nurse->hr6 = Carbon::parse($nurse->hr)->addMinutes(150)->format('H:i');
-            $nurse->hr7 = Carbon::parse($nurse->hr)->addHour(3)->format('H:i');
+            if (!$nurse->hr2)
+                $nurse->hr2 = Carbon::parse($nurse->hr)->addMinutes(30)->format('H:i');
+            else
+                $nurse->hr2 = $nurse->hr2;
+
+            if (!$nurse->hr3)
+                $nurse->hr3 = Carbon::parse($nurse->hr)->addMinutes(30)->format('H:i');
+            else
+                $nurse->hr3 = $nurse->hr3;
+
+            if (!$nurse->hr4)
+                $nurse->hr4 = Carbon::parse($nurse->hr)->addMinutes(90)->format('H:i');
+            else
+                $nurse->hr4 = $nurse->hr4;
+
+            if (!$nurse->hr5)
+                $nurse->hr5 = Carbon::parse($nurse->hr)->addHour(2)->format('H:i');
+            else
+                $nurse->hr5 = $nurse->hr5;
+
+            if (!$nurse->hr6)
+                $nurse->hr6 = Carbon::parse($nurse->hr)->addMinutes(150)->format('H:i');
+            else
+                $nurse->hr6 = $nurse->hr6;
+
+            if (!$nurse->hr7)
+                $nurse->hr7 = Carbon::parse($nurse->hr)->addHour(3)->format('H:i');
+            else
+                $nurse->hr7 = $nurse->hr7;
 
             if ($nurse->order->medical->hour_hd == '3.15')
                 {
