@@ -167,18 +167,21 @@ class NurseController extends Controller
             else
                 $nurse->hr7 = $nurse->hr7;
 
-            if ($nurse->order->medical->hour_hd == '3.15')
+            if (!$nurse->hr8)
+                if ($nurse->order->medical->hour_hd == '3.15')
                 {
                     $nurse->hr8 = Carbon::parse($nurse->hr)->addMinutes(195)->format('H:i');
                 }
-            elseif ($nurse->order->medical->hour_hd == '3.75')
+                elseif ($nurse->order->medical->hour_hd == '3.75')
                 {
                     $nurse->hr8 = Carbon::parse($nurse->hr)->addMinutes(225)->format('H:i');
                 }
+                else
+                {
+                    $nurse->hr8 = Carbon::parse($nurse->hr)->addMinutes(210)->format('H:i');
+                }
             else
-            {
-                $nurse->hr8 = Carbon::parse($nurse->hr)->addMinutes(210)->format('H:i');
-            }
+                $nurse->hr8 = $nurse->hr8;
         }
 
         $patient = $nurse->patient;
