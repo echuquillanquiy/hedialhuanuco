@@ -88,7 +88,7 @@
                 <td style="font-size: 0.6rem; margin-bottom: 1px; height: 20px" colspan="">EXAMEN: {{ $order->medical->evaluation }}</td>
                 <td style="font-size: 0.6rem; margin-bottom: 1px; height: 20px" colspan="">INDICACIONES: {{ $order->medical->indications }}</td>
               </tr>
-                @if ($order->created_at->format('Y-m-d') >= date('2023-03-18'))
+                @if ($order->created_at->format('Y-m-d') >= date('2023-03-17'))
                     <tr>
                         <td style="font-size: 0.6rem; margin-bottom: 1px; height: 20px" colspan="">
                             Medicamentos:
