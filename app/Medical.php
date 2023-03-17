@@ -35,7 +35,11 @@ class Medical extends Model
         'start_hour',
         'end_hour',
         'signal',
-        'user_id'
+        'user_id',
+        'epo',
+        'iron',
+        'vitb12',
+        'calci'
 
     ];
 

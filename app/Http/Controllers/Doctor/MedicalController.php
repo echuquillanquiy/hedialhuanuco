@@ -72,7 +72,11 @@ class MedicalController extends Controller
             //'dializer' => 'required|min:5',
             'bicarbonat' => 'required|min:2',
             //'na_in_solution' => 'required|min:2'
-            'user_id' => 'required'
+            'user_id' => 'required',
+            'epo' => 'required',
+            'iron' => 'required',
+            'vitb12' => 'required',
+            'calci' => 'required'
 
         ];
 
@@ -124,7 +128,12 @@ class MedicalController extends Controller
             'dializer.min' => 'El campo dializador debe tener mínimo 5 carácteres',
             'bircarbonat.min' => 'El campo Bicarbonatodebe tener mínimo 2 carácteres',
             'na_in_solution.min' => 'El campo Calcio en solución debe tener mínimo 2 carácteres',
-            'user_id.required' => 'El usuario es requerido.'
+            'user_id.required' => 'El usuario es requerido.',
+
+            'epo.required' => 'Campo obligatorio',
+            'iron.required' => 'Campo obligatorio',
+            'vitb12.required' => 'Campo obligatorio',
+            'calci.required' => 'Campo obligatorio'
 
         ];
 

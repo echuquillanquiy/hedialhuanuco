@@ -325,7 +325,7 @@
 
                   <div class="form-group col-sm-12 col-lg-4">
                       <label for="iron">Hierro</label>
-                      <input type="text" name="iron" class="form-control" value="{{ old('iron', $nurse->iron) }}">
+                      <input type="text" name="iron" class="form-control" value="{{ old('iron', !$nurse->iron ? $nurse->order->medical->iron : $nurse->iron) }}">
                   </div>
 
               </div>
@@ -333,7 +333,7 @@
                 <div class="row text-center">
                     <div class="form-group col-sm-12 col-lg-2">
                         <label for="epo2000">EPO 2000</label>
-                        <input type="text" name="epo2000" class="form-control" value="{{ old('epo2000', $nurse->epo2000) }}">
+                        <input type="text" name="epo2000" class="form-control" value="{{ old('epo2000', !$nurse->epo2000 ? $nurse->order->medical->epo : $nurse->epo2000) }}">
                     </div>
 
                     <div class="form-group col-sm-12 col-lg-2">
@@ -343,12 +343,12 @@
 
                     <div class="form-group col-sm-12 col-lg-2">
                         <label for="hidroxi">Hidroxicobalamina</label>
-                        <input type="text" name="hidroxi" class="form-control" value="{{ old('hidroxi', $nurse->hidroxi) }}">
+                        <input type="text" name="hidroxi" class="form-control" value="{{ old('hidroxi', !$nurse->hidroxi ? $nurse->order->medical->vitb12 : $nurse->hidroxi) }}">
                     </div>
 
                     <div class="form-group col-sm-12 col-lg-2">
                         <label for="calcitriol">Calcitriol</label>
-                        <input type="text" name="calcitriol" class="form-control" value="{{ old('calcitriol', $nurse->calcitriol) }}">
+                        <input type="text" name="calcitriol" class="form-control" value="{{ old('calcitriol', !$nurse->calcitriol ? $nurse->order->medical->calci : $nurse->calcitriol) }}">
                     </div>
 
                     <div class="form-group col-sm-12 col-lg-4">
