@@ -176,6 +176,10 @@ class NurseController extends Controller
                 {
                     $nurse->hr8 = Carbon::parse($nurse->hr)->addMinutes(225)->format('H:i');
                 }
+                elseif ($nurse->order->medical->hour_hd == '3')
+                {
+                    $nurse->hr8 = Carbon::parse($nurse->hr)->addHour(3)->format('H:i');
+                }
                 else
                 {
                     $nurse->hr8 = Carbon::parse($nurse->hr)->addMinutes(210)->format('H:i');
