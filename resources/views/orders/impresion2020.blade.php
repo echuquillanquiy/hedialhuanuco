@@ -157,7 +157,7 @@
 
             <tr>
 
-                <td colspan="2" style="font-size: 0.6rem; width: 10%; text-align: right">Ara de dializador:</td>
+                <td colspan="2" style="font-size: 0.6rem; width: 10%; text-align: right">Area de dializador:</td>
                 <td style="font-size: 0.5rem; border-bottom: 1px solid; width: 10%; text-align: center">{{ $order->medical->area_filter }}</td>
                 <td colspan="2" style="font-size: 0.6rem; width: 5%; text-align: right"> Membrana de dializador:</td>
                 <td style="font-size: 0.5rem; border-bottom: 1px solid; width: 8%; text-align: center">{{ $order->medical->membrane }}</td>
