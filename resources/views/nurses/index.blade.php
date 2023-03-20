@@ -87,6 +87,7 @@
 	     <th scope="col">Epo2000</th>
 	     <th scope="col">Epo4000</th>
 	     <th scope="col">Vit B12</th>
+            <th scope="col">Calcitriol</th>
           <th scope="col">Sala</th>
           <th scope="col">Turno</th>
           <th>Fecha de Creacion</th>
@@ -142,6 +143,9 @@
         <th scope="row">
             @if ($nurse->hidroxi  > 0) 1 @else 0 @endif
           </th>
+            <th scope="row">
+                @if ($nurse->calcitriol  > 0) 1 @else 0 @endif
+            </th>
 
           <td>
             {{$nurse->room}}
