@@ -80,6 +80,16 @@
               </select>
           </div>
 
+          <div class="form-group col-sm-12 col-lg-1">
+              <label for="covid">HD</label>
+              <select name="hour_hd" id="hour_hd" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
+                  <option value="3.5" selected>3.5</option>
+                  <option value="3">3</option>
+                  <option value="3.15">3.15</option>
+                  <option value="3.75">3.75</option>
+              </select>
+          </div>
+
         <div class="form-group">
           <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
         </div>

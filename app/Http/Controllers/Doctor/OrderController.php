@@ -101,8 +101,16 @@ class OrderController extends Controller
             'shift' => $order->shift->name,
         ];
 
+        $orders_data2 = [
+            'order_id' => $order->id,
+            'patient' => $order->patient->name,
+            'room' => $order->room->name,
+            'shift' => $order->shift->name,
+            'hour_hd' => $request->hour_hd
+        ];
+
         $nurse = $order->nurse()->create($orders_data);
-        $medical = $order->medical()->create($orders_data);
+        $medical = $order->medical()->create($orders_data2);
         $notification = 'La orden fue creada correctamente.';
         return back()->with(compact('notification'));
     }
