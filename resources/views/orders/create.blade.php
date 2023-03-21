@@ -62,7 +62,7 @@
           </select>
         </div>
 
-        <div class="form-group col-sm-12 col-lg-3">
+        <div class="form-group col-sm-12 col-lg-2">
           <label for="shift_id">Turnos</label>
           <select name="shift_id" id="shift_id" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
             @foreach ($shifts as $shift)
