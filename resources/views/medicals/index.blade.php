@@ -74,8 +74,12 @@
           <th scope="col">Sala</th>
           <th scope="col">Turno</th>
           <th scope="col">HORAS HD</th>
-          <th>Fecha de Creación</th>
+          <th scope="col">Fecha de Creación</th>
           <th scope="col">Opciones</th>
+          <th scope="col">P.Inicial</th>
+            <th scope="col">P.Final</th>
+            <th scope="col">UF</th>
+            <th scope="col">P.Seco</th>
         </tr>
       </thead>
       <tbody>
@@ -107,6 +111,20 @@
               <a href="{{ url('/medicals/'.$medical->id.'/edit') }}" class="btn btn-sm btn-primary">Editar</a>
             </form>
           </td>
+
+            <td>
+                {{$medical->start_weight}}
+            </td>
+            <td>
+                {{$medical->order->nurse->end_weight}}
+            </td>
+            <td>
+                {{$medical->uf}}
+            </td>
+            <td>
+                {{$medical->dry_weight}}
+            </td>
+
         </tr>
         @endforeach
       </tbody>
