@@ -108,7 +108,7 @@
 
           <div class="form-group col-sm-12 col-lg-3">
               <label for="vitb12">Hidroxicobalamina 1mg/mL INY 1mL: </label>
-              <input type="number" name="vitb12" class="form-control" value="{{ old('vitb12', !$medical->vitb12 ? '0' : $medical->vitb12) }}" placeholder="COLOCAR SOLO CANTIDAD">
+              <input type="number" name="vitb12" class="form-control" value="{{ old('vitb12', !$medical->vitb12 ? '1' : $medical->vitb12) }}" placeholder="COLOCAR SOLO CANTIDAD">
           </div>
 
           <div class="form-group col-sm-12 col-lg-3">
