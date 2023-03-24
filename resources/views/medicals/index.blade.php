@@ -119,7 +119,7 @@
                 {{$medical->order->nurse->end_weight}}
             </td>
             <td>
-                {{$medical->uf}}
+                {{ preg_match('/(-?\d+)/', $medical->uf, $matches) ? $valor_num = intval($matches[0]) / 1000 : 0 }}
             </td>
             <td>
                 {{$medical->dry_weight}}
