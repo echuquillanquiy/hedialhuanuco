@@ -98,22 +98,22 @@
       <div class="row">
           <div class="form-group col-sm-12 col-lg-3">
               <label for="epo">Epoteina alfa 2000 Ul/mL:</label>
-              <input type="number" name="epo" class="form-control" value="{{ old('epo', !$medical->epo ? '1' : $medical->epo) }}" placeholder="COLOCAR SOLO CANTIDAD">
+              <input type="number" name="epo" class="form-control" value="{{ old('epo', $medical->epo) }}" placeholder="COLOCAR SOLO CANTIDAD">
           </div>
 
           <div class="form-group col-sm-12 col-lg-3">
               <label for="iron">Hierro 20 mg Fe/mL INY 5 mL:</label>
-              <input type="number" name="iron" class="form-control" value="{{ old('iron', !$medical->iron ? '0' : $medical->iron) }}" placeholder="COLOCAR SOLO CANTIDAD">
+              <input type="number" name="iron" class="form-control" value="{{ old('iron', $medical->iron) }}" placeholder="COLOCAR SOLO CANTIDAD">
           </div>
 
           <div class="form-group col-sm-12 col-lg-3">
               <label for="vitb12">Hidroxicobalamina 1mg/mL INY 1mL: </label>
-              <input type="number" name="vitb12" class="form-control" value="{{ old('vitb12', !$medical->vitb12 ? '1' : $medical->vitb12) }}" placeholder="COLOCAR SOLO CANTIDAD">
+              <input type="number" name="vitb12" class="form-control" value="{{ old('vitb12', $medical->vitb12) }}" placeholder="COLOCAR SOLO CANTIDAD">
           </div>
 
           <div class="form-group col-sm-12 col-lg-3">
               <label for="calci">Calcitriol 1 mcg/mL INY:</label>
-              <input type="number" name="calci" class="form-control" value="{{ old('calci', !$medical->calci ? '0' : $medical->calci) }}" placeholder="COLOCAR SOLO CANTIDAD">
+              <input type="number" name="calci" class="form-control" value="{{ old('calci', $medical->calci) }}" placeholder="COLOCAR SOLO CANTIDAD">
           </div>
       </div>
 

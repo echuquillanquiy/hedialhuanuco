@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Doctor;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Medical;
 use App\Order;
@@ -189,7 +190,30 @@ class MedicalController extends Controller
     public function edit($id)
     {
         $medical = Medical::findOrFail($id);
+
+
+        $patient = $medical->patient;
+        $fecha = Carbon::now();
+        $ultimos = $medical->where('patient', $patient)->whereDate('created_at', '!=', $fecha)->latest()->first();
+
+
+        if (!$medical->epo || !$medical->iron || !$medical->vitb12 || !$medical->calci)
+            {
+                $medical->epo = $ultimos->epo;
+                $medical->iron = $ultimos->iron;
+                $medical->vitb12 = $ultimos->vitb12;
+                $medical->calci = $ultimos->calci;
+
+            } else
+            {
+                $medical->epo = $medical->epo;
+                $medical->iron = $medical->iron;
+                $medical->vitb12 = $medical->vitb12;
+                $medical->calci = $medical->calci;
+            }
+
         return view('medicals.edit', compact('medical'));
+
     }
 
     /**

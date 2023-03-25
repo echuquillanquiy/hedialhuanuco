@@ -190,10 +190,11 @@ class NurseController extends Controller
 
         $patient = $nurse->patient;
         $fecha = Carbon::now();
+        $ultimo = $nurse->where('patient', $patient)->whereDate('created_at', '!=', $fecha)->latest()->first();
+        $ult = $ultimo ? $ultimo->nhd : 0;
+
         if (!$nurse->nhd)
         {
-            $ultimo = $nurse->where('patient', $patient)->whereDate('created_at', '!=', $fecha)->latest()->first();
-            $ult = $ultimo ? $ultimo->nhd : 0;
             $nurse->nhd = $ult + 1;
         }
         else
