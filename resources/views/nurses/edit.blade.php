@@ -86,6 +86,28 @@
                 </div>
 
                 <div class="row">
+                    <div class="form-group col-sm-12 col-lg-3">
+                        <label for="epo2000">EPO 2000</label>
+                        <input type="number" name="" class="form-control" value="{{ $nurse->order->medical->epo }}" disabled>
+                    </div>
+
+                    <div class="form-group col-sm-12 col-lg-3">
+                        <label for="epo4000">EPO 4000</label>
+                        <input type="number" name="" class="form-control" value="{{ $nurse->order->medical->iron }}" disabled>
+                    </div>
+
+                    <div class="form-group col-sm-12 col-lg-3">
+                        <label for="hidroxi">Hidroxicobalamina</label>
+                        <input type="number" name="" class="form-control" value="{{ $nurse->order->medical->vitb12 }}" disabled>
+                    </div>
+
+                    <div class="form-group col-sm-12 col-lg-3">
+                        <label for="calcitriol">Calcitriol</label>
+                        <input type="number" name="" class="form-control" value="{{ $nurse->order->medical->calci }}" disabled>
+                    </div>
+                </div>
+
+                <div class="row">
                     <div class="form-group col-sm-12 col-lg-4">
                         <label for="clinical_trouble">Problemas Clínicos:</label>
                         <textarea class="form-control" id="" name="clinical_trouble" rows="2" disabled>{{ $nurse->order->medical->clinical_trouble }}</textarea>
@@ -332,22 +354,22 @@
 
                 <div class="row text-center">
                     <div class="form-group col-sm-12 col-lg-2">
-                        <label for="epo2000">Epoteina alfa 2000 Ul/mL:</label>
+                        <label for="epo2000">EPO 2000</label>
                         <input type="number" name="epo2000" class="form-control" value="{{ old('epo2000', !$nurse->epo2000 ? $nurse->order->medical->epo : $nurse->epo2000) }}" placeholder="COLOCAR SOLO CANTIDAD">
                     </div>
 
                     <div class="form-group col-sm-12 col-lg-2">
-                        <label for="epo4000">Hierro 20 mg Fe/mL INY 5 mL:</label>
+                        <label for="epo4000">EPO 4000</label>
                         <input type="number" name="epo4000" class="form-control" value="{{ old('epo4000', $nurse->epo4000) }}" placeholder="COLOCAR SOLO CANTIDAD">
                     </div>
 
                     <div class="form-group col-sm-12 col-lg-2">
-                        <label for="hidroxi">Hidroxicobalamina 1mg/mL INY 1mL: </label>
+                        <label for="hidroxi">Hidroxicobalamina</label>
                         <input type="number" name="hidroxi" class="form-control" value="{{ old('hidroxi', !$nurse->hidroxi ? $nurse->order->medical->vitb12 : $nurse->hidroxi) }}" placeholder="COLOCAR SOLO CANTIDAD">
                     </div>
 
                     <div class="form-group col-sm-12 col-lg-2">
-                        <label for="calcitriol">Calcitriol 1 mcg/mL INY:</label>
+                        <label for="calcitriol">Calcitriol</label>
                         <input type="number" name="calcitriol" class="form-control" value="{{ old('calcitriol', !$nurse->calcitriol ? $nurse->order->medical->calci : $nurse->calcitriol) }}" placeholder="COLOCAR SOLO CANTIDAD">
                     </div>
 
