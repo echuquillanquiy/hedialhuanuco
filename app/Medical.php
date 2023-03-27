@@ -37,6 +37,7 @@ class Medical extends Model
         'signal',
         'user_id',
         'epo',
+        'epo4000',
         'iron',
         'vitb12',
         'calci'

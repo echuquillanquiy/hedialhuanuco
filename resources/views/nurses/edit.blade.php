@@ -86,13 +86,18 @@
                 </div>
 
                 <div class="row">
-                    <div class="form-group col-sm-12 col-lg-3">
+                    <div class="form-group col-sm-12 col-lg-2">
                         <label for="epo2000">EPO 2000</label>
                         <input type="number" name="" class="form-control" value="{{ $nurse->order->medical->epo }}" disabled>
                     </div>
 
-                    <div class="form-group col-sm-12 col-lg-3">
+                    <div class="form-group col-sm-12 col-lg-2">
                         <label for="epo4000">EPO 4000</label>
+                        <input type="number" name="" class="form-control" value="{{ $nurse->order->medical->epo4000 }}" disabled>
+                    </div>
+
+                    <div class="form-group col-sm-12 col-lg-2">
+                        <label for="epo4000">Hierro</label>
                         <input type="number" name="" class="form-control" value="{{ $nurse->order->medical->iron }}" disabled>
                     </div>
 

@@ -96,12 +96,17 @@
     </div>
 
       <div class="row">
-          <div class="form-group col-sm-12 col-lg-3">
+          <div class="form-group col-sm-12 col-lg-2">
               <label for="epo">Epoteina alfa 2000 Ul/mL:</label>
               <input type="number" name="epo" class="form-control" value="{{ old('epo', $medical->epo) }}" placeholder="COLOCAR SOLO CANTIDAD">
           </div>
 
-          <div class="form-group col-sm-12 col-lg-3">
+          <div class="form-group col-sm-12 col-lg-2">
+              <label for="epo4000">Epoteina alfa 4000 Ul/mL:</label>
+              <input type="number" name="epo4000" class="form-control" value="{{ old('epo4000', $medical->epo4000) }}" placeholder="COLOCAR SOLO CANTIDAD">
+          </div>
+
+          <div class="form-group col-sm-12 col-lg-2">
               <label for="iron">Hierro 20 mg Fe/mL INY 5 mL:</label>
               <input type="number" name="iron" class="form-control" value="{{ old('iron', $medical->iron) }}" placeholder="COLOCAR SOLO CANTIDAD">
           </div>
