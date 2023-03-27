@@ -132,10 +132,10 @@
 
 	    <th scope="row">
             @if ($nurse->iron > 0) 1 @else 0 @endif
-          </th>
+        </th>
 
         <th scope="row">
-            @if ($nurse->epo2000 > 0) 1 @else 0 @endif
+            @if (!$nurse->epo2000) 0 @else {{ $nurse->epo2000 }} @endif
           </th>
         <th scope="row">
             @if ($nurse->epo4000  > 0) 1 @else 0 @endif
