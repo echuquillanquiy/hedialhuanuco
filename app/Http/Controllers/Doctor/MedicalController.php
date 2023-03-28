@@ -197,9 +197,10 @@ class MedicalController extends Controller
         $ultimos = $medical->where('patient', $patient)->whereDate('created_at', '!=', $fecha)->latest()->first();
 
 
-        if (!$medical->epo || !$medical->iron || !$medical->vitb12 || !$medical->calci)
+        if (!$medical->epo || !$medical->epo4000 || !$medical->iron || !$medical->vitb12 || !$medical->calci)
             {
                 $medical->epo = $ultimos->epo;
+                $medical->epo4000 = $ultimos->epo4000;
                 $medical->iron = $ultimos->iron;
                 $medical->vitb12 = $ultimos->vitb12;
                 $medical->calci = $ultimos->calci;
@@ -207,6 +208,7 @@ class MedicalController extends Controller
             } else
             {
                 $medical->epo = $medical->epo;
+                $medical->epo4000 = $medical->epo4000;
                 $medical->iron = $medical->iron;
                 $medical->vitb12 = $medical->vitb12;
                 $medical->calci = $medical->calci;
