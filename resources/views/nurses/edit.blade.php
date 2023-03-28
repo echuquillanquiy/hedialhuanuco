@@ -365,7 +365,7 @@
 
                     <div class="form-group col-sm-12 col-lg-2">
                         <label for="epo4000">EPO 4000</label>
-                        <input type="number" name="epo4000" class="form-control" value="{{ old('epo4000', !$nurse->epo4000 ? $nurse->order->medical->epo : $nurse->epo4000) }}" placeholder="COLOCAR SOLO CANTIDAD">
+                        <input type="number" name="epo4000" class="form-control" value="{{ old('epo4000', !$nurse->epo4000 ? $nurse->order->medical->epo4000 : $nurse->epo4000) }}" placeholder="COLOCAR SOLO CANTIDAD">
                     </div>
 
                     <div class="form-group col-sm-12 col-lg-2">
