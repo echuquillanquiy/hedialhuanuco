@@ -93,6 +93,7 @@
                         <td style="font-size: 0.6rem; margin-bottom: 1px; height: 20px" colspan="">
                             Medicamentos:
                             <strong>Epo 2000 ({{ '0' . $order->medical->epo }})</strong>
+                            <strong> - Epo 4000 ({{ '0' . $order->medical->epo4000 }})</strong>
                             <strong> - Hierro ({{ '0' . $order->medical->iron }})</strong>
                             <strong> - Vitamina B12 ({{ '0' . $order->medical->vitb12 }})</strong>
                             <strong> - Calcitriol ({{ '0' . $order->medical->calci }})</strong>
