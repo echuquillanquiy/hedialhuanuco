@@ -76,6 +76,7 @@ class MedicalController extends Controller
             //'na_in_solution' => 'required|min:2'
             'user_id' => 'required',
             'epo' => 'required',
+            'epo4000' => 'required',
             'iron' => 'required',
             'vitb12' => 'required',
             'calci' => 'required'
@@ -133,6 +134,7 @@ class MedicalController extends Controller
             'user_id.required' => 'El usuario es requerido.',
 
             'epo.required' => 'Campo obligatorio',
+            'epo4000.required' => 'Campo obligatorio',
             'iron.required' => 'Campo obligatorio',
             'vitb12.required' => 'Campo obligatorio',
             'calci.required' => 'Campo obligatorio'
@@ -201,7 +203,6 @@ class MedicalController extends Controller
         $medical->iron = $medical->iron ? $medical->iron :  $ultimos->iron;
         $medical->vitb12 = $medical->vitb12 ? $medical->vitb12 :  $ultimos->vitb12;
         $medical->calci = $medical->calci ? $medical->calci :  $ultimos->calci;
-
 
         return view('medicals.edit', compact('medical'));
 
