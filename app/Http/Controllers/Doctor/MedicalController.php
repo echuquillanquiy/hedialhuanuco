@@ -200,7 +200,6 @@ class MedicalController extends Controller
         $medical->epo = $medical->epo ? $medical->epo : $ultimos->epo;
         $medical->epo4000 = $medical->epo4000 ? $medical->epo4000 : $ultimos->epo4000;
         $medical->iron = $medical->iron ? $medical->iron : $ultimos->iron;
-        $medical->vitb12 = !$medical->vitb12 ? $ultimos->vitb12 : $medical->vitb12;
         $medical->calci = $medical->calci ? $medical->calci : $ultimos->calci;
 
         return view('medicals.edit', compact('medical'));
