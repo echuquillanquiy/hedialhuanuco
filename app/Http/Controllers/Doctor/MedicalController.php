@@ -196,23 +196,12 @@ class MedicalController extends Controller
         $fecha = Carbon::now();
         $ultimos = $medical->where('patient', $patient)->whereDate('created_at', '!=', $fecha)->latest()->first();
 
+        $medical->epo = $medical->epo ? $medical->epo : $ultimos->epo;
+        $medical->epo4000 = $medical->epo4000 ? $medical->epo4000 :  $ultimos->epo4000;
+        $medical->iron = $medical->iron ? $medical->iron :  $ultimos->iron;
+        $medical->vitb12 = $medical->vitb12 ? $medical->vitb12 :  $ultimos->vitb12;
+        $medical->calci = $medical->calci ? $medical->calci :  $ultimos->calci;
 
-        if (!$medical->epo || !$medical->iron || !$medical->vitb12 || !$medical->calci || !$medical->epo4000 )
-            {
-                $medical->epo = $ultimos->epo;
-                $medical->epo4000 = $ultimos->epo4000;
-                $medical->iron = $ultimos->iron;
-                $medical->vitb12 = $ultimos->vitb12;
-                $medical->calci = $ultimos->calci;
-
-            } else
-            {
-                $medical->epo = $medical->epo;
-                $medical->epo4000 = $medical->epo4000;
-                $medical->iron = $medical->iron;
-                $medical->vitb12 = $medical->vitb12;
-                $medical->calci = $medical->calci;
-            }
 
         return view('medicals.edit', compact('medical'));
 
