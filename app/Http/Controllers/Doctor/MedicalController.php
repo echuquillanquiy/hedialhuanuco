@@ -193,7 +193,6 @@ class MedicalController extends Controller
     {
         $medical = Medical::findOrFail($id);
 
-
         $patient = $medical->patient;
         $fecha = Carbon::now();
         $ultimos = $medical->where('patient', $patient)->whereDate('created_at', '!=', $fecha)->latest()->first();
