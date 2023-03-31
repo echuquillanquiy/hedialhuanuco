@@ -193,14 +193,9 @@ class MedicalController extends Controller
     {
         $medical = Medical::findOrFail($id);
 
-        $patient = $medical->patient;
+        /*$patient = $medical->patient;
         $fecha = Carbon::now();
-        $ultimos = $medical->where('patient', $patient)->whereDate('created_at', '!=', $fecha)->latest()->first();
-
-        $medical->epo = $medical->epo ? $medical->epo : $ultimos->epo;
-        $medical->epo4000 = $medical->epo4000 ? $medical->epo4000 : $ultimos->epo4000;
-        $medical->iron = $medical->iron ? $medical->iron : $ultimos->iron;
-        $medical->calci = $medical->calci ? $medical->calci : $ultimos->calci;
+        $ultimos = $medical->where('patient', $patient)->whereDate('created_at', '!=', $fecha)->latest()->first();*/
 
         return view('medicals.edit', compact('medical'));
 
