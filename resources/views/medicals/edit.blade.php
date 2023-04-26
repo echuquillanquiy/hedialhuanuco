@@ -87,11 +87,18 @@
         <label for="indications">Indicaciones</label>
         <textarea class="form-control" id="" name="indications" rows="2">{{ old('indications', $medical->indications) }}</textarea>
       </div>
+        @if($medical->signal == null)
+              <div class="form-group col-sm-12 col-lg-3">
+                  <label for="signal">Signos y Sintomas</label>
+                  <textarea class="form-control" id="" name="signal" rows="2">{{ old('signal', 'NIEGA') }}</textarea>
+              </div>
+          @else
+              <div class="form-group col-sm-12 col-lg-3">
+                  <label for="signal">Signos y Sintomas</label>
+                  <textarea class="form-control" id="" name="signal" rows="2">{{ old('signal', $medical->signal) }}</textarea>
+              </div>
+        @endif
 
-          <div class="form-group col-sm-12 col-lg-3">
-              <label for="signal">Signos y Sintomas</label>
-              <textarea class="form-control" id="" name="signal" rows="2">{{ old('signal', $medical->signal) }}</textarea>
-          </div>
 
     </div>
 
@@ -148,15 +155,30 @@
         <input type="text" name="qb" class="form-control" value="{{ old('qb', $medical->qb) }}">
       </div>
 
-      <div class="form-group col-sm-12 col-lg-2">
-        <label for="qd">QD</label>
-        <input type="text" name="qd" class="form-control" value="{{ old('qd', $medical->qd) }}">
-      </div>
+        @if($medical->qd == null)
+            <div class="form-group col-sm-12 col-lg-2">
+                <label for="qd">QD</label>
+                <input type="text" name="qd" class="form-control" value="{{ old('qd', '500') }}">
+            </div>
+        @else
+            <div class="form-group col-sm-12 col-lg-2">
+                <label for="qd">QD</label>
+                <input type="text" name="qd" class="form-control" value="{{ old('qd', $medical->qd) }}">
+            </div>
+        @endif
 
-      <div class="form-group col-sm-12 col-lg-2">
-        <label for="bicarbonat">Bicarbonato</label>
-        <input type="text" name="bicarbonat" class="form-control" value="{{ old('bicarbonat', $medical->bicarbonat) }}">
-      </div>
+        @if($medical->bicarbonat == null)
+            <div class="form-group col-sm-12 col-lg-2">
+                <label for="bicarbonat">Bicarbonato</label>
+                <input type="text" name="bicarbonat" class="form-control" value="{{ old('bicarbonat', '5.6') }}">
+            </div>
+        @else
+            <div class="form-group col-sm-12 col-lg-2">
+                <label for="bicarbonat">Bicarbonato</label>
+                <input type="text" name="bicarbonat" class="form-control" value="{{ old('bicarbonat', $medical->bicarbonat) }}">
+            </div>
+        @endif
+
     </div>
 
     <div class="row">
@@ -176,25 +198,50 @@
         <input type="text" name="end_na" class="form-control" value="{{ old('end_na', $medical->end_na) }}">
       </div>
 
-        <div class="form-group col-sm-12 col-lg-1">
-            <label for="profile_na">Perfil Na</label>
-            <input type="text" name="profile_na" class="form-control" value="{{ old('profile_na', $medical->profile_na) }}">
-        </div>
+        @if($medical->profile_na == null)
+            <div class="form-group col-sm-12 col-lg-1">
+                <label for="profile_na">Perfil Na</label>
+                <input type="text" name="profile_na" class="form-control" value="{{ old('profile_na', 'PERFIL L') }}">
+            </div>
+        @else
+            <div class="form-group col-sm-12 col-lg-1">
+                <label for="profile_na">Perfil Na</label>
+                <input type="text" name="profile_na" class="form-control" value="{{ old('profile_na', $medical->profile_na) }}">
+            </div>
+        @endif
+
 
       <div class="form-group col-sm-12 col-lg-2">
         <label for="area_filter">ÁREA/FILTRO</label>
         <input type="text" name="area_filter" class="form-control" value="{{ old('area_filter', $medical->area_filter) }}">
       </div>
 
-      <div class="form-group col-sm-12 col-lg-2">
-        <label for="membrane">MEMBRANA</label>
-        <input type="text" name="membrane" class="form-control" value="{{ old('membrane', $medical->membrane) }}">
-      </div>
+        @if($medical->membrane == null)
+            <div class="form-group col-sm-12 col-lg-2">
+                <label for="membrane">MEMBRANA</label>
+                <input type="text" name="membrane" class="form-control" value="{{ old('membrane', 'PSF') }}">
+            </div>
+        @else
+            <div class="form-group col-sm-12 col-lg-2">
+                <label for="membrane">MEMBRANA</label>
+                <input type="text" name="membrane" class="form-control" value="{{ old('membrane', $medical->membrane) }}">
+            </div>
+        @endif
 
-        <div class="form-group col-sm-12 col-lg-2">
-            <label for="profile_uf">Perfil UF:</label>
-            <input type="text" name="profile_uf" class="form-control" value="{{ old('profile_uf', $medical->profile_uf) }}">
-        </div>
+
+        @if($medical->profile_uf == null)
+            <div class="form-group col-sm-12 col-lg-2">
+                <label for="profile_uf">Perfil UF:</label>
+                <input type="text" name="profile_uf" class="form-control" value="{{ old('profile_uf', 'PERFIL L') }}">
+            </div>
+        @else
+            <div class="form-group col-sm-12 col-lg-2">
+                <label for="profile_uf">Perfil UF:</label>
+                <input type="text" name="profile_uf" class="form-control" value="{{ old('profile_uf', $medical->profile_uf) }}">
+            </div>
+        @endif
+
+
 
 <!--      <div class="form-group col-sm-12 col-lg-2">
         <label for="serological">Cond. Serologica</label>
@@ -218,10 +265,18 @@
         @endif
 
       </div>-->
-        <div class="form-group col-sm-12 col-lg-4">
-            <label for="end_evaluation">Evaluación Final</label>
-            <textarea class="form-control" id="" name="end_evaluation" rows="2">{{ old('end_evaluation' ,$medical->end_evaluation) }}</textarea>
-        </div>
+        @if($medical->end_evaluation == null)
+            <div class="form-group col-sm-12 col-lg-4">
+                <label for="end_evaluation">Evaluación Final</label>
+                <textarea class="form-control" id="" name="end_evaluation" rows="2">{{ old('end_evaluation' ,'SIN COMPLICACIONES') }}</textarea>
+            </div>
+        @else
+            <div class="form-group col-sm-12 col-lg-4">
+                <label for="end_evaluation">Evaluación Final</label>
+                <textarea class="form-control" id="" name="end_evaluation" rows="2">{{ old('end_evaluation' ,$medical->end_evaluation) }}</textarea>
+            </div>
+        @endif
+
 
         <div class="form-group col-sm-12 col-lg-2">
             <label for="end_hour">Hora final</label>
