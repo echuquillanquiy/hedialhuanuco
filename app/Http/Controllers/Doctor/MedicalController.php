@@ -59,7 +59,7 @@ class MedicalController extends Controller
             'hour_hd' => 'required|min:2',
             'heparin' => 'required|min:2',
             'dry_weight' => 'required|min:2',
-            'uf' => 'required|min:4',
+            //'uf' => 'required|min:4',
             'qb' => 'required|min:2',
             'qd' => 'required|min:2',
             //'bathroom' => 'required|min:2',
@@ -98,7 +98,7 @@ class MedicalController extends Controller
             'dry_weight.min' => 'el Peso seco debe tener minimo 2 carácteres.',
             'dry_weight.required' => 'el Peso seco es requerido.',
 
-            'uf.min' => 'el Utra Filtrado debe tener minimo 4 carácteres.',
+            //'uf.min' => 'el Utra Filtrado debe tener minimo 4 carácteres.',
             'qb.min' => 'EL QB debe tener minimo 2 carácteres.',
             'qd.min' => 'El QD debe tener minimo 2 carácteres.',
             'bathroom.min' => 'El Baño debe tener minimo 2 carácteres.',
