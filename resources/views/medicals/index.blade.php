@@ -91,6 +91,11 @@
           <th scope="row">
             {{$medical->patient}}
           </th>
+
+            <th scope="row">
+                {{$medical->order->patient->dni}}
+            </th>
+
           <td>
             {{$medical->room}}
           </td>
