@@ -71,6 +71,7 @@
         <tr>
           <th scope="col">id</th>
           <th scope="col">Nombres y Apellidos</th>
+            <th scope="col">DNI</th>
           <th scope="col">Sala</th>
           <th scope="col">Turno</th>
           <th scope="col">HORAS HD</th>
