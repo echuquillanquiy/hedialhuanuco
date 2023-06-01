@@ -87,16 +87,20 @@
             <form action="{{ url('/orders/'.$order->id) }}" method="POST">
               @csrf
               @method('DELETE')
+                <button class="btn btn-sm btn-danger" onclick="return confirm('¿Seguro que desea eliminar la orden del paciente {{ $order->patient->name }}?, ya que al borrarlo eliminara los registros que tenga del día {{ $order->created_at }}');" type="submit">Eliminar</button>
 
-              <a href="{{ url('/orders/'.$order->id.'/edit') }}" class="btn btn-sm btn-primary">Editar</a>
+                <a href="{{ url('/orders/'.$order->id.'/edit') }}" class="btn btn-sm btn-primary">Editar</a>
 
-              <button class="btn btn-sm btn-danger" onclick="return confirm('¿Seguro que desea eliminar la orden del paciente {{ $order->patient->name }}?, ya que al borrarlo eliminara los registros que tenga del día {{ $order->created_at }}');" type="submit">Eliminar</button>
-              @if ($order->created_at->format('Y-m-d') <= date('2020-03-10'))
-              <a href="{{ url('/orders/'.$order->id.'/impresion') }}" class="btn btn-sm btn-info" target="_blank">Impresión</a>
-              @else
-              <a href="{{ url('/orders/'.$order->id.'/impresion2020') }}" class="btn btn-sm btn-success" target="_blank">Historia</a>
-              @endif
+                @if ($order->created_at->format('Y-m-d') <= date('2020-03-10'))
+                    <a href="{{ url('/orders/'.$order->id.'/impresion') }}" class="btn btn-sm btn-info" target="_blank">Impresión</a>
+                @else
+                    <a href="{{ url('/orders/'.$order->id.'/impresion2020') }}" class="btn btn-sm btn-success" target="_blank">Historia</a>
+                @endif
+
+                <a href="{{ url('/orders/'.$order->id.'/receta') }}" class="btn btn-sm btn-info" target="_blank">Receta</a>
             </form>
+
+
 
           </td>
         </tr>
