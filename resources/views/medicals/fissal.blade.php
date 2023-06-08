@@ -128,13 +128,13 @@
                         <td>
 
                             @if($medical->shift == 'TURNO 1')
-                                1
+                                <span class="badge badge-lg badge-danger">1</span>
 
                             @elseif($medical->shift == 'TURNO 2')
-                                2
+                                <span class="badge badge-lg badge-danger">2</span>
 
                             @else($medical->shift == 'TURNO 3')
-                                3
+                                <span class="badge badge-lg badge-danger">3</span>
                             @endif
                         </td>
 
