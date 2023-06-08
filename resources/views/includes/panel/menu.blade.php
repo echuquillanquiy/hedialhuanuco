@@ -81,7 +81,7 @@
     </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="fissal">
+            <a class="nav-link" href="{{ route('medical.fissalweb') }}">
                 <i class="ni ni-curved-next text-dark"></i> FISSAL
             </a>
         </li>

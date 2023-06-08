@@ -12,7 +12,7 @@
         </div>
 
         <div class="card-body">
-            <form action="{{ url('medicals') }}" method="GET">
+            <form action="{{ route('medical.fissalweb') }}" method="GET">
                 <div class="row">
 
                     <div class="col-lg-4">
@@ -162,7 +162,7 @@
                         </td>
 
                         <td>
-                            @if($medical->order->nurse->user_id)
+                            @if($medical->order->nurse->user->name)
                                 {{ $medical->order->nurse->user->name }}
                             @else
                                 actualizar orden

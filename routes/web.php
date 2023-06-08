@@ -52,13 +52,14 @@ Route::middleware(['auth', 'administrador'])->namespace('Administrador')->group(
 	Route::get('user-list-excel', 'UserController@exportExcel')->name('users.excel');
 	Route::resource('tracings', 'TracingController');
 	Route::resource('format006s', 'Format006Controller');
+
 });
 
 Route::middleware(['auth', 'doctor'])->namespace('Doctor')->group(function () {
 
 	//FORMATS
 	Route::resource('medicals', 'MedicalController');
-    Route::get('fissal', 'MedicalController@fissalweb');
+    Route::get('fissalweb', 'MedicalController@fissalweb')->name('medical.fissalweb');
 
 	Route::resource('nurses', 'NurseController');
 
@@ -76,6 +77,8 @@ Route::middleware(['auth', 'doctor'])->namespace('Doctor')->group(function () {
 	Route::resource('tracings', 'TracingController');
 	Route::get('/tracings/{tracing}/impresion', 'TracingController@showPdf');
 	Route::resource('format006s', 'Format006Controller');
+
+
 
 });
 
