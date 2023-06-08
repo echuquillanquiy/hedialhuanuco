@@ -77,4 +77,10 @@ class Medical extends Model
         if($created_at)
             return $query->where('created_at', 'LIKE', "%$created_at%");
     }
+
+    public function scopeHour_hd($query, $hour_hd)
+    {
+        if($hour_hd)
+            return $query->where('hour_hd', 'LIKE', "%$hour_hd%");
+    }
 }

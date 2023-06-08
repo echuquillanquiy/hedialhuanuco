@@ -28,6 +28,7 @@ class MedicalController extends Controller
         $room = $request->get('room');
         $shift = $request->get('shift');
         $created_at = $request->get('created_at');
+        $hour_hd = $request->get('hour_hd');
 
         $medicals = Medical::orderBy('created_at', 'desc')
             ->orderBy('patient', 'asc')
@@ -35,6 +36,7 @@ class MedicalController extends Controller
             ->room($room)
             ->shift($shift)
             ->created_at($created_at)
+            ->hour_hd($hour_hd)
             ->paginate(15);
         return view('medicals.index', compact('medicals', 'order', 'rooms', 'shifts'));
     }

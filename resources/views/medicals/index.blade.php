@@ -44,7 +44,7 @@
           </select>
         </div>
 
-        <div class="form-group col-lg-3">
+        <div class="form-group col-lg-2">
             <label for="created_at">Fecha</label>
           <div class="input-group">
             <div class="input-group-prepend">
@@ -57,6 +57,17 @@
                 >
           </div>
         </div>
+
+          <div class="form-group col-sm-12 col-lg-1">
+              <label for="hour_hd">HORAS</label>
+              <select name="hour_hd" id="hour_hd" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
+                  <option value=""></option>
+                  <option value="3.0">3.0</option>
+                  <option value="3.25">3.25</option>
+                  <option value="3.5">3.5</option>
+                  <option value="3.75">3.75</option>
+              </select>
+          </div>
 
 
       </div>

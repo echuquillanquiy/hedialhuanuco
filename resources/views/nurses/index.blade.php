@@ -76,21 +76,20 @@
   <div class="table-responsive">
     <!-- Projects table -->
     <table class="table align-items-center table-flush">
-      <thead class="thead-light">
+      <thead class="thead-light text-center">
         <tr>
           <th scope="col">Nombres y Apellidos</th>
-	<th scope="col">Opciones</th>
-	     <th scope="col">DNI</th>
+	        <th scope="col">Opciones</th>
 	     <th scope="col">HD Inicio</th>
 	     <th scope="col">HD Fin</th>
           <th scope="col">Sala</th>
           <th scope="col">Turno</th>
-          <th>Fecha de Creacion</th>
+          <th>Fecha</th>
             <th>Licenciado</th>
 
         </tr>
       </thead>
-      <tbody>
+      <tbody class="text-center">
         @foreach ($nurses as $nurse)
         <tr>
 
@@ -104,13 +103,11 @@
               @csrf
               @method('DELETE')
 
-              <a href="{{ url('/nurses/'.$nurse->id.'/edit') }}" class="btn btn-sm btn-success">Llenar</a>
+              <a href="{{ url('/nurses/'.$nurse->id.'/edit') }}" class="btn btn-sm btn-success">
+                  <i class="fas fa-edit"></i>
+              </a>
             </form>
           </td>
-
-          <th scope="row">
-            {{$nurse->order->patient->dni}}
-          </th>
 
           <th scope="row">
             {{$nurse->hr}}
@@ -126,13 +123,29 @@
           </th>
 
           <td>
-            {{$nurse->room}}
+              @if($nurse->room == 'AMARILLA')
+                  <span class="badge badge-lg bg-yellow">A</span>
+
+              @elseif($nurse->room == 'VERDE')
+                  <span class="badge badge-lg badge-success">V</span>
+
+              @else($nurse->room == 'AZUL')
+                  <span class="badge badge-lg bg-blue text-white">A</span>
+              @endif
           </td>
           <td>
-            {{$nurse->shift}}
+              @if($nurse->shift == 'TURNO 1')
+                  1
+
+              @elseif($nurse->shift == 'TURNO 2')
+                  2
+
+              @else($nurse->shift == 'TURNO 3')
+                  3
+              @endif
           </td>
           <td>
-	    {{ \Carbon\Carbon::parse($nurse->created_at)->format('d/m/Y')}}
+	    {{ \Carbon\Carbon::parse($nurse->created_at)->format('d-m')}}
           </td>
             @if($nurse->user_id)
                 <td>
