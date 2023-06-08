@@ -83,11 +83,6 @@
 	     <th scope="col">DNI</th>
 	     <th scope="col">HD Inicio</th>
 	     <th scope="col">HD Fin</th>
-	     <th scope="col">Hierro</th>
-	     <th scope="col">Epo2000</th>
-	     <th scope="col">Epo4000</th>
-	     <th scope="col">Vit B12</th>
-            <th scope="col">Calcitriol</th>
           <th scope="col">Sala</th>
           <th scope="col">Turno</th>
           <th>Fecha de Creacion</th>
@@ -100,7 +95,7 @@
         <tr>
 
 	  <th scope="row">
-            {{ \Illuminate\Support\Str::limit($nurse->patient, 20) }}
+            {{ $nurse->patient }}
           </th>
 
 <td>
@@ -130,23 +125,6 @@
               @endif
           </th>
 
-	    <th scope="row">
-            @if ($nurse->iron > 0) 1 @else 0 @endif
-        </th>
-
-        <th scope="row">
-            @if (!$nurse->epo2000) 0 @else {{ $nurse->epo2000 }} @endif
-          </th>
-        <th scope="row">
-            @if ($nurse->epo4000  > 0) 1 @else 0 @endif
-          </th>
-        <th scope="row">
-            @if ($nurse->hidroxi  > 0) 1 @else 0 @endif
-          </th>
-            <th scope="row">
-                @if ($nurse->calcitriol  > 0) 1 @else 0 @endif
-            </th>
-
           <td>
             {{$nurse->room}}
           </td>
@@ -158,7 +136,7 @@
           </td>
             @if($nurse->user_id)
                 <td>
-                    {{ \Illuminate\Support\Str::limit($nurse->user->name, 20 )}}
+                    {{ $nurse->user->name}}
                 </td>
             @else
                 <td>actualizar orden</td>

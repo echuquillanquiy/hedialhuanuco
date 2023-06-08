@@ -67,54 +67,91 @@
   <div class="table-responsive">
     <!-- Projects table -->
     <table class="table align-items-center table-flush">
-      <thead class="thead-light">
+      <thead class="thead-light text-center">
         <tr>
           <th scope="col">id</th>
-          <th scope="col">Nombres y Apellidos</th>
-            <th scope="col">DNI</th>
+          <th scope="col">Nombres y Apellidos DNI</th>
           <th scope="col">Sala</th>
           <th scope="col">Turno</th>
-          <th scope="col">HORAS HD</th>
-          <th scope="col">Fecha de Creación</th>
-          <th scope="col">Opciones</th>
-          <th scope="col">P.Inicial</th>
-            <th scope="col">P.Final</th>
+            <th scope="col">Epo2</th>
+            <th scope="col">Epo4</th>
+            <th scope="col">B12</th>
+            <th scope="col">Fe</th>
+          <th scope="col">HD</th>
+          <th scope="col">Fecha</th>
+          <th scope="col">Editar</th>
+          <th scope="col">P.Ini</th>
+            <th scope="col">P.Fin</th>
             <th scope="col">UF</th>
-            <th scope="col">P.Seco</th>
+            <th scope="col">P.Sec</th>
+
         </tr>
       </thead>
-      <tbody>
+      <tbody class="text-center">
         @foreach ($medicals as $medical)
         <tr>
           <th scope="row">
             {{$medical->id}}
           </th>
           <th scope="row">
-            {{$medical->patient}}
+            {{$medical->patient}} {{$medical->order->patient->dni}}
           </th>
 
-            <th scope="row">
-                {{$medical->order->patient->dni}}
-            </th>
+          <td>
 
-          <td>
-            {{$medical->room}}
+             @if($medical->room == 'AMARILLA')
+                  <span class="badge badge-lg bg-yellow">A</span>
+
+              @elseif($medical->room == 'VERDE')
+                      <span class="badge badge-lg badge-success">V</span>
+
+              @else($medical->room == 'AZUL')
+                          <span class="badge badge-lg bg-blue text-white">A</span>
+              @endif
+
+
           </td>
           <td>
-            {{$medical->shift}}
+
+              @if($medical->shift == 'TURNO 1')
+                  1
+
+              @elseif($medical->shift == 'TURNO 2')
+                  2
+
+              @else($medical->shift == 'TURNO 3')
+                  3
+              @endif
           </td>
+
             <td>
-                <button class="btn btn-info btn-md">{{ $medical->hour_hd }}</button>
+                @if (!$medical->epo) 0 @else {{ $medical->epo }} @endif
+            </td>
+
+            <td>
+                @if (!$medical->epo4000) 0 @else {{ $medical->epo4000 }} @endif
+            </td>
+
+            <td>
+                @if (!$medical->vitb12) 0 @else {{ $medical->vitb12 }} @endif
+            </td>
+
+            <td>
+                @if (!$medical->iron) 0 @else {{ $medical->iron }} @endif
+            </td>
+
+            <td>
+                <button class="btn btn-info btn-sm">{{ $medical->hour_hd }}</button>
             </td>
           <td>
-            {{$medical->created_at}}
+            {{$medical->created_at->format('d-m')}}
           </td>
           <td>
 
             <form action="{{ url('/medicals/'.$medical->id) }}" method="POST">
               @csrf
 
-              <a href="{{ url('/medicals/'.$medical->id.'/edit') }}" class="btn btn-sm btn-primary">Editar</a>
+              <a href="{{ url('/medicals/'.$medical->id.'/edit') }}" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
             </form>
           </td>
 
