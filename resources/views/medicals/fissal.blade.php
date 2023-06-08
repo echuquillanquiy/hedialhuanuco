@@ -6,7 +6,7 @@
         <div class="card-header border-0">
             <div class="row align-items-center">
                 <div class="col">
-                    <h3 class="mb-0">Medicina</h3>
+                    <h3 class="mb-0">DATOS FISSAL</h3>
                 </div>
             </div>
         </div>
@@ -162,7 +162,7 @@
                         </td>
 
                         <td>
-                            @if($medical->order->nurse->user->name)
+                            @if($medical->order->nurse->user_id)
                                 {{ $medical->order->nurse->user->name }}
                             @else
                                 actualizar orden
