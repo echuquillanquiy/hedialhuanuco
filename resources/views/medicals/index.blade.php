@@ -80,7 +80,6 @@
     <table class="table align-items-center table-flush">
       <thead class="thead-light text-center">
         <tr>
-          <th scope="col">id</th>
           <th scope="col">Nombres y Apellidos DNI</th>
           <th scope="col">Sala</th>
           <th scope="col">Turno</th>
@@ -101,9 +100,6 @@
       <tbody class="text-center">
         @foreach ($medicals as $medical)
         <tr>
-          <th scope="row">
-            {{$medical->id}}
-          </th>
           <th scope="row">
             {{$medical->patient}} {{$medical->order->patient->dni}}
           </th>
