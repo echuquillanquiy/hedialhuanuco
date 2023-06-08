@@ -58,6 +58,7 @@ Route::middleware(['auth', 'doctor'])->namespace('Doctor')->group(function () {
 
 	//FORMATS
 	Route::resource('medicals', 'MedicalController');
+    Route::get('fissal', 'MedicalController@fissalweb');
 
 	Route::resource('nurses', 'NurseController');
 

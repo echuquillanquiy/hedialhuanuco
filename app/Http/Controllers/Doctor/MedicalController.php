@@ -224,6 +224,29 @@ class MedicalController extends Controller
         return back()->with(compact('notification'));
     }
 
+    public function fissalweb(Request $request)
+    {
+        $order = Order::all();
+        $rooms = Room::all();
+        $shifts = Shift::all();
+
+        $patient = $request->get('patient');
+        $room = $request->get('room');
+        $shift = $request->get('shift');
+        $created_at = $request->get('created_at');
+        $hour_hd = $request->get('hour_hd');
+
+        $medicals = Medical::orderBy('created_at', 'desc')
+            ->orderBy('patient', 'asc')
+            ->patient($patient)
+            ->room($room)
+            ->shift($shift)
+            ->created_at($created_at)
+            ->hour_hd($hour_hd)
+            ->paginate(15);
+        return view('medicals.fissal', compact('medicals', 'order', 'rooms', 'shifts'));
+    }
+
     /**
      * Remove the specified resource from storage.
      *

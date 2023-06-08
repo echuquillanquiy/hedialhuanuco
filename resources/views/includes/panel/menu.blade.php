@@ -21,7 +21,7 @@
         <i class="ni ni-single-02 text-green"></i> Médicos
       </a>
     </li>
-    
+
     <li class="nav-item">
       <a class="nav-link" href="/patients">
         <i class="ni ni-satisfied text-info"></i> Pacientes
@@ -64,7 +64,7 @@
           <ul class="text-gray">
             <i class="ni ni-bold-right text-Secondary"></i> Medicina
           </ul>
-        </a> 
+        </a>
 
         <a class="nav-link" href="/nurses">
           <ul class="text-gray">
@@ -77,8 +77,14 @@
     <li class="nav-item">
         <a class="nav-link" href="/format006s">
             <i class="ni ni-curved-next text-dark"></i> Formato006
-        </a> 
+        </a>
     </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="fissal">
+                <i class="ni ni-curved-next text-dark"></i> FISSAL
+            </a>
+        </li>
 
     <!--<li class="nav-item acordion" id="almacen">
 
@@ -98,13 +104,13 @@
           <ul class="text-gray">
             <i class="ni ni-bold-right text-Secondary"></i> Articulos
           </ul>
-        </a> 
+        </a>
 
         <a class="nav-link" href="/tickets">
           <ul class="text-gray">
             <i class="ni ni-bold-right text-Secondary"></i> Entradas
           </ul>
-        </a> 
+        </a>
 
         <a class="nav-link" href="/departures">
           <ul class="text-gray">
@@ -135,7 +141,7 @@
           <ul class="text-gray">
             <i class="ni ni-bold-right text-Secondary"></i> Medicina
           </ul>
-        </a> 
+        </a>
 
         <a class="nav-link" href="/nurses">
           <ul class="text-gray">
@@ -148,11 +154,11 @@
     <li class="nav-item">
         <a class="nav-link" href="/format006s">
             <i class="ni ni-curved-next text-dark"></i> Formato006
-        </a> 
+        </a>
     </li>
     </li>
   @elseif (auth()->user()->role == 'logistica')
-  
+
   <!--ALMACEN -->
     <li class="nav-item acordion" id="almacen">
 
@@ -172,13 +178,13 @@
           <ul class="text-gray">
             <i class="ni ni-bold-right text-Secondary"></i> Articulos
           </ul>
-        </a> 
+        </a>
 
         <a class="nav-link" href="/tickets">
           <ul class="text-gray">
             <i class="ni ni-bold-right text-Secondary"></i> Entradas
           </ul>
-        </a> 
+        </a>
 
         <a class="nav-link" href="/departures">
           <ul class="text-gray">
@@ -206,7 +212,7 @@
 <h6 class="navbar-heading text-muted">Reportes</h6>
 <!-- Navigation -->
 <ul class="navbar-nav mb-md-3">
-  
+
   <li class="nav-item">
     <a class="nav-link" href="{{ url('/charts/orders/line') }}">
       <i class="ni ni-sound-wave text-yellow"></i>Atenciones por mes
