@@ -82,11 +82,11 @@
                 <tr>
                     <th scope="col">Nombres y Apellidos DNI</th>
                     <th scope="col">I-F HD</th>
-                    <th scope="col">Turno</th>
                     <th scope="col">Epo2</th>
                     <th scope="col">Epo4</th>
                     <th scope="col">B12</th>
                     <th scope="col">Fe</th>
+                    <th scope="col">Turno</th>
                     <th scope="col">HD</th>
                     <th scope="col">Fecha</th>
                     <th scope="col">Licenciado</th>
