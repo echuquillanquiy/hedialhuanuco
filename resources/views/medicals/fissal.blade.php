@@ -162,7 +162,12 @@
                         </td>
 
                         <td>
-                            {{ $medical->order->user->name }}
+                            @if($medical->order->nurse->user->name)
+                                {{ $medical->order->nurse->user->name }}
+                            @else
+                                actualizar orden
+                            @endif
+
                         </td>
 
                     </tr>
