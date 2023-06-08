@@ -162,7 +162,7 @@
                         </td>
 
                         <td>
-                            @if($medical->order->nurse->user->name)
+                            @if($medical->order->nurse->user_id)
                                 {{ $medical->order->nurse->user->name }}
                             @else
                                 actualizar orden
