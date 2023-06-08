@@ -82,7 +82,6 @@
                 <tr>
                     <th scope="col">Nombres y Apellidos DNI</th>
                     <th scope="col">I-F HD</th>
-                    <th scope="col">Sala</th>
                     <th scope="col">Turno</th>
                     <th scope="col">Epo2</th>
                     <th scope="col">Epo4</th>
@@ -111,32 +110,6 @@
                             @endif
                         </td>
 
-                        <td>
-
-                            @if($medical->room == 'AMARILLA')
-                                <span class="badge badge-lg bg-yellow">A</span>
-
-                            @elseif($medical->room == 'VERDE')
-                                <span class="badge badge-lg badge-success">V</span>
-
-                            @else($medical->room == 'AZUL')
-                                <span class="badge badge-lg bg-blue text-white">A</span>
-                            @endif
-
-
-                        </td>
-                        <td>
-
-                            @if($medical->shift == 'TURNO 1')
-                                <span class="badge badge-lg badge-danger">1</span>
-
-                            @elseif($medical->shift == 'TURNO 2')
-                                <span class="badge badge-lg badge-danger">2</span>
-
-                            @else($medical->shift == 'TURNO 3')
-                                <span class="badge badge-lg badge-danger">3</span>
-                            @endif
-                        </td>
 
                         <td>
                             @if (!$medical->epo) 0 @else {{ $medical->epo }} @endif
@@ -152,6 +125,19 @@
 
                         <td>
                             @if (!$medical->iron) 0 @else {{ $medical->iron }} @endif
+                        </td>
+
+                        <td>
+
+                            @if($medical->shift == 'TURNO 1')
+                                <span class="badge badge-lg badge-danger">1</span>
+
+                            @elseif($medical->shift == 'TURNO 2')
+                                <span class="badge badge-lg badge-danger">2</span>
+
+                            @else($medical->shift == 'TURNO 3')
+                                <span class="badge badge-lg badge-danger">3</span>
+                            @endif
                         </td>
 
                         <td>
