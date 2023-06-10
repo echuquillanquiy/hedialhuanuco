@@ -73,6 +73,7 @@ Route::middleware(['auth', 'doctor'])->namespace('Doctor')->group(function () {
 	Route::get('/orders/{order}/impresion2020', 'OrderController@showPdf2020');
     Route::get('/orders/{order}/receta', 'OrderController@recetapaciente');
 	Route::get('order-list-excel', 'OrderController@exportOrderExcel')->name('orders.excel');
+    Route::get('/orders/{order}/fua', 'OrderController@fuapaciente');
 
 	Route::resource('tracings', 'TracingController');
 	Route::get('/tracings/{tracing}/impresion', 'TracingController@showPdf');

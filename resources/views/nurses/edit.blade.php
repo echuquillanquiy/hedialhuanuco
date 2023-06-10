@@ -360,27 +360,27 @@
                 <div class="row text-center">
                     <div class="form-group col-sm-12 col-lg-2">
                         <label for="epo2000">EPO 2000</label>
-                        <input type="number" name="epo2000" class="form-control" value="{{ old('epo2000', !$nurse->epo2000 ? $nurse->order->medical->epo : $nurse->epo2000) }}" placeholder="COLOCAR SOLO CANTIDAD">
+                        <input type="number" name="epo2000" class="form-control" readonly value="{{ old('epo2000', !$nurse->epo2000 ? $nurse->order->medical->epo : $nurse->epo2000) }}" placeholder="COLOCAR SOLO CANTIDAD">
                     </div>
 
                     <div class="form-group col-sm-12 col-lg-2">
                         <label for="epo4000">EPO 4000</label>
-                        <input type="number" name="epo4000" class="form-control" value="{{ old('epo4000', !$nurse->epo4000 ? $nurse->order->medical->epo4000 : $nurse->epo4000) }}" placeholder="COLOCAR SOLO CANTIDAD">
+                        <input type="number" name="epo4000" class="form-control" readonly value="{{ old('epo4000', !$nurse->epo4000 ? $nurse->order->medical->epo4000 : $nurse->epo4000) }}" placeholder="COLOCAR SOLO CANTIDAD">
                     </div>
 
                     <div class="form-group col-sm-12 col-lg-2">
                         <label for="hidroxi">Hidroxicobalamina</label>
-                        <input type="number" name="hidroxi" class="form-control" value="{{ old('hidroxi', !$nurse->hidroxi ? $nurse->order->medical->vitb12 : $nurse->hidroxi) }}" placeholder="COLOCAR SOLO CANTIDAD">
+                        <input type="number" name="hidroxi" class="form-control" readonly value="{{ old('hidroxi', !$nurse->hidroxi ? $nurse->order->medical->vitb12 : $nurse->hidroxi) }}" placeholder="COLOCAR SOLO CANTIDAD">
                     </div>
 
                     <div class="form-group col-sm-12 col-lg-2">
                         <label for="calcitriol">Calcitriol</label>
-                        <input type="number" name="calcitriol" class="form-control" value="{{ old('calcitriol', !$nurse->calcitriol ? $nurse->order->medical->calci : $nurse->calcitriol) }}" placeholder="COLOCAR SOLO CANTIDAD">
+                        <input type="number" name="calcitriol" class="form-control" readonly value="{{ old('calcitriol', !$nurse->calcitriol ? $nurse->order->medical->calci : $nurse->calcitriol) }}" placeholder="COLOCAR SOLO CANTIDAD">
                     </div>
 
                     <div class="form-group col-sm-12 col-lg-4">
                         <label for="others_med">Otros Medicamentos</label>
-                        <input type="text" name="others_med" class="form-control" value="{{ old('others_med', $nurse->others_med) }}">
+                        <input type="text" name="others_med" class="form-control" readonly value="{{ old('others_med', $nurse->others_med) }}">
                     </div>
                 </div>
 

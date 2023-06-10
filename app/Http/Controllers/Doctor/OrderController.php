@@ -154,6 +154,22 @@ class OrderController extends Controller
         return $pdf->stream();
     }
 
+    public function fuapaciente($order)
+    {
+        $order = Order::findOrFail($order);
+        $date = $order->created_at->format('Y-m-d');
+        $nomyap = $order->patient->name;
+        $separacion = explode(" ", $nomyap);
+
+        $primeronom = $separacion[0];
+        $otrosnom = $separacion[1];
+        $ap_pat = $separacion[2];
+        $ap_mat = $separacion[3];
+
+        $pdf = PDF::loadView('orders.fua', compact('order', 'date', 'primeronom', 'otrosnom', 'ap_pat', 'ap_mat'));
+        return $pdf->stream();
+    }
+
     public function edit($id)
     {
         $patients = Patient::all();

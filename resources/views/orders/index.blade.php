@@ -98,6 +98,8 @@
                 @endif
 
                 <a href="{{ url('/orders/'.$order->id.'/receta') }}" class="btn btn-sm btn-info" target="_blank">Receta</a>
+
+                <a href="{{ url('/orders/'.$order->id.'/fua') }}" class="btn btn-sm btn-warning" target="_blank">FUA</a>
             </form>
 
 
