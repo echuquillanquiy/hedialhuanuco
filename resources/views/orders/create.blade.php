@@ -90,6 +90,11 @@
               </select>
           </div>
 
+          <div class="form-group col-sm-12 col-lg-2">
+              <label for="n_fua">FUA</label>
+              <input type="text" name="n_fua" class="form-control" value="{{ old('n_fua') }}">
+          </div>
+
         <div class="form-group">
           <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
         </div>
@@ -97,9 +102,9 @@
 
 
       <button type="submit" class="btn btn-primary">Guardar</button>
-    </form>
+    </div>
   </div>
-</div>
+</form>
 @endsection
 
 @section('scripts')

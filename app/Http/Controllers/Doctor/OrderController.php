@@ -70,14 +70,17 @@ class OrderController extends Controller
            'patient_id' => 'required',
            'room_id' => 'required',
            'shift_id' => 'required',
-           'covid' => 'required'
+           'covid' => 'required',
+            'n_fua' => 'required'
+
         ];
 
         $messages = [
             'patient_id.required' => 'Por favor seleccionar un paciente.',
             'room_id.required' => 'Por favor seleccionar una Sala.',
             'shift_id.required' => 'Por favor seleccionar un Turno.',
-            'covid.required' => 'Confirme si el paciente tiene COVID 19.'
+            'covid.required' => 'Confirme si el paciente tiene COVID 19.',
+            'n_fua.required' => 'El numero de fua es requerido.'
         ];
 
         $this->validate($request, $rules, $messages);

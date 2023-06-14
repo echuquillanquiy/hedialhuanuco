@@ -12,7 +12,8 @@ class Order extends Model
         'room_id',
         'shift_id',
         'user_id',
-        'covid'
+        'covid',
+        'n_fua'
 	];
 
     public function user()

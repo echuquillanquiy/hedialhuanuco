@@ -702,7 +702,7 @@
             <td colspan="8" style="height: 10px; color: white;">OBSERVACIONES</td>
         </tr>
         <tr style="font-size: 0.5rem; font-weight: bold;">
-            <td colspan="8" style="text-align: left">{{ $order->medical->clinical_trouble }}</td>
+            <td colspan="8" style="text-align: left"></td>
         </tr>
 
     </table>
