@@ -240,7 +240,7 @@
 
             @if($order->medical->user_id)
                 <td colspan="3" style="text-align: center">
-                    <img src="{{ asset($order->medical->user->image) }}" style="width: 30%">
+                    <img src="{{ asset($order->medical->user->image) }}" style="width: 15%">
                 </td>
             @else
                 <p>AQUI VA SELLO DEL MEDICO</p>
