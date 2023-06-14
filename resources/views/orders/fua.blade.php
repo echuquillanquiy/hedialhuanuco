@@ -283,11 +283,12 @@
                 <td style="text-align: left">EPOETINA ALFA (ERITROPOYETINA) 1 ML 2000 UI/ML INY</td>
                 <td>{{ $order->medical->epo }}</td>
                 <td>{{ $order->medical->epo }}</td>
+
+                <td style="font-size: 0.5rem; height: 10px"></td>
+                <td style="font-size: 0.5rem; height: 10px"></td>
+                <td style="font-size: 0.5rem; height: 10px"></td>
+                <td style="font-size: 0.5rem; height: 10px"></td>
             @endif
-            <td style="font-size: 0.5rem; height: 10px"></td>
-            <td style="font-size: 0.5rem; height: 10px"></td>
-            <td style="font-size: 0.5rem; height: 10px"></td>
-            <td style="font-size: 0.5rem; height: 10px"></td>
         </tr>
         <tr style="font-size: 0.4rem;">
             @if($order->medical->epo4000 > 0)
@@ -295,11 +296,12 @@
                 <td style="text-align: left">EPOETINA ALFA (ERITROPOYETINA) 4000 UI/ML INY 1 ML</td>
                 <td>{{ $order->medical->epo4000 }}</td>
                 <td>{{ $order->medical->epo4000 }}</td>
+
+                <td style="font-size: 0.5rem; height: 10px"></td>
+                <td style="font-size: 0.5rem; height: 10px"></td>
+                <td style="font-size: 0.5rem; height: 10px"></td>
+                <td style="font-size: 0.5rem; height: 10px"></td>
             @endif
-            <td style="font-size: 0.5rem; height: 10px"></td>
-            <td style="font-size: 0.5rem; height: 10px"></td>
-            <td style="font-size: 0.5rem; height: 10px"></td>
-            <td style="font-size: 0.5rem; height: 10px"></td>
         </tr>
          <tr style="font-size: 0.4rem;">
         @if($order->medical->vitb12 > 0)
@@ -307,23 +309,25 @@
                 <td style="text-align: left">VITAMINA B12 HIDROXICOBALAMINA 1MG/ML INY 1ML</td>
                 <td>{{ $order->medical->vitb12 }}</td>
                 <td>{{ $order->medical->vitb12 }}</td>
-        @endif
-            <td style="font-size: 0.5rem; height: 10px"></td>
-            <td style="font-size: 0.5rem; height: 10px"></td>
-            <td style="font-size: 0.5rem; height: 10px"></td>
-            <td style="font-size: 0.5rem; height: 10px"></td>
+
+                <td style="font-size: 0.5rem; height: 10px"></td>
+                <td style="font-size: 0.5rem; height: 10px"></td>
+                <td style="font-size: 0.5rem; height: 10px"></td>
+                <td style="font-size: 0.5rem; height: 10px"></td>
+             @endif
          </tr>
          <tr style="font-size: 0.4rem;">
             @if($order->medical->iron > 0)
-                    <td>19238</td>
-                    <td style="text-align: left">HIERRO (COMO SACARATO) 5 ML 20 MG FE/ML INY</td>
-                    <td>{{ $order->medical->iron }}</td>
-                    <td>{{ $order->medical->iron }}</td>
-            @endif
-            <td style="font-size: 0.5rem; height: 10px"></td>
-            <td style="font-size: 0.5rem; height: 10px"></td>
-            <td style="font-size: 0.5rem; height: 10px"></td>
-            <td style="font-size: 0.5rem; height: 10px"></td>
+                <td>19238</td>
+                <td style="text-align: left">HIERRO (COMO SACARATO) 5 ML 20 MG FE/ML INY</td>
+                <td>{{ $order->medical->iron }}</td>
+                <td>{{ $order->medical->iron }}</td>
+
+                <td style="font-size: 0.5rem; height: 10px"></td>
+                <td style="font-size: 0.5rem; height: 10px"></td>
+                <td style="font-size: 0.5rem; height: 10px"></td>
+                <td style="font-size: 0.5rem; height: 10px"></td>
+             @endif
          </tr>
          <tr style="font-size: 0.5rem;">
             <td style="font-size: 0.5rem; height: 10px"></td>
@@ -701,7 +705,7 @@
 
     </table>
 
-    <table width="100%" style="margin-top: 10px; margin-bottom: -80px">
+    <table width="100%" style="margin-top: 10px; margin-top: 10px">
         <tr>
             @if($order->medical->user_id)
                 <td rowspan="6" style="text-align: center;">
@@ -720,7 +724,7 @@
             </td>
 
             <td style="text-align: center; font-size: 0.5rem; width: 200px; border: #000000 1px solid;">
-                <p style="margin-top: 130px">Huella digital del Asegurado o Apoderado</p>
+                <p style="margin-top: 120px">Huella digital del Asegurado o Apoderado</p>
             </td>
         </tr>
     </table>
