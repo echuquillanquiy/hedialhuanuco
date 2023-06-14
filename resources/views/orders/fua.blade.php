@@ -277,56 +277,58 @@
             <td>C. ENTREGADA</td>
         </tr>
 
-        <tr style="font-size: 0.4rem;">
+
             @if($order->medical->epo > 0)
-                <td>3107</td>
-                <td style="text-align: left">EPOETINA ALFA (ERITROPOYETINA) 1 ML 2000 UI/ML INY</td>
-                <td>{{ $order->medical->epo }}</td>
-                <td>{{ $order->medical->epo }}</td>
-
-                <td style="font-size: 0.5rem; height: 10px"></td>
-                <td style="font-size: 0.5rem; height: 10px"></td>
-                <td style="font-size: 0.5rem; height: 10px"></td>
-                <td style="font-size: 0.5rem; height: 10px"></td>
+                <tr style="font-size: 0.4rem;">
+                    <td>3107</td>
+                    <td style="text-align: left">EPOETINA ALFA (ERITROPOYETINA) 1 ML 2000 UI/ML INY</td>
+                    <td>{{ $order->medical->epo }}</td>
+                    <td>{{ $order->medical->epo }}</td>
+                    <td style="font-size: 0.5rem; height: 10px"></td>
+                    <td style="font-size: 0.5rem; height: 10px"></td>
+                    <td style="font-size: 0.5rem; height: 10px"></td>
+                    <td style="font-size: 0.5rem; height: 10px"></td>
+                </tr>
             @endif
-        </tr>
-        <tr style="font-size: 0.4rem;">
             @if($order->medical->epo4000 > 0)
-                <td>3113</td>
-                <td style="text-align: left">EPOETINA ALFA (ERITROPOYETINA) 4000 UI/ML INY 1 ML</td>
-                <td>{{ $order->medical->epo4000 }}</td>
-                <td>{{ $order->medical->epo4000 }}</td>
+                <tr style="font-size: 0.4rem;">
+                    <td>3113</td>
+                    <td style="text-align: left">EPOETINA ALFA (ERITROPOYETINA) 4000 UI/ML INY 1 ML</td>
+                    <td>{{ $order->medical->epo4000 }}</td>
+                    <td>{{ $order->medical->epo4000 }}</td>
+                    <td style="font-size: 0.5rem; height: 10px"></td>
+                    <td style="font-size: 0.5rem; height: 10px"></td>
+                    <td style="font-size: 0.5rem; height: 10px"></td>
+                    <td style="font-size: 0.5rem; height: 10px"></td>
+                </tr>
+           @endif
+            @if($order->medical->vitb12 > 0)
+                <tr style="font-size: 0.4rem;">
+                    <td>3979</td>
+                    <td style="text-align: left">VITAMINA B12 HIDROXICOBALAMINA 1MG/ML INY 1ML</td>
+                    <td>{{ $order->medical->vitb12 }}</td>
+                    <td>{{ $order->medical->vitb12 }}</td>
 
-                <td style="font-size: 0.5rem; height: 10px"></td>
-                <td style="font-size: 0.5rem; height: 10px"></td>
-                <td style="font-size: 0.5rem; height: 10px"></td>
-                <td style="font-size: 0.5rem; height: 10px"></td>
+                    <td style="font-size: 0.5rem; height: 10px"></td>
+                    <td style="font-size: 0.5rem; height: 10px"></td>
+                    <td style="font-size: 0.5rem; height: 10px"></td>
+                    <td style="font-size: 0.5rem; height: 10px"></td>
+                </tr>
             @endif
         </tr>
-         <tr style="font-size: 0.4rem;">
-        @if($order->medical->vitb12 > 0)
-                <td>3979</td>
-                <td style="text-align: left">VITAMINA B12 HIDROXICOBALAMINA 1MG/ML INY 1ML</td>
-                <td>{{ $order->medical->vitb12 }}</td>
-                <td>{{ $order->medical->vitb12 }}</td>
 
-                <td style="font-size: 0.5rem; height: 10px"></td>
-                <td style="font-size: 0.5rem; height: 10px"></td>
-                <td style="font-size: 0.5rem; height: 10px"></td>
-                <td style="font-size: 0.5rem; height: 10px"></td>
-             @endif
-         </tr>
-         <tr style="font-size: 0.4rem;">
             @if($order->medical->iron > 0)
-                <td>19238</td>
-                <td style="text-align: left">HIERRO (COMO SACARATO) 5 ML 20 MG FE/ML INY</td>
-                <td>{{ $order->medical->iron }}</td>
-                <td>{{ $order->medical->iron }}</td>
+                <tr style="font-size: 0.4rem;">
+                    <td>19238</td>
+                    <td style="text-align: left">HIERRO (COMO SACARATO) 5 ML 20 MG FE/ML INY</td>
+                    <td>{{ $order->medical->iron }}</td>
+                    <td>{{ $order->medical->iron }}</td>
 
-                <td style="font-size: 0.5rem; height: 10px"></td>
-                <td style="font-size: 0.5rem; height: 10px"></td>
-                <td style="font-size: 0.5rem; height: 10px"></td>
-                <td style="font-size: 0.5rem; height: 10px"></td>
+                    <td style="font-size: 0.5rem; height: 10px"></td>
+                    <td style="font-size: 0.5rem; height: 10px"></td>
+                    <td style="font-size: 0.5rem; height: 10px"></td>
+                    <td style="font-size: 0.5rem; height: 10px"></td>
+                </tr>
              @endif
          </tr>
          <tr style="font-size: 0.5rem;">
