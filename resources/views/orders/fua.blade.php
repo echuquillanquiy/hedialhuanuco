@@ -231,7 +231,7 @@
 
 
         <tr>
-            <td style="height: 100px"></td>
+            <td style="height: 50px"></td>
         </tr>
 
 
