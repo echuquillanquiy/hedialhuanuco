@@ -117,8 +117,8 @@
 
     <table width="100%" style="border-collapse:collapse;text-align:center; margin-top:5px;" border="1px">
         <tr style="font-size: 0.6rem; font-weight: bold; background: #A8A8A8">
-            <td rowspan="2" style="width: 20px">N°</td>
-            <td colspan="5" style="height: 20px">DIAGNOSTICOS</td>
+            <td rowspan="2" style="width: 15px">N°</td>
+            <td colspan="5" style="height: 15px">DIAGNOSTICOS</td>
         </tr>
 
         <tr style="font-size: 0.5rem; font-weight: bold; background: #BEBEBE">
@@ -185,7 +185,7 @@
 
     <table width="100%" style="border-collapse:collapse;text-align:center; margin-top:5px;" border="1px">
         <tr style="font-size: 0.5rem; font-weight: bold; background: #A8A8A8">
-            <td style="width: 130px; height: 25px">N° DNI</td>
+            <td style="width: 130px; height: 15px">N° DNI</td>
             <td> NOMBRE DEL RESPONSABLE DE LA ATENCION</td>
             <td style="width: 130px;">N° COLEGIATURA</td>
         </tr>
@@ -231,12 +231,12 @@
 
     </table>
 
-    <table width="100%" style="border-collapse:collapse;text-align:center; margin-top:5px;">
-        <tr style="font-size: 0.4rem; font-weight: bold;">
+    <table width="100%" style="border-collapse:collapse;">
+        <tr style="font-weight: bold;">
 
             @if($order->medical->user_id)
-                <td style="text-align: center">
-                    <img src="{{ asset($order->medical->user->image) }}" width="120px" height="50px">
+                <td style="text-align: center;">
+                    <img src="{{ asset($order->medical->user->image) }}" style="width: 180px;height: 90px">
                 </td>
             @else
                 <td>
@@ -244,9 +244,9 @@
                 </td>
             @endif
 
-            <td>Firma del asegurado o apoderado</td>
+            <td style="text-align: center; font-size: 0.5rem; width: 300px">Firma del asegurado o apoderado</td>
 
-            <td>Huella digital del Asegurado o Apoderado</td>
+            <td style="text-align: center; font-size: 0.5rem; width: 200px">Huella digital del Asegurado o Apoderado</td>
         </tr>
     </table>
 
