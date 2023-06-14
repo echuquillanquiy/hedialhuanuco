@@ -244,7 +244,7 @@
                 </td>
             @endif
 
-            <td style="text-align: center; font-size: 0.5rem; width: 300px">Firma del asegurado o apoderado</td>
+            <td style="text-align: center; font-size: 0.5rem; width: 250px">Firma del asegurado o apoderado</td>
 
             <td style="text-align: center; font-size: 0.5rem; width: 200px">Huella digital del Asegurado o Apoderado</td>
         </tr>
