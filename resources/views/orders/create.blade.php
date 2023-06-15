@@ -92,7 +92,7 @@
 
           <div class="form-group col-sm-12 col-lg-2">
               <label for="n_fua">FUA</label>
-              <input type="text" name="n_fua" class="form-control" value="{{ $sig_fua }}">
+              <input type="text" name="n_fua" class="form-control" value="{{ $sig_fua }}" readonly>
           </div>
 
         <div class="form-group">
