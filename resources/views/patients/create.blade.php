@@ -35,10 +35,31 @@
           <input type="text" name="name" class="form-control" value="{{ old('name') }}" required>
         </div>
 
-        <div class="form-group col-lg-3">
-            <label for="dni">DNI</label>
-            <input type="text" name="dni" class="form-control" value="{{ old('dni') }}" required>
-        </div>
+          <div class="form-group col-lg-3">
+              <label for="dni">DNI</label>
+              <input type="text" name="dni" class="form-control" value="{{ old('dni') }}" required>
+          </div>
+
+          <div class="form-group col-lg-3">
+              <label for="firstname">Primer Nombre</label>
+              <input type="text" name="firstname" class="form-control" value="{{ old('firstname') }}" required>
+          </div>
+
+          <div class="form-group col-lg-3">
+              <label for="othername">Otros Nombres</label>
+              <input type="text" name="othername" class="form-control" value="{{ old('othername') }}">
+          </div>
+
+          <div class="form-group col-lg-3">
+              <label for="surname">Primer Apellido</label>
+              <input type="text" name="surname" class="form-control" value="{{ old('surname') }}" required>
+          </div>
+
+          <div class="form-group col-lg-3">
+              <label for="lastname">Segundo Apellido</label>
+              <input type="text" name="lastname" class="form-control" value="{{ old('lastname') }}" required>
+          </div>
+
       </div>
 
       <div class="row">

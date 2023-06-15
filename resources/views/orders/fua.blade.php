@@ -87,8 +87,8 @@
         </tr>
 
         <tr style="font-size: 0.6rem; font-weight: bold;">
-            <td style="height: 15px">{{ $ap_pat }}</td>
-            <td style="height: 15px">{{ $ap_mat }}</td>
+            <td style="height: 15px">{{ $order->patient->surname }}</td>
+            <td style="height: 15px">{{ $order->patient->lastname }}</td>
         </tr>
 
         <tr style="font-size: 0.5rem; font-weight: bold; background: #A8A8A8;">
@@ -97,8 +97,8 @@
         </tr>
 
         <tr style="font-size: 0.6rem; font-weight: bold;">
-            <td style="height: 15px">{{ $primeronom }}</td>
-            <td style="height: 15px">{{ $otrosnom }}</td>
+            <td style="height: 15px">{{ $order->patient->firstname }}</td>
+            <td style="height: 15px">{{ $order->patient->othername }}</td>
         </tr>
     </table>
 

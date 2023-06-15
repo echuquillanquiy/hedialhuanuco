@@ -30,10 +30,34 @@
   	<form action="{{ url('patients/'.$patient->id) }}" method="POST">
   		@csrf
       @method('PUT')
-	  	<div class="form-group">
-	  		<label for="name">Nombres y Apellidos</label>
-	  		<input type="text" name="name" class="form-control" value="{{ old('name', $patient->name) }}" required>
-	  	</div>
+	  	<div class="row">
+            <div class="form-group col-lg-12">
+                <label for="name">Nombres y Apellidos</label>
+                <input type="text" name="name" class="form-control" value="{{ old('name', $patient->name) }}" required>
+            </div>
+
+            <div class="form-group col-lg-3">
+                <label for="firstname">Primer Nombre</label>
+                <input type="text" name="firstname" class="form-control" value="{{ old('firstname', $patient->firstname) }}" required>
+            </div>
+
+            <div class="form-group col-lg-3">
+                <label for="othername">Otros Nombres</label>
+                <input type="text" name="othername" class="form-control" value="{{ old('othername', $patient->othername) }}">
+            </div>
+
+            <div class="form-group col-lg-3">
+                <label for="surname">Primer Apellido</label>
+                <input type="text" name="surname" class="form-control" value="{{ old('surname', $patient->surname) }}" required>
+            </div>
+
+            <div class="form-group col-lg-3">
+                <label for="lastname">Segundo Apellido</label>
+                <input type="text" name="lastname" class="form-control" value="{{ old('lastname', $patient->lastname) }}" required>
+            </div>
+        </div>
+
+
 
       <div class="row">
 
