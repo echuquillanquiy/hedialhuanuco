@@ -52,16 +52,6 @@ class PatientController extends Controller
         $rules = [
             'name' => 'required|min:3',
             'dni' => 'required|unique:patients|digits:8',
-            'date_of_birth' => 'date',
-            'sex' => 'required',
-            'age' => 'required|min:2',
-            'address' => 'min:15',
-            'phone' => 'required|min:9',
-            'civil_status' => 'min:5',
-            'ocupation' => 'min:5',
-            'condition' => 'min:5',
-            'last_job' => 'date',
-            'hosp_origin' => 'required|min:5',
             'code' => 'required|unique:patients|min:10',
         ];
 

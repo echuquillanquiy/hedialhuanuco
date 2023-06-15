@@ -89,12 +89,12 @@
 
         <div class="form-group col-lg-1">
           <label for="age">Edad</label>
-          <input type="text" name="age" id="age" class="form-control" value="{{ old('age', $patient->age) }}" required>
+          <input type="text" name="age" id="age" class="form-control" value="{{ old('age', $patient->age) }}">
         </div>
 
         <div class="form-group col-lg-5">
           <label for="address">Dirección</label>
-          <input type="text" name="address" class="form-control" value="{{ old('address', $patient->address) }}" required>
+          <input type="text" name="address" class="form-control" value="{{ old('address', $patient->address) }}">
         </div>
       </div>
 
@@ -102,7 +102,7 @@
 
         <div class="form-group col-lg-2">
           <label for="phone">Telefono</label>
-          <input type="text" name="phone" class="form-control" value="{{ old('phone', $patient->phone) }}" required>
+          <input type="text" name="phone" class="form-control" value="{{ old('phone', $patient->phone) }}">
         </div>
 
         <div class="form-group col-lg-2">
@@ -162,7 +162,7 @@
 
         <div class="form-group col-lg-5">
           <label for="hosp_origin">Hospital de origen</label>
-          <input type="text" name="hosp_origin" class="form-control" value="{{ old('hosp_origin', $patient->hosp_origin) }}" required>
+          <input type="text" name="hosp_origin" class="form-control" value="{{ old('hosp_origin', $patient->hosp_origin) }}">
         </div>
 
       </div>
@@ -170,7 +170,7 @@
         <div class="row">
             <div class="form-group col-lg-6">
                 <label for="code">Codigo (Autogenerado)</label>
-                <input type="text" name="code" class="form-control" value="{{ old('code', $patient->code) }}" required>
+                <input type="text" name="code" class="form-control" value="{{ old('code', $patient->code) }}">
             </div>
 
         </div>
