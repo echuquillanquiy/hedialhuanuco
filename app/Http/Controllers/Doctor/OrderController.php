@@ -57,11 +57,14 @@ class OrderController extends Controller
      */
     public function create(Request $request)
     {
+        $order = Order::select('id', 'n_fua')->latest()->first();
+        $sig_fua = $order->n_fua + 1;
+
         $patients = Patient::all();
         $rooms = Room::all();
         $shifts = Shift::all();
         $users = User::all();
-        return view('orders.create', compact('patients', 'rooms', 'shifts', 'users'));
+        return view('orders.create', compact('patients', 'rooms', 'shifts', 'users', 'sig_fua'));
     }
 
     private function performValidation(Request $request)
