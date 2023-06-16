@@ -191,9 +191,15 @@
         </tr>
 
         <tr style="font-size: 0.5rem; font-weight: bold;">
-            <td style="height: 15px">{{ $order->medical->user->dni }}</td>
-            <td style="height: 15px">{{ $order->medical->user->name }}</td>
-            <td style="height: 15px">{{ $order->medical->user->rne }}</td>
+            @if($order->medical->user_id)
+                <td style="height: 15px">{{ $order->medical->user->dni }}</td>
+                <td style="height: 15px">{{ $order->medical->user->name }}</td>
+                <td style="height: 15px">{{ $order->medical->user->rne }}</td>
+            @else
+                <td style="height: 15px">aun no se registra medidco</td>
+                <td style="height: 15px">aun no se registra medidco</td>
+                <td style="height: 15px">aun no se registra medidco</td>
+            @endif
         </tr>
     </table>
 
