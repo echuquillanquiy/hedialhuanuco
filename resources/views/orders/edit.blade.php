@@ -77,7 +77,7 @@
         </div>
 
           <div class="form-group col-sm-12 col-lg-2">
-              <label for="covid">Turnos</label>
+              <label for="covid">COVID</label>
               <select name="covid" id="covid" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
                   <option value="{{ $order->covid }}" disabled selected>{{ $order->covid }}</option>
                   <option value="NO">NO</option>
@@ -92,9 +92,9 @@
 
 
       <button type="submit" class="btn btn-primary">Actualizar</button>
-    </form>
+    </div>
   </div>
-</div>
+</form>
 @endsection
 
 @section('scripts')

@@ -194,7 +194,7 @@
             @if($order->medical->user_id)
                 <td style="height: 15px">{{ $order->medical->user->dni }}</td>
                 <td style="height: 15px">{{ $order->medical->user->name }}</td>
-                <td style="height: 15px">{{ $order->medical->user->rne }}</td>
+                <td style="height: 15px">{{ $order->medical->user->code_specialty }}</td>
             @else
                 <td style="height: 15px">aun no se registra medidco</td>
                 <td style="height: 15px">aun no se registra medidco</td>
