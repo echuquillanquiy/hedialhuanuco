@@ -99,14 +99,7 @@
 
                 <a href="{{ url('/orders/'.$order->id.'/receta') }}" class="btn btn-sm btn-info" target="_blank">Receta</a>
 
-                @if(\Illuminate\Support\Facades\Auth::user()->id == 1)
-                    <a href="{{ url('/orders/'.$order->id.'/fua') }}" class="btn btn-sm btn-warning" target="_blank">FUA</a>
-                @endif
-
             </form>
-
-
-
           </td>
         </tr>
         @endforeach

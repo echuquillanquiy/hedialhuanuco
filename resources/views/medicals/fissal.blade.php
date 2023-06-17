@@ -91,6 +91,7 @@
                     <th scope="col">HD</th>
                     <th scope="col">Fecha</th>
                     <th scope="col">Licenciado</th>
+                    <th scope="col">FUA</th>
 
                 </tr>
                 </thead>
@@ -158,6 +159,12 @@
                                 actualizar orden
                             @endif
 
+                        </td>
+
+                        <td>
+                            @if(\Illuminate\Support\Facades\Auth::user()->id == 1)
+                                <a href="{{ url('/orders/'.$medical->order->id.'/fua') }}" class="btn btn-sm btn-outline-success" target="_blank"><i class="fas fa-file-alt fa-lg"></i></a>
+                            @endif
                         </td>
 
                     </tr>
