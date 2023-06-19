@@ -212,7 +212,7 @@ class MedicalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->performValidation($request);
+        //$this->performValidation($request);
         $medical = Medical::findOrFail($id);
 
         $data = $request->all();

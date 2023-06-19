@@ -52,13 +52,13 @@
     <table class="table align-items-center table-flush table-hover">
       <thead class="thead-light text-center">
         <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Paciente</th>
-          <th scope="col">Sala</th>
-          <th scope="col">Turno</th>
-          <th scope="col">Paciente con COVID</th>
-          <th scope="col">Fecha y hora de creación</th>
-          <th>Opciones</th>
+            <th scope="col">ID</th>
+            <th scope="col">Paciente</th>
+            <th scope="col">Sala</th>
+            <th scope="col">Turno</th>
+            <th scope="col">Paciente con COVID</th>
+            <th scope="col">Fecha y hora de creación</th>
+            <th>Opciones</th>
         </tr>
       </thead>
       <tbody class="text-center">
@@ -82,6 +82,7 @@
           <td>
             {{$order->created_at}}
           </td>
+
           <td>
 
             <form action="{{ url('/orders/'.$order->id) }}" method="POST">
@@ -96,8 +97,6 @@
                 @else
                     <a href="{{ url('/orders/'.$order->id.'/impresion2020') }}" class="btn btn-sm btn-success" target="_blank">Historia</a>
                 @endif
-
-                <a href="{{ url('/orders/'.$order->id.'/receta') }}" class="btn btn-sm btn-info" target="_blank">Receta</a>
 
             </form>
           </td>

@@ -154,9 +154,8 @@ class OrderController extends Controller
     public function recetapaciente($order)
     {
         $order = Order::findOrFail($order);
-        $date = $order->created_at->format('Y-m-d');
 
-        $pdf = PDF::loadView('orders.receta', compact('order', 'date'))->setPaper('a4', 'landscape');
+        $pdf = PDF::loadView('orders.receta', compact('order'))->setPaper('a4', 'landscape');
         return $pdf->stream();
     }
 
