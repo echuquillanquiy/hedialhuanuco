@@ -238,6 +238,7 @@ class MedicalController extends Controller
 
         $medicals = Medical::orderBy('created_at', 'desc')
             ->orderBy('patient', 'asc')
+            ->orderBy('user_id', 'desc')
             ->patient($patient)
             ->room($room)
             ->shift($shift)
