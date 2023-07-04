@@ -246,7 +246,7 @@
                 </td>
             @else
                 <td>
-                    Aqui va firma del medico
+                    <p style="width: 110px;height: 50px">Aqui va firma del medico</p>
                 </td>
             @endif
 

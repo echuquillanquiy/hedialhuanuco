@@ -40,7 +40,8 @@ class Medical extends Model
         'epo4000',
         'iron',
         'vitb12',
-        'calci'
+        'calci',
+        'created_at'
 
     ];
 

@@ -58,7 +58,10 @@ class OrderController extends Controller
     public function create(Request $request)
     {
         $order = Order::select('id', 'n_fua')->latest()->first();
-        $sig_fua = $order->n_fua + 1;
+        if (!$order)
+            $sig_fua = 5000;
+        else
+            $sig_fua = $order->n_fua + 1;
 
         $patients = Patient::all();
         $rooms = Room::all();
@@ -100,11 +103,13 @@ class OrderController extends Controller
         }
 
         $order = Order::create($request->all());
+
         $orders_data = [
             'order_id' => $order->id,
             'patient' => $order->patient->name,
             'room' => $order->room->name,
             'shift' => $order->shift->name,
+            'created_at' => $order->created_at
         ];
 
         $orders_data2 = [
@@ -112,7 +117,8 @@ class OrderController extends Controller
             'patient' => $order->patient->name,
             'room' => $order->room->name,
             'shift' => $order->shift->name,
-            'hour_hd' => $request->hour_hd
+            'hour_hd' => $request->hour_hd,
+            'created_at' => $order->created_at
         ];
 
         $nurse = $order->nurse()->create($orders_data);

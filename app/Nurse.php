@@ -34,6 +34,7 @@ class Nurse extends Model
      'others_med',
      'end_observation',
      'aspect_dializer',
+      'created_at',
 
       's',
       'o',

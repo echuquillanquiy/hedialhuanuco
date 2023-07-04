@@ -13,7 +13,8 @@ class Order extends Model
         'shift_id',
         'user_id',
         'covid',
-        'n_fua'
+        'n_fua',
+        'created_at'
 	];
 
     public function user()
@@ -25,6 +26,7 @@ class Order extends Model
     {
         return $this->belongsTo(Patient::class);
     }
+
 
     public function room()
     {

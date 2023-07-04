@@ -67,6 +67,8 @@ Route::middleware(['auth', 'doctor'])->namespace('Doctor')->group(function () {
 
 	Route::resource('orders', 'OrderController');
 
+    Route::resource('consults', 'ConsultController');
+
 	Route::get('orders/cuadroPaciente', 'OrderController@show');
 
 	Route::get('/orders/{order}/impresion', 'OrderController@showPdf');
