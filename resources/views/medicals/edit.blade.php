@@ -137,7 +137,12 @@
 
       <div class="form-group col-sm-12 col-lg-1">
         <label for="heparin">Heparina</label>
-        <input type="text" name="heparin" class="form-control" value="{{ old('heparin', $medical->heparin) }}">
+          @if(!$medical->heparin)
+              <input type="text" name="heparin" class="form-control border border-danger" value="{{ old('heparin', $medical->heparin) }}">
+          @else
+              <input type="text" name="heparin" class="form-control" value="{{ old('heparin', $medical->heparin) }}">
+          @endif
+
       </div>
 
       <div class="form-group col-sm-12 col-lg-2">

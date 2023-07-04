@@ -61,7 +61,18 @@
             <td style="height: 10px; font-size: 0.6rem; background: #BEBEBE">DIA</td>
             <td style="height: 10px; font-size: 0.6rem; background: #BEBEBE">MES</td>
             <td style="height: 10px; font-size: 0.6rem; background: #BEBEBE">AÑO</td>
-            <td rowspan="2" style="font-size: 0.7rem; font-weight: bold">{{ $order->medical->updated_at->format('G:i') }}</td>
+
+            @if($order->shift_id == 1)
+                <td rowspan="2" style="font-size: 0.7rem; font-weight: bold">5:20</td>
+            @elseif($order->shift_id == 2)
+                <td rowspan="2" style="font-size: 0.7rem; font-weight: bold">9:20</td>
+            @elseif($order->shift_id == 3)
+                <td rowspan="2" style="font-size: 0.7rem; font-weight: bold">13:20</td>
+            @else
+                <td rowspan="2" style="font-size: 0.7rem; font-weight: bold">17:20</td>
+            @endif
+
+
             <td rowspan="2" style="font-size: 0.6rem; font-weight: bold">{{ $order->patient->dni }}</td>
             <td rowspan="2" style="font-size: 0.5rem; background: #BEBEBE">TD</td>
             <td rowspan="2" style="font-size: 0.6rem; font-weight: bold">2</td>
