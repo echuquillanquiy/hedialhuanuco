@@ -103,8 +103,8 @@
                   </div>
                   <input class="form-control datepicker" placeholder="Seleccionar fecha"
                          id="created_at" name="created_at" type="text"
-                         value="{{ old('date', date('Y-m-d G:i:s')) }}"
-                         data-date-format="yyyy-mm-dd H:i:s"
+                         value="{{ old('date', date('Y-m-d')) }}"
+                         data-date-format="yyyy-mm-dd"
                   >
               </div>
           </div>
