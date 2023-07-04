@@ -61,7 +61,7 @@
             <td style="height: 10px; font-size: 0.6rem; background: #BEBEBE">DIA</td>
             <td style="height: 10px; font-size: 0.6rem; background: #BEBEBE">MES</td>
             <td style="height: 10px; font-size: 0.6rem; background: #BEBEBE">AÑO</td>
-            <td rowspan="2" style="font-size: 0.7rem; font-weight: bold">{{ $order->created_at->format('G:i') }}</td>
+            <td rowspan="2" style="font-size: 0.7rem; font-weight: bold">{{ $order->medical->updated_at->format('G:i') }}</td>
             <td rowspan="2" style="font-size: 0.6rem; font-weight: bold">{{ $order->patient->dni }}</td>
             <td rowspan="2" style="font-size: 0.5rem; background: #BEBEBE">TD</td>
             <td rowspan="2" style="font-size: 0.6rem; font-weight: bold">2</td>
