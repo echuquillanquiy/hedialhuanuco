@@ -57,11 +57,13 @@ class OrderController extends Controller
      */
     public function create(Request $request)
     {
-        $order = Order::select('id', 'n_fua')->latest()->first();
-        if (!$order)
+        $fecha = Carbon::now()->format('Y-m-d');
+        $ultima_fua= Order::select('id', 'n_fua')->whereDate('created_at', '=', $fecha)->latest()->first();
+
+        if ($ultima_fua->n_fua == null)
             $sig_fua = 5000;
         else
-            $sig_fua = $order->n_fua + 1;
+            $sig_fua = $ultima_fua->n_fua + 1;
 
         $patients = Patient::all();
         $rooms = Room::all();
@@ -197,7 +199,8 @@ class OrderController extends Controller
         $data = $request->only([
             'room_id',
             'shift_id',
-            'covid'
+            'covid',
+            'n_fua'
         ]);
         $order->fill($data);
         $order->save();

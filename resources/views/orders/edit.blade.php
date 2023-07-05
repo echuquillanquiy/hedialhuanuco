@@ -85,6 +85,25 @@
               </select>
           </div>
 
+          <div class="form-group col-sm-12 col-lg-2">
+              <label for="n_fua">FUA</label>
+              <input type="text" name="n_fua" class="form-control" value="{{ $order->n_fua }}">
+          </div>
+
+          <div class="form-group col-lg-2">
+              <label for="">FECHA DE CREACION</label>
+              <div class="input-group">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                  </div>
+                  <input class="form-control datepicker" placeholder="Seleccionar fecha"
+                         id="created_at" name="created_at" type="text"
+                         value="{{ old('date', date('Y-m-d')) }}"
+                         data-date-format="yyyy-mm-dd"
+                  >
+              </div>
+          </div>
+
         <div class="form-group">
           <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
         </div>
