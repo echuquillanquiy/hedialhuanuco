@@ -208,7 +208,8 @@ class OrderController extends Controller
         $order->save();
         $data_or = [
             'room' => $order->room->name,
-            'shift' => $order->shift->name
+            'shift' => $order->shift->name,
+            'date_order' => $order->date_order
         ];
 
         $order->nurse()->update($data_or);
