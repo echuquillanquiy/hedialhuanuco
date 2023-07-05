@@ -31,7 +31,7 @@
             <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
             </div>
             <input class="form-control datepicker" placeholder="Seleccionar fecha"
-                id="created_at" name="created_at" type="text"
+                id="date_order" name="date_order" type="text"
                 value="{{ old('date', date('Y-m-d')) }}"
                 data-date-format="yyyy-mm-dd"
                 >
@@ -58,6 +58,7 @@
             <th scope="col">Sala</th>
             <th scope="col">Turno</th>
             <th scope="col">Paciente con COVID</th>
+            <th scope="col">Fecha de orden</th>
             <th scope="col">Fecha y hora de creación</th>
             <th>Opciones</th>
         </tr>
@@ -84,8 +85,12 @@
             {{$order->covid}}
           </td>
           <td>
-            {{$order->created_at}}
+            {{$order->date_order}}
           </td>
+
+            <td>
+                {{$order->created_at}}
+            </td>
 
           <td>
 

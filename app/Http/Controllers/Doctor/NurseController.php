@@ -26,13 +26,13 @@ class NurseController extends Controller
         $patient = $request->get('patient');
         $room = $request->get('room');
         $shift = $request->get('shift');
-        $created_at = $request->get('created_at');
+        $date_order = $request->get('date_order');
 
         $nurses = Nurse::orderBy('created_at', 'desc')
             ->patient($patient)
             ->room($room)
             ->shift($shift)
-            ->created_at($created_at)
+            ->date_order($date_order)
             ->paginate(15);
         return view('nurses.index', compact('nurses','shifts', 'rooms'));
     }

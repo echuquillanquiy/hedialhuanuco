@@ -102,8 +102,8 @@
                       <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
                   </div>
                   <input class="form-control datepicker" placeholder="Seleccionar fecha"
-                         id="created_at" name="created_at" type="text"
-                         value="{{ old('date', date('Y-m-d')) }}"
+                         id="date_order" name="date_order" type="text"
+                         value="{{ old('date_order', date('Y-m-d')) }}"
                          data-date-format="yyyy-mm-dd"
                   >
               </div>

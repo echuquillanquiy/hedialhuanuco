@@ -14,7 +14,7 @@ class Order extends Model
         'user_id',
         'covid',
         'n_fua',
-        'created_at'
+        'date_order'
 	];
 
     public function user()
@@ -54,10 +54,10 @@ class Order extends Model
             return $query->where('patient_id', 'LIKE', "%$patient%");
     }*/
 
-    public function scopeCreated_at($query, $created_at)
+    public function scopeDate_order($query, $date_order)
     {
-        if($created_at)
-            return $query->where('created_at', 'LIKE', "%$created_at%");
+        if($date_order)
+            return $query->where('date_order', 'LIKE', "%$date_order%");
     }
 
 }

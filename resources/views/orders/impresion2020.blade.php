@@ -28,7 +28,7 @@
                 <td style="border:solid 1px; text-align: center; font-size: 0.7rem;" width="50px">{{ $order->patient->dni }}</td>
 
                 <td style="font-size: 0.7rem"><strong>Fecha: </strong></td>
-                <td style="border: solid 1px; padding: 2px; font-size: 0.7rem; text-align: center" width="76px">{{ $date }}</td>
+                <td style="border: solid 1px; padding: 2px; font-size: 0.7rem; text-align: center" width="76px">{{ $order->date_order }}</td>
 
             </tr>
         </table>

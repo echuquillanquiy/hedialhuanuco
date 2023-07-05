@@ -42,10 +42,11 @@ class OrderController extends Controller
         $users = User::all();
 
         /*$patient = $request->get('patient');*/
-        $created_at = $request->get('created_at');
+        $date_order = $request->get('date_order');
 
-        $orders = Order::orderBy('created_at', 'desc')
-            ->created_at($created_at)
+        $orders = Order::orderBy('date_order', 'desc')
+            ->orderBy('n_fua','desc')
+            ->date_order($date_order)
             ->paginate(30);
         return view('orders.index', compact('orders','patients', 'rooms', 'shifts', 'users'));
     }
@@ -60,7 +61,7 @@ class OrderController extends Controller
         $fecha = Carbon::now()->format('Y-m-d');
         $ultima_fua= Order::select('id', 'n_fua')->whereDate('created_at', '=', $fecha)->latest()->first();
 
-        if ($ultima_fua->n_fua == null)
+        if ($ultima_fua == null || $ultima_fua->n_fua == null)
             $sig_fua = 5000;
         else
             $sig_fua = $ultima_fua->n_fua + 1;
@@ -111,7 +112,7 @@ class OrderController extends Controller
             'patient' => $order->patient->name,
             'room' => $order->room->name,
             'shift' => $order->shift->name,
-            'created_at' => $order->created_at
+            'date_order' => $order->date_order
         ];
 
         $orders_data2 = [
@@ -120,7 +121,7 @@ class OrderController extends Controller
             'room' => $order->room->name,
             'shift' => $order->shift->name,
             'hour_hd' => $request->hour_hd,
-            'created_at' => $order->created_at
+            'date_order' => $order->date_order
         ];
 
         $nurse = $order->nurse()->create($orders_data);
@@ -144,9 +145,8 @@ class OrderController extends Controller
     public function showPdf($order)
     {
         $order = Order::findOrFail($order);
-        $date = $order->created_at->format('Y-m-d');
 
-        $pdf = PDF::loadView('orders.impresion', compact('order', 'date'));
+        $pdf = PDF::loadView('orders.impresion', compact('order'));
         return $pdf->stream();
     }
 
@@ -200,7 +200,8 @@ class OrderController extends Controller
             'room_id',
             'shift_id',
             'covid',
-            'n_fua'
+            'n_fua',
+            'date_order'
         ]);
         $order->fill($data);
         $order->save();

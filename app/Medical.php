@@ -41,7 +41,7 @@ class Medical extends Model
         'iron',
         'vitb12',
         'calci',
-        'created_at'
+        'date_order'
 
     ];
 
@@ -73,10 +73,10 @@ class Medical extends Model
             return $query->where('shift', 'LIKE', "%$shift%");
     }
 
-    public function scopeCreated_at($query, $created_at)
+    public function scopeDate_order($query, $date_order)
     {
-        if($created_at)
-            return $query->where('created_at', 'LIKE', "%$created_at%");
+        if($date_order)
+            return $query->where('date_order', 'LIKE', "%$date_order%");
     }
 
     public function scopeHour_hd($query, $hour_hd)

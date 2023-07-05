@@ -54,13 +54,13 @@
         </div>
 
         <div class="form-group col-lg-3">
-            <label for="created_at">Fecha</label>
+            <label for="date_order">Fecha</label>
           <div class="input-group">
             <div class="input-group-prepend">
             <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
             </div>
             <input class="form-control datepicker" placeholder="Seleccionar fecha"
-                id="created_at" name="created_at" type="text"
+                id="date_order" name="date_order" type="text"
                 value="{{ old('date', date('Y-m-d')) }}"
                 data-date-format="yyyy-mm-dd"
                 >
@@ -145,7 +145,7 @@
               @endif
           </td>
           <td>
-	    {{ \Carbon\Carbon::parse($nurse->created_at)->format('d-m')}}
+	    {{ $nurse->date_order}}
           </td>
             @if($nurse->user_id)
                 <td>
