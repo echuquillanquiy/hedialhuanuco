@@ -54,6 +54,7 @@
         <tr>
             <th scope="col">ID</th>
             <th scope="col">Paciente</th>
+            <th scope="col">N° FUA</th>
             <th scope="col">Sala</th>
             <th scope="col">Turno</th>
             <th scope="col">Paciente con COVID</th>
@@ -70,6 +71,9 @@
           <td>
             {{$order->patient->name}}
           </td>
+            <td>
+                {{$order->n_fua}}
+            </td>
           <td>
             {{$order->room->name}}
           </td>
