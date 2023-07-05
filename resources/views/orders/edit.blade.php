@@ -104,21 +104,6 @@
               </div>
           </div>
 
-          <div class="form-group col-lg-2">
-              <label for="created_at">FECHA DE CREACION</label>
-              <div class="input-group">
-                  <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
-                  </div>
-                  <input class="form-control datepicker" placeholder="Seleccionar fecha"
-                         id="created_at" name="created_at" type="text"
-                         value="{{ $order->created_at }}"
-                         data-date-format="yyyy-mm-dd"
-                         readonly
-                  >
-              </div>
-          </div>
-
         <div class="form-group">
           <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
         </div>
