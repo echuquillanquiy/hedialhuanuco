@@ -82,7 +82,7 @@
                 <tr>
                     <th scope="col">Nombres y Apellidos DNI</th>
                     <th scope="col">I-F HD</th>
-                    <th scope="col">FUA</th>
+                    <th scope="col">N° FUA</th>
                     <th scope="col">Epo2</th>
                     <th scope="col">Epo4</th>
                     <th scope="col">B12</th>

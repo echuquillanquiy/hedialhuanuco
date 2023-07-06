@@ -83,9 +83,9 @@
         </tr>
 
         <tr>
-            <td style="height: 10px; font-size: 0.6rem;  font-weight: bold">{{ $order->created_at->format('d') }}</td>
-            <td style="height: 10px; font-size: 0.6rem;  font-weight: bold">{{ $order->created_at->format('m') }}</td>
-            <td style="height: 10px; font-size: 0.6rem;  font-weight: bold">{{ $order->created_at->format('Y') }}</td>
+            <td style="height: 10px; font-size: 0.6rem;  font-weight: bold">{{ $order->date_order->format('d') }}</td>
+            <td style="height: 10px; font-size: 0.6rem;  font-weight: bold">{{ $order->date_order->format('m') }}</td>
+            <td style="height: 10px; font-size: 0.6rem;  font-weight: bold">{{ $order->date_order->format('Y') }}</td>
             <td style="font-size: 0.4rem; background: #BEBEBE">SEMICONTRIBUTIVO</td>
             <td style="font-size: 0.5rem; font-weight: bold;"></td>
         </tr>
