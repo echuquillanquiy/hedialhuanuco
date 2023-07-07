@@ -62,7 +62,7 @@ class OrderController extends Controller
         $ultima_fua= Order::select('id', 'n_fua')->whereDate('created_at', '=', $fecha)->latest()->first();
 
         if ($ultima_fua == null)
-            $ultima_fua->n_fua + 1;
+           $sig_fua = 5000;
         else
             $sig_fua = $ultima_fua->n_fua + 1;
 
