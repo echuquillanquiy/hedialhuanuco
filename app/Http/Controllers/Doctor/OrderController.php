@@ -59,7 +59,7 @@ class OrderController extends Controller
     public function create(Request $request)
     {
         $fecha = Carbon::now()->format('Y-m-d');
-        $ultima_fua= Order::select('id', 'n_fua')->whereDate('date_order', '=', $fecha)->latest()->first();
+        $ultima_fua= Order::select('id', 'n_fua')->whereDate('date_order', '!=', $fecha)->latest()->first();
 
         if ($ultima_fua == null)
            $sig_fua = 5000;
