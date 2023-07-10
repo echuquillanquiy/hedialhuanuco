@@ -154,9 +154,8 @@ class OrderController extends Controller
     public function showPdf2020($order)
     {
         $order = Order::findOrFail($order);
-        $date = $order->date_order;
 
-        $pdf = PDF::loadView('orders.impresion2020', compact('order', 'date'));
+        $pdf = PDF::loadView('orders.impresion2020', compact('order'));
         return $pdf->stream();
     }
 
