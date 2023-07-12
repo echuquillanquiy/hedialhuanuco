@@ -83,14 +83,15 @@
             {{$user->dni}}
           </td>
 
-            <td>
+<!--            <td>
                 @if($user->image)
                     <img src="{{ asset($user->image) }}" class="img-fluid" height=120" width="250"></img>
                 @else
                     <p>No hay imgen que mostrar</p>
                 @endif
 
-            </td>
+            </td>-->
+
           <td>
 
             <form action="{{ url('/users/'.$user->id) }}" method="POST">
