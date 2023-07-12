@@ -66,7 +66,7 @@
           <th scope="col">Nombres</th>
           <th scope="col">Correo</th>
           <th scope="col">DNI</th>
-            <th scope="col">FIRMA</th>
+{{--            <th scope="col">FIRMA</th>--}}
           <th scope="col">Opciones</th>
         </tr>
       </thead>
