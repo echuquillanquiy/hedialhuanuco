@@ -66,7 +66,7 @@
           <th scope="col">Nombres</th>
           <th scope="col">Correo</th>
           <th scope="col">DNI</th>
-{{--            <th scope="col">FIRMA</th>--}}
+            <th scope="col">FIRMA</th>
           <th scope="col">Opciones</th>
         </tr>
       </thead>
@@ -83,14 +83,14 @@
             {{$user->dni}}
           </td>
 
-<!--            <td>
+        <td>
                 @if($user->image)
                     <img src="{{ asset($user->image) }}" class="img-fluid" height=120" width="250"></img>
                 @else
                     <p>No hay imgen que mostrar</p>
                 @endif
 
-            </td>-->
+            </td>
 
           <td>
 
