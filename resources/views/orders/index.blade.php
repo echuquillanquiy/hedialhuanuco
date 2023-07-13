@@ -101,11 +101,11 @@
 
                 <a href="{{ url('/orders/'.$order->id.'/edit') }}" class="btn btn-sm btn-primary">Editar</a>
 
-                @if ($order->created_at->format('Y-m-d') <= date('2020-03-10'))
-                    <a href="{{ url('/orders/'.$order->id.'/impresion') }}" class="btn btn-sm btn-info" target="_blank">Impresión</a>
-                @else
-                    <a href="{{ url('/orders/'.$order->id.'/impresion2020') }}" class="btn btn-sm btn-success" target="_blank">Historia</a>
+            <td>
+                @if(\Illuminate\Support\Facades\Auth::user()->id == 1)
+                    <a href="{{ url('/orders/'.$medical->order->id.'/fua') }}" class="btn btn-sm btn-outline-success" target="_blank"><i class="fas fa-file-alt fa-lg"></i></a>
                 @endif
+            </td>
 
             </form>
           </td>
