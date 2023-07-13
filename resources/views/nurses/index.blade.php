@@ -110,7 +110,7 @@
                 @if ($nurse->order->created_at->format('Y-m-d') <= date('2020-03-10'))
                     <a href="{{ url('/orders/'.$nurse->order->id.'/impresion') }}" class="btn btn-sm btn-info" target="_blank">Impresión</a>
                 @else
-                    <a href="{{ url('/orders/'.$nurse->order->id.'/impresion2020') }}" class="btn btn-sm btn-success" target="_blank">Historia</a>
+                    <a href="{{ url('/orders/'.$nurse->order->id.'/impresion2020') }}" class="btn btn-sm btn-danger" target="_blank">Historia</a>
                 @endif
             </form>
           </td>
