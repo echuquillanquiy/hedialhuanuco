@@ -102,14 +102,22 @@
             <td style="font-size: 0.7rem; text-align: left; padding: 3px">{{ $laboratory->description5 }}</td>
             <td style="font-size: 0.7rem;">{{ $laboratory->result5 }}</td>
             <td style="font-size: 0.6rem;">mg/dl</td>
-            <td style="font-size: 0.4rem;">10 - 50</td>
+            <td style="font-size: 0.6rem;">2.5 - 5.6</td>
         </tr>
 
         <tr>
             <td style="font-size: 0.7rem; text-align: left; padding: 3px">{{ $laboratory->description6 }}</td>
             <td style="font-size: 0.7rem;">{{ $laboratory->result6 }}</td>
-            <td style="font-size: 0.6rem;">mg/dl</td>
-            <td style="font-size: 0.4rem;">10 - 50</td>
+            <td style="font-size: 0.6rem;">mg/dL</td>
+            <td style="font-size: 0.5rem;">
+                <strong>
+                    Niños 02-12 años: 8.8 - 10.8 /
+                    Niños 12-18 años: 8.4 - 10.2 /
+                    Adultos 18-60 años: 8.6 - 10.0 /
+                    Adultos 60-90 años: 8.8 - 10.2 /
+                    Adultos >90 años: 8.2 - 9.6
+                </strong>
+            </td>
         </tr>
 
 
