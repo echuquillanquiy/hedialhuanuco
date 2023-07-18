@@ -81,21 +81,21 @@
             <td style="font-size: 0.7rem; text-align: left; padding: 3px">Cloro</td>
             <td style="font-size: 0.7rem;">{{ $laboratory->cloro }}</td>
             <td style="font-size: 0.6rem;">mmol/L</td>
-            <td style="font-size: 0.4rem;">98 - 107</td>
+            <td style="font-size: 0.6rem;">98 - 107</td>
         </tr>
 
         <tr style="background-color: #BEBEBE">
             <td style="font-size: 0.7rem; text-align: left; padding: 3px">Sodio</td>
             <td style="font-size: 0.7rem;">{{ $laboratory->sodio }}</td>
             <td style="font-size: 0.6rem;">mmol/L</td>
-            <td style="font-size: 0.4rem;">98 - 107</td>
+            <td style="font-size: 0.6rem;">135 - 148</td>
         </tr>
 
         <tr style="background-color: #BEBEBE">
             <td style="font-size: 0.7rem; text-align: left; padding: 3px">Potasio</td>
             <td style="font-size: 0.7rem;">{{ $laboratory->potasio }}</td>
             <td style="font-size: 0.6rem;">mmol/L</td>
-            <td style="font-size: 0.4rem;">98 - 107</td>
+            <td style="font-size: 0.6rem;">3.5 - 5.3</td>
         </tr>
 
         <tr>
