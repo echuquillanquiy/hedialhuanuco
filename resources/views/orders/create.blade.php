@@ -42,7 +42,7 @@
 
       @csrf
       <div class="row mt--4">
-        <div class="form-group col-sm-12 col-lg-4">
+        <div class="form-group col-sm-12 col-lg-3">
           <label for="patient_id">Pacientes</label
 >          <select name="patient_id" id="patient_id" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
             @foreach ($patients as $patient)
@@ -52,7 +52,7 @@
           </select>
         </div>
 
-        <div class="form-group col-sm-12 col-lg-3">
+        <div class="form-group col-sm-12 col-lg-2">
           <label for="room_id">Salas</label>
           <select data-live-search="true" name="room_id" id="room_id" class="form-control selectpicker" data-style="btn-info">
             @foreach ($rooms as $room)
@@ -72,8 +72,8 @@
           </select>
         </div>
 
-          <div class="form-group col-sm-12 col-lg-2">
-              <label for="covid">Paciente Con COVID-19</label>
+          <div class="form-group col-sm-12 col-lg-1">
+              <label for="covid">COVID?</label>
               <select name="covid" id="covid" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
                   <option value="NO">NO</option>
                   <option value="SI">SI</option>
@@ -90,7 +90,7 @@
               </select>
           </div>
 
-          <div class="form-group col-sm-12 col-lg-2">
+          <div class="form-group col-sm-12 col-lg-1">
               <label for="n_fua">FUA</label>
               <input type="text" name="n_fua" class="form-control" value="{{ $sig_fua }}">
           </div>
@@ -108,6 +108,32 @@
                   >
               </div>
           </div>
+
+          <div class="form-group col-sm-12 col-lg-3">
+              <label for="type">TIPO PROCEDIMIENTO</label>
+              <select name="type" id="type" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
+                  <option value="1" selected>HEMODIALISIS</option>
+                  <option value="2">CONSULTA NEFROLOGICA</option>
+              </select>
+          </div>
+
+          @if(\Carbon\Carbon::now()->format('Y-m-d') == '2023-07-19' || \Carbon\Carbon::now()->format('Y-m-d') == '2023-07-20')
+              <div class="form-group col-sm-12 col-lg-2">
+                  <label for="lab">¿INCLUYE LABORATORIO?</label>
+                  <select name="lab" id="lab" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
+                      <option value="SI" selected>SI</option>
+                      <option value="NO">NO</option>
+                  </select>
+              </div>
+          @else
+              <div class="form-group col-sm-12 col-lg-2">
+                  <label for="lab">¿INCLUYE LABORATORIO?</label>
+                  <select name="lab" id="lab" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
+                      <option value="NO" selected>NO</option>
+                      <option value="SI">SI</option>
+                  </select>
+              </div>
+          @endif
 
         <div class="form-group">
           <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">

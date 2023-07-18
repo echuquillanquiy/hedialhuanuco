@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="card shadow">
-  <div class="card-header border-0 mb--6">
+  <div class="card-header border-0 mb--4">
     <div class="row align-items-center">
       <div class="col-lg">
         <h3 class="mb-0">Ordenes de Atención</h3>

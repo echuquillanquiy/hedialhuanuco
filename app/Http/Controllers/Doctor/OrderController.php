@@ -124,10 +124,34 @@ class OrderController extends Controller
             'date_order' => $order->date_order
         ];
 
-        $nurse = $order->nurse()->create($orders_data);
-        $medical = $order->medical()->create($orders_data2);
-        $notification = 'La orden fue creada correctamente.';
-        return back()->with(compact('notification'));
+        $consult_data = [
+            'order_id' => $order->id,
+            'patient_id' => $order->patient_id,
+            'date_order' => $order->date_order
+        ];
+
+        if ($order->type == 1 && $order->lab == 'SI')
+        {
+            $nurse = $order->nurse()->create($orders_data);
+            $medical = $order->medical()->create($orders_data2);
+            $laboratory = $order->laboratory()->create($consult_data);
+            $notification = 'La orden fue creada correctamente.';
+            return back()->with(compact('notification'));
+
+        } elseif ($order->type == 1)
+        {
+            $nurse = $order->nurse()->create($orders_data);
+            $medical = $order->medical()->create($orders_data2);
+            $notification = 'La orden fue creada correctamente.';
+            return back()->with(compact('notification'));
+
+        } else {
+            $nephrology = $order->nephrology()->create($consult_data);
+            $recipe = $order->recipe()->create($consult_data);
+            $notification = 'La consulta nefrologica fue creada correctamente.';
+            return back()->with(compact('notification'));
+        }
+
     }
 
     public function showMedical($id)

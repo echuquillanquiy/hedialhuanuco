@@ -14,7 +14,9 @@ class Order extends Model
         'user_id',
         'covid',
         'n_fua',
-        'date_order'
+        'date_order',
+        'type',
+        'lab'
 	];
 
     public function user()
@@ -46,6 +48,21 @@ class Order extends Model
     public function nurse()
     {
         return $this->hasOne(Nurse::class)->withDefault();
+    }
+
+    public function laboratory()
+    {
+        return $this->hasOne(Laboratory::class)->withDefault();
+    }
+
+    public function nephrology()
+    {
+        return $this->hasOne(Nephrology::class)->withDefault();
+    }
+
+    public function recipe()
+    {
+        return $this->hasOne(Recipe::class)->withDefault();
     }
 
     /*public function scopePatient($query, $patient)

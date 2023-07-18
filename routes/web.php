@@ -81,7 +81,9 @@ Route::middleware(['auth', 'doctor'])->namespace('Doctor')->group(function () {
 	Route::get('/tracings/{tracing}/impresion', 'TracingController@showPdf');
 	Route::resource('format006s', 'Format006Controller');
 
-
+    Route::resource('nephrologies', 'NephrologyController');
+    Route::resource('laboratories', 'LaboratoryController');
+    Route::resource('recipes', 'RecipeController');
 
 });
 
