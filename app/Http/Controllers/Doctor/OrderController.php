@@ -253,6 +253,7 @@ class OrderController extends Controller
         $orderName = $order->patient->name;
         $order->nurse->delete();
         $order->medical->delete();
+        $order->laboratory->delete();
         $order->delete();
 
         $notification = "La orden del paciente: $orderName se ha eliminado correctamente.";
