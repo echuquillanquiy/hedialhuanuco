@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Doctor;
 use App\Http\Controllers\Controller;
 use App\Laboratory;
 use App\Procedure;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class LaboratoryController extends Controller
@@ -16,7 +17,7 @@ class LaboratoryController extends Controller
      */
     public function index()
     {
-        $laboratories = Laboratory::orderBy('created_at', 'desc')
+        $laboratories = Laboratory::orderBy('id', 'desc')
             ->paginate(15);
 
         return view('laboratories.index', compact('laboratories'));

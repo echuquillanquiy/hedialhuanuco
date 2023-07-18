@@ -12,7 +12,7 @@
         </div>
 
         <div class="card-body mb--4">
-            <form action="{{ url('nephrologies') }}" method="GET">
+            <form action="{{ url('laboratories') }}" method="GET">
                 <div class="row">
 
                     <div class="form-group col-lg-4">
@@ -30,10 +30,7 @@
                     <div class="col-lg-3">
                         <button class="btn btn-info btn-md" type="submit">Buscar</button>
                     </div>
-
-
                 </div>
-
             </form>
         </div>
 
@@ -72,13 +69,11 @@
 
                         <td>
 
-                            <form action="{{ url('/nephrologies/'.$laboratory->id) }}" method="POST">
+                            <form action="{{ url('/laboratories/'.$laboratory->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-sm btn-danger" onclick="return confirm('¿Seguro que desea eliminar la orden del paciente {{ $laboratory->patient->name }}?, ya que al borrarlo eliminara los registros que tenga del día {{ $laboratory->created_at }}');" type="submit">Eliminar</button>
 
                                 <a href="{{ url('/laboratories/'.$laboratory->id.'/edit') }}" class="btn btn-sm btn-primary" target="_blank">Editar</a>
-
                             </form>
                         </td>
                     </tr>

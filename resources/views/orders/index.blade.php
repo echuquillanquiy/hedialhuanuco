@@ -40,8 +40,6 @@
         <div class="col-lg-3">
           <button class="btn btn-info btn-md" type="submit">Buscar</button>
         </div>
-
-
       </div>
 
     </form>
