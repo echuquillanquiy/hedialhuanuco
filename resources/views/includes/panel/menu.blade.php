@@ -91,6 +91,20 @@
                 <i class="ni ni-curved-next text-dark"></i> FISSAL
             </a>
         </li>
+        @if(auth()->user()->id == 1)
+            <li class="nav-item">
+                <a class="nav-link" href="/nephrologies">
+                    <i class="ni ni-curved-next text-dark"></i> CONSULTAS
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/laboratories">
+                    <i class="ni ni-curved-next text-dark"></i> LABORATORIOS
+                </a>
+            </li>
+        @endif
+
 
     <!--<li class="nav-item acordion" id="almacen">
 
