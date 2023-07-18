@@ -83,6 +83,8 @@ Route::middleware(['auth', 'doctor'])->namespace('Doctor')->group(function () {
 
     Route::resource('nephrologies', 'NephrologyController');
     Route::resource('laboratories', 'LaboratoryController');
+    Route::get('/laboratories/{laboratory}/results', 'LaboratoryController@results');
+
     Route::resource('recipes', 'RecipeController');
 
 });

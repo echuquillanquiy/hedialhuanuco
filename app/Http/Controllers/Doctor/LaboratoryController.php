@@ -8,6 +8,7 @@ use App\Procedure;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
+use PDF;
 class LaboratoryController extends Controller
 {
     /**
@@ -15,9 +16,12 @@ class LaboratoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $date_order = $request->get('date_order');
+
         $laboratories = Laboratory::orderBy('id', 'desc')
+            ->date_order($date_order)
             ->paginate(15);
 
         return view('laboratories.index', compact('laboratories'));
@@ -96,5 +100,12 @@ class LaboratoryController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function results(Laboratory $laboratory)
+    {
+        $pdf = PDF::loadView('laboratories.resultados', compact('laboratory'))->setPaper('a4', 'portrait');
+        return $pdf->stream();
     }
 }

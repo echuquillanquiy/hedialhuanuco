@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Laboratory extends Model
 {
-    protected $guarded = ['id', 'date_order'];
+    protected $guarded = ['id'];
 
     public function patient()
     {

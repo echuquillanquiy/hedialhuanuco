@@ -74,6 +74,8 @@
                                 @method('DELETE')
 
                                 <a href="{{ url('/laboratories/'.$laboratory->id.'/edit') }}" class="btn btn-sm btn-primary" target="_blank">Editar</a>
+
+                                <a href="{{ url('/laboratories/'.$laboratory->id.'/results') }}" class="btn btn-sm btn-outline-default" target="_blank"><i class="fas fa-syringe"></i></a>
                             </form>
                         </td>
                     </tr>

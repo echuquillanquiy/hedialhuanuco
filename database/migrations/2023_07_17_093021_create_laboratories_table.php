@@ -41,7 +41,9 @@ class CreateLaboratoriesTable extends Migration
             $table->string('description4', 150)->nullable();
             $table->string('code4', 10)->nullable();
             $table->string('cant4', 10)->nullable();
-            $table->string('result4', 10)->nullable();
+            $table->string('sodio', 10)->nullable();
+            $table->string('cloro', 10)->nullable();
+            $table->string('potasio', 10)->nullable();
 
             $table->string('description5', 150)->nullable();
             $table->string('code5', 10)->nullable();

@@ -67,22 +67,36 @@
 
 </div>
 
-<div class="row text-center">
+<div class="row text-center mt--3">
 
-    <div class="form-group col-sm-12 col-lg-4">
+    <div class="form-group col-sm-12 col-lg-3">
+        <label for="description4">EXAMENES</label>
         <input type="text" name="description4" id="description4" class="form-control" value="{{ !$laboratory->description4 ? 'Perfil de electrolitos (Cloro, Sodio y Potasio).' : $laboratory->description4 }}" readonly>
     </div>
 
-    <div class="form-group col-sm-12 col-lg-2">
+    <div class="form-group col-sm-12 col-lg-1">
+        <label for="code4">CODIGO</label>
         <input type="text" name="code4" id="code4" class="form-control" value="{{ !$laboratory->code4 ? '80051' : $laboratory->code4 }}" readonly>
     </div>
 
     <div class="form-group col-sm-12 col-lg-2">
+        <label for="cant4">CANTIDAD</label>
         <input type="number" name="cant4" class="form-control" value="{{ !$laboratory->cant4 ? '1' : $laboratory->cant4 }}">
     </div>
 
-    <div class="form-group col-sm-12 col-lg-4">
-        <input type="text" name="result4" class="form-control" value="{{ !$laboratory->result4 ? '0' : $laboratory->result4 }}" tabindex="5">
+    <div class="form-group col-sm-12 col-lg-2">
+        <label for="cloro">CLORO</label>
+        <input type="text" name="cloro" class="form-control" value="{{ !$laboratory->cloro ? '0' : $laboratory->cloro }}" tabindex="5">
+    </div>
+
+    <div class="form-group col-sm-12 col-lg-2">
+        <label for="sodio">SODIO</label>
+        <input type="text" name="sodio" class="form-control" value="{{ !$laboratory->sodio ? '0' : $laboratory->sodio }}" tabindex="6">
+    </div>
+
+    <div class="form-group col-sm-12 col-lg-2">
+        <label for="potasio">POTASIO</label>
+        <input type="text" name="potasio" class="form-control" value="{{ !$laboratory->potasio ? '0' : $laboratory->potasio }}" tabindex="7">
     </div>
 
 </div>
@@ -102,7 +116,7 @@
     </div>
 
     <div class="form-group col-sm-12 col-lg-4">
-        <input type="text" name="result5" class="form-control" value="{{ !$laboratory->result5 ? '0' : $laboratory->result5 }}" tabindex="6">
+        <input type="text" name="result5" class="form-control" value="{{ !$laboratory->result5 ? '0' : $laboratory->result5 }}" tabindex="8">
     </div>
 
 </div>
@@ -122,7 +136,7 @@
     </div>
 
     <div class="form-group col-sm-12 col-lg-4">
-        <input type="text" name="result6" class="form-control" value="{{ !$laboratory->result6 ? '0' : $laboratory->result6 }}" tabindex="7">
+        <input type="text" name="result6" class="form-control" value="{{ !$laboratory->result6 ? '0' : $laboratory->result6 }}" tabindex="9">
     </div>
 
 </div>
