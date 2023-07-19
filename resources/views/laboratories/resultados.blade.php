@@ -42,14 +42,14 @@
         </tr>
 
         <tr>
-            <td style="font-size: 0.7rem; text-align: left; padding: 3px">{{ $laboratory->description2 }}</td>
+            <td style="font-size: 0.7rem; text-align: left; padding: 3px">HEMATOCRITO</td>
             <td style="font-size: 0.7rem;">{{ $laboratory->result2 }}</td>
             <td style="font-size: 0.6rem;">%</td>
             <td style="font-size: 0.4rem;">VARONES: 42.0 - 54.0 / MUEJRES 37.0 - 48.0</td>
         </tr>
 
         <tr>
-            <td style="font-size: 0.7rem; text-align: left; padding: 3px">{{ $laboratory->description3 }}</td>
+            <td style="font-size: 0.7rem; text-align: left; padding: 3px">HEMOGLOBINA</td>
             <td style="font-size: 0.7rem;">{{ $laboratory->result3 }}</td>
             <td style="font-size: 0.6rem;">g/dl</td>
             <td style="font-size: 0.4rem;">VARONES: 14.0 - 18.0 / MUEJRES 12.0 - 16.0</td>
