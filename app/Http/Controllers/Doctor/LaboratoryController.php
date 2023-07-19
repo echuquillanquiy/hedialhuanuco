@@ -105,7 +105,7 @@ class LaboratoryController extends Controller
 
     public function results(Laboratory $laboratory)
     {
-        $pdf = PDF::loadView('laboratories.resultados', compact('laboratory'))->setPaper('a4', 'portrait');
+        $pdf = PDF::loadView('laboratories.resultados', compact('laboratory'));
         return $pdf->stream();
     }
 }

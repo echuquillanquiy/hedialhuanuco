@@ -82,10 +82,13 @@ Route::middleware(['auth', 'doctor'])->namespace('Doctor')->group(function () {
 	Route::resource('format006s', 'Format006Controller');
 
     Route::resource('nephrologies', 'NephrologyController');
+    Route::get('/nephrologies/{nephrology}/consult', 'NephrologyController@consulta');
+
     Route::resource('laboratories', 'LaboratoryController');
     Route::get('/laboratories/{laboratory}/results', 'LaboratoryController@results');
 
     Route::resource('recipes', 'RecipeController');
+    Route::get('/recipes/{recipe}/receta_mensual', 'RecipeController@recetaMensual');
 
 });
 

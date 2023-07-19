@@ -13,50 +13,15 @@ class MedicamentSeeder extends Seeder
     public function run()
     {
         Medicament::create([
-            'codigo' => '19238',
-            'descripcion' => 'Hierro (como sacarato) 20 mg Fe/mL INY 5 mL AMP',
-            'c_referencial' => '4',
-            'frecuencia' => 'Mensual',
-        ]);
-
-        Medicament::create([
-            'codigo' => '03107',
-            'descripcion' => 'Epoetina alfa (Eritropoyetina) 2000 UI/mL INY 1 mL',
-            'c_referencial' => '12',
-            'frecuencia' => 'Mensual',
-        ]);
-
-        Medicament::create([
-            'codigo' => '03113',
-            'descripcion' => 'Epoetina alfa (Eritropoyetina) 4000 UI/mL INY 1 mL',
-            'c_referencial' => '6',
-            'frecuencia' => 'Mensual',
-        ]);
-
-        Medicament::create([
-            'codigo' => '03979',
-            'descripcion' => 'Vitamina B12 Hidroxocobalamina 1mg/mL INY 1mL AMP',
-            'c_referencial' => '12',
-            'frecuencia' => 'Mensual',
-        ]);
-
-        Medicament::create([
-            'codigo' => '02496',
-            'descripcion' => 'Vitamina B – complejo B TAB o CAP',
-            'c_referencial' => '30',
-            'frecuencia' => 'Mensual',
-        ]);
-
-        Medicament::create([
             'codigo' => '05491',
-            'descripcion' => 'Piridoxina clorhidrato 50mg TAB',
+            'descripcion' => 'Piridoxina 50mg TAB',
             'c_referencial' => '30',
             'frecuencia' => 'Mensual',
         ]);
 
         Medicament::create([
             'codigo' => '06127',
-            'descripcion' => 'Tiamina clorhidrato 100 mg TAB ',
+            'descripcion' => 'Tiamina 100 mg TAB',
             'c_referencial' => '30',
             'frecuencia' => 'Mensual',
         ]);
@@ -70,14 +35,14 @@ class MedicamentSeeder extends Seeder
 
         Medicament::create([
             'codigo' => '28897',
-            'descripcion' => 'Sevelamero clorhidrato o carbonato 800 mg TAB ',
+            'descripcion' => 'Sevelamero 800 mg TAB ',
             'c_referencial' => '90',
             'frecuencia' => 'Mensual',
         ]);
 
         Medicament::create([
             'codigo' => '20635',
-            'descripcion' => 'Carbonato de Calcio 1,25 g (equivalente a 500 mg de Calcio) TAB ',
+            'descripcion' => 'Carbonato de Calcio 1,25 g TAB',
             'c_referencial' => '90',
             'frecuencia' => 'Mensual',
         ]);
@@ -113,7 +78,7 @@ class MedicamentSeeder extends Seeder
 
         Medicament::create([
             'codigo' => '00671',
-            'descripcion' => 'Amlodipino (como besilato) 10 mg TAB ',
+            'descripcion' => 'Amlodipino 10 mg TAB ',
             'c_referencial' => '90',
             'frecuencia' => 'Mensual',
         ]);
@@ -150,6 +115,41 @@ class MedicamentSeeder extends Seeder
             'codigo' => '04523',
             'descripcion' => 'Losartan potásico 50 mg TAB',
             'c_referencial' => '60',
+            'frecuencia' => 'Mensual',
+        ]);
+
+        Medicament::create([
+            'codigo' => '19238',
+            'descripcion' => 'Hierro',
+            'c_referencial' => '4',
+            'frecuencia' => 'Mensual',
+        ]);
+
+        Medicament::create([
+            'codigo' => '03107',
+            'descripcion' => 'Epoetina 2000',
+            'c_referencial' => '12',
+            'frecuencia' => 'Mensual',
+        ]);
+
+        Medicament::create([
+            'codigo' => '03113',
+            'descripcion' => 'Epoetina alfa 4000',
+            'c_referencial' => '6',
+            'frecuencia' => 'Mensual',
+        ]);
+
+        Medicament::create([
+            'codigo' => '03979',
+            'descripcion' => 'Vitamina B12 Hidroxocobalamina',
+            'c_referencial' => '12',
+            'frecuencia' => 'Mensual',
+        ]);
+
+        Medicament::create([
+            'codigo' => '02496',
+            'descripcion' => 'Vitamina B TAB o CAP',
+            'c_referencial' => '30',
             'frecuencia' => 'Mensual',
         ]);
     }

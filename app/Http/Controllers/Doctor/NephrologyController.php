@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Nephrology;
 use Illuminate\Http\Request;
 
+use PDF;
+
 class NephrologyController extends Controller
 {
     /**
@@ -73,7 +75,14 @@ class NephrologyController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $nephorology = Nephrology::findOrFail($id);
+
+        $data = $request->all();
+        $nephorology->fill($data);
+        $nephorology->save();
+
+        $notification = 'Se ha guardado los examenes correctamente.';
+        return back()->with(compact('notification'));
     }
 
     /**
@@ -85,5 +94,11 @@ class NephrologyController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function consulta(Nephrology $nephrology)
+    {
+        $pdf = PDF::loadView('nephrologies.consult', compact('nephrology'));
+        return $pdf->stream();
     }
 }

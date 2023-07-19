@@ -99,6 +99,12 @@
             </li>
 
             <li class="nav-item">
+                <a class="nav-link" href="/recipes">
+                    <i class="ni ni-curved-next text-dark"></i> RECETAS
+                </a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link" href="/laboratories">
                     <i class="ni ni-curved-next text-dark"></i> LABORATORIOS
                 </a>

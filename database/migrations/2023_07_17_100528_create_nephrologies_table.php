@@ -38,7 +38,7 @@ class CreateNephrologiesTable extends Migration
             $table->string('peso')->nullable();
             $table->string('talla')->nullable();
             $table->string('imc')->nullable();
-            $table->string('physical_observation')->nullable();
+            $table->string('{{physical_observation}}')->nullable();
             $table->string('torax_pulmones')->nullable();
             $table->string('cardio')->nullable();
             $table->string('diuresis')->nullable();

@@ -75,9 +75,10 @@
                             <form action="{{ url('/nephrologies/'.$nephrology->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-sm btn-danger" onclick="return confirm('¿Seguro que desea eliminar la orden del paciente {{ $nephrology->patient->name }}?, ya que al borrarlo eliminara los registros que tenga del día {{ $nephrology->created_at }}');" type="submit">Eliminar</button>
 
                                 <a href="{{ url('/nephrologies/'.$nephrology->id.'/edit') }}" class="btn btn-sm btn-primary" target="_blank">Editar</a>
+
+                                <a href="{{ url('/nephrologies/'.$nephrology->id.'/consult') }}" class="btn btn-sm btn-outline-primary" target="_blank"><i class="fas fa-file-pdf"></i></a>
 
                             </form>
                         </td>

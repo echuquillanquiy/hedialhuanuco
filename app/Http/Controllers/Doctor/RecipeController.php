@@ -3,7 +3,11 @@
 namespace App\Http\Controllers\Doctor;
 
 use App\Http\Controllers\Controller;
+use App\Medicament;
+use App\Recipe;
 use Illuminate\Http\Request;
+
+use PDF;
 
 class RecipeController extends Controller
 {
@@ -12,9 +16,15 @@ class RecipeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $date_order = $request->get('date_order');
+
+        $recipes = Recipe::orderBy('id', 'desc')
+            ->date_order($date_order)
+            ->paginate(15);
+
+        return view('recipes.index', compact('recipes'));
     }
 
     /**
@@ -55,9 +65,11 @@ class RecipeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Recipe $recipe)
     {
-        //
+        $recipesall = Medicament::all('codigo', 'descripcion');
+
+        return view('recipes.edit', compact('recipe','recipesall'));
     }
 
     /**
@@ -69,7 +81,14 @@ class RecipeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $recipe = Recipe::findOrFail($id);
+
+        $data = $request->all();
+        $recipe->fill($data);
+        $recipe->save();
+
+        $notification = 'Se ha guardado los examenes correctamente.';
+        return back()->with(compact('notification'));
     }
 
     /**
@@ -81,5 +100,11 @@ class RecipeController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function recetaMensual(Recipe $recipe)
+    {
+        $pdf = PDF::loadView('recipes.recetamensual', compact('recipe'))->setPaper('a4', 'landscape');
+        return $pdf->stream();
     }
 }

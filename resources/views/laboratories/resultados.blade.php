@@ -1,27 +1,36 @@
-<div style="font-family: Arial,sans-serif; margin: 0px auto;width: 100%; padding: 5px;">
-    <table style="width: 100%; text-align: center; margin-top: -70px">
+<div style="font-family: Arial,sans-serif; width: 100%; padding: 5px; box-sizing: border-box; margin: 0px -25px auto; padding: 20px; border: 1mm solid black;  height: 965px">
+
+    <div style="width: 100%; margin-top: -25px">
+        <figure>
+            <img src="{{ asset('img/brand/logo_hs_occupational.png') }}" style="width: 30%">
+        </figure>
+    </div>
+
+    <table style="width: 100%; text-align: center; margin-top: -40px">
 
         <h3 style="text-decoration: underline">RESULTADOS DE LABORATORIO</h3>
     </table>
 
     <table style="padding: 5px; width: 100%; text-align: center">
         <tr>
-            <td style="font-size: 0.7rem;">PACIENTE:</td>
-            <td style="font-size: 0.7rem; border-bottom: 1px solid; text-align: center">{{ $laboratory->patient->name }}</td>
-            <td style="font-size: 0.7rem;">DNI:</td>
+            <td style="font-size: 0.7rem; font-weight: bold">PACIENTE:</td>
+            <td  colspan="3" style="font-size: 0.7rem; border-bottom: 1px solid; text-align: center">{{ $laboratory->patient->name }}</td>
+            <td style="font-size: 0.7rem; font-weight: bold">DNI:</td>
             <td style="font-size: 0.7rem; border-bottom: 1px solid; text-align: center">{{ $laboratory->patient->dni }}</td>
+            <td style="font-size: 0.7rem; font-weight: bold">PROCEDENCIA:</td>
+            <td style="font-size: 0.7rem; border-bottom: 1px solid; text-align: center">FISSAL</td>
         </tr>
 
         <tr>
-            <td style="font-size: 0.7rem;">PROCEDENCIA:</td>
-            <td style="font-size: 0.7rem; border-bottom: 1px solid; text-align: center">FISSAL</td>
-            <td style="font-size: 0.7rem;">FECHA:</td>
-            <td style="font-size: 0.7rem; border-bottom: 1px solid; text-align: center">{{ $laboratory->updated_at }}</td>
+            <td style="font-size: 0.7rem; font-weight: bold">FECHA:</td>
+            <td colspan="2" style="font-size: 0.7rem; border-bottom: 1px solid; text-align: center">{{ $laboratory->updated_at }}</td>
+            <td style="font-size: 0.7rem; font-weight: bold">MEDICO:</td>
+            <td colspan="3" style="font-size: 0.7rem; border-bottom: 1px solid; text-align: center">{{ $laboratory->order->user->name }}</td>
         </tr>
     </table>
 
-    <table style="width: 100%; text-align: center; margin-top: -20px;">
-        <h5>AREA DE HEMATOLOGIA</h5>
+    <table style="width: 100%; text-align: center; margin-top: -40px;">
+        <h5 style="text-decoration: underline">AREA DE HEMATOLOGIA</h5>
     </table>
 
     <table style="width: 100%; text-align: center; padding: 7px; border: solid 1px #000000; border-collapse: collapse;" border="1">
@@ -47,8 +56,8 @@
         </tr>
     </table>
 
-    <table style="width: 100%; text-align: center; margin-top: -20px;">
-        <h5>AREA DE BIOQUIMICA</h5>
+    <table style="width: 100%; text-align: center; margin-top: -45px;">
+        <h5 style="text-decoration: underline">AREA DE BIOQUIMICA</h5>
     </table>
 
     <table style="width: 100%; text-align: center; padding: 7px; border: solid 1px #000000; border-collapse: collapse;" border="1">
@@ -69,12 +78,12 @@
         <tr>
             <td style="font-size: 0.7rem; text-align: left; padding: 3px">UREA POST</td>
             <td style="font-size: 0.7rem;">{{ $laboratory->post }}</td>
-            <td style="font-size: 0.6rem;">mg/dl</td>
+            <td style="font-size: 0.6rem;">mg/dL</td>
             <td style="font-size: 0.4rem;">10 - 50</td>
         </tr>
 
         <tr>
-            <tH colspan="4" style="font-size: 0.7rem; text-align: left; padding: 3px">{{ $laboratory->description4 }}</tH>
+            <th colspan="4" style="font-size: 0.7rem; text-align: left; padding: 3px">{{ $laboratory->description4 }}</th>
         </tr>
 
         <tr style="background-color: #BEBEBE">
@@ -119,8 +128,14 @@
                 </strong>
             </td>
         </tr>
+    </table>
 
-
+    <table style="width: 100%; margin-top: 200px">
+        <tr>
+            <td style="text-align: center">
+                <img src="{{ asset('img/sellos/ivan-cerron.jpg') }}" style="text-align: center">
+            </td>
+        </tr>
     </table>
 
 </div>
