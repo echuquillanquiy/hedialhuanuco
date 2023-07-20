@@ -41,6 +41,10 @@
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Paciente</th>
+                    <th scope="col">UREA POST mg/dl</th>
+                    <th scope="col">UREA PRE mg/dl</th>
+                    <th scope="col">HB g/dl</th>
+                    <th scope="col">HTO %</th>
                     <th scope="col">N° FUA</th>
                     <th scope="col">Fecha de orden</th>
                     <th scope="col">Fecha y hora de creación</th>
@@ -56,6 +60,23 @@
                         <td>
                             {{$laboratory->patient->name}}
                         </td>
+
+                        <td>
+                            {{ $laboratory->pre }}
+                        </td>
+
+                        <td>
+                            {{ $laboratory->post }}
+                        </td>
+
+                        <td>
+                            {{ $laboratory->result2 }}
+                        </td>
+
+                        <td>
+                            {{ $laboratory->result3 }}
+                        </td>
+
                         <td>
                             {{$laboratory->order->n_fua}}
                         </td>
