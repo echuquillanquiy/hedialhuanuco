@@ -79,6 +79,7 @@
                                 <a href="{{ url('/nephrologies/'.$nephrology->id.'/edit') }}" class="btn btn-sm btn-primary" target="_blank">Editar</a>
 
                                 <a href="{{ url('/nephrologies/'.$nephrology->id.'/consult') }}" class="btn btn-sm btn-outline-primary" target="_blank"><i class="fas fa-file-pdf"></i></a>
+                                <a href="{{ url('/nephrologies/'.$nephrology->id.'/fuaconsulta') }}" class="btn btn-sm btn-outline-warning" target="_blank"><i class="fas fa-bookmark"></i></a>
 
                             </form>
                         </td>

@@ -101,4 +101,10 @@ class NephrologyController extends Controller
         $pdf = PDF::loadView('nephrologies.consult', compact('nephrology'));
         return $pdf->stream();
     }
+
+    public function fua(Nephrology $nephrology)
+    {
+        $pdf = PDF::loadView('nephrologies.fuaconsulta', compact('nephrology'));
+        return $pdf->stream();
+    }
 }

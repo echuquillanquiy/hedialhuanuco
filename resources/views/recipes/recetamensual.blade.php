@@ -47,7 +47,6 @@
                 <td>{{ $recipe->entregada1 }}</td>
             </tr>
         @endif
-
         @if($recipe->med2)
         <tr>
             <td>{{ $recipe->code2 }}</td>
