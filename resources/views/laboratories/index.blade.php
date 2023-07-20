@@ -62,11 +62,11 @@
                         </td>
 
                         <td>
-                            {{ $laboratory->pre }}
+                            {{ $laboratory->post }}
                         </td>
 
                         <td>
-                            {{ $laboratory->post }}
+                            {{ $laboratory->pre }}
                         </td>
 
                         <td>
