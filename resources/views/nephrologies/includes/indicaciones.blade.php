@@ -15,7 +15,7 @@
     </div>
 
     <div class="form-group col-sm-12 col-lg-3">
-        <label for="date_order">FECHA PROXIMA CITA</label>
-        <input type="date" name="date_order" class="form-control" value="{{ !$nephrology->date_order ? '//' : $nephrology->date_order }}">
+        <label for="date_order">FECHA DE ORDEN</label>
+        <input type="date" name="date_order" class="form-control" value="{{ !$nephrology->date_order ? '//' : $nephrology->date_order }}" readonly>
     </div>
 </div>
