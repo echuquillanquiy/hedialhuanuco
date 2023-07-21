@@ -44,8 +44,8 @@
                     <th scope="col">Turno</th>
                     <th scope="col">UREA POST mg/dl</th>
                     <th scope="col">UREA PRE mg/dl</th>
-                    <th scope="col">HB g/dl</th>
                     <th scope="col">HTO %</th>
+                    <th scope="col">HB g/dl</th>
                     <th scope="col">N° FUA</th>
                     <th scope="col">Fecha de orden</th>
                     <th scope="col">Fecha y hora de creación</th>
