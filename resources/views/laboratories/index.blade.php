@@ -41,6 +41,7 @@
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Paciente</th>
+                    <th scope="col">Turno</th>
                     <th scope="col">UREA POST mg/dl</th>
                     <th scope="col">UREA PRE mg/dl</th>
                     <th scope="col">HB g/dl</th>
@@ -59,6 +60,10 @@
                         </th>
                         <td>
                             {{$laboratory->patient->name}}
+                        </td>
+
+                        <td>
+                            {{ $laboratory->order->shift->name }}
                         </td>
 
                         <td>
