@@ -35,47 +35,48 @@
             <td style="font-size: 0.5rem; text-align: left; width: 8%">{{ $nephrology->patient->age }} años</td>
         </tr>
     </table>
-        <table style="width: 100%; border-collapse:collapse; margin-top:5px;">
 
-            <tr>
-                <td style="font-weight: bold; font-size: 0.6rem; width: 20%">FECHA DE ATENCION: </td>
-                <td style="font-size: 0.6rem; width: 10%">{{ $nephrology->date_order }}</td>
+    <table style="width: 100%; border-collapse:collapse; margin-top:5px;">
 
-                <td style="font-weight: bold; font-size: 0.6rem;">MOTIVO DE CONSULTA: </td>
-                <td style="font-size: 0.6rem; text-align: left;">{{ $nephrology->consult }}</td>
+        <tr>
+            <td style="font-weight: bold; font-size: 0.6rem; width: 20%">FECHA DE ATENCION: </td>
+            <td style="font-size: 0.6rem; width: 10%">{{ $nephrology->date_order }}</td>
 
-                <td style="font-weight: bold; font-size: 0.6rem">TIEMPO DE ENFERMEDAD: </td>
-                <td colspan="2" style="font-size: 0.6rem; text-align: left;">{{ $nephrology->time_disease }}</td>
-            </tr>
-        </table>
-        <table style="width: 100%; border-collapse:collapse; margin-top:5px;">
+            <td style="font-weight: bold; font-size: 0.6rem;">MOTIVO DE CONSULTA: </td>
+            <td style="font-size: 0.6rem; text-align: left;">{{ $nephrology->consult }}</td>
 
-            <tr>
-                <td style="font-weight: bold; font-size: 0.6rem; width: 8%">ANAMNESIS: </td>
-                <td style="font-size: 0.6rem; text-align: left;">{{ $nephrology->anamnesis }} </td>
-
-                <td style="font-weight: bold; font-size: 0.6rem; width: 13%;">FECHA DE INICIO: </td>
-                <td style="font-size: 0.6rem; text-align: left;">{{ $nephrology->date_start }}</td>
-            </tr>
-        </table>
-        <table style="width: 100%; border-collapse:collapse; margin-top:5px;">
-
-            <tr>
-                <td style="font-weight: bold; font-size: 0.6rem; width: 8%;">ETIOLOGIA: </td>
-                <td style="font-size: 0.6rem; text-align: left;">{{ $nephrology->etiology }}</td>
-
-                <td colspan="2" style="font-weight: bold; font-size: 0.6rem; width: 20%">ACCESO VASCULAR ACTUAL: </td>
-                <td style="font-size: 0.6rem; text-align: left;">{{ $nephrology->access }} {{ $nephrology->desc_access }}</td>
-            </tr>
-        </table>
-        <table style="width: 100%; border-collapse:collapse; margin-top:5px;">
-
-            <tr>
-                <td style="font-weight: bold; font-size: 0.6rem; width: 15%">SIGNOS Y SINTOMAS: </td>
-                <td colspan="6" style="font-size: 0.6rem; text-align: left;">{{ $nephrology->symptoms }}</td>
-            </tr>
-        </table>
+            <td style="font-weight: bold; font-size: 0.6rem">TIEMPO DE ENFERMEDAD: </td>
+            <td colspan="2" style="font-size: 0.6rem; text-align: left;">{{ $nephrology->time_disease }}</td>
+        </tr>
     </table>
+    <table style="width: 100%; border-collapse:collapse; margin-top:5px;">
+
+        <tr>
+            <td style="font-weight: bold; font-size: 0.6rem; width: 8%">ANAMNESIS: </td>
+            <td style="font-size: 0.6rem; text-align: left;">{{ $nephrology->anamnesis }} </td>
+
+            <td style="font-weight: bold; font-size: 0.6rem; width: 13%;">FECHA DE INICIO: </td>
+            <td style="font-size: 0.6rem; text-align: left;">{{ $nephrology->date_start }}</td>
+        </tr>
+    </table>
+    <table style="width: 100%; border-collapse:collapse; margin-top:5px;">
+
+        <tr>
+            <td style="font-weight: bold; font-size: 0.6rem; width: 8%;">ETIOLOGIA: </td>
+            <td style="font-size: 0.6rem; text-align: left;">{{ $nephrology->etiology }}</td>
+
+            <td colspan="2" style="font-weight: bold; font-size: 0.6rem; width: 20%">ACCESO VASCULAR ACTUAL: </td>
+            <td style="font-size: 0.6rem; text-align: left;">{{ $nephrology->access }} {{ $nephrology->desc_access }}</td>
+        </tr>
+    </table>
+    <table style="width: 100%; border-collapse:collapse; margin-top:5px;">
+
+        <tr>
+            <td style="font-weight: bold; font-size: 0.6rem; width: 15%">SIGNOS Y SINTOMAS: </td>
+            <td colspan="6" style="font-size: 0.6rem; text-align: left;">{{ $nephrology->symptoms }}</td>
+        </tr>
+    </table>
+
 
     <table style="width: 100%; border-collapse:collapse; margin-top:10px;">
         <tr>
@@ -203,8 +204,14 @@
             <td style="font-weight: bold; font-size: 0.6rem; width: 3%">NO</td>
             <td style="font-weight: bold; font-size: 0.6rem; border: solid 2px black; width: 4%; text-align: center">{{ $nephrology->alteracion_meta == 'NO' ? 'X' : '' }}</td>
             <td width="5%"></td>
-            <td style="font-weight: bold; font-size: 0.6rem; width: 10%">Especificar: </td>
-            <td style="font-size: 0.6rem;">{{ $nephrology->especificacion }}</td>
+            @if($nephrology->alteracion_meta == 'SI')
+                <td style="font-weight: bold; font-size: 0.6rem; width: 10%">Especificar: </td>
+                <td style="font-size: 0.6rem;">{{ $nephrology->especificacion }}</td>
+            @else
+                <td style="font-weight: bold; font-size: 0.6rem; width: 10%"></td>
+                <td style="font-size: 0.6rem;"></td>
+            @endif
+
         </tr>
 
     </table>
@@ -218,8 +225,13 @@
             <td style="font-weight: bold; font-size: 0.6rem; width: 3%">NO</td>
             <td style="font-weight: bold; font-size: 0.6rem; border: solid 2px black; width: 4%; text-align: center">{{ $nephrology->antihipertensivos == 'NO' ? 'X' : '' }}</td>
             <td width="5%"></td>
-            <td style="font-weight: bold; font-size: 0.6rem; width: 10%">Especificar: </td>
-            <td style="font-size: 0.6rem;">{{ $nephrology->especificacion2 }}</td>
+            @if($nephrology->antihipertensivos == 'SI')
+                <td style="font-weight: bold; font-size: 0.6rem; width: 10%">Especificar: </td>
+                <td style="font-size: 0.6rem;">{{ $nephrology->especificacion2 }}</td>
+            @else
+                <td style="font-weight: bold; font-size: 0.6rem; width: 10%"></td>
+                <td style="font-size: 0.6rem;"></td>
+            @endif
         </tr>
     </table>
 

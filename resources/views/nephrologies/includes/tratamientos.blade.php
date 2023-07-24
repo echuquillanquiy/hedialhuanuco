@@ -2,14 +2,15 @@
     <div class="form-group col-sm-12 col-lg-2">
         <label for="anemia">ANEMIA</label>
         <select name="anemia" id="anemia" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
-            <option value="SI" selected>SI</option>
+            <option value="{{ $nephrology->anemia }}" disabled selected>{{ $nephrology->anemia }}</option>
+            <option value="SI">SI</option>
             <option value="NO">NO</option>
         </select>
     </div>
 
     <div class="form-group col-sm-12 col-lg-2">
         <label for="hb">HEMOGLOBINA</label>
-        <input type="number" name="hb" class="form-control" value="{{ !$nephrology->hb ? '0' : $nephrology->hb }}">
+        <input type="text" name="hb" class="form-control" value="{{ !$nephrology->hb ? '-' : $nephrology->hb }}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-2">
@@ -42,7 +43,8 @@
     <div class="form-group col-sm-12 col-lg-2">
         <label for="alteracion_meta">ALTERACION METABOLISMO</label>
         <select name="alteracion_meta" id="alteracion_meta" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
-            <option value="SI" selected>SI</option>
+            <option value="{{ $nephrology->alteracion_meta }}" disabled selected>{{ $nephrology->alteracion_meta }}</option>
+            <option value="SI">SI</option>
             <option value="NO">NO</option>
         </select>
     </div>
@@ -58,7 +60,8 @@
     <div class="form-group col-sm-12 col-lg-2">
         <label for="antihipertensivos">ANTIHIPERTENSIVOS</label>
         <select name="antihipertensivos" id="antihipertensivos" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
-            <option value="SI" selected>SI</option>
+            <option value="{{ $nephrology->antihipertensivos }}" disabled selected>{{ $nephrology->antihipertensivos }}</option>
+            <option value="SI">SI</option>
             <option value="NO">NO</option>
         </select>
     </div>

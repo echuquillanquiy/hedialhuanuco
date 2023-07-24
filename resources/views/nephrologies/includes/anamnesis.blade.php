@@ -27,18 +27,19 @@
     <div class="form-group col-sm-12 col-lg-3">
         <label for="access">Acceso Vascular actual</label>
         <select name="access" id="access" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
+            <option value="{{ $nephrology->access }}" disabled selected>{{ $nephrology->access }}</option>
             <option value="Fístula Arteriovenosa" selected>Fístula Arteriovenosa</option>
             <option value="Catéter venoso central temporal ">Catéter venoso central temporal </option>
             <option value="Catéter Venoso Central Tunelizado">Catéter Venoso Central Tunelizado</option>
         </select>
     </div>
 
-    <div class="form-group col-sm-12 col-lg-2">
+    <div class="form-group col-sm-12 col-lg-3">
         <label for="desc_access">TIPO ACCESO</label>
         <input type="text" name="desc_access" class="form-control" value="{{ !$nephrology->desc_access ? '-' : $nephrology->desc_access }}">
     </div>
 
-    <div class="form-group col-sm-12 col-lg-5">
+    <div class="form-group col-sm-12 col-lg-4">
         <label for="symptoms">Signos y Sintomas</label>
         <input type="text" name="symptoms" class="form-control" value="{{ !$nephrology->symptoms ? 'Niega' : $nephrology->symptoms }}">
     </div>

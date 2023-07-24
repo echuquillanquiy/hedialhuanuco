@@ -167,9 +167,9 @@
 
     </table>
 
-    <table width="100%" style="border-collapse:collapse; margin-top:20px; font-size: 0.8rem;" border="1px">
+    <table width="100%" style="border-collapse:collapse; margin-top:30px; font-size: 0.8rem;" border="1px">
          <tr>
-             <td style="width: 40%; height: 200px; text-align: center">
+             <td colspan="6" style="height: 200px; text-align: center">
                  @if($recipe->order->user_id)
                      <img src="{{ asset($recipe->order->user->image) }}" alt="" width="180px" height="100px">
                  @else
@@ -177,10 +177,15 @@
                  @endif
              </td>
 
-             <td style="width: 50%; text-align: left">
+             <td colspan="6" style="width: 50%; text-align: left">
 
              </td>
          </tr>
+
+        <tr style="text-align: center">
+            <td colspan="6" style="font-weight: bold">SELLO Y FIRMA DEL MEDICO</td>
+            <td colspan="6" style="font-weight: bold">FIRMA Y HUELLA DEL PACIENTE</td>
+        </tr>
     </table>
 
 </div>
