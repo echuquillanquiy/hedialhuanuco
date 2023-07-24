@@ -171,7 +171,7 @@
          <tr>
              <td style="width: 50%">
                  @if($recipe->order->user_id)
-                     <img src="{{ asset($recipe->order->user->image) }}" alt="">
+                     <img src="{{ asset($recipe->order->user->image) }}" alt="" width="150px" height="80px">
                  @else
                      <p>AQUI VA SELLO DEL MEDICO</p>
                  @endif
