@@ -863,7 +863,7 @@
 
     <table width="100%" style="margin-top: 10px; margin-top: 10px">
         <tr>
-            @if($nephrology->order->medical->user_id)
+            @if($nephrology->order->user_id)
                 <td rowspan="6" style="text-align: center;">
                     <img src="{{ asset($nephrology->order->user->image) }}" style="width: 180px;height: 90px">
                 </td>
