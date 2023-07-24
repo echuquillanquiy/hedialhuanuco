@@ -15,7 +15,7 @@
       </a>
   </li>
 
-  @if (auth()->user()->role == 'administrador' && auth()->user()->role == 'doctor')
+  @if (auth()->user()->role == 'administrador')
     <li class="nav-item">
       <a class="nav-link" href="/users">
         <i class="ni ni-single-02 text-green"></i> Médicos
