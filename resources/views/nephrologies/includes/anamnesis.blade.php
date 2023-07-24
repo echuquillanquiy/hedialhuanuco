@@ -102,22 +102,22 @@
 
     <div class="form-group col-sm-12 col-lg-4">
         <label for="dx1">DX1</label>
-        <input type="text" name="dx1" class="form-control" value="{{ !$nephrology->dx1 ? '' : $nephrology->dx1 }}">
+        <input type="text" name="dx1" class="form-control" value="{{ !$nephrology->dx1 ? 'INSUFICIENCIA RENAL TERMINAL' : $nephrology->dx1 }}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-2">
         <label for="cie1">CIE 10</label>
-        <input type="text" name="cie1" class="form-control" value="{{ !$nephrology->cie1 ? '' : $nephrology->cie1 }}">
+        <input type="text" name="cie1" class="form-control" value="{{ !$nephrology->cie1 ? 'N18.0' : $nephrology->cie1 }}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-4">
         <label for="dx2">DX2</label>
-        <input type="text" name="dx2" class="form-control" value="{{ !$nephrology->dx2 ? '' : $nephrology->dx2 }}">
+        <input type="text" name="dx2" class="form-control" value="{{ !$nephrology->dx2 ? 'ANEMIA EN OTRAS ENFERMEDADES CRÓNICAS CLASIFICADAS EN OTRA PARTE' : $nephrology->dx2 }}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-2">
         <label for="cie2">CIE 10</label>
-        <input type="text" name="cie2" class="form-control" value="{{ !$nephrology->cie2 ? '' : $nephrology->cie2 }}">
+        <input type="text" name="cie2" class="form-control" value="{{ !$nephrology->cie2 ? 'D63.8' : $nephrology->cie2 }}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-4">
