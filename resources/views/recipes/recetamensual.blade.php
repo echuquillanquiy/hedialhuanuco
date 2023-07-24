@@ -178,7 +178,7 @@
              </td>
 
              <td style="width: 50%; text-align: left">
-                 firma del paciente
+
              </td>
          </tr>
     </table>
