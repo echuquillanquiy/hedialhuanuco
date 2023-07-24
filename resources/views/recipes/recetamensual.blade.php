@@ -167,7 +167,7 @@
 
     </table>
 
-    <table width="100%" style="border-collapse:collapse; margin-top:20px; font-size: 0.8rem;" border="1px">
+    <table width="100%" style="border-collapse:collapse; margin-top:80px; font-size: 0.8rem;" border="1px">
          <tr>
              <td style="width: 50%">
                  @if($recipe->order->user_id)
