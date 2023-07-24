@@ -169,7 +169,7 @@
 
     <table width="100%" style="border-collapse:collapse; margin-top:20px; font-size: 0.8rem;" border="1px">
          <tr>
-             <td style="width: 50%; height: 300px;">
+             <td style="width: 40%; height: 200px;">
                  @if($recipe->order->user_id)
                      <img src="{{ asset($recipe->order->user->image) }}" alt="" width="180px" height="100px">
                  @else
