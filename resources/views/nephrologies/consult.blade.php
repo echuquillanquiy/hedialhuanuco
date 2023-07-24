@@ -251,7 +251,11 @@
     <table style="width: 100%; border-collapse:collapse; margin-top:10px;">
         <tr>
             <td style="font-weight: bold; font-size: 0.6rem; width: 8%">Se solicita: </td>
-            <td style="font-size: 0.6rem;">{{ $nephrology->solicitud }}</td>
+            <td style="font-size: 0.6rem;">
+                {{ !$nephrology->solicitud ? 'Úrea sérica pre y post hemodiálisis, hemoglobina, hematocrito, perfil de electrolitos (cloro, sodio y potasio), fósforo inorgánico, calcio
+                    total, AST, ALT, albúmina sérica, fosfatasa alcalina, paratohormona, hierro, ferritina, transferrina, anticuerpos para HIV1 y HIV2, Prueba
+                    de sífilis cualitativo, HBsAg, HBsAb, HBcAb, Anticuerpo contra la hepatitis C, Anticuerpo para HTLV1.' : $nephrology->solicitud }}
+            </td>
         </tr>
 
         <tr>
