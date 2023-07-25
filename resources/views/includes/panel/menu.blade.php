@@ -85,7 +85,7 @@
             <i class="ni ni-curved-next text-dark"></i> Formato006
         </a>
     </li>
-        @if(auth()->user()->id == 1 && auth()->user()->id == 20)
+        @if(auth()->user()->id == 1 || auth()->user()->id == 20)
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('medical.fissalweb') }}">
                     <i class="ni ni-curved-next text-dark"></i> FISSAL
