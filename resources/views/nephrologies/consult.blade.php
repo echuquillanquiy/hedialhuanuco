@@ -309,7 +309,7 @@
         </tr>
     </table>
 
-    <table width="100%" style="margin-top: 100px;">
+    <table width="100%" style="margin-top: 50px;">
         <tr>
             @if($nephrology->order->user_id)
                 <td rowspan="6" style="text-align: center;">
