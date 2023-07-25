@@ -174,14 +174,6 @@
             </tr>
         @endif
 
-        @if( $nephrology->epo2000 )
-            <tr>
-                <td colspan="8"></td>
-                <td style="font-size: 0.6rem; width: 10%">Epoetina alfa 2000Ul: </td>
-                <td style="font-size: 0.6rem;">{{ $nephrology->epo2000 }}</td>
-            </tr>
-        @endif
-
         @if( $nephrology->epo4000 )
         <tr>
             <td colspan="8"></td>
