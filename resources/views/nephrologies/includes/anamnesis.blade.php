@@ -46,7 +46,7 @@
 
     <div class="form-group col-sm-12 col-lg-1">
         <label for="temperature">T°</label>
-        <input type="number" name="temperature" class="form-control" value="{{ !$nephrology->temperature ? '0' : $nephrology->temperature }}">
+        <input type="text" name="temperature" class="form-control" value="{{ !$nephrology->temperature ? '0' : $nephrology->temperature }}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-1">
