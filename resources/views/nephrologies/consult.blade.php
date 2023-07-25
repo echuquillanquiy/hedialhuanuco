@@ -250,44 +250,44 @@
 
     <table style="width: 100%; border-collapse:collapse; margin-top:10px;">
         <tr>
-            <td style="font-weight: bold; font-size: 0.6rem; width: 8%">Se solicita: </td>
-            <td style="font-size: 0.6rem;">{{ $nephrology->solicitud }}</td>
+            <td style="font-weight: bold; font-size: 0.7rem; width: 8%">Se solicita: </td>
+            <td style="font-size: 0.7rem;">{{ $nephrology->solicitud }}</td>
         </tr>
 
         <tr>
-            <td style="font-weight: bold; font-size: 0.6rem; width: 20%">Fecha de toma de muestra: </td>
-            <td style="font-size: 0.6rem;">{{ $nephrology->date_lab }}</td>
+            <td style="font-weight: bold; font-size: 0.7rem; width: 20%">Fecha de toma de muestra: </td>
+            <td style="font-size: 0.7rem;">{{ $nephrology->date_lab }}</td>
         </tr>
     </table>
 
     <table style="width: 100%; border-collapse:collapse; margin-top:10px;">
         <tr>
-            <td style="font-weight: bold; font-size: 0.6rem; width: 11%">Proxima Cita: </td>
-            <td style="font-size: 0.6rem;">{{ $nephrology->date_appointment }}</td>
+            <td style="font-weight: bold; font-size: 0.7rem; width: 11%">Proxima Cita: </td>
+            <td style="font-size: 0.7rem;">{{ $nephrology->date_appointment }}</td>
         </tr>
     </table>
 
     <table style="width: 100%; border-collapse:collapse; margin-top:10px;">
         <tr>
-            <td style="font-weight: bold; font-size: 0.6rem; width: 11%">Atendido por: </td>
+            <td style="font-weight: bold; font-size: 0.7rem; width: 11%">Atendido por: </td>
         </tr>
 
         <tr>
-            <td style="font-weight: bold; font-size: 0.6rem; width: 13%">Nombre y Apellido:</td>
-            <td style="font-size: 0.6rem; width: 25%">{{ $nephrology->order->user->name }}</td>
+            <td style="font-weight: bold; font-size: 0.7rem; width: 13%">Nombre y Apellido:</td>
+            <td style="font-size: 0.7rem; width: 25%">{{ $nephrology->order->user->name }}</td>
         </tr>
         <tr>
-            <td style="font-weight: bold; font-size: 0.6rem; width: 13%">Profesion:</td>
-            <td style="font-size: 0.6rem">Medico Cirujano</td>
-        </tr>
-
-        <tr>
-            <td style="font-weight: bold; font-size: 0.6rem; width: 13%">Especialidad:</td>
-            <td style="font-size: 0.6rem">Nefrologia</td>
+            <td style="font-weight: bold; font-size: 0.7rem; width: 13%">Profesion:</td>
+            <td style="font-size: 0.7rem">Medico Cirujano</td>
         </tr>
 
         <tr>
-            <td colspan="8" style="font-size: 0.6rem;"> <strong>N° C.M.P.:</strong> {{ $nephrology->order->user->code_specialty }} - <strong>N° R.N.E.:</strong> {{ $nephrology->order->user->rne }}</td>
+            <td style="font-weight: bold; font-size: 0.7rem; width: 13%">Especialidad:</td>
+            <td style="font-size: 0.7rem">Nefrologia</td>
+        </tr>
+
+        <tr>
+            <td colspan="8" style="font-size: 0.7rem;"> <strong>N° C.M.P.:</strong> {{ $nephrology->order->user->code_specialty }} - <strong>N° R.N.E.:</strong> {{ $nephrology->order->user->rne }}</td>
 
         </tr>
     </table>
