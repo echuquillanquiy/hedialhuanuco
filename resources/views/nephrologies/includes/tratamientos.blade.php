@@ -15,21 +15,21 @@
 
     <div class="form-group col-sm-12 col-lg-2">
         <label for="epo2000">EPO 2000</label>
-        <input type="text" name="epo2000" class="form-control" value="{{ !$nephrology->epo2000 ? ' VECES POR SEMANA' : $nephrology->epo2000 }}">
+        <input type="text" name="epo2000" class="form-control" value="{{ !$nephrology->epo2000 ? '' : $nephrology->epo2000 }}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-2">
         <label for="epo4000">EPO 4000</label>
-        <input type="text" name="epo4000" class="form-control" value="{{ !$nephrology->epo4000 ? 'VECES POR SEMANA' : $nephrology->epo4000 }}">
+        <input type="text" name="epo4000" class="form-control" value="{{ !$nephrology->epo4000 ? '' : $nephrology->epo4000 }}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-2">
         <label for="vitb12">VITAMINA B12</label>
-        <input type="text" name="vitb12" class="form-control" value="{{ !$nephrology->vitb12 ? ' VECES POR SEMANA' : $nephrology->vitb12 }}">
+        <input type="text" name="vitb12" class="form-control" value="{{ !$nephrology->vitb12 ? '' : $nephrology->vitb12 }}">
     </div>
     <div class="form-group col-sm-12 col-lg-2">
         <label for="hierro">HIERRO</label>
-        <input type="text" name="hierro" class="form-control" value="{{ !$nephrology->hierro ? 'VECES POR SEMANA' : $nephrology->hierro }}">
+        <input type="text" name="hierro" class="form-control" value="{{ !$nephrology->hierro ? '' : $nephrology->hierro }}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-12">
