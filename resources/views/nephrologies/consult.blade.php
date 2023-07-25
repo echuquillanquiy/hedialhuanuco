@@ -166,29 +166,46 @@
             <td style="font-size: 0.6rem;">{{ $nephrology->hb }} mg/dl</td>
         </tr>
 
-        <tr>
-            <td colspan="8"></td>
-            <td style="font-size: 0.6rem; width: 10%">Epoetina alfa 2000Ul: </td>
-            <td style="font-size: 0.6rem;">{{ $nephrology->epo2000 }}</td>
-        </tr>
+        @if($nephrology->epo2000)
+            <tr>
+                <td colspan="8"></td>
+                <td style="font-size: 0.6rem; width: 10%">Epoetina alfa 2000Ul: </td>
+                <td style="font-size: 0.6rem;">{{ $nephrology->epo2000 }}</td>
+            </tr>
+        @endif
 
+        @if( $nephrology->epo2000 )
+            <tr>
+                <td colspan="8"></td>
+                <td style="font-size: 0.6rem; width: 10%">Epoetina alfa 2000Ul: </td>
+                <td style="font-size: 0.6rem;">{{ $nephrology->epo2000 }}</td>
+            </tr>
+        @endif
+
+        @if( $nephrology->epo4000 )
         <tr>
             <td colspan="8"></td>
             <td style="font-size: 0.6rem; width: 10%">Epoetina alfa 4000Ul: </td>
             <td style="font-size: 0.6rem;">{{ $nephrology->epo4000 }}</td>
         </tr>
+        @endif
 
-        <tr>
-            <td colspan="8"></td>
-            <td style="font-size: 0.6rem; width: 10%">Hidroxicobalamina: </td>
-            <td style="font-size: 0.6rem;">{{ $nephrology->vitb12 }}</td>
-        </tr>
+        @if( $nephrology->vitb12 )
+            <tr>
+                <td colspan="8"></td>
+                <td style="font-size: 0.6rem; width: 10%">Hidroxicobalamina: </td>
+                <td style="font-size: 0.6rem;">{{ $nephrology->vitb12 }}</td>
+            </tr>
+        @endif
 
-        <tr>
-            <td colspan="8"></td>
-            <td style="font-size: 0.6rem; width: 10%">Hierro: </td>
-            <td style="font-size: 0.6rem;">{{ $nephrology->hierro }}</td>
-        </tr>
+        @if($nephrology->hierro)
+            <tr>
+                <td colspan="8"></td>
+                <td style="font-size: 0.6rem; width: 10%">Hierro: </td>
+                <td style="font-size: 0.6rem;">{{ $nephrology->hierro }}</td>
+            </tr>
+        @endif
+
 
         <tr>
             <td colspan="12" style="font-size: 0.6rem;"><strong>Observacion:</strong> {{ $nephrology->observacion }}</td>
