@@ -15,9 +15,12 @@ class NephrologyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $nephrologies = Nephrology::orderBy('created_at', 'desc')
+        $date_order = $request->get('date_order');
+
+        $nephrologies = Nephrology::orderBy('date_order', 'desc')
+            ->date_order($date_order)
             ->paginate(15);
 
         return view('nephrologies.index', compact('nephrologies'));
