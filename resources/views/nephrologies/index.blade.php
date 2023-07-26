@@ -57,7 +57,7 @@
                             {{$nephrology->id}}
                         </th>
                         <td>
-                            {{$nephrology->patient->name}}
+                            {{$nephrology->patient->name}}, {{$nephrology->patient->dni}}
                         </td>
                         <td>
                             {{$nephrology->order->n_fua}}
