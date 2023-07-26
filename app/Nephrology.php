@@ -17,4 +17,10 @@ class Nephrology extends Model
     {
         return $this->belongsTo(Patient::class);
     }
+
+    public function scopeDate_order($query, $date_order)
+    {
+        if($date_order)
+            return $query->where('date_order', 'LIKE', "%$date_order%");
+    }
 }
