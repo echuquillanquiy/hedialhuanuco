@@ -407,14 +407,14 @@
           </tr>
 
             <tr>
-                <td style="font-size:0.6rem;">Hierro 20 mg Fe/mL INY 5 mL: <span style="border:1px solid #000; padding:10px">{{ $order->nurse->iron }} </span></td>
-                <td style="font-size:0.6rem;">Epoteina alfa 2000 Ul/mL: <span style="border:1px solid #000; padding:10px">{{ $order->nurse->epo2000 }} </span></td>
-                <td style="font-size:0.6rem;">Epoteina alfa 4000 Ul/mL: <span style="border:1px solid #000; padding:10px">{{ $order->nurse->epo4000 }} </span></td>
+                <td style="font-size:0.6rem;">Hierro 20 mg Fe/mL INY 5 mL: <span style="border:1px solid #000; padding:10px">{{ $order->medical->iron }} </span></td>
+                <td style="font-size:0.6rem;">Epoteina alfa 2000 Ul/mL: <span style="border:1px solid #000; padding:10px">{{ $order->medical->epo }} </span></td>
+                <td style="font-size:0.6rem;">Epoteina alfa 4000 Ul/mL: <span style="border:1px solid #000; padding:10px">{{ $order->medical->epo4000 }} </span></td>
             </tr>
 
             <tr>
-                <td style="font-size:0.6rem">Hidroxicobalamina 1mg/mL INY 1mL: <span style="border:1px solid #000; padding:10px">{{ $order->nurse->hidroxi }} </span></td>
-                <td style="font-size:0.6rem">Calcitriol 1 mcg/mL INY: <span style="border:1px solid #000; padding:10px">{{ $order->nurse->calcitriol }} </span></td>
+                <td style="font-size:0.6rem">Hidroxicobalamina 1mg/mL INY 1mL: <span style="border:1px solid #000; padding:10px">{{ $order->medical->vitb12 }} </span></td>
+                <td style="font-size:0.6rem">Calcitriol 1 mcg/mL INY: <span style="border:1px solid #000; padding:10px">{{ $order->nurse->calci }} </span></td>
                 <td style="font-size:0.6rem">Otros: <span style="border:1px solid #000; padding:10px">{{ $order->nurse->others_med }} </span></td>
             </tr>
         </table>
