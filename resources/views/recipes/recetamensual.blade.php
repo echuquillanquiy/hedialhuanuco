@@ -6,7 +6,7 @@
             </td>
 
             <td>
-                <h2 style="text-align: left; width: 120%">RECETA MEDICA POR SESION</h2>
+                <h2 style="text-align: left; width: 120%">RECETA MEDICA</h2>
             </td>
 
             <td style="text-align: right">
