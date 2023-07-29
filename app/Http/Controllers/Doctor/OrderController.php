@@ -84,7 +84,7 @@ class OrderController extends Controller
            'room_id' => 'required',
            'shift_id' => 'required',
            'covid' => 'required',
-            'n_fua' => 'required'
+            'n_fua' => 'required|unique:orders'
 
         ];
 
@@ -93,7 +93,8 @@ class OrderController extends Controller
             'room_id.required' => 'Por favor seleccionar una Sala.',
             'shift_id.required' => 'Por favor seleccionar un Turno.',
             'covid.required' => 'Confirme si el paciente tiene COVID 19.',
-            'n_fua.required' => 'El numero de fua es requerido.'
+            'n_fua.required' => 'El numero de fua es requerido.',
+            'n_fua.unique' => 'El numero de fua es unico.'
         ];
 
         $this->validate($request, $rules, $messages);

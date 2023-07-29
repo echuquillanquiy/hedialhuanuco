@@ -16,7 +16,8 @@ class NumerationController extends Controller
      */
     public function index()
     {
-        $numerations = Numeration::paginate(5);
+        $numerations = Numeration::orderBy('fua', 'desc')
+        ->paginate(5);
 
         return view('numerations.index', compact('numerations'));
     }
@@ -37,8 +38,23 @@ class NumerationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    private function performValidation(Request $request)
+    {
+        $rules = [
+            'fua' => 'unique:numerations',
+        ];
+
+        $messages = [
+            'fua.unique' => 'EL NUMERO DE FUA ES UNICO E IRREPETIBLE INTENTA NUEVAMENTE.',
+        ];
+
+        $this->validate($request, $rules, $messages);
+    }
     public function store(Request $request)
     {
+        $this->performValidation($request);
+
         $numeration = Numeration::create($request->all());
 
         $notification = 'Serie registrada correctamente.';
