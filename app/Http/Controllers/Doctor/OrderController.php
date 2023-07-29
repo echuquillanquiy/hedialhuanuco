@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Doctor;
 
+use App\Numeration;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -59,12 +60,15 @@ class OrderController extends Controller
     public function create(Request $request)
     {
         $fecha = Carbon::now()->format('Y-m-d');
-        $ultima_fua= Order::select('n_fua', 'date_order')->whereDate('date_order', '>=', $fecha)->latest()->first();
+        //$ultima_fua= Order::select('n_fua', 'date_order')->whereDate('date_order', '>=', $fecha)->latest()->first();
 
-        if ($ultima_fua == null)
+        $ultima_fua = Numeration::select('fua')->latest()->first();
+        $sig_fua = $ultima_fua->fua + 1;
+
+        /*if ($ultima_fua == null)
            $sig_fua = 5000;
         else
-            $sig_fua = $ultima_fua->n_fua + 1;
+            $sig_fua = $ultima_fua->n_fua + 1;*/
 
         $patients = Patient::all();
         $rooms = Room::all();
@@ -106,6 +110,9 @@ class OrderController extends Controller
         }
 
         $order = Order::create($request->all());
+        $numerarion_save = Numeration::create([
+            'fua' => $request->n_fua
+        ]);
 
         $orders_data = [
             'order_id' => $order->id,

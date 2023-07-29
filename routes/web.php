@@ -91,5 +91,7 @@ Route::middleware(['auth', 'doctor'])->namespace('Doctor')->group(function () {
     Route::resource('recipes', 'RecipeController');
     Route::get('/recipes/{recipe}/receta_mensual', 'RecipeController@recetaMensual');
 
+    Route::resource('numerations', 'NumerationController');
+
 });
 

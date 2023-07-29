@@ -86,6 +86,12 @@
         </a>
     </li>
 
+        <li class="nav-item">
+            <a class="nav-link" href="/numerations">
+                <i class="ni ni-curved-next text-dark"></i> Numeracion FUA
+            </a>
+        </li>
+
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('medical.fissalweb') }}">
                     <i class="ni ni-curved-next text-dark"></i> FISSAL
