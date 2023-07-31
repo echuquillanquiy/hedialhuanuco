@@ -41,7 +41,8 @@ class Medical extends Model
         'iron',
         'vitb12',
         'calci',
-        'date_order'
+        'date_order',
+        'fua_observacion'
 
     ];
 

@@ -1,5 +1,9 @@
 @extends('layouts.panel')
 
+@section('styles')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+@endsection
+
 @section('content')
 
 <div class="card shadow">
@@ -288,6 +292,16 @@
             <input type="time" name="end_hour" class="form-control" value="{{ old('end_hour', $medical->end_hour) }}">
         </div>
 
+        <div class="form-group col-sm-12 col-lg-6">
+            <label for="fua_observacion">Turnos</label>
+            <select name="fua_observacion" id="fua_observacion" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
+                <option value="{{ !$medical->fua_observacion ? '' : $medical->fua_observacion }}" disabled selected>{{ !$medical->fua_observacion ? '[SELECCIONE UNA OPCION]' : $medical->fua_observacion }}</option>
+                <option value="PACIENTE PRESENTA MOVIMIENTOS INVOLUNTARIOS EN MIEMBROS SUPERIORES, IMPOSIBILITADO PARA FIRMAR">PACIENTE PRESENTA MOVIMIENTOS INVOLUNTARIOS EN MIEMBROS SUPERIORES, IMPOSIBILITADO PARA FIRMAR</option>
+                <option value="PACIENTE REFIERE DISMINUCION DE LA AGUDEZA VISUAL, IMPOSIBILITADO PARA FIRMAR">PACIENTE REFIERE DISMINUCION DE LA AGUDEZA VISUAL, IMPOSIBILITADO PARA FIRMAR</option>
+                <option value="PACIENTE PRESENTA ASTENIA POST DIALISIS, IMPOSIBILITADO AL MOMENTO DE FIRMAR">PACIENTE PRESENTA ASTENIA POST DIALISIS, IMPOSIBILITADO AL MOMENTO DE FIRMAR</option>
+            </select>
+        </div>
+
     </div>
 
 
@@ -302,4 +316,5 @@
 
 @section('scripts')
 <script src="{{ asset('vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
 @endsection

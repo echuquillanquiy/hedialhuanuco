@@ -718,9 +718,22 @@
         <tr style="font-size: 0.5rem; font-weight: bold; background: #000000">
             <td colspan="8" style="height: 10px; color: white;">OBSERVACIONES</td>
         </tr>
-        <tr style="font-size: 0.5rem; font-weight: bold;">
-            <td colspan="8" style="text-align: left"></td>
-        </tr>
+
+        @if($order->medical->fua_observacion)
+            <tr style="font-size: 0.5rem;">
+                <td colspan="8" style="text-align: left">{{ $order->medical->fua_observacion }}</td>
+            </tr>
+        @else
+            <tr style="font-size: 0.5rem;">
+                <td colspan="8" style="text-align: left"></td>
+            </tr>
+        @endif
+
+        @if($order->medical->fua_observacion)
+            <tr style="font-size: 0.5rem;">
+                <td colspan="8" style="text-align: left">PACIENTE COLOCA SU HUELLA COMO SEÑAL DE CONFORMIDAD DE LA ATENCION.</td>
+            </tr>
+        @endif
 
     </table>
 
