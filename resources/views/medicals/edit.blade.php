@@ -293,7 +293,7 @@
         </div>
 
         <div class="form-group col-sm-12 col-lg-6">
-            <label for="fua_observacion">Turnos</label>
+            <label for="fua_observacion">SI EL PACIENTE NO PUEDE FIRMAR SELECCIONE UNA OPCION</label>
             <select name="fua_observacion" id="fua_observacion" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
                 <option value="{{ !$medical->fua_observacion ? '' : $medical->fua_observacion }}" disabled selected>{{ !$medical->fua_observacion ? '[SELECCIONE UNA OPCION]' : $medical->fua_observacion }}</option>
                 <option value="PACIENTE PRESENTA MOVIMIENTOS INVOLUNTARIOS EN MIEMBROS SUPERIORES, IMPOSIBILITADO PARA FIRMAR">PACIENTE PRESENTA MOVIMIENTOS INVOLUNTARIOS EN MIEMBROS SUPERIORES, IMPOSIBILITADO PARA FIRMAR</option>
