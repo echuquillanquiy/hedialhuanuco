@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Doctor;
 
 use Carbon\Carbon;
+//use http\Client\Curl\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Nurse;
 use App\Medical;
 use App\Room;
+use App\User;
 use App\Shift;
 use Monolog\Handler\IFTTTHandler;
 
@@ -92,6 +94,8 @@ class NurseController extends Controller
      */
     public function edit($id)
     {
+        $users = User::where('role', '=', 'enfermera')->get();
+
         $nurse = Nurse::findOrFail($id);
 
         //$generados = $nurse->where('patient', $nurse->patient)->count();
@@ -202,7 +206,7 @@ class NurseController extends Controller
             $nurse->nhd = $nurse->nhd;
         }
 
-        return view('nurses.edit', compact('nurse'));
+        return view('nurses.edit', compact('nurse', 'users'));
     }
 
     /**

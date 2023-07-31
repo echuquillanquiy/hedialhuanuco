@@ -410,9 +410,20 @@
 
                 <div class="row text-center">
 
-                    <div class="form-group col-sm-12 col-lg-12">
+                    <div class="form-group col-sm-12 col-lg-9">
                         <label for="end_observation">Observación Final</label>
                         <textarea class="form-control" id="" name="end_observation" rows="3" value="">{{ old('end_observation', $nurse->end_observation) }}</textarea>
+                    </div>
+
+                    <div class="form-group col-sm-12 col-lg-3">
+                        <label for="user_id">USUARIO DE LA ATENCION</label>
+                        <select class="form-control" name="user_id" data-toggle="select" title="Simple select" data-placeholder="Select a state">
+                            <option value="{{ !$nurse->user_id ? auth()->user()->id : $nurse->user_id }}">{{ !$nurse->user_id ? auth()->user()->name : $nurse->user->name }}</option>
+                            @foreach($users as $user)
+                                <option value="{{ $user->id }}">{{ $user->name }}</option>
+                            @endforeach
+
+                        </select>
                     </div>
 
                 </div>
