@@ -1,5 +1,11 @@
 @extends('layouts.panel')
 
+@section('styles')
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+
+@endsection
+
 @section('content')
 
 <div class="card shadow">
@@ -417,7 +423,7 @@
 
                     <div class="form-group col-sm-12 col-lg-3">
                         <label for="user_id">USUARIO DE LA ATENCION</label>
-                        <select class="form-control" name="user_id" data-toggle="select" title="Simple select" data-placeholder="Select a state">
+                        <select class="form-control selectpicker" name="user_id" data-live-search="true" data-style="btn-info">
                             <option value="{{ !$nurse->user_id ? auth()->user()->id : $nurse->user_id }}">{{ !$nurse->user_id ? auth()->user()->name : $nurse->user->name }}</option>
                             @foreach($users as $user)
                                 <option value="{{ $user->id }}">{{ $user->name }}</option>
@@ -797,6 +803,8 @@
 @endsection
 
 @section('scripts')
-<script src="{{ asset('vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
+
+    <script src="{{ asset('vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
 
 @endsection
