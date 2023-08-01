@@ -153,7 +153,7 @@
     <div class="form-group col-sm-12 col-lg-2">
         <label for="tiempo_hd">TIEMPO HD</label>
         <select name="tiempo_hd" id="tiempo_hd" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
-            <option value="{{ $nephrology->tiempo_hd }}" disabled>{{ $nephrology->tiempo_hd }}</option>
+            <option value="{{ $nephrology->tiempo_hd }}" disabled selected>{{ $nephrology->tiempo_hd }}</option>
             <option value="3.5">3.5</option>
             <option value="3.25">3.25</option>
             <option value="3.75">3.75</option>

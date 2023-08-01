@@ -185,7 +185,7 @@
         @if( $nephrology->vitb12 )
             <tr>
                 <td colspan="8"></td>
-                <td style="font-size: 0.6rem; width: 10%">Hidroxicobalamina: </td>
+                <td style="font-size: 0.6rem; width: 10%">Hidroxicobalamina 1mg: </td>
                 <td style="font-size: 0.6rem;">{{ $nephrology->vitb12 }}</td>
             </tr>
         @endif
@@ -193,7 +193,7 @@
         @if($nephrology->hierro)
             <tr>
                 <td colspan="8"></td>
-                <td style="font-size: 0.6rem; width: 10%">Hierro: </td>
+                <td style="font-size: 0.6rem; width: 10%">Hierro 100mg: </td>
                 <td style="font-size: 0.6rem;">{{ $nephrology->hierro }}</td>
             </tr>
         @endif
