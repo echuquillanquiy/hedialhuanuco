@@ -112,6 +112,10 @@ class CorrectionController extends Controller
     {
         $fecha_orden = $correction->order->date_order;
 
+        $anio = '';
+        $mes = '';
+        $dia = '';
+
         $partes = explode('-', $fecha_orden);
         if (count($partes) === 3)
         {
@@ -122,9 +126,11 @@ class CorrectionController extends Controller
             $anio = (int)$anio;
             $mes = (int)$mes;
             $dia = (int)$dia;
+        } else {
+            echo "no es el formato requerido";
         }
 
-        $pdf = PDF::loadView('corrections.subsanacion', compact('correction', 'dia', 'mes', 'anio'));
+        $pdf = PDF::loadView('corrections.subsanacion', compact('correction', 'anio', 'mes', 'dia'));
         return $pdf->stream();
     }
 }
