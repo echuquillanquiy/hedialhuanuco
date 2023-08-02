@@ -112,13 +112,15 @@ class CorrectionController extends Controller
     {
         $fecha_orden = $correction->order->date_order;
 
-        $carbonFecha = Carbon::createFromFormat('Y-m-d', $fecha_orden);
+        list($anio, $mes, $dia) = explode('-', $fecha_orden);
 
-        $anio = $carbonFecha->year;
-        $mes = $carbonFecha->month;
-        $dia = $carbonFecha->day;
+        $fechacarbon = Carbon::create($anio, $mes, $dia);
 
-        $pdf = PDF::loadView('corrections.subsanacion', compact('correction', 'anio', 'mes', 'dia'));
+        $Nanio = $fechacarbon->format('Y');
+        $Nmes = $fechacarbon->format('m');
+        $Ndia = $fechacarbon->format('d');
+
+        $pdf = PDF::loadView('corrections.subsanacion', compact('correction', 'Nanio', 'Nmes', 'Ndia'));
         return $pdf->stream();
     }
 }
