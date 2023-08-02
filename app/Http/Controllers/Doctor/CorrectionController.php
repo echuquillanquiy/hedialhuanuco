@@ -8,6 +8,8 @@ use App\Order;
 use App\User;
 use Illuminate\Http\Request;
 
+use PDF;
+
 class CorrectionController extends Controller
 {
     /**
@@ -54,6 +56,9 @@ class CorrectionController extends Controller
     public function store(Request $request)
     {
         $corrections = Correction::create($request->all());
+
+        $notification = 'La Subsanacion fue creada correctamente.';
+        return back()->with(compact('notification'));
     }
 
     /**
@@ -99,5 +104,11 @@ class CorrectionController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function subsanacion(Correction $correction)
+    {
+        $pdf = PDF::loadView('corrections.subsanacion', compact('correction'));
+        return $pdf->stream();
     }
 }

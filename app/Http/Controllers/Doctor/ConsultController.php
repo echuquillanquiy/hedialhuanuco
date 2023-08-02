@@ -3,11 +3,14 @@
 namespace App\Http\Controllers\Doctor;
 
 use App\Consult;
+use App\Correction;
 use App\Http\Controllers\Controller;
 use App\Medicament;
 use App\Patient;
 use App\User;
 use Illuminate\Http\Request;
+
+use PDF;
 
 class ConsultController extends Controller
 {
@@ -112,4 +115,5 @@ class ConsultController extends Controller
     {
         //
     }
+
 }

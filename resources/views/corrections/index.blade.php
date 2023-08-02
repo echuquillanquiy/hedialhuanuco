@@ -46,7 +46,10 @@
                 <thead class="thead-light text-center">
                 <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Paciente</th>
+                    <th scope="col">FUA SUBSANACION</th>
+                    <th scope="col">FUA A SUBSANAR</th>
+                    <th scope="col">PACIENTE</th>
+                    <th scope="col">FECHA</th>
                     <th>Opciones</th>
                 </tr>
                 </thead>
@@ -57,10 +60,21 @@
                             {{$correction->id}}
                         </th>
 
+                        <th scope="row">
+                            {{$correction->serie_fua}}
+                        </th>
+
                         <td>
-                            {{$correction->patient->name}}
+                            {{$correction->order->n_fua }}
                         </td>
 
+                        <td>
+                            {{$correction->order->patient->name}}
+                        </td>
+
+                        <td>
+                            {{$correction->order->date_order}}
+                        </td>
 
                         <td>
 
@@ -70,7 +84,7 @@
 
                                 <a href="{{ url('/corrections/'.$correction->id.'/edit') }}" class="btn btn-sm btn-primary" target="_blank">Editar</a>
 
-                                <a href="{{ url('/corrections/'.$correction->id.'/results') }}" class="btn btn-sm btn-outline-default" target="_blank"><i class="fas fa-syringe"></i></a>
+                                <a href="{{ url('/corrections/'.$correction->id.'/fua') }}" class="btn btn-sm btn-outline-default" target="_blank"><i class="fas fa-syringe"></i></a>
                             </form>
                         </td>
                     </tr>

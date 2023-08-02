@@ -95,6 +95,7 @@ Route::middleware(['auth', 'doctor'])->namespace('Doctor')->group(function () {
     Route::resource('numerations', 'NumerationController');
 
     Route::resource('corrections', 'CorrectionController');
+    Route::get('/corrections/{correction}/fua', 'CorrectionController@subsanacion');
 
 });
 

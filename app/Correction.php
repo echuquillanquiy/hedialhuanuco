@@ -10,6 +10,6 @@ class Correction extends Model
 
     public function order()
     {
-        return $this->hasOne(Order::class)->withDefault();
+        return $this->belongsTo(Order::class)->withDefault();
     }
 }
