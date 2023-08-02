@@ -112,19 +112,11 @@ class CorrectionController extends Controller
     {
         $fecha_orden = $correction->order->date_order;
 
-        $partes = explode('-', $fecha_orden);
-        if (count($partes) === 3)
-        {
-            // Asignar los valores solo si existen las 3 partes
-            list($anio, $mes, $dia) = $partes;
+        $carbonFecha = Carbon::createFromFormat('Y-m-d', $fecha_orden);
 
-            // Convertir los valores a números enteros (opcional)
-            $anio = (int)$anio;
-            $mes = (int)$mes;
-            $dia = (int)$dia;
-        } else {
-            echo "no es el formato requerido";
-        }
+        $anio = $carbonFecha->year;
+        $mes = $carbonFecha->month;
+        $dia = $carbonFecha->day;
 
         $pdf = PDF::loadView('corrections.subsanacion', compact('correction', 'anio', 'mes', 'dia'));
         return $pdf->stream();
