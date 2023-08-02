@@ -143,7 +143,7 @@
     <div class="form-group col-sm-12 col-lg-3">
         <label for="preescripcion">PRESCRIPCION DE DIALISIS</label>
         <select name="preescripcion" id="preescripcion" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
-            <option value="{{ $nephrology->preescripcion }}" disabled>{{ $nephrology->preescripcion }}</option>
+            <option value="{{ $nephrology->preescripcion }}" disabled selected>{{ $nephrology->preescripcion }}</option>
             <option value="TRES VECES POR SEMANA">TRES VECES POR SEMANA</option>
             <option value="DOS VECES POR SEMANA">DOS VECES POR SEMANA</option>
             <option value="UNA VEZ POR SEMANA">UNA VEZ POR SEMANA</option>
@@ -163,9 +163,9 @@
     </div>
 
     <div class="form-group col-sm-12 col-lg-2">
-        <label for="area_filtro">TIEMPO HD</label>
+        <label for="area_filtro">FILTRO</label>
         <select name="area_filtro" id="area_filtro" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
-            <option value="{{ $nephrology->area_filtro }}" disabled>{{ $nephrology->area_filtro }}</option>
+            <option value="{{ $nephrology->area_filtro }}" disabled selected>{{ $nephrology->area_filtro }}</option>
             <option value="1.9" >1.9</option>
             <option value="2.1">2.1</option>
             <option value="1.4">1.4</option>

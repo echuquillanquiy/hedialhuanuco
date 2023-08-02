@@ -77,6 +77,7 @@ Route::middleware(['auth', 'doctor'])->namespace('Doctor')->group(function () {
 	Route::get('order-list-excel', 'OrderController@exportOrderExcel')->name('orders.excel');
     Route::get('/orders/{order}/fua', 'OrderController@fuapaciente');
 
+
 	Route::resource('tracings', 'TracingController');
 	Route::get('/tracings/{tracing}/impresion', 'TracingController@showPdf');
 	Route::resource('format006s', 'Format006Controller');
@@ -92,6 +93,8 @@ Route::middleware(['auth', 'doctor'])->namespace('Doctor')->group(function () {
     Route::get('/recipes/{recipe}/receta_mensual', 'RecipeController@recetaMensual');
 
     Route::resource('numerations', 'NumerationController');
+
+    Route::resource('corrections', 'CorrectionController');
 
 });
 

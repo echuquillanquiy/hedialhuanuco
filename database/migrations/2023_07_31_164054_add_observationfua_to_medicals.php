@@ -14,7 +14,9 @@ class AddObservationfuaToMedicals extends Migration
     public function up()
     {
         Schema::table('medicals', function (Blueprint $table) {
+
             $table->text('fua_observacion')->nullable();
+
         });
     }
 

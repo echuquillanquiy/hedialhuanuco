@@ -60,11 +60,17 @@
           </ul>
         </a>
 
-        <a class="nav-link" href="/tracings">
+          <a class="nav-link" href="/corrections">
+              <ul class="text-gray">
+                  <i class="ni ni-pin-3 text-Secondary"></i> FUA Subsan.
+              </ul>
+          </a>
+
+<!--        <a class="nav-link" href="/tracings">
           <ul class="text-gray">
             <i class="ni ni-bold-right text-Secondary"></i> Generar seguimiento
           </ul>
-        </a>
+        </a>-->
 
         <a class="nav-link" href="/medicals">
           <ul class="text-gray">
