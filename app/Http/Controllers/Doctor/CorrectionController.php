@@ -112,9 +112,7 @@ class CorrectionController extends Controller
     {
         $fecha_orden = $correction->order->date_order;
 
-        $dia = Carbon::createFromFormat('Y-m-d', $correction->order->date_order)->format('d');
-        $mes = Carbon::createFromFormat('Y-m-d', $correction->order->date_order)->format('m');
-        $anio = Carbon::createFromFormat('Y-m-d', $correction->order->date_order)->format('Y');
+        list($anio, $mes, $dia) = explode('-', $fecha_orden);
 
         $pdf = PDF::loadView('corrections.subsanacion', compact('correction', 'dia', 'mes', 'anio'));
         return $pdf->stream();
