@@ -84,7 +84,7 @@
 
                                 <a href="{{ url('/corrections/'.$correction->id.'/edit') }}" class="btn btn-sm btn-primary" target="_blank">Editar</a>
 
-                                <a href="{{ url('/corrections/'.$correction->id.'/fua') }}" class="btn btn-sm btn-outline-default" target="_blank"><i class="fas fa-syringe"></i></a>
+                                <a href="{{ url('/corrections/'.$correction->id.'/subsanacionfua') }}" class="btn btn-sm btn-outline-default" target="_blank"><i class="fas fa-syringe"></i></a>
                             </form>
                         </td>
                     </tr>
