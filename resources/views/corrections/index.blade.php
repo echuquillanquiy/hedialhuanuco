@@ -46,9 +46,9 @@
                 <thead class="thead-light text-center">
                 <tr>
                     <th scope="col">ID</th>
+                    <th scope="col">PACIENTE</th>
                     <th scope="col">FUA SUBSANACION</th>
                     <th scope="col">FUA A SUBSANAR</th>
-                    <th scope="col">PACIENTE</th>
                     <th scope="col">FECHA</th>
                     <th>Opciones</th>
                 </tr>
@@ -60,16 +60,16 @@
                             {{$correction->id}}
                         </th>
 
+                        <td>
+                            {{$correction->order->patient->name}}
+                        </td>
+
                         <th scope="row">
                             {{$correction->serie_fua}}
                         </th>
 
                         <td>
                             {{$correction->order->n_fua }}
-                        </td>
-
-                        <td>
-                            {{$correction->order->patient->name}}
                         </td>
 
                         <td>
