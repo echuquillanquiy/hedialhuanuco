@@ -27,7 +27,7 @@
     <div class="form-group col-sm-12 col-lg-3">
         <label for="access">Acceso Vascular actual</label>
         <select name="access" id="access" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
-            <option value="{{ $nephrology->access }}" disabled selected>{{ $nephrology->access }}</option>
+            <option value="{{ !$nephrology->access ? '' : $nephrology->access }}" disabled selected>{{ !$nephrology->access ? '' : $nephrology->access }}</option>
             <option value="Fístula Arteriovenosa" selected>Fístula Arteriovenosa</option>
             <option value="Catéter venoso central temporal ">Catéter venoso central temporal </option>
             <option value="Catéter Venoso Central Tunelizado">Catéter Venoso Central Tunelizado</option>
