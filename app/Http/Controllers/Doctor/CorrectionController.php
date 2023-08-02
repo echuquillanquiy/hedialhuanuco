@@ -112,7 +112,17 @@ class CorrectionController extends Controller
     {
         $fecha_orden = $correction->order->date_order;
 
-        list($anio, $mes, $dia) = explode('-', $fecha_orden);
+        $partes = explode('-', $fecha_orden);
+        if (count($partes) === 3)
+        {
+            // Asignar los valores solo si existen las 3 partes
+            list($anio, $mes, $dia) = $partes;
+
+            // Convertir los valores a números enteros (opcional)
+            $anio = (int)$anio;
+            $mes = (int)$mes;
+            $dia = (int)$dia;
+        }
 
         $pdf = PDF::loadView('corrections.subsanacion', compact('correction', 'dia', 'mes', 'anio'));
         return $pdf->stream();
