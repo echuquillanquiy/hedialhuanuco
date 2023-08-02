@@ -44,9 +44,8 @@ class CorrectionController extends Controller
 
 
         $orders = Order::all('n_fua', 'date_order', 'type', 'user_id', 'id');
-        $users = User::where('role', '=', 'doctor')->get();
 
-        return view('corrections.create', compact('orders', 'users', 'sig_fua'));
+        return view('corrections.create', compact('orders', 'sig_fua'));
     }
 
     /**
@@ -110,13 +109,9 @@ class CorrectionController extends Controller
 
     public function subsanacion(Correction $correction)
     {
-        $fecha_orden = $correction->order->date_order;
+        $fecha_orden = $correction->date_order;
 
-        $separar = explode('-', $fecha_orden);
-
-        $anio = $separar[0];
-        $mes = $separar[1];
-        $dia = $separar[2];
+        list($anio, $mes, $dia) = explode('-', $fecha_orden);
 
         $pdf = PDF::loadView('corrections.subsanacion', compact('correction', 'anio', 'mes', 'dia'));
         return $pdf->stream();

@@ -20,6 +20,7 @@ class CreateCorrectionsTable extends Migration
             $table->foreign('order_id')->references('id')->on('orders');
 
             $table->unsignedBigInteger('serie_fua')->nullable();
+            $table->date('date_order')->nullable();
 
             $table->timestamps();
         });

@@ -59,8 +59,23 @@
                     </div>
 
                     <div class="form-group col-sm-12 col-lg-2">
-                        <label for="code1">ORDEN</label>
+                        <label for="order">FUA - FECHA</label>
+                        <select name="fechafua" id="obtenerfuafecha" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
+                            <option value="">[BUSQUE FUA A SUBSANAR]</option>
+                            @foreach ($orders as $order)
+                                <option value="{{ $order->date_order }}">{{ $order->n_fua }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <div class="form-group col-sm-12 col-lg-2">
+                        <label for="order_id">ORDEN</label>
                         <input type="text" name="order_id" id="order_id" class="form-control" readonly>
+                    </div>
+
+                    <div class="form-group col-sm-12 col-lg-2">
+                        <label for="date_order">FECHA DE ORDEN</label>
+                        <input type="text" name="date_order" id="date_order" class="form-control" readonly>
                     </div>
 
                 </div>
