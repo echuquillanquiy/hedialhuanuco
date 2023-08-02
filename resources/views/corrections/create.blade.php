@@ -75,7 +75,7 @@
 
                     <div class="form-group col-sm-12 col-lg-2">
                         <label for="date_order">FECHA DE ORDEN</label>
-                        <input type="text" name="date_order" id="date_order" class="form-control" readonly>
+                        <input type="text" name="date_order" id="date_order" class="form-control">
                     </div>
 
                 </div>
