@@ -73,7 +73,7 @@
                         </td>
 
                         <td>
-                            {{$correction->order->date_order}}
+                            {{$correction->date_order}}
                         </td>
 
                         <td>
