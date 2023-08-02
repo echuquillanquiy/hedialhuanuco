@@ -112,26 +112,13 @@ class CorrectionController extends Controller
     {
         $fecha_orden = $correction->order->date_order;
 
-// Dividir la fecha en partes separadas
-        list($anio, $mes, $dia) = explode('-', $fecha_orden);
+        $separar = explode('-', $fecha_orden);
 
-// Comprobar si la fecha es válida
-        if (checkdate($mes, $dia, $anio)) {
-            // Crear una instancia de Carbon con la fecha separada
-            $fechacarbon = Carbon::create($anio, $mes, $dia);
+        $anio = $separar[0];
+        $mes = $separar[1];
+        $dia = $separar[2];
 
-            // Obtener las partes de la fecha formateadas
-            $Nanio = $fechacarbon->format('Y');
-            $Nmes = $fechacarbon->format('m');
-            $Ndia = $fechacarbon->format('d');
-
-            // Generar el PDF con las variables
-            $pdf = PDF::loadView('corrections.subsanacion', compact('correction', 'Nanio', 'Nmes', 'Ndia'));
-            return $pdf->stream();
-        } else {
-            // La fecha no es válida, puedes manejar el error o mostrar un mensaje apropiado.
-            // Por ejemplo:
-            return 'La fecha no es válida.';
-        }
+        $pdf = PDF::loadView('corrections.subsanacion', compact('correction', 'anio', 'mes', 'dia'));
+        return $pdf->stream();
     }
 }
