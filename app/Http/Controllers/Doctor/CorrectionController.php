@@ -112,10 +112,6 @@ class CorrectionController extends Controller
     {
         $fecha_orden = $correction->order->date_order;
 
-        $anio = '';
-        $mes = '';
-        $dia = '';
-
         $partes = explode('-', $fecha_orden);
         if (count($partes) === 3)
         {
