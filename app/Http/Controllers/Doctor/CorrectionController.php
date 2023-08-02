@@ -10,7 +10,6 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use PDF;
-use Symfony\Component\Routing\Annotation\Route;
 
 class CorrectionController extends Controller
 {
@@ -111,9 +110,13 @@ class CorrectionController extends Controller
     {
         $fecha_orden = $correction->date_order;
 
-        list($anio, $mes, $dia) = explode('-', $fecha_orden);
+        $carbonAnio = Carbon::parse($fecha_orden)->format('Y');
+        $carbonMes = Carbon::parse($fecha_orden)->format('m');
+        $carbonDia = Carbon::parse($fecha_orden)->format('d');
 
-        $pdf = PDF::loadView('corrections.subsanacion', compact('correction', 'anio', 'mes', 'dia'));
+
+
+        $pdf = PDF::loadView('corrections.subsanacion', compact('correction', 'carbonAnio', 'carbonMes', 'carbonDia'));
         return $pdf->stream();
     }
 }
