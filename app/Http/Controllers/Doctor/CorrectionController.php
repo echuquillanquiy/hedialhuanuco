@@ -6,9 +6,11 @@ use App\Correction;
 use App\Http\Controllers\Controller;
 use App\Order;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use PDF;
+use Symfony\Component\Routing\Annotation\Route;
 
 class CorrectionController extends Controller
 {
@@ -108,7 +110,13 @@ class CorrectionController extends Controller
 
     public function subsanacion(Correction $correction)
     {
-        $pdf = PDF::loadView('corrections.subsanacion', compact('correction'));
+        $fecha_orden = $correction->order->date_order;
+
+        $dia = Carbon::createFromFormat('Y-m-d', $correction->order->date_order)->format('d');
+        $mes = Carbon::createFromFormat('Y-m-d', $correction->order->date_order)->format('m');
+        $anio = Carbon::createFromFormat('Y-m-d', $correction->order->date_order)->format('Y');
+
+        $pdf = PDF::loadView('corrections.subsanacion', compact('correction', 'dia', 'mes', 'anio'));
         return $pdf->stream();
     }
 }

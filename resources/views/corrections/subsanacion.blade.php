@@ -83,9 +83,9 @@
         </tr>
 
         <tr>
-            <td style="height: 10px; font-size: 0.6rem;  font-weight: bold">0</td>
-            <td style="height: 10px; font-size: 0.6rem;  font-weight: bold">0</td>
-            <td style="height: 10px; font-size: 0.6rem;  font-weight: bold">0</td>
+            <td style="height: 10px; font-size: 0.6rem;  font-weight: bold">{{ $dia }}</td>
+            <td style="height: 10px; font-size: 0.6rem;  font-weight: bold">{{ $mes }}</td>
+            <td style="height: 10px; font-size: 0.6rem;  font-weight: bold">{{ $anio }}</td>
             <td style="font-size: 0.4rem; background: #BEBEBE">SEMICONTRIBUTIVO</td>
             <td style="font-size: 0.5rem; font-weight: bold;"></td>
         </tr>
