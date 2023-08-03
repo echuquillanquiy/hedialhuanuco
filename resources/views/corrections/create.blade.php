@@ -53,17 +53,7 @@
                         <select name="order" id="obtenerfua" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
                             <option value="">[BUSQUE FUA A SUBSANAR]</option>
                             @foreach ($orders as $order)
-                                <option value="{{ $order->id }}">{{ $order->n_fua }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-
-                    <div class="form-group col-sm-12 col-lg-2">
-                        <label for="order">FUA - FECHA</label>
-                        <select name="fechafua" id="obtenerfuafecha" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
-                            <option value="">[BUSQUE FUA A SUBSANAR]</option>
-                            @foreach ($orders as $order)
-                                <option value="{{ $order->date_order }}">{{ $order->n_fua }}</option>
+                                <option value="{{ $order->id }}">{{ $order->n_fua }} - {{ $order->patient->name }}</option>
                             @endforeach
                         </select>
                     </div>

@@ -42,7 +42,7 @@ class CorrectionController extends Controller
             $sig_fua = $ultima_fua->serie_fua + 1;
 
 
-        $orders = Order::all('n_fua', 'date_order', 'type', 'user_id', 'id');
+        $orders = Order::all();
 
         return view('corrections.create', compact('orders', 'sig_fua'));
     }
