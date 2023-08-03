@@ -80,7 +80,7 @@
     <div style="text-align: center">
 
         @if($order->user_id)
-            <img src="{{ asset($order->medical->user->image) }}" width="250" height="120" alt="">
+            <img src="{{ asset($order->user->image) }}" width="250" height="120" alt="">
         @else
             <p>AQUI VA SELLO DEL MEDICO</p>
         @endif
