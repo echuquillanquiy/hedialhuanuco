@@ -248,7 +248,7 @@
 
     </table>
 
-    <table width="100%" style="border-collapse:collapse; margin-bottom: 50px">
+    <table width="100%" style="border-collapse:collapse; margin-bottom: 100px">
         <tr style="font-weight: bold;">
 
             @if($correction->order->user_id)
