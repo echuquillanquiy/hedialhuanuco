@@ -15,7 +15,7 @@
             <form action="{{ route('medical.fissalweb') }}" method="GET">
                 <div class="row">
 
-                    <div class="col-lg-2">
+                    <div class="col-lg-3">
                         <div class="form-group">
                             <label for="patient">Nombres y Apellidos</label>
                             <input type="text" name="patient" class="form-control" value="{{ old('patient') }}" autofocus>
@@ -33,7 +33,7 @@
                         </select>
                     </div>
 
-                    <div class="form-group col-sm-12 col-lg-3">
+                    <div class="form-group col-sm-12 col-lg-2">
                         <label for="shift">Turnos</label>
                         <select name="shift" id="shift" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
                             <option></option>
@@ -45,7 +45,7 @@
                     </div>
 
                     <div class="form-group col-lg-2">
-                        <label for="created_at">Fecha</label>
+                        <label for="created_at">FECHA CREACION</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
@@ -59,7 +59,7 @@
                     </div>
 
                     <div class="form-group col-lg-2">
-                        <label for="date_order">Fecha</label>
+                        <label for="date_order">FECHA ORDEN</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
