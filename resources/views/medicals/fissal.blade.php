@@ -149,7 +149,7 @@
                             <button class="btn btn-info btn-sm">{{ $medical->hour_hd }}</button>
                         </td>
                         <td>
-                            {{$medical->order->date_order }}
+                            {{$medical->order->created_at }}
                         </td>
 
                         <td>
