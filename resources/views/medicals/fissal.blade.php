@@ -15,7 +15,7 @@
             <form action="{{ route('medical.fissalweb') }}" method="GET">
                 <div class="row">
 
-                    <div class="col-lg-4">
+                    <div class="col-lg-2">
                         <div class="form-group">
                             <label for="patient">Nombres y Apellidos</label>
                             <input type="text" name="patient" class="form-control" value="{{ old('patient') }}" autofocus>
@@ -52,6 +52,20 @@
                             </div>
                             <input class="form-control datepicker" placeholder="Seleccionar fecha"
                                    id="created_at" name="created_at" type="text"
+                                   value="{{ old('date', date('Y-m-d')) }}"
+                                   data-date-format="yyyy-mm-dd"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-group col-lg-2">
+                        <label for="date_order">Fecha</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                            </div>
+                            <input class="form-control datepicker" placeholder="Seleccionar fecha"
+                                   id="date_order" name="date_order" type="text"
                                    value="{{ old('date', date('Y-m-d')) }}"
                                    data-date-format="yyyy-mm-dd"
                             >

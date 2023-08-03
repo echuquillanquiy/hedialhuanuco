@@ -234,6 +234,7 @@ class MedicalController extends Controller
         $room = $request->get('room');
         $shift = $request->get('shift');
         $created_at = $request->get('created_at');
+        $date_order = $request->get('date_order');
         $hour_hd = $request->get('hour_hd');
 
         $medicals = Medical::orderBy('created_at', 'desc')
@@ -244,6 +245,7 @@ class MedicalController extends Controller
             ->room($room)
             ->shift($shift)
             ->created_at($created_at)
+            ->date_order($date_order)
             ->hour_hd($hour_hd)
             ->paginate(15);
         return view('medicals.fissal', compact('medicals', 'order', 'rooms', 'shifts'));
