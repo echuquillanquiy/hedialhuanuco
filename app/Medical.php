@@ -80,6 +80,12 @@ class Medical extends Model
             return $query->where('date_order', 'LIKE', "%$date_order%");
     }
 
+    public function scopeCreated_at($query, $created_at)
+    {
+        if($created_at)
+            return $query->where('created_at', 'LIKE', "%$created_at%");
+    }
+
     public function scopeHour_hd($query, $hour_hd)
     {
         if($hour_hd)
