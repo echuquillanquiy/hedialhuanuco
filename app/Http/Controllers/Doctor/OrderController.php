@@ -104,7 +104,7 @@ class OrderController extends Controller
     {
         $this->performValidation($request);
         $existsOrdersToday = Order::where('patient_id', $request->input('patient_id'))
-            ->where('date_order')->exists();
+            ->whereDate('date_order', date('Y-m-d'))->exists();
         if ($existsOrdersToday) {
             $notification = 'Este paciente ya tiene una orden registrada hoy. Intente nuevamente mañana.';
             return back()->with(compact('notification'));
