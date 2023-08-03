@@ -253,7 +253,7 @@
 
             @if($correction->order->user_id)
                 <td style="text-align: center;">
-                    <img src="{{ asset($correction->order->user->image) }}" style="width: 180px;height: 90px">
+                    <img src="" style="width: 180px;height: 90px">
                 </td>
             @else
                 <td>
@@ -865,7 +865,7 @@
         <tr>
             @if($correction->order->user_id)
                 <td rowspan="6" style="text-align: center;">
-                    <img src="{{ asset($correction->order->user->image) }}" style="width: 180px;height: 90px">
+                    <img src="" style="width: 180px;height: 90px">
                 </td>
             @else
                 <td>
