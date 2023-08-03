@@ -115,6 +115,6 @@ class CorrectionController extends Controller
         $carbonDia = Carbon::parse($fecha_orden)->format('d');
 
         $pdf = PDF::loadView('corrections.subsanacion', compact('correction', 'carbonAnio', 'carbonMes', 'carbonDia'));
-        return $pdf->download($correction->serie_fua.'.pdf');
+        return $pdf->download($correction->serie_fua . '  Corrige: ' . $correction->order->n_fua . '.pdf');
     }
 }
