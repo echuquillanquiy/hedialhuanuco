@@ -48,7 +48,7 @@
                         <input type="text" name="serie_fua" class="form-control" value="{{ $sig_fua }}" >
                     </div>
 
-                    <div class="form-group col-sm-12 col-lg-2">
+                    <div class="form-group col-sm-12 col-lg-4">
                         <label for="order">FUA A SUBSANAR</label>
                         <select name="order" id="obtenerfua" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
                             <option value="">[BUSQUE FUA A SUBSANAR]</option>
