@@ -237,8 +237,7 @@ class MedicalController extends Controller
         $date_order = $request->get('date_order');
         $hour_hd = $request->get('hour_hd');
 
-        $medicals = Medical::orderBy('created_at', 'desc')
-            ->orderBy('shift', 'desc')
+        $medicals = Medical::orderBy('created_at', 'asc')
             ->orderBy('shift', 'desc')
             ->orderBy('patient', 'asc')
             ->patient($patient)
