@@ -100,7 +100,7 @@
                 <a href="{{ url('/orders/'.$order->id.'/edit') }}" class="btn btn-sm btn-primary">Editar</a>
 
                 @if(\Illuminate\Support\Facades\Auth::user()->id == 1)
-                    <a href="{{ url('/orders/'.$order->id.'/fua') }}" class="btn btn-sm btn-outline-success" target="_blank"><i class="fas fa-file-alt fa-lg"></i></a
+                    <a href="{{ url('/orders/'.$order->id.'/fua') }}" class="btn btn-sm btn-outline-success" target="_blank"><i class="fas fa-file-alt fa-lg"></i></a>
                 @endif
 
             </form>

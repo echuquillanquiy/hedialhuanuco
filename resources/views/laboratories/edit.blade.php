@@ -61,8 +61,10 @@
                                 @include('laboratories.includes.mensual')
                             </div>
                             <div class="tab-pane fade" id="tabs-icons-text-2" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
+                                @include('laboratories.includes.bi-trimestral')
                             </div>
                             <div class="tab-pane fade" id="tabs-icons-text-3" role="tabpanel" aria-labelledby="tabs-icons-text-3-tab">
+                                @include('laboratories.includes.semestral')
                             </div>
                         </div>
                     </div>
