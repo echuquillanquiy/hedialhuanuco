@@ -73,7 +73,7 @@
 
         <div class="form-group col-sm-12 col-lg-2">
             <label for="fio">FIO2</label>
-            <input type="text" name="fio" class="form-control" value="{{ old('fio', $medical->fio) }}">
+            <input type="text" name="fio" class="form-control" value="{{ !$medical->fio ? '0.21' : $medical->fio) }}">
         </div>
 
         <div class="form-group col-sm-12 col-lg-1">
