@@ -247,7 +247,7 @@
     <table style="width: 100%; border-collapse:collapse; margin-top:10px;">
         <tr>
             <td style="font-weight: bold; font-size: 0.6rem; width: 10%">d) Otros</td>
-            <td style="font-size: 0.6rem;">{{ $nephrology->otros_med }}</td>
+            <td style="font-size: 0.6rem;">{{ $nephrology->order->recipe }}</td>
         </tr>
     </table>
 

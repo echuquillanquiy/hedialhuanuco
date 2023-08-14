@@ -51,20 +51,35 @@
             <input type="time" name="start_hour" class="form-control" value="{{ old('start_hour', $medical->start_hour) }}">
         </div>
 
-      <div class="form-group col-sm-12 col-lg-3">
+      <div class="form-group col-sm-12 col-lg-1">
         <label for="start_weight">Peso Inicial</label>
         <input type="text" name="start_weight" class="form-control" value="{{ old('start_weight', $medical->start_weight) }}">
       </div>
 
-      <div class="form-group col-sm-12 col-lg-3">
+      <div class="form-group col-sm-12 col-lg-2">
         <label for="start_pa">PA Inicial</label>
         <input type="text" name="start_pa" class="form-control" value="{{ old('start_pa', $medical->start_pa) }}">
       </div>
 
-      <div class="form-group col-sm-12 col-lg-4">
+      <div class="form-group col-sm-12 col-lg-2">
         <label for="fc">Frecuencia Cardiaca</label>
         <input type="text" name="fc" class="form-control" value="{{ old('fc', $medical->fc) }}">
       </div>
+
+        <div class="form-group col-sm-12 col-lg-2">
+            <label for="so2">Saturacion SO2</label>
+            <input type="text" name="so2" class="form-control" value="{{ old('so2', $medical->so2) }}">
+        </div>
+
+        <div class="form-group col-sm-12 col-lg-2">
+            <label for="fio">FIO2</label>
+            <input type="text" name="fio" class="form-control" value="{{ old('fio', $medical->fio) }}">
+        </div>
+
+        <div class="form-group col-sm-12 col-lg-1">
+            <label for="temp">TEMPERATURA</label>
+            <input type="text" name="temp" class="form-control" value="{{ old('temp', $medical->temp) }}">
+        </div>
     </div>
 
     <div class="row">

@@ -75,6 +75,11 @@
 <div class="row">
     <div class="form-group col-sm-12 col-lg-12">
         <label for="otros_med">OTROS</label>
-        <textarea class="form-control" id="" name="otros_med" rows="2">{{ !$nephrology->otros_med ? 'Tiamina clorhidrato 100 mg VO C/24 horas, Piridoxina 50 mg VO C/24 horas, acido fólico 0.5 mg VO C/24 horas.' : $nephrology->otros_med }}</textarea>
+
+            <textarea class="form-control" id="" name="otros_med" rows="2">
+                {{ $nephrology->order->recipe->code1  }}
+            </textarea>
+
+
     </div>
 </div>

@@ -42,7 +42,10 @@ class Medical extends Model
         'vitb12',
         'calci',
         'date_order',
-        'fua_observacion'
+        'fua_observacion',
+        'so2',
+        'fio',
+        'temp'
 
     ];
 

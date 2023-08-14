@@ -60,13 +60,11 @@
           <table width="100%" style="border:2px solid; border-collapse: collapse; margin-top: -3px;">
 
             <tr>
-              <td style="font-size: 0.6rem; width: 95%; text-transform:uppercase;" colspan="10">PROBLEMAS CLINICOS: {{ $order->medical->clinical_trouble }} </td>
-              <td style="font-size: 0.6rem; width: 5%; text-align:right" colspan="2">P.A: {{ $order->medical->start_pa }}</td>
+              <td style="font-size: 0.6rem; width: 95%; text-transform:uppercase;" colspan="12">PROBLEMAS CLINICOS: {{ $order->medical->clinical_trouble }} </td>
             </tr>
 
             <tr>
-              <td style="font-size: 0.6rem; width: 10%; text-transform:uppercase;" colspan="10">Signos - Sintomas: {{ $order->medical->signal }}</td>
-              <td style="font-size: 0.6rem; width: 10%; text-align:right" colspan="2">F.C: {{ $order->medical->fc }}</td>
+              <td style="font-size: 0.6rem; width: 10%; text-transform:uppercase;" colspan="12">Signos - Sintomas: {{ $order->medical->signal }}</td>
             </tr>
 
             <tr>
@@ -85,10 +83,20 @@
           <tr>
             <table width="100%" style="border:2px solid; border-collapse: collapse; border-top: none; margin-top: -2px">
               <tr>
-                <td style="font-size: 0.6rem; margin-bottom: 1px; height: 20px" colspan="">EXAMEN: {{ $order->medical->evaluation }}</td>
+                  <td style="font-size: 0.6rem;" colspan="2">EXAMEN FISICO</td>
+                  <td style="font-size: 0.6rem;" colspan="2"><strong> PA:</strong> {{ $order->medical->start_pa }} mmHg</td>
+                  <td style="font-size: 0.6rem;" colspan="2"><strong>FC:</strong> {{ $order->medical->fc }} x'</td>
+                  <td style="font-size: 0.6rem;" colspan="2"><strong>SATO2:</strong> {{ $order->medical->so2 }} %</td>
+                  <td style="font-size: 0.6rem;" colspan="2"><strong>FIO2:</strong> {{ $order->medical->fio }}</td>
+                  <td style="font-size: 0.6rem;" colspan="2"><strong>T°:</strong> {{ $order->medical->temp }} °C</td>
               </tr>
+
                 <tr>
-                    <td style="font-size: 0.6rem; margin-bottom: 1px; height: 20px" colspan="">INDICACIONES: {{ $order->medical->indications }}</td>
+                    <td style="font-size: 0.6rem; margin-bottom: 1px; height: 20px" colspan="12">{{ $order->medical->evaluation }}</td>
+                </tr>
+
+                <tr>
+                    <td style="font-size: 0.6rem; margin-bottom: 1px; height: 20px" colspan="12">INDICACIONES: {{ $order->medical->indications }}</td>
                 </tr>
             </table>
           </tr>

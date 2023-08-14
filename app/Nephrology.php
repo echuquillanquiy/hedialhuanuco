@@ -18,6 +18,11 @@ class Nephrology extends Model
         return $this->belongsTo(Patient::class);
     }
 
+    public function recipe()
+    {
+        return $this->belongsTo(Recipe::class);
+    }
+
     public function scopeDate_order($query, $date_order)
     {
         if($date_order)
