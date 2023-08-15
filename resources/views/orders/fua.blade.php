@@ -553,10 +553,10 @@
             <td style="font-size: 0.4rem; height: 15px; text-align: left">{{ !$order->laboratory->cant1 > 0 ? '' : $order->laboratory->description1 }}</td>
             <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant1 > 0 ? '' : $order->laboratory->cant1 }}</td>
             <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant1 > 0 ? '' : $order->laboratory->cant1 }}</td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant17 > 0 ? '' : $order->laboratory->code17 }}</td>
+            <td style="font-size: 0.4rem; height: 15px; text-align: left">{{ !$order->laboratory->cant17 > 0 ? '' : $order->laboratory->description17 }}</td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant17 > 0 ? '' : $order->laboratory->cant17 }}</td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant17 > 0 ? '' : $order->laboratory->cant17 }}</td>
         </tr>
 
         <tr style="font-size: 0.4rem; text-align: center">
@@ -564,10 +564,10 @@
             <td style="font-size: 0.4rem; height: 15px; text-align: left">{{ !$order->laboratory->cant2 > 0 ? '' : $order->laboratory->description2 }}</td>
             <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant2 > 0 ? '' : $order->laboratory->cant2 }}</td>
             <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant2 > 0 ? '' : $order->laboratory->cant2 }}</td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant18 > 0 ? '' : $order->laboratory->code18 }}</td>
+            <td style="font-size: 0.4rem; height: 15px; text-align: left">{{ !$order->laboratory->cant18 > 0 ? '' : $order->laboratory->description18 }}</td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant18 > 0 ? '' : $order->laboratory->cant18 }}</td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant18 > 0 ? '' : $order->laboratory->cant18 }}</td>
         </tr>
 
         <tr style="font-size: 0.4rem;">
@@ -575,10 +575,10 @@
             <td style="font-size: 0.4rem; height: 15px; text-align: left">{{ !$order->laboratory->cant3 > 0 ? '' : $order->laboratory->description3 }}</td>
             <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant3 > 0 ? '' : $order->laboratory->cant3 }}</td>
             <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant3 > 0 ? '' : $order->laboratory->cant3 }}</td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant19 > 0 ? '' : $order->laboratory->code19 }}</td>
+            <td style="font-size: 0.4rem; height: 15px; text-align: left">{{ !$order->laboratory->cant19 > 0 ? '' : $order->laboratory->description19 }}</td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant19 > 0 ? '' : $order->laboratory->cant19 }}</td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant19 > 0 ? '' : $order->laboratory->cant19 }}</td>
         </tr>
 
 
@@ -587,20 +587,20 @@
             <td style="font-size: 0.4rem; height: 15px; text-align: left">{{ !$order->laboratory->cant4 > 0 ? '' : $order->laboratory->description4 }}</td>
             <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant4 > 0 ? '' : $order->laboratory->cant4 }}</td>
             <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant4 > 0 ? '' : $order->laboratory->cant4 }}</td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant20 > 0 ? '' : $order->laboratory->code20 }}</td>
+            <td style="font-size: 0.4rem; height: 15px; text-align: left">{{ !$order->laboratory->cant20 > 0 ? '' : $order->laboratory->description20 }}</td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant20 > 0 ? '' : $order->laboratory->cant20 }}</td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant20 > 0 ? '' : $order->laboratory->cant20 }}</td>
         </tr>
         <tr style="font-size: 0.4rem;">
             <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant5 > 0 ? '' : $order->laboratory->code5 }}</td>
             <td style="font-size: 0.4rem; height: 15px; text-align: left">{{ !$order->laboratory->cant5 > 0 ? '' : $order->laboratory->description5 }}</td>
             <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant5 > 0 ? '' : $order->laboratory->cant5 }}</td>
             <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant5 > 0 ? '' : $order->laboratory->cant5 }}</td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant21 > 0 ? '' : $order->laboratory->code21 }}</td>
+            <td style="font-size: 0.4rem; height: 15px; text-align: left">{{ !$order->laboratory->cant21 > 0 ? '' : $order->laboratory->description21 }}</td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant21 > 0 ? '' : $order->laboratory->cant21 }}</td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant21 > 0 ? '' : $order->laboratory->cant21 }}</td>
         </tr>
         <tr style="font-size: 0.4rem;">
             <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant6 > 0 ? '' : $order->laboratory->code6 }}</td>
@@ -613,100 +613,100 @@
             <td style="font-size: 0.4rem; height: 15px"></td>
         </tr>
         <tr style="font-size: 0.4rem;">
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-        </tr>
-        <tr style="font-size: 0.4rem;">
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant7 > 0 ? '' : $order->laboratory->code7 }}</td>
+            <td style="font-size: 0.4rem; height: 15px; text-align: left">{{ !$order->laboratory->cant7 > 0 ? '' : $order->laboratory->description7 }}</td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant7 > 0 ? '' : $order->laboratory->cant7 }}</td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant7 > 0 ? '' : $order->laboratory->cant7 }}</td>
             <td style="font-size: 0.4rem; height: 15px"></td>
             <td style="font-size: 0.4rem; height: 15px"></td>
             <td style="font-size: 0.4rem; height: 15px"></td>
             <td style="font-size: 0.4rem; height: 15px"></td>
         </tr>
         <tr style="font-size: 0.4rem;">
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-        </tr>
-        <tr style="font-size: 0.4rem;">
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant8 > 0 ? '' : $order->laboratory->code8 }}</td>
+            <td style="font-size: 0.4rem; height: 15px; text-align: left">{{ !$order->laboratory->cant8 > 0 ? '' : $order->laboratory->description8 }}</td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant8 > 0 ? '' : $order->laboratory->cant8 }}</td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant8 > 0 ? '' : $order->laboratory->cant8 }}</td>
             <td style="font-size: 0.4rem; height: 15px"></td>
             <td style="font-size: 0.4rem; height: 15px"></td>
             <td style="font-size: 0.4rem; height: 15px"></td>
             <td style="font-size: 0.4rem; height: 15px"></td>
         </tr>
         <tr style="font-size: 0.4rem;">
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-        </tr>
-        <tr style="font-size: 0.4rem;">
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant9 > 0 ? '' : $order->laboratory->code9 }}</td>
+            <td style="font-size: 0.4rem; height: 15px; text-align: left">{{ !$order->laboratory->cant9 > 0 ? '' : $order->laboratory->description9 }}</td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant9 > 0 ? '' : $order->laboratory->cant9 }}</td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant9 > 0 ? '' : $order->laboratory->cant9 }}</td>
             <td style="font-size: 0.4rem; height: 15px"></td>
             <td style="font-size: 0.4rem; height: 15px"></td>
             <td style="font-size: 0.4rem; height: 15px"></td>
             <td style="font-size: 0.4rem; height: 15px"></td>
         </tr>
         <tr style="font-size: 0.4rem;">
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-        </tr>
-        <tr style="font-size: 0.4rem;">
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant10 > 0 ? '' : $order->laboratory->code10 }}</td>
+            <td style="font-size: 0.4rem; height: 15px; text-align: left">{{ !$order->laboratory->cant10 > 0 ? '' : $order->laboratory->description10 }}</td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant10 > 0 ? '' : $order->laboratory->cant10 }}</td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant10 > 0 ? '' : $order->laboratory->cant10 }}</td>
             <td style="font-size: 0.4rem; height: 15px"></td>
             <td style="font-size: 0.4rem; height: 15px"></td>
             <td style="font-size: 0.4rem; height: 15px"></td>
             <td style="font-size: 0.4rem; height: 15px"></td>
         </tr>
         <tr style="font-size: 0.4rem;">
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
-            <td style="font-size: 0.4rem; height: 15px"></td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant11 > 0 ? '' : $order->laboratory->code11 }}</td>
+            <td style="font-size: 0.4rem; height: 15px; text-align: left">{{ !$order->laboratory->cant11 > 0 ? '' : $order->laboratory->description11 }}</td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant11 > 0 ? '' : $order->laboratory->cant11 }}</td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant11 > 0 ? '' : $order->laboratory->cant11 }}</td>
             <td style="font-size: 0.4rem; height: 15px"></td>
             <td style="font-size: 0.4rem; height: 15px"></td>
             <td style="font-size: 0.4rem; height: 15px"></td>
             <td style="font-size: 0.4rem; height: 15px"></td>
         </tr>
         <tr style="font-size: 0.4rem;">
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant12 > 0 ? '' : $order->laboratory->code12 }}</td>
+            <td style="font-size: 0.4rem; height: 15px; text-align: left">{{ !$order->laboratory->cant12 > 0 ? '' : $order->laboratory->description12 }}</td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant12 > 0 ? '' : $order->laboratory->cant12 }}</td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant12 > 0 ? '' : $order->laboratory->cant12 }}</td>
             <td style="font-size: 0.4rem; height: 15px"></td>
             <td style="font-size: 0.4rem; height: 15px"></td>
             <td style="font-size: 0.4rem; height: 15px"></td>
             <td style="font-size: 0.4rem; height: 15px"></td>
+        </tr>
+        <tr style="font-size: 0.4rem;">
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant13 > 0 ? '' : $order->laboratory->code13 }}</td>
+            <td style="font-size: 0.4rem; height: 15px; text-align: left">{{ !$order->laboratory->cant13 > 0 ? '' : $order->laboratory->description13 }}</td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant13 > 0 ? '' : $order->laboratory->cant13 }}</td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant13 > 0 ? '' : $order->laboratory->cant13 }}</td>
+            <td style="font-size: 0.4rem; height: 15px"></td>
+            <td style="font-size: 0.4rem; height: 15px"></td>
+            <td style="font-size: 0.4rem; height: 15px"></td>
+            <td style="font-size: 0.4rem; height: 15px"></td>
+        </tr>
+        <tr style="font-size: 0.4rem;">
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant14 > 0 ? '' : $order->laboratory->code14 }}</td>
+            <td style="font-size: 0.4rem; height: 15px; text-align: left">{{ !$order->laboratory->cant14 > 0 ? '' : $order->laboratory->description14 }}</td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant14 > 0 ? '' : $order->laboratory->cant14 }}</td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant14 > 0 ? '' : $order->laboratory->cant14 }}</td>
+            <td style="font-size: 0.4rem; height: 15px"></td>
+            <td style="font-size: 0.4rem; height: 15px"></td>
+            <td style="font-size: 0.4rem; height: 15px"></td>
+            <td style="font-size: 0.4rem; height: 15px"></td>
+        </tr>
+        <tr style="font-size: 0.4rem;">
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant15 > 0 ? '' : $order->laboratory->code15 }}</td>
+            <td style="font-size: 0.4rem; height: 15px; text-align: left">{{ !$order->laboratory->cant15 > 0 ? '' : $order->laboratory->description15 }}</td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant15 > 0 ? '' : $order->laboratory->cant15 }}</td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant15 > 0 ? '' : $order->laboratory->cant15 }}</td>
+            <td style="font-size: 0.4rem; height: 15px"></td>
+            <td style="font-size: 0.4rem; height: 15px"></td>
+            <td style="font-size: 0.4rem; height: 15px"></td>
+            <td style="font-size: 0.4rem; height: 15px"></td>
+        </tr>
+        <tr style="font-size: 0.4rem;">
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant16 > 0 ? '' : $order->laboratory->code16 }}</td>
+            <td style="font-size: 0.4rem; height: 15px; text-align: left">{{ !$order->laboratory->cant16 > 0 ? '' : $order->laboratory->description16 }}</td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant16 > 0 ? '' : $order->laboratory->cant16 }}</td>
+            <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant16 > 0 ? '' : $order->laboratory->cant16 }}</td>
             <td style="font-size: 0.4rem; height: 15px"></td>
             <td style="font-size: 0.4rem; height: 15px"></td>
             <td style="font-size: 0.4rem; height: 15px"></td>
