@@ -12,7 +12,7 @@
 
     <div class="form-group col-sm-12 col-lg-2">
         <label for="cant15">CANTIDAD</label>
-        <input type="text" name="cant15" class="form-control" value="{{ !$laboratory->cant15 ? '0' : $laboratory->cant15 }}">
+        <input type="text" name="cant15" class="form-control" value="{{ !$laboratory->cant15 ? '1' : $laboratory->cant15 }}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-4">
@@ -33,7 +33,7 @@
     </div>
 
     <div class="form-group col-sm-12 col-lg-2">
-        <input type="text" name="cant16" class="form-control" value="{{ !$laboratory->cant16 ? '0' : $laboratory->cant16 }}">
+        <input type="text" name="cant16" class="form-control" value="{{ !$laboratory->cant16 ? '1' : $laboratory->cant16 }}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-4">
@@ -53,7 +53,7 @@
     </div>
 
     <div class="form-group col-sm-12 col-lg-2">
-        <input type="text" name="cant17" class="form-control" value="{{ !$laboratory->cant17 ? '0' : $laboratory->cant17 }}">
+        <input type="text" name="cant17" class="form-control" value="{{ !$laboratory->cant17 ? '1' : $laboratory->cant17 }}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-4">
@@ -73,7 +73,7 @@
     </div>
 
     <div class="form-group col-sm-12 col-lg-2">
-        <input type="text" name="cant18" class="form-control" value="{{ !$laboratory->cant18 ? '0' : $laboratory->cant18 }}">
+        <input type="text" name="cant18" class="form-control" value="{{ !$laboratory->cant18 ? '1' : $laboratory->cant18 }}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-4">
@@ -93,7 +93,7 @@
     </div>
 
     <div class="form-group col-sm-12 col-lg-2">
-        <input type="text" name="cant19" class="form-control" value="{{ !$laboratory->cant19 ? '0' : $laboratory->cant19 }}">
+        <input type="text" name="cant19" class="form-control" value="{{ !$laboratory->cant19 ? '1' : $laboratory->cant19 }}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-4">
@@ -113,7 +113,7 @@
     </div>
 
     <div class="form-group col-sm-20 col-lg-2">
-        <input type="text" name="cant20" class="form-control" value="{{ !$laboratory->cant20 ? '0' : $laboratory->cant20 }}">
+        <input type="text" name="cant20" class="form-control" value="{{ !$laboratory->cant20 ? '1' : $laboratory->cant20 }}">
     </div>
 
     <div class="form-group col-sm-20 col-lg-4">
@@ -133,7 +133,7 @@
     </div>
 
     <div class="form-group col-sm-21 col-lg-2">
-        <input type="text" name="cant21" class="form-control" value="{{ !$laboratory->cant21 ? '0' : $laboratory->cant21 }}">
+        <input type="text" name="cant21" class="form-control" value="{{ !$laboratory->cant21 ? '1' : $laboratory->cant21 }}">
     </div>
 
     <div class="form-group col-sm-21 col-lg-4">
