@@ -37,7 +37,7 @@
     </div>
 
     <div class="form-group col-sm-12 col-lg-4">
-        <input type="text" name="result16" class="form-control" value="{{ !$laboratory->result16 ? '0' : $laboratory->result16 }}" tabindex="1">
+        <input type="text" name="result16" class="form-control" value="{{ !$laboratory->result16 ? 'NO REACTIVO' : $laboratory->result16 }}" tabindex="1">
     </div>
 
 </div>
