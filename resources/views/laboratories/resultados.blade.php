@@ -76,44 +76,46 @@
             <td style="font-size: 0.6rem;">10 - 50</td>
         </tr>
 
-        <tr>
-            <th colspan="4" style="font-size: 0.6rem; text-align: left; padding: 3px">{{ $laboratory->description4 }}</th>
-        </tr>
+        @if()
+            <tr>
+                <th colspan="4" style="font-size: 0.6rem; text-align: left; padding: 3px">{{ $laboratory->description4 }}</th>
+            </tr>
 
-        <tr style="background-color: #BEBEBE">
-            <td style="font-size: 0.7rem; text-align: left; padding: 3px">Cloro</td>
-            <td style="font-size: 0.7rem;">{{ $laboratory->cloro }}</td>
-            <td style="font-size: 0.6rem;">mmol/L</td>
-            <td style="font-size: 0.6rem;">98 - 107</td>
-        </tr>
+            <tr style="background-color: #BEBEBE">
+                <td style="font-size: 0.7rem; text-align: left; padding: 3px">Cloro</td>
+                <td style="font-size: 0.7rem;">{{ $laboratory->cloro }}</td>
+                <td style="font-size: 0.6rem;">mmol/L</td>
+                <td style="font-size: 0.6rem;">98 - 107</td>
+            </tr>
 
-        <tr style="background-color: #BEBEBE">
-            <td style="font-size: 0.7rem; text-align: left; padding: 3px">Sodio</td>
-            <td style="font-size: 0.7rem;">{{ $laboratory->sodio }}</td>
-            <td style="font-size: 0.6rem;">mmol/L</td>
-            <td style="font-size: 0.6rem;">135 - 148</td>
-        </tr>
+            <tr style="background-color: #BEBEBE">
+                <td style="font-size: 0.7rem; text-align: left; padding: 3px">Sodio</td>
+                <td style="font-size: 0.7rem;">{{ $laboratory->sodio }}</td>
+                <td style="font-size: 0.6rem;">mmol/L</td>
+                <td style="font-size: 0.6rem;">135 - 148</td>
+            </tr>
 
-        <tr style="background-color: #BEBEBE">
-            <td style="font-size: 0.7rem; text-align: left; padding: 3px">Potasio</td>
-            <td style="font-size: 0.7rem;">{{ $laboratory->potasio }}</td>
-            <td style="font-size: 0.6rem;">mmol/L</td>
-            <td style="font-size: 0.6rem;">3.5 - 5.3</td>
-        </tr>
+            <tr style="background-color: #BEBEBE">
+                <td style="font-size: 0.7rem; text-align: left; padding: 3px">Potasio</td>
+                <td style="font-size: 0.7rem;">{{ $laboratory->potasio }}</td>
+                <td style="font-size: 0.6rem;">mmol/L</td>
+                <td style="font-size: 0.6rem;">3.5 - 5.3</td>
+            </tr>
 
-        <tr>
-            <td style="font-size: 0.7rem; text-align: left; padding: 3px">{{ $laboratory->description5 }}</td>
-            <td style="font-size: 0.7rem;">{{ $laboratory->result5 }}</td>
-            <td style="font-size: 0.6rem;">mg/dl</td>
-            <td style="font-size: 0.6rem;">2.5 - 5.6</td>
-        </tr>
+            <tr>
+                <td style="font-size: 0.7rem; text-align: left; padding: 3px">{{ $laboratory->description5 }}</td>
+                <td style="font-size: 0.7rem;">{{ $laboratory->result5 }}</td>
+                <td style="font-size: 0.6rem;">mg/dl</td>
+                <td style="font-size: 0.6rem;">2.5 - 5.6</td>
+            </tr>
 
-        <tr>
-            <td style="font-size: 0.7rem; text-align: left; padding: 3px">{{ $laboratory->description6 }}</td>
-            <td style="font-size: 0.7rem;">{{ $laboratory->result6 }}</td>
-            <td style="font-size: 0.6rem;">mg/dL</td>
-            <td style="font-size: 0.6rem;">8.8 - 10.2</td>
-        </tr>
+            <tr>
+                <td style="font-size: 0.7rem; text-align: left; padding: 3px">{{ $laboratory->description6 }}</td>
+                <td style="font-size: 0.7rem;">{{ $laboratory->result6 }}</td>
+                <td style="font-size: 0.6rem;">mg/dL</td>
+                <td style="font-size: 0.6rem;">8.8 - 10.2</td>
+            </tr>
+        @endif
 
         @if($laboratory->result7 > 0)
             <tr>

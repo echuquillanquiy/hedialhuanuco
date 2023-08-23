@@ -103,12 +103,13 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         $this->performValidation($request);
-        $existsOrdersToday = Order::where('patient_id', $request->input('patient_id'))
-            ->whereDate('date_order', date('Y-m-d'))->exists();
-        if ($existsOrdersToday) {
-            $notification = 'Este paciente ya tiene una orden registrada hoy. Intente nuevamente mañana.';
-            return back()->with(compact('notification'));
-        }
+        //$existsOrdersToday = Order::where('patient_id', $request->input('patient_id'))
+            //->whereDate('date_order', date('Y-m-d'))->exists();
+
+        //if ($existsOrdersToday) {
+            //$notification = 'Este paciente ya tiene una orden registrada hoy. Intente nuevamente mañana.';
+            //return back()->with(compact('notification'));
+        //}
 
         $order = Order::create($request->all());
         $numerarion_save = Numeration::create([
