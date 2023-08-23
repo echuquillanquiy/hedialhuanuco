@@ -210,7 +210,7 @@
             </tr>
         @endif
 
-        @if($laboratory->result17 > 0)
+        @if($laboratory->result17)
             <tr>
                 <td style="font-size: 0.6rem; text-align: left; padding: 3px">{{ $laboratory->description17 }}</td>
                 <td style="font-size: 0.7rem;">{{ $laboratory->result17 }}</td>
