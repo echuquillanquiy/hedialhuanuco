@@ -201,7 +201,7 @@
             </tr>
         @endif
 
-        @if($laboratory->result16 > 0)
+        @if($laboratory->result16 == 'NO REACTIVO' || $laboratory->result16 == 'REACTIVO')
             <tr>
                 <td style="font-size: 0.6rem; text-align: left; padding: 3px">{{ $laboratory->description16 }}</td>
                 <td style="font-size: 0.7rem;">{{ $laboratory->result16 }}</td>
