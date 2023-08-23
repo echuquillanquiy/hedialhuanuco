@@ -21,6 +21,7 @@ class LaboratoryController extends Controller
         $date_order = $request->get('date_order');
 
         $laboratories = Laboratory::orderBy('id', 'desc')
+            ->orderBy('patient', 'asc')
             ->date_order($date_order)
             ->paginate(15);
 
