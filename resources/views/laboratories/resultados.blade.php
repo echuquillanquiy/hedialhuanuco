@@ -76,7 +76,7 @@
             <td style="font-size: 0.6rem;">10 - 50</td>
         </tr>
 
-        @if()
+        @if($laboratory->cloro > 0 && $laboratory->sodio > 0 && $laboratory->potasio > 0 && $laboratory->result5 > 0 && $laboratory->result6)
             <tr>
                 <th colspan="4" style="font-size: 0.6rem; text-align: left; padding: 3px">{{ $laboratory->description4 }}</th>
             </tr>
