@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Doctor;
 
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Medical;
@@ -194,12 +195,12 @@ class MedicalController extends Controller
     public function edit($id)
     {
         $medical = Medical::findOrFail($id);
-
+        $users = User::where('role', '=', 'doctor')->get();
         /*$patient = $medical->patient;
         $fecha = Carbon::now();
         $ultimos = $medical->where('patient', $patient)->whereDate('created_at', '!=', $fecha)->latest()->first();*/
 
-        return view('medicals.edit', compact('medical'));
+        return view('medicals.edit', compact('medical', 'users'));
 
     }
 

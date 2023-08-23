@@ -45,7 +45,6 @@
 
     <div class="row">
 
-        <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
         <div class="form-group col-sm-12 col-lg-2">
             <label for="start_hour">Hora Inicial</label>
             <input type="time" name="start_hour" class="form-control" value="{{ old('start_hour', $medical->start_hour) }}">
@@ -307,13 +306,24 @@
             <input type="time" name="end_hour" class="form-control" value="{{ old('end_hour', $medical->end_hour) }}">
         </div>
 
-        <div class="form-group col-sm-12 col-lg-6">
+        <div class="form-group col-sm-12 col-lg-4">
             <label for="fua_observacion">SI EL PACIENTE NO PUEDE FIRMAR SELECCIONE UNA OPCION</label>
             <select name="fua_observacion" id="fua_observacion" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
                 <option value="{{ !$medical->fua_observacion ? '' : $medical->fua_observacion }}" disabled selected>{{ !$medical->fua_observacion ? '[SELECCIONE UNA OPCION]' : $medical->fua_observacion }}</option>
                 <option value="PACIENTE PRESENTA MOVIMIENTOS INVOLUNTARIOS EN MIEMBROS SUPERIORES, IMPOSIBILITADO PARA FIRMAR">PACIENTE PRESENTA MOVIMIENTOS INVOLUNTARIOS EN MIEMBROS SUPERIORES, IMPOSIBILITADO PARA FIRMAR</option>
                 <option value="PACIENTE REFIERE DISMINUCION DE LA AGUDEZA VISUAL, IMPOSIBILITADO PARA FIRMAR">PACIENTE REFIERE DISMINUCION DE LA AGUDEZA VISUAL, IMPOSIBILITADO PARA FIRMAR</option>
                 <option value="PACIENTE PRESENTA ASTENIA POST DIALISIS, IMPOSIBILITADO AL MOMENTO DE FIRMAR">PACIENTE PRESENTA ASTENIA POST DIALISIS, IMPOSIBILITADO AL MOMENTO DE FIRMAR</option>
+            </select>
+        </div>
+
+        <div class="form-group col-sm-12 col-lg-2">
+            <label for="user_id">USUARIO DE LA ATENCION</label>
+            <select class="form-control selectpicker" name="user_id" data-live-search="true" data-style="btn-info">
+                <option value="{{ !$medical->user_id ? auth()->user()->id : $medical->user_id }}">{{ !$medical->user_id ? auth()->user()->name : $medical->user->name }}</option>
+                @foreach($users as $user)
+                    <option value="{{ $user->id }}">{{ $user->name }}</option>
+                @endforeach
+
             </select>
         </div>
 
