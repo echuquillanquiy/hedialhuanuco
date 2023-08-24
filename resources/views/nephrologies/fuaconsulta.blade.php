@@ -294,7 +294,7 @@
             <td>C. ENTREGADA</td>
         </tr>
 
-        @if(!$nephrology->order->recipe->med1 || $nephrology->order->recipe->code1 == '03107' || $nephrology->order->recipe->code1 == '03113' || $nephrology->order->recipe->code1 == '03979' || $nephrology->order->recipe->code1 == '19238')
+        @if(!$nephrology->order->recipe->med1 ||  nephrology->order->recipe->code1 == '01502'$||nephrology->order->recipe->code1 == '03107' || $nephrology->order->recipe->code1 == '03113' || $nephrology->order->recipe->code1 == '03979' || $nephrology->order->recipe->code1 == '19238')
 
         @else
             <tr>
@@ -308,7 +308,7 @@
                 <td></td>
             </tr>
         @endif
-        @if(!$nephrology->order->recipe->med2 || $nephrology->order->recipe->code2 == '03107' || $nephrology->order->recipe->code2 == '03113' || $nephrology->order->recipe->code2 == '03979' || $nephrology->order->recipe->code2 == '19238')
+        @if(!$nephrology->order->recipe->med2 ||  nephrology->order->recipe->code2 == '01502'$||nephrology->order->recipe->code2 == '03107' || $nephrology->order->recipe->code2 == '03113' || $nephrology->order->recipe->code2 == '03979' || $nephrology->order->recipe->code2 == '19238')
             @else
             <tr>
                 <td>{{ $nephrology->order->recipe->code2 }}</td>
@@ -321,7 +321,7 @@
                 <td></td>
             </tr>
         @endif
-        @if(!$nephrology->order->recipe->med3 || $nephrology->order->recipe->code3 == '03107' || $nephrology->order->recipe->code3 == '03113' || $nephrology->order->recipe->code3 == '03979' || $nephrology->order->recipe->code3 == '19238')
+        @if(!$nephrology->order->recipe->med3 ||  nephrology->order->recipe->code3 == '01502'$||nephrology->order->recipe->code3 == '03107' || $nephrology->order->recipe->code3 == '03113' || $nephrology->order->recipe->code3 == '03979' || $nephrology->order->recipe->code3 == '19238')
             @else
             <tr>
                 <td>{{ $nephrology->order->recipe->code3 }}</td>
@@ -334,7 +334,7 @@
                 <td></td>
             </tr>
         @endif
-        @if(!$nephrology->order->recipe->med4 || $nephrology->order->recipe->code4 == '03107' || $nephrology->order->recipe->code4 == '03113' || $nephrology->order->recipe->code4 == '03979' || $nephrology->order->recipe->code4 == '19238')
+        @if(!$nephrology->order->recipe->med4 ||  nephrology->order->recipe->code4 == '01502'$||nephrology->order->recipe->code4 == '03107' || $nephrology->order->recipe->code4 == '03113' || $nephrology->order->recipe->code4 == '03979' || $nephrology->order->recipe->code4 == '19238')
             @else
             <tr>
                 <td>{{ $nephrology->order->recipe->code4 }}</td>
@@ -347,7 +347,7 @@
                 <td></td>
             </tr>
         @endif
-        @if(!$nephrology->order->recipe->med5 || $nephrology->order->recipe->code5 == '03107' || $nephrology->order->recipe->code5 == '03113' || $nephrology->order->recipe->code5 == '03979' || $nephrology->order->recipe->code5 == '19238')
+        @if(!$nephrology->order->recipe->med5 ||  nephrology->order->recipe->code5 == '01502'$||nephrology->order->recipe->code5 == '03107' || $nephrology->order->recipe->code5 == '03113' || $nephrology->order->recipe->code5 == '03979' || $nephrology->order->recipe->code5 == '19238')
             @else
             <tr>
                 <td>{{ $nephrology->order->recipe->code5 }}</td>
@@ -360,7 +360,7 @@
                 <td></td>
             </tr>
         @endif
-        @if(!$nephrology->order->recipe->med6 || $nephrology->order->recipe->code6 == '03107' || $nephrology->order->recipe->code6 == '03113' || $nephrology->order->recipe->code6 == '03979' || $nephrology->order->recipe->code6 == '19238')
+        @if(!$nephrology->order->recipe->med6 ||  nephrology->order->recipe->code6 == '01502'$||nephrology->order->recipe->code6 == '03107' || $nephrology->order->recipe->code6 == '03113' || $nephrology->order->recipe->code6 == '03979' || $nephrology->order->recipe->code6 == '19238')
             @else
             <tr>
                 <td>{{ $nephrology->order->recipe->code6 }}</td>
@@ -373,7 +373,7 @@
                 <td></td>
             </tr>
         @endif
-        @if(!$nephrology->order->recipe->med7 || $nephrology->order->recipe->code7 == '03107' || $nephrology->order->recipe->code7 == '03113' || $nephrology->order->recipe->code7 == '03979' || $nephrology->order->recipe->code7 == '19238')
+        @if(!$nephrology->order->recipe->med7 ||  nephrology->order->recipe->code7 == '01502'$||nephrology->order->recipe->code7 == '03107' || $nephrology->order->recipe->code7 == '03113' || $nephrology->order->recipe->code7 == '03979' || $nephrology->order->recipe->code7 == '19238')
             @else
             <tr>
                 <td>{{ $nephrology->order->recipe->code7 }}</td>
@@ -386,7 +386,7 @@
                 <td></td>
             </tr>
         @endif
-        @if(!$nephrology->order->recipe->med8 || $nephrology->order->recipe->code8 == '03107' || $nephrology->order->recipe->code8 == '03113' || $nephrology->order->recipe->code8 == '03979' || $nephrology->order->recipe->code8 == '19238')
+        @if(!$nephrology->order->recipe->med8 ||  nephrology->order->recipe->code8 == '01502'$||nephrology->order->recipe->code8 == '03107' || $nephrology->order->recipe->code8 == '03113' || $nephrology->order->recipe->code8 == '03979' || $nephrology->order->recipe->code8 == '19238')
             @else
             <tr>
                 <td>{{ $nephrology->order->recipe->code8 }}</td>
@@ -399,7 +399,7 @@
                 <td></td>
             </tr>
         @endif
-        @if(!$nephrology->order->recipe->med9 || $nephrology->order->recipe->code9 == '03107' || $nephrology->order->recipe->code9 == '03113' || $nephrology->order->recipe->code9 == '03979' || $nephrology->order->recipe->code9 == '19238')
+        @if(!$nephrology->order->recipe->med9 ||  nephrology->order->recipe->code9 == '01502'$||nephrology->order->recipe->code9 == '03107' || $nephrology->order->recipe->code9 == '03113' || $nephrology->order->recipe->code9 == '03979' || $nephrology->order->recipe->code9 == '19238')
             @else
             <tr>
                 <td>{{ $nephrology->order->recipe->code9 }}</td>
@@ -412,7 +412,7 @@
                 <td></td>
             </tr>
         @endif
-        @if(!$nephrology->order->recipe->med10 || $nephrology->order->recipe->code10 == '03107' || $nephrology->order->recipe->code10 == '03113' || $nephrology->order->recipe->code10 == '03979' || $nephrology->order->recipe->code10 == '19238')
+        @if(!$nephrology->order->recipe->med10 || $nephrology->order->recipe->code10 == '01502' ||$nephrology->order->recipe->code10 == '03107' || $nephrology->order->recipe->code10 == '03113' || $nephrology->order->recipe->code10 == '03979' || $nephrology->order->recipe->code10 == '19238')
             @else
             <tr>
                 <td>{{ $nephrology->order->recipe->code10 }}</td>
@@ -425,7 +425,7 @@
                 <td></td>
             </tr>
         @endif
-        @if(!$nephrology->order->recipe->med11 || $nephrology->order->recipe->code11 == '03107' || $nephrology->order->recipe->code11 == '03113' || $nephrology->order->recipe->code11 == '03979' || $nephrology->order->recipe->code11 == '19238')
+        @if(!$nephrology->order->recipe->med11 || $nephrology->order->recipe->code11 == '01502' ||$nephrology->order->recipe->code11 == '03107' || $nephrology->order->recipe->code11 == '03113' || $nephrology->order->recipe->code11 == '03979' || $nephrology->order->recipe->code11 == '19238')
             @else
             <tr>
                 <td>{{ $nephrology->order->recipe->code11 }}</td>
@@ -438,7 +438,7 @@
                 <td></td>
             </tr>
         @endif
-        @if(!$nephrology->order->recipe->med12 || $nephrology->order->recipe->code12 == '03107' || $nephrology->order->recipe->code12 == '03113' || $nephrology->order->recipe->code12 == '03979' || $nephrology->order->recipe->code12 == '19238')
+        @if(!$nephrology->order->recipe->med12 || $nephrology->order->recipe->code12 == '01502' ||$nephrology->order->recipe->code12 == '03107' || $nephrology->order->recipe->code12 == '03113' || $nephrology->order->recipe->code12 == '03979' || $nephrology->order->recipe->code12 == '19238')
             @else
             <tr>
                 <td>{{ $nephrology->order->recipe->code12 }}</td>
@@ -451,7 +451,7 @@
                 <td></td>
             </tr>
         @endif
-        @if(!$nephrology->order->recipe->med13 || $nephrology->order->recipe->code13 == '03107' || $nephrology->order->recipe->code13 == '03113' || $nephrology->order->recipe->code13 == '03979' || $nephrology->order->recipe->code13 == '19238')
+        @if(!$nephrology->order->recipe->med13 || $nephrology->order->recipe->code13 == '01502' ||$nephrology->order->recipe->code13 == '03107' || $nephrology->order->recipe->code13 == '03113' || $nephrology->order->recipe->code13 == '03979' || $nephrology->order->recipe->code13 == '19238')
             @else
             <tr>
                 <td>{{ $nephrology->order->recipe->code13 }}</td>
@@ -464,7 +464,7 @@
                 <td></td>
             </tr>
         @endif
-        @if(!$nephrology->order->recipe->med14 || $nephrology->order->recipe->code14 == '03107' || $nephrology->order->recipe->code14 == '03113' || $nephrology->order->recipe->code14 == '03979' || $nephrology->order->recipe->code14 == '19238')
+        @if(!$nephrology->order->recipe->med14 || $nephrology->order->recipe->code14 == '01502' ||$nephrology->order->recipe->code14 == '03107' || $nephrology->order->recipe->code14 == '03113' || $nephrology->order->recipe->code14 == '03979' || $nephrology->order->recipe->code14 == '19238')
             @else
             <tr>
                 <td>{{ $nephrology->order->recipe->code14 }}</td>
