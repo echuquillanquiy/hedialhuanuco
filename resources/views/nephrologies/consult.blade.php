@@ -215,7 +215,14 @@
             <td width="5%"></td>
             @if($nephrology->alteracion_meta == 'SI')
                 <td style="font-weight: bold; font-size: 0.6rem; width: 10%">Especificar: </td>
-                <td style="font-size: 0.6rem;">{{ $nephrology->especificacion }}</td>
+                <td style="font-size: 0.6rem;">
+                    @for($i = 1; $i <= 15; $i++)
+                        @if($nephrology->order->recipe->{'code'.$i} == '28897' || $nephrology->order->recipe->{'code'.$i} == '20635' ||
+                            $nephrology->order->recipe->{'code'.$i} == '01502' || $nephrology->order->recipe->{'code'.$i} == '01503')
+                            {{ $nephrology->order->recipe->{'med'.$i} }} : {{ $nephrology->order->recipe->{'prescripcion'.$i} }}
+                        @endif
+                    @endfor
+                </td>
             @else
                 <td style="font-weight: bold; font-size: 0.6rem; width: 10%"></td>
                 <td style="font-size: 0.6rem;"></td>
@@ -236,7 +243,16 @@
             <td width="5%"></td>
             @if($nephrology->antihipertensivos == 'SI')
                 <td style="font-weight: bold; font-size: 0.6rem; width: 10%">Especificar: </td>
-                <td style="font-size: 0.6rem;">{{ $nephrology->especificacion2 }}</td>
+                <td style="font-size: 0.6rem;">
+                    @for($i = 1; $i <= 15; $i++)
+                        @if($nephrology->order->recipe->{'code'.$i} == '04701' ||
+                             $nephrology->order->recipe->{'code'.$i} == '04523' || $nephrology->order->recipe->{'code'.$i} == '00671' ||
+                             $nephrology->order->recipe->{'code'.$i} == '03078' || $nephrology->order->recipe->{'code'.$i} == '05018' ||
+                             $nephrology->order->recipe->{'code'.$i} == '05021' || $nephrology->order->recipe->{'code'.$i} == '00900')
+                            {{ $nephrology->order->recipe->{'med'.$i} }} : {{ $nephrology->order->recipe->{'prescripcion'.$i} }}
+                        @endif
+                    @endfor
+                </td>
             @else
                 <td style="font-weight: bold; font-size: 0.6rem; width: 10%"></td>
                 <td style="font-size: 0.6rem;"></td>
@@ -249,11 +265,18 @@
             <tr>
                 <td style="font-weight: bold; font-size: 0.6rem; width: 10%">d) Otros</td>
 
-                <td style="font-size: 0.6rem;">
+                <td style="font-size: 0.6rem; text-align: justify">
                     @for($i = 1; $i <= 15; $i++)
-                        @if(!$nephrology->order->recipe->{'med'.$i} || $nephrology->order->recipe->{'code'.$i} == '03107' || $nephrology->order->recipe->{'code'.$i}== '03113' || $nephrology->order->recipe->{'code'.$i} == '03979' || $nephrology->order->recipe->{'code'.$i} == '19238')
+                        @if(!$nephrology->order->recipe->{'med'.$i} || $nephrology->order->recipe->{'code'.$i} == '03107' ||
+                             $nephrology->order->recipe->{'code'.$i}== '03113' || $nephrology->order->recipe->{'code'.$i} == '03979' ||
+                             $nephrology->order->recipe->{'code'.$i} == '19238' || $nephrology->order->recipe->{'code'.$i} == '28897' ||
+                             $nephrology->order->recipe->{'code'.$i} == '20635' || $nephrology->order->recipe->{'code'.$i} == '01502' ||
+                             $nephrology->order->recipe->{'code'.$i} == '01503' || $nephrology->order->recipe->{'code'.$i} == '04701' ||
+                             $nephrology->order->recipe->{'code'.$i} == '04523' || $nephrology->order->recipe->{'code'.$i} == '00671' ||
+                             $nephrology->order->recipe->{'code'.$i} == '03078' || $nephrology->order->recipe->{'code'.$i} == '05018' ||
+                             $nephrology->order->recipe->{'code'.$i} == '05021' || $nephrology->order->recipe->{'code'.$i} == '00900')
                         @else
-                            {{ $nephrology->order->recipe->{'med'.$i} }} / {{ $nephrology->order->recipe->{'prescripcion'.$i} }}
+                            {{ $nephrology->order->recipe->{'med'.$i} }} : {{ $nephrology->order->recipe->{'prescripcion'.$i} }} /
                         @endif
                     @endfor
                 </td>

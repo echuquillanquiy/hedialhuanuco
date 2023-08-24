@@ -17,7 +17,7 @@
 
     <br>
 
-    <table style="width: 100%;font-size: 0.8rem; border: #0a0c0d 2px solid;">
+    <table style="width: 100%;font-size: 0.8rem; border: #0a0c0d 2px solid; margin-top: -15px">
         <tr>
 
             <td>NOMBRES Y APELLIDOS: {{ $recipe->patient->name }}</td>
@@ -28,7 +28,7 @@
         </tr>
     </table>
     <br>
-    <table width="100%" style="border-collapse:collapse;text-align:center; margin-top:-10px; font-size: 0.8rem" border="1px;">
+    <table width="100%" style="border-collapse:collapse;text-align:center; margin-top:-15px; font-size: 0.7rem" border="1px;">
 
         <tr style="border: #0a0c0d 2px solid; brecipe-collapse: collapse">
             <th>CODIGO</th>
@@ -167,7 +167,7 @@
 
     </table>
 
-    <table width="100%" style="border-collapse:collapse; margin-top:30px; font-size: 0.8rem;" border="1px">
+    <table width="100%" style="border-collapse:collapse; margin-top:5px; font-size: 0.8rem;" border="1px">
          <tr>
              <td colspan="6" style="height: 200px; text-align: center">
                  @if($recipe->order->user_id)

@@ -2,9 +2,7 @@
     <div class="form-group col-sm-12 col-lg-12">
         <label for="solicitud">INDICACIONES DE EXAMENES AUXILIARES - SE SOLICITA:</label>
         <textarea class="form-control" id="" name="solicitud" rows="2">
-            {{ !$nephrology->solicitud ? 'Úrea sérica pre y post hemodiálisis, hemoglobina, hematocrito, perfil de electrolitos (cloro, sodio y potasio), fósforo inorgánico, calcio
-                total, AST, ALT, albúmina sérica, fosfatasa alcalina, paratohormona, hierro, ferritina, transferrina, anticuerpos para HIV1 y HIV2, Prueba
-                de sífilis cualitativo, HBsAg, HBsAb, HBcAb, Anticuerpo contra la hepatitis C, Anticuerpo para HTLV1.
+            {{ !$nephrology->solicitud ? 'Úrea sérica pre y post hemodiálisis, hemoglobina, hematocrito, perfil de electrolitos (cloro, sodio y potasio), fósforo inorgánico, calcio total.
                 ' : $nephrology->solicitud }}
         </textarea>
     </div>
