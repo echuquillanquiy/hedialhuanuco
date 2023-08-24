@@ -1,95 +1,79 @@
 <div class="row text-center mt--4">
     <div class="form-group col-sm-12 col-lg-3">
-        <label for="type">MEDICAMENTOS</label>
-        <select name="type" id="obtenerMed1" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
-            <option value="{{ !$recipe->code1 ? '[SELECIONE]' : $recipe->code1 }}" selected disabled>{{ !$recipe->med1 ? '[SELECCIONE]' : $recipe->med1 }}</option>
-            @foreach($recipesall as $item)
-                <option value="{{ $item->codigo }}">{{ $item->descripcion }}</option>
-            @endforeach
+        <label for="med1">MEDICAMENTOS</label>
+        <select name="med1" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
+            <option value="{{ !$recipe->med1 ? 'Tiamina 100 mg Tab' : $recipe->med1 }}" selected>{{ !$recipe->med1 ? 'Tiamina 100 mg Tab' : $recipe->med1 }}</option>
         </select>
     </div>
 
     <div class="form-group col-sm-12 col-lg-1">
         <label for="code1">CODIGO</label>
-        <input type="text" name="code1" id="code1" class="form-control" value="{{ !$recipe->code1 ? '0' : $recipe->code1}}" readonly>
+        <input type="text" name="code1" id="code1" class="form-control" value="{{ !$recipe->code1 ? '06127' : $recipe->code1}}" readonly>
     </div>
-
-    <input type="hidden" name="med1" id="med1" class="form-control" value="{{ !$recipe->med1 ? '' : $recipe->med1}}" readonly>
-
 
     <div class="form-group col-sm-12 col-lg-4">
         <label for="prescripcion1">PRESCRIPCION</label>
-        <input type="text" name="prescripcion1" id="prescripcion1" class="form-control" value="{{ !$recipe->prescripcion1 ? '' : $recipe->prescripcion1}}">
+        <input type="text" name="prescripcion1" id="prescripcion1" class="form-control" value="{{ !$recipe->prescripcion1 ? '1 TAB VO C/24 horas a las 10am' : $recipe->prescripcion1}}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-2">
         <label for="prescrita1">C. PRESCRITA</label>
-        <input type="number" name="prescrita1" id="prescrita1" class="form-control" value="{{ !$recipe->prescrita1 ? '0' : $recipe->prescrita1}}">
+        <input type="number" name="prescrita1" id="prescrita1" class="form-control" value="{{ !$recipe->prescrita1 ? '30' : $recipe->prescrita1}}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-2">
         <label for="entregada1">C. ENTREGADA</label>
-        <input type="number" name="entregada1" id="entregada1" class="form-control" value="{{ !$recipe->entregada1 ? '0' : $recipe->entregada1}}">
+        <input type="number" name="entregada1" id="entregada1" class="form-control" value="{{ !$recipe->entregada1 ? '30' : $recipe->entregada1}}">
     </div>
 
 </div>
 
 <div class="row text-center mt--3">
     <div class="form-group col-sm-12 col-lg-3">
-        <select name="type" id="obtenerMed2" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
-            <option value="{{ !$recipe->code2 ? '[SELECIONE]' : $recipe->code2 }}" selected disabled>{{ !$recipe->med2 ? '[SELECCIONE]' : $recipe->med2 }}</option>
-            @foreach($recipesall as $item)
-                <option value="{{ $item->codigo }}">{{ $item->descripcion }}</option>
-            @endforeach
+        <select name="med2" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
+            <option value="{{ !$recipe->med2 ? 'Piridoxina 50mg TAB' : $recipe->med2 }}" selected>{{ !$recipe->med2 ? 'Piridoxina 50mg TAB' : $recipe->med2 }}</option>
         </select>
     </div>
 
     <div class="form-group col-sm-12 col-lg-1">
-        <input type="text" name="code2" id="code2" class="form-control" value="{{ !$recipe->code2 ? '0' : $recipe->code2}}" readonly>
+        <input type="text" name="code2" id="code2" class="form-control" value="{{ !$recipe->code2 ? '05491' : $recipe->code2}}" readonly>
     </div>
-
-    <input type="hidden" name="med2" id="med2" class="form-control" value="{{ !$recipe->med2 ? '0' : $recipe->med2}}" readonly>
 
     <div class="form-group col-sm-12 col-lg-4">
-        <input type="text" name="prescripcion2" id="prescripcion2" class="form-control" value="{{ !$recipe->prescripcion2 ? '' : $recipe->prescripcion2}}">
+        <input type="text" name="prescripcion2" id="prescripcion2" class="form-control" value="{{ !$recipe->prescripcion2 ? '1 TAB VO C/24 horas a las 10am' : $recipe->prescripcion2}}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-2">
-        <input type="number" name="prescrita2" id="prescrita2" class="form-control" value="{{ !$recipe->prescrita2 ? '0' : $recipe->prescrita2}}">
+        <input type="number" name="prescrita2" id="prescrita2" class="form-control" value="{{ !$recipe->prescrita2 ? '30' : $recipe->prescrita2}}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-2">
-        <input type="number" name="entregada2" id="entregada2" class="form-control" value="{{ !$recipe->entregada2 ? '0' : $recipe->entregada2}}">
+        <input type="number" name="entregada2" id="entregada2" class="form-control" value="{{ !$recipe->entregada2 ? '30' : $recipe->entregada2}}">
     </div>
 
 </div>
 
 <div class="row text-center mt--3">
     <div class="form-group col-sm-12 col-lg-3">
-        <select name="type" id="obtenerMed3" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
-            <option value="{{ !$recipe->code3 ? '[SELECIONE]' : $recipe->code3 }}" selected disabled>{{ !$recipe->med3 ? '[SELECCIONE]' : $recipe->med3 }}</option>
-            @foreach($recipesall as $item)
-                <option value="{{ $item->codigo }}">{{ $item->descripcion }}</option>
-            @endforeach
+        <select name="med3" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
+            <option value="{{ !$recipe->med3 ? 'Ácido fólico 500 mcg (0,5 mg) TAB' : $recipe->med3 }}" selected>{{ !$recipe->med3 ? 'Ácido fólico 500 mcg (0,5 mg) TAB' : $recipe->med3 }}</option>
         </select>
     </div>
 
     <div class="form-group col-sm-12 col-lg-1">
-        <input type="text" name="code3" id="code3" class="form-control" value="{{ !$recipe->code3 ? '0' : $recipe->code3}}" readonly>
+        <input type="text" name="code3" id="code3" class="form-control" value="{{ !$recipe->code3 ? '00200' : $recipe->code3}}" readonly>
     </div>
-
-    <input type="hidden" name="med3" id="med3" class="form-control" value="{{ !$recipe->med3 ? '0' : $recipe->med3}}" readonly>
 
     <div class="form-group col-sm-12 col-lg-4">
-        <input type="text" name="prescripcion3" id="prescripcion3" class="form-control" value="{{ !$recipe->prescripcion3 ? '' : $recipe->prescripcion3}}">
+        <input type="text" name="prescripcion3" id="prescripcion3" class="form-control" value="{{ !$recipe->prescripcion3 ? '1 TAB VO C/24 horas a las 10am' : $recipe->prescripcion3}}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-2">
-        <input type="number" name="prescrita3" id="prescrita3" class="form-control" value="{{ !$recipe->prescrita3 ? '0' : $recipe->prescrita3}}">
+        <input type="number" name="prescrita3" id="prescrita3" class="form-control" value="{{ !$recipe->prescrita3 ? '30' : $recipe->prescrita3}}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-2">
-        <input type="number" name="entregada3" id="entregada3" class="form-control" value="{{ !$recipe->entregada3 ? '0' : $recipe->entregada3}}">
+        <input type="number" name="entregada3" id="entregada3" class="form-control" value="{{ !$recipe->entregada3 ? '30' : $recipe->entregada3}}">
     </div>
 
 </div>
