@@ -245,10 +245,21 @@
     </table>
 
     <table style="width: 100%; border-collapse:collapse; margin-top:10px;">
-        <tr>
-            <td style="font-weight: bold; font-size: 0.6rem; width: 10%">d) Otros</td>
-            <td style="font-size: 0.6rem;">{{ $nephrology->order->recipe }}</td>
-        </tr>
+
+            <tr>
+                <td style="font-weight: bold; font-size: 0.6rem; width: 10%">d) Otros</td>
+
+                <td style="font-size: 0.6rem;">
+                    @for($i = 1; $i <= 15; $i++)
+                        @if(!$nephrology->order->recipe->{'med'.$i} || $nephrology->order->recipe->{'code'.$i} == '03107' || $nephrology->order->recipe->{'code'.$i}== '03113' || $nephrology->order->recipe->{'code'.$i} == '03979' || $nephrology->order->recipe->{'code'.$i} == '19238')
+                        @else
+                            {{ $nephrology->order->recipe->{'med'.$i} }} / {{ $nephrology->order->recipe->{'prescripcion'.$i} }}
+                        @endif
+                    @endfor
+                </td>
+            </tr>
+
+
     </table>
 
     <table style="width: 100%; border-collapse:collapse; margin-top:5px; border: solid 2px black">
