@@ -80,6 +80,9 @@
         <tr>
           <th scope="col">Nombres y Apellidos</th>
 	        <th scope="col">Opciones</th>
+            <th scope="col">HB</th>
+            <th scope="col">TGO</th>
+            <th scope="col">TGP</th>
 	     <th scope="col">HD Inicio</th>
 	     <th scope="col">HD Fin</th>
           <th scope="col">Sala</th>
@@ -93,11 +96,11 @@
         @foreach ($nurses as $nurse)
         <tr>
 
-	  <th scope="row">
-            {{ $nurse->patient }}
-          </th>
+	        <th scope="row">
+                {{ $nurse->patient }}
+            </th>
 
-<td>
+        <td>
 
             <form action="{{ url('/nurses/'.$nurse->id) }}" method="POST">
               @csrf
@@ -114,6 +117,19 @@
                 @endif
             </form>
           </td>
+
+            <td>
+                {{ $nurse->order->laboratory->result3 }}
+            </td>
+
+            <td>
+                {{ $nurse->order->laboratory->result7 }}
+            </td>
+
+            <td>
+                {{ $nurse->order->laboratory->result8 }}
+            </td>
+
 
           <th scope="row">
             {{$nurse->hr}}

@@ -249,6 +249,7 @@
                              $nephrology->order->recipe->{'code'.$i} == '04523' || $nephrology->order->recipe->{'code'.$i} == '00671' ||
                              $nephrology->order->recipe->{'code'.$i} == '03078' || $nephrology->order->recipe->{'code'.$i} == '05018' ||
                              $nephrology->order->recipe->{'code'.$i} == '05021' || $nephrology->order->recipe->{'code'.$i} == '00900')
+
                             {{ $nephrology->order->recipe->{'med'.$i} }} : {{ $nephrology->order->recipe->{'prescripcion'.$i} }}
                         @endif
                     @endfor
@@ -267,7 +268,7 @@
 
                 <td style="font-size: 0.6rem; text-align: justify">
                     @for($i = 1; $i <= 15; $i++)
-                        @if(!$nephrology->order->recipe->{'med'.$i} || $nephrology->order->recipe->{'code'.$i} == '03107' ||
+                        @if(!$nephrology->order->recipe->{'med'.$i} || $nephrology->order->recipe->{'code'.$i} == '03107' || $nephrology->order->recipe->{'code'.$i} == '01502' ||
                              $nephrology->order->recipe->{'code'.$i}== '03113' || $nephrology->order->recipe->{'code'.$i} == '03979' ||
                              $nephrology->order->recipe->{'code'.$i} == '19238' || $nephrology->order->recipe->{'code'.$i} == '28897' ||
                              $nephrology->order->recipe->{'code'.$i} == '20635' || $nephrology->order->recipe->{'code'.$i} == '01502' ||
