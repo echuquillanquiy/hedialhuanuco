@@ -101,6 +101,7 @@
                     <th scope="col">Epo4</th>
                     <th scope="col">B12</th>
                     <th scope="col">Fe</th>
+                    <th scope="col">Calc</th>
                     <th scope="col">Turno</th>
                     <th scope="col">HD</th>
                     <th scope="col">Fecha</th>
@@ -147,6 +148,10 @@
                         </td>
 
                         <td>
+                            @if (!$medical->calci) 0 @else {{ $medical->calci }} @endif
+                        </td>
+
+                        <td>
 
                             @if($medical->shift == 'TURNO 1')
                                 <span class="badge badge-lg badge-danger">1</span>
@@ -163,7 +168,7 @@
                             <button class="btn btn-info btn-sm">{{ $medical->hour_hd }}</button>
                         </td>
                         <td>
-                            {{$medical->order->created_at }}
+                            {{$medical->order->created_at->format('d/m') }}
                         </td>
 
                         <td>
