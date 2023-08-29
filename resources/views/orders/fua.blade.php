@@ -349,24 +349,34 @@
              @endif
          </tr>
          <tr style="font-size: 0.5rem;">
-            <td style="font-size: 0.5rem; height: 10px"></td>
-            <td style="font-size: 0.5rem; height: 10px"></td>
-            <td style="font-size: 0.5rem; height: 10px"></td>
-            <td style="font-size: 0.5rem; height: 10px"></td>
-            <td style="font-size: 0.5rem; height: 10px"></td>
-            <td style="font-size: 0.5rem; height: 10px"></td>
-            <td style="font-size: 0.5rem; height: 10px"></td>
-            <td style="font-size: 0.5rem; height: 10px"></td>
+                @if($order->medical->iron > 0)
+                    <tr style="font-size: 0.4rem;">
+                        <td>19238</td>
+                        <td style="text-align: left">HIERRO (COMO SACARATO) 5 ML 20 MG FE/ML INY</td>
+                        <td>{{ $order->medical->iron }}</td>
+                        <td>{{ $order->medical->iron }}</td>
+
+                        <td style="font-size: 0.5rem; height: 10px"></td>
+                        <td style="font-size: 0.5rem; height: 10px"></td>
+                        <td style="font-size: 0.5rem; height: 10px"></td>
+                        <td style="font-size: 0.5rem; height: 10px"></td>
+                    </tr>
+                    @endif
          </tr>
          <tr style="font-size: 0.5rem;">
-            <td style="font-size: 0.5rem; height: 10px"></td>
-            <td style="font-size: 0.5rem; height: 10px"></td>
-            <td style="font-size: 0.5rem; height: 10px"></td>
-            <td style="font-size: 0.5rem; height: 10px"></td>
-            <td style="font-size: 0.5rem; height: 10px"></td>
-            <td style="font-size: 0.5rem; height: 10px"></td>
-            <td style="font-size: 0.5rem; height: 10px"></td>
-            <td style="font-size: 0.5rem; height: 10px"></td>
+                    @if($order->medical->calci > 0)
+                        <tr style="font-size: 0.4rem;">
+                            <td>19238</td>
+                            <td style="text-align: left">CALCITRIOL 1 MCG/ML INY</td>
+                            <td>{{ $order->medical->calci }}</td>
+                            <td>{{ $order->medical->calci }}</td>
+
+                            <td style="font-size: 0.5rem; height: 10px"></td>
+                            <td style="font-size: 0.5rem; height: 10px"></td>
+                            <td style="font-size: 0.5rem; height: 10px"></td>
+                            <td style="font-size: 0.5rem; height: 10px"></td>
+                        </tr>
+                        @endif
          </tr>
          <tr style="font-size: 0.5rem;">
             <td style="font-size: 0.5rem; height: 10px"></td>
