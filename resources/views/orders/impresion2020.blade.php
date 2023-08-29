@@ -422,7 +422,7 @@
 
             <tr>
                 <td style="font-size:0.6rem">Hidroxicobalamina 1mg/mL INY 1mL: <span style="border:1px solid #000; padding:10px">{{ $order->medical->vitb12 }} </span></td>
-                <td style="font-size:0.6rem">Calcitriol 1 mcg/mL INY: <span style="border:1px solid #000; padding:10px">{{ $order->nurse->calci }} </span></td>
+                <td style="font-size:0.6rem">Calcitriol 1 mcg/mL INY: <span style="border:1px solid #000; padding:10px">{{ $order->nurse->calcitriol }} </span></td>
                 <td style="font-size:0.6rem">Otros: <span style="border:1px solid #000; padding:10px">{{ $order->nurse->others_med }} </span></td>
             </tr>
         </table>

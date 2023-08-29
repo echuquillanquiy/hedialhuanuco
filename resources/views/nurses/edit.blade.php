@@ -114,7 +114,7 @@
 
                     <div class="form-group col-sm-12 col-lg-3">
                         <label for="calcitriol">Calcitriol</label>
-                        <input type="number" name="" class="form-control" value="{{ $nurse->order->medical->calci }}" disabled>
+                        <input type="number" name="" class="form-control" value="{{ $nurse->order->medical->calcitriol }}" disabled>
                     </div>
                 </div>
 
