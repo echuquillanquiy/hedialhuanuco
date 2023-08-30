@@ -247,7 +247,7 @@ class MedicalController extends Controller
             ->created_at($created_at)
             ->date_order($date_order)
             ->hour_hd($hour_hd)
-            ->paginate(15);
+            ->paginate(30);
         return view('medicals.fissal', compact('medicals', 'order', 'rooms', 'shifts'));
     }
 
