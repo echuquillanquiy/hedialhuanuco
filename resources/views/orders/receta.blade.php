@@ -19,7 +19,7 @@
             <td>NOMBRES Y APELLIDOS: {{ $order->patient->name }}</td>
             <td>DNI: {{ $order->patient->dni }}</td>
             <td>H.CL: {{ $order->patient->dni }}</td>
-            <td>FECHA: {{ $order->created_at->format('Y-m-d' ) }}</td>
+            <td>FECHA: {{ $order->date_order->format('Y-m-d' ) }}</td>
 
         </tr>
     </table>

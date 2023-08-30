@@ -63,6 +63,7 @@
                         <input type="text" name="order_id" id="order_id" class="form-control" readonly>
                     </div>
 
+
                     <div class="form-group col-sm-12 col-lg-2">
                         <label for="date_order">FECHA DE ORDEN</label>
                         <input type="text" name="date_order" id="date_order" class="form-control" value="{{ \Carbon\Carbon::now()->format('Y-m-d') }}">
