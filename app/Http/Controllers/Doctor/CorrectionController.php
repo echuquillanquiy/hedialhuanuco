@@ -109,11 +109,12 @@ class CorrectionController extends Controller
 
     public function subsanacion(Correction $correction)
     {
-        $fecha_orden = $correction->date_order;
+        $otrafecha = $correction->order->date_order;
 
-        $carbonAnio = Carbon::parse($fecha_orden)->format('Y');
-        $carbonMes = Carbon::parse($fecha_orden)->format('m');
-        $carbonDia = Carbon::parse($fecha_orden)->format('d');
+
+        $carbonAnio = Carbon::parse($otrafecha)->format('Y');
+        $carbonMes = Carbon::parse($otrafecha)->format('m');
+        $carbonDia = Carbon::parse($otrafecha)->format('d');
 
         $pdf = PDF::loadView('corrections.subsanacion', compact('correction', 'carbonAnio', 'carbonMes', 'carbonDia'));
         return $pdf->download($correction->serie_fua . '  Corrige: ' . $correction->order->n_fua . '.pdf');
