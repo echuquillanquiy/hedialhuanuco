@@ -49,7 +49,8 @@
                     <th scope="col">PACIENTE</th>
                     <th scope="col">FUA SUBSANACION</th>
                     <th scope="col">FUA A SUBSANAR</th>
-                    <th scope="col">FECHA</th>
+                    <th scope="col">FECHA FUA A SUBSANAR</th>
+                    <th scope="col">FECHA CREACION</th>
                     <th>Opciones</th>
                 </tr>
                 </thead>
@@ -70,6 +71,10 @@
 
                         <td>
                             {{$correction->order->n_fua }}
+                        </td>
+
+                        <td>
+                            {{$correction->order->date_order}}
                         </td>
 
                         <td>
