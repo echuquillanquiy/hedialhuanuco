@@ -65,7 +65,7 @@
 
                     <div class="form-group col-sm-12 col-lg-2">
                         <label for="date_order">FECHA DE ORDEN</label>
-                        <input type="text" name="date_order" id="date_order" class="form-control" value="2023-07-01">
+                        <input type="text" name="date_order" id="date_order" class="form-control" value="{{ \Carbon\Carbon::now()->format('Y-m-d') }}">
                     </div>
 
                 </div>
