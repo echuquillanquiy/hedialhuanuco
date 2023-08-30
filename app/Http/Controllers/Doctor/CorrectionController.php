@@ -20,7 +20,8 @@ class CorrectionController extends Controller
      */
     public function index()
     {
-        $corrections = Correction::paginate(30);
+        $corrections = Correction::paginate(30)
+            ->orderBy('created_at', 'desc');
 
         return view('corrections.index', compact('corrections'));
     }
