@@ -103,6 +103,7 @@
                     <th scope="col">Fe</th>
                     <th scope="col">Calc</th>
                     <th scope="col">Turno</th>
+                    <th scope="col">Sala</th>
                     <th scope="col">HD</th>
                     <th scope="col">Fecha</th>
                     <th scope="col">Licenciado</th>
@@ -161,6 +162,18 @@
 
                             @else($medical->shift == 'TURNO 3')
                                 <span class="badge badge-lg badge-danger">3</span>
+                            @endif
+                        </td>
+
+                        <td>
+                            @if($medical->room == 'AMARILLA')
+                                <span class="badge badge-lg bg-yellow">A</span>
+
+                            @elseif($medical->room == 'VERDE')
+                                <span class="badge badge-lg badge-success">V</span>
+
+                            @else($medical->room == 'AZUL')
+                                <span class="badge badge-lg bg-blue text-white">A</span>
                             @endif
                         </td>
 
