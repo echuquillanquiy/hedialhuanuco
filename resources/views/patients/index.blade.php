@@ -61,6 +61,7 @@
         <tr>
           <th scope="col">Nombres</th>
           <th scope="col">DNI</th>
+          <th scope="col">Fecha de Nacimiento</th>
           <th scope="col">Autogenerado</th>
           <th scope="col">Opciones</th>
         </tr>
@@ -74,6 +75,9 @@
           <td>
             {{$patient->dni}}
           </td>
+            <td>
+                {{$patient->date_of_birth}}
+            </td>
           <td>
             {{$patient->code}}
           </td>
