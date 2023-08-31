@@ -113,7 +113,7 @@ class NurseController extends Controller
             $nurse->nhd;
         }*/
 
-        $dayWeek = Carbon::parse($nurse->created_at)->dayOfWeek;
+        $dayWeek = Carbon::parse($nurse->date_order)->dayOfWeek;
 
         if ($nurse->others == null)
         {
