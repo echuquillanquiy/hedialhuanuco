@@ -123,8 +123,11 @@
               @elseif($medical->room == 'VERDE')
                       <span class="badge badge-lg badge-success">V</span>
 
-              @else($medical->room == 'AZUL')
+              @elseif($medical->room == 'AZUL')
                           <span class="badge badge-lg bg-blue text-white">A</span>
+
+              @else($medical->room == 'NARANJA')
+                  <span class="badge badge-lg bg-orange text-white">N</span>
               @endif
 
 
