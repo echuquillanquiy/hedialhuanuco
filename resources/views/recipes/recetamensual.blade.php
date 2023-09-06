@@ -38,7 +38,7 @@
             <th>C. PRESCRITA</th>
         </tr>
 
-        @if($recipe->med1)
+        @if($recipe->prescrita1 > 0  || $recipe->entregada1 > 0)
             <tr>
                 <td>{{ $recipe->code1 }}</td>
                 <td>{{ $recipe->med1 }}</td>
@@ -47,7 +47,7 @@
                 <td>{{ $recipe->entregada1 }}</td>
             </tr>
         @endif
-        @if($recipe->med2)
+        @if($recipe->prescrita2 > 0  || $recipe->entregada2 > 0 )
         <tr>
             <td>{{ $recipe->code2 }}</td>
             <td>{{ $recipe->med2 }}</td>
@@ -56,7 +56,7 @@
             <td>{{ $recipe->entregada2 }}</td>
         </tr>
         @endif
-        @if($recipe->med3)
+        @if($recipe->prescrita3 > 0  || $recipe->entregada3 > 0 )
         <tr>
             <td>{{ $recipe->code3 }}</td>
             <td>{{ $recipe->med3 }}</td>
@@ -65,7 +65,7 @@
             <td>{{ $recipe->entregada3 }}</td>
         </tr>
         @endif
-        @if($recipe->med4)
+        @if($recipe->prescrita4 > 0  || $recipe->entregada4 > 0 )
         <tr>
             <td>{{ $recipe->code4 }}</td>
             <td>{{ $recipe->med4 }}</td>
@@ -74,7 +74,7 @@
             <td>{{ $recipe->entregada4 }}</td>
         </tr>
         @endif
-        @if($recipe->med5)
+        @if($recipe->prescrita5 > 0  || $recipe->entregada5 > 0 )
         <tr>
             <td>{{ $recipe->code5 }}</td>
             <td>{{ $recipe->med5 }}</td>
@@ -83,7 +83,7 @@
             <td>{{ $recipe->entregada5 }}</td>
         </tr>
         @endif
-        @if($recipe->med6)
+        @if($recipe->prescrita6 > 0  || $recipe->entregada6 > 0 )
         <tr>
             <td>{{ $recipe->code6 }}</td>
             <td>{{ $recipe->med6 }}</td>
@@ -92,7 +92,7 @@
             <td>{{ $recipe->entregada6 }}</td>
         </tr>
         @endif
-        @if($recipe->med7)
+        @if($recipe->prescrita7 > 0  || $recipe->entregada7 > 0 )
         <tr>
             <td>{{ $recipe->code7 }}</td>
             <td>{{ $recipe->med7 }}</td>
@@ -101,7 +101,7 @@
             <td>{{ $recipe->entregada7 }}</td>
         </tr>
         @endif
-        @if($recipe->med8)
+        @if($recipe->prescrita8 > 0  || $recipe->entregada8 > 0 )
         <tr>
             <td>{{ $recipe->code8 }}</td>
             <td>{{ $recipe->med8 }}</td>
@@ -110,7 +110,7 @@
             <td>{{ $recipe->entregada8 }}</td>
         </tr>
         @endif
-        @if($recipe->med9)
+        @if($recipe->prescrita9 > 0  || $recipe->entregada9 > 0 )
         <tr>
             <td>{{ $recipe->code9 }}</td>
             <td>{{ $recipe->med9 }}</td>
@@ -119,7 +119,7 @@
             <td>{{ $recipe->entregada9 }}</td>
         </tr>
         @endif
-        @if($recipe->med10)
+        @if($recipe->prescrita10 > 0  || $recipe->entregada10 > 0 )
         <tr>
             <td>{{ $recipe->code10 }}</td>
             <td>{{ $recipe->med10 }}</td>
@@ -128,7 +128,7 @@
             <td>{{ $recipe->entregada10 }}</td>
         </tr>
         @endif
-        @if($recipe->med11)
+        @if($recipe->prescrita11 > 0  || $recipe->entregada11 > 0 )
         <tr>
             <td>{{ $recipe->code11 }}</td>
             <td>{{ $recipe->med11 }}</td>
@@ -137,7 +137,7 @@
             <td>{{ $recipe->entregada11 }}</td>
         </tr>
         @endif
-        @if($recipe->med12)
+        @if($recipe->prescrita12 > 0  || $recipe->entregada12 > 0 )
         <tr>
             <td>{{ $recipe->code12 }}</td>
             <td>{{ $recipe->med12 }}</td>
@@ -146,7 +146,7 @@
             <td>{{ $recipe->entregada12 }}</td>
         </tr>
         @endif
-        @if($recipe->med13)
+        @if($recipe->prescrita13 > 0  || $recipe->entregada13 > 0 )
         <tr>
             <td>{{ $recipe->code13 }}</td>
             <td>{{ $recipe->med13 }}</td>
@@ -155,7 +155,7 @@
             <td>{{ $recipe->entregada13 }}</td>
         </tr>
         @endif
-        @if($recipe->med14)
+        @if($recipe->prescrita14 > 0 || $recipe->entregada14 > 0)
         <tr>
             <td>{{ $recipe->code14 }}</td>
             <td>{{ $recipe->med14 }}</td>
