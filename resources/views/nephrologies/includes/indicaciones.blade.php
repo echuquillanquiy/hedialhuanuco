@@ -2,7 +2,8 @@
     <div class="form-group col-sm-12 col-lg-12">
         <label for="solicitud">INDICACIONES DE EXAMENES AUXILIARES - SE SOLICITA:</label>
         <textarea class="form-control" id="" name="solicitud" rows="2">
-            {{ !$nephrology->solicitud ? 'Úrea sérica pre y post hemodiálisis, hemoglobina, hematocrito, perfil de electrolitos (cloro, sodio y potasio), fósforo inorgánico, calcio total.
+            {{ !$nephrology->solicitud ? 'Úrea sérica pre y post hemodiálisis, hemoglobina, hematocrito, perfil de electrolitos (cloro, sodio y potasio), fósforo inorgánico, calcio total,
+Aspartato amino transferasa (AST) (SGOT), Alanina amino Transferasa (ALT) (SGPT).
                 ' : $nephrology->solicitud }}
         </textarea>
     </div>
