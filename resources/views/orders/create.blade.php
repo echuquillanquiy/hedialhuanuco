@@ -117,7 +117,7 @@
               </select>
           </div>
 
-          @if(\Carbon\Carbon::now()->format('Y-m-d') == '2023-08-16' || \Carbon\Carbon::now()->format('Y-m-d') == '2023-08-17')
+          @if(\Carbon\Carbon::now()->format('Y-m-d') == '2023-09-20' || \Carbon\Carbon::now()->format('Y-m-d') == '2023-09-21')
               <div class="form-group col-sm-12 col-lg-2">
                   <label for="lab">¿INCLUYE LABORATORIO?</label>
                   <select name="lab" id="lab" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
