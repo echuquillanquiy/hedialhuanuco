@@ -6,17 +6,17 @@
 
     <div class="form-group col-sm-12 col-lg-2">
         <label for="time_disease">TIEMPO ENFERMEDAD</label>
-        <input type="text" name="time_disease" class="form-control" value="{{ !$nephrology->time_disease ? '0 años, meses, días' : $nephrology->time_disease }}">
+        <input type="text" name="time_disease" class="form-control" id="resultado">
     </div>
 
     <div class="form-group col-sm-12 col-lg-6">
         <label for="anamnesis">ANAMNESIS</label>
-        <input type="text" name="anamnesis" class="form-control" value="{{ !$nephrology->anamnesis ? 'Paciente con insuficiencia renal terminal, en Hemodiálisis' : $nephrology->anamnesis }}">
+        <input type="text" name="anamnesis"  class="form-control" value="{{ !$nephrology->anamnesis ? 'Paciente con insuficiencia renal terminal, en Hemodiálisis' : $nephrology->anamnesis }}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-2">
         <label for="date_start">FECHA INICIO</label>
-        <input type="date" name="date_start" class="form-control" value="{{ !$nephrology->date_start ? '//' : $nephrology->date_start }}">
+        <input type="date" name="date_start" class="form-control" id="fechaInicioDialisis" onblur="calcularDiferencia()" value="{{ !$nephrology->date_start ? '//' : $nephrology->date_start }}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-2">

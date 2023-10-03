@@ -81,5 +81,6 @@
 @section('scripts')
     <script src="{{ asset('vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
     <script src="{{ asset('js/imc.js') }}"></script>
+    <script src="{{ asset('js/timetto.js') }}"></script>
 @endsection
 
