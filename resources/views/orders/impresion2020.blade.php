@@ -13,7 +13,7 @@
           <tr>
 
             <td colspan="6" style="font-size: 0.6rem; text-align: right;"><strong>Apellidos y Nombres: </strong></td>
-            <td width="586px" style="border-bottom: solid 1px; font-size: 0.7rem; text-transform:uppercase;">{{ $order->patient->name }}</td>
+            <td width="586px" style="border-bottom: solid 1px; font-size: 0.6rem; text-transform:uppercase;">{{ $order->patient->name }}</td>
 
           </tr>
         </table>
@@ -22,12 +22,12 @@
             <tr>
 
                 <td colspan="5" style="font-size: 0.7rem"><strong>N° de afiliacion a aseguradora: </strong></td>
-                <td width="250px" style="border-bottom: solid 1px; font-size: 0.7rem; text-transform:uppercase;">{{ $order->patient->code }}</td>
+                <td width="250px" style="border-bottom: solid 1px; font-size: 0.6rem; text-transform:uppercase;">{{ $order->patient->code }}</td>
 
-                <td style="width: 6%; font-size: 0.7rem"><strong>N° de historia clinica: </strong></td>
-                <td style="border:solid 1px; text-align: center; font-size: 0.7rem;" width="50px">{{ $order->patient->dni }}</td>
+                <td style="width: 6%; font-size: 0.6rem"><strong>N° de historia clinica: </strong></td>
+                <td style="border:solid 1px; text-align: center; font-size: 0.6rem;" width="50px">{{ $order->patient->dni }}</td>
 
-                <td style="font-size: 0.7rem"><strong>Fecha: </strong></td>
+                <td style="font-size: 0.6rem"><strong>Fecha: </strong></td>
                 <td style="border: solid 1px; padding: 2px; font-size: 0.7rem; text-align: center" width="76px">{{ $order->date_order }}</td>
 
             </tr>
@@ -60,11 +60,11 @@
           <table width="100%" style="border:2px solid; border-collapse: collapse; margin-top: -3px;">
 
             <tr>
-              <td style="font-size: 0.6rem; width: 95%; text-transform:uppercase;" colspan="12">PROBLEMAS CLINICOS: {{ $order->medical->clinical_trouble }} </td>
+              <td style="font-size: 0.5rem; width: 95%; text-transform:uppercase;" colspan="12">PROBLEMAS CLINICOS: {{ $order->medical->clinical_trouble }} </td>
             </tr>
 
             <tr>
-              <td style="font-size: 0.6rem; width: 10%; text-transform:uppercase;" colspan="12">Signos - Sintomas: {{ $order->medical->signal }}</td>
+              <td style="font-size: 0.5rem; width: 10%; text-transform:uppercase;" colspan="12">Signos - Sintomas: {{ $order->medical->signal }}</td>
             </tr>
 
             <tr>
@@ -84,11 +84,11 @@
             <table width="100%" style="border:2px solid; border-collapse: collapse; border-top: none; margin-top: -2px">
               <tr>
                   <td style="font-size: 0.6rem;" colspan="2">EXAMEN FISICO</td>
-                  <td style="font-size: 0.6rem;" colspan="2"><strong> PA:</strong> {{ $order->medical->start_pa }} mmHg</td>
-                  <td style="font-size: 0.6rem;" colspan="2"><strong>FC:</strong> {{ $order->medical->fc }} x'</td>
-                  <td style="font-size: 0.6rem;" colspan="2"><strong>SATO2:</strong> {{ $order->medical->so2 }} %</td>
-                  <td style="font-size: 0.6rem;" colspan="2"><strong>FIO2:</strong> {{ $order->medical->fio }}</td>
-                  <td style="font-size: 0.6rem;" colspan="2"><strong>T°:</strong> {{ $order->medical->temp }} °C</td>
+                  <td style="font-size: 0.5rem;" colspan="2"><strong> PA:</strong> {{ $order->medical->start_pa }} mmHg</td>
+                  <td style="font-size: 0.5rem;" colspan="2"><strong>FC:</strong> {{ $order->medical->fc }} x'</td>
+                  <td style="font-size: 0.5rem;" colspan="2"><strong>SATO2:</strong> {{ $order->medical->so2 }} %</td>
+                  <td style="font-size: 0.5rem;" colspan="2"><strong>FIO2:</strong> {{ $order->medical->fio }}</td>
+                  <td style="font-size: 0.5rem;" colspan="2"><strong>T°:</strong> {{ $order->medical->temp }} °C</td>
               </tr>
 
                 <tr>
@@ -391,8 +391,8 @@
             </tr>
 
             <tr style="border: none">
-                <td colspan="8" style="font-size:0.7rem !important; text-align: left">P.A. Final: {{ $order->nurse->end_pa }}</td>
-                <td colspan="2" style="font-size:0.7rem !important; text-align: left">Peso Final: {{ $order->nurse->end_weight }} Kg</td>
+                <td colspan="8" style="font-size:0.5rem !important; text-align: left">P.A. Final: {{ $order->nurse->end_pa }}</td>
+                <td colspan="2" style="font-size:0.5rem !important; text-align: left">Peso Final: {{ $order->nurse->end_weight }} Kg</td>
             </tr>
 
           <tr>
@@ -431,9 +431,9 @@
 
         <table width="100%" style="text-align:center; margin-top:0px">
       <tr>
-        <td style="font-size: 0.6rem">ENFERMERA(O) QUE INICIA LA DIALISIS</td>
+        <td style="font-size: 0.5rem">ENFERMERA(O) QUE INICIA LA DIALISIS</td>
 
-        <td style="font-size: 0.6rem">ENFERMERA(O) QUE FINALIZA LA DIALISIS</td>
+        <td style="font-size: 0.5rem">ENFERMERA(O) QUE FINALIZA LA DIALISIS</td>
 
       </tr>
 
