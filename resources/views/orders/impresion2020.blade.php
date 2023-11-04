@@ -185,11 +185,11 @@
             </tr>
 
           <tr>
-            <td colspan="4" style="font-size: 0.6rem; text-align: center;">
+            <td colspan="4" style="font-size: 0.4rem; text-align: center;">
 
               Médico que Inicia HD
             </td>
-            <td colspan="4" style="font-size: 0.6rem; text-align: center">
+            <td colspan="4" style="font-size: 0.4rem; text-align: center">
 
               Médico que Finaliza HD
             </td>
@@ -218,19 +218,19 @@
           </tr>
 
             <tr>
-                <td colspan="10" style="font-size: 0.5rem; border-bottom:1px dotted;" ><strong style="font-size:0.6rem;">S.-</strong>  {{ $order->nurse->s }}</td>
+                <td colspan="10" style="font-size: 0.5rem; border-bottom:1px dotted;" ><strong style="font-size:0.5rem;">S.-</strong>  {{ $order->nurse->s }}</td>
             </tr>
 
             <tr>
-                <td colspan="10" style="font-size: 0.5rem; border-bottom:1px dotted;" ><strong style="font-size:0.6rem">O.-</strong> {{ $order->nurse->o }}</td>
+                <td colspan="10" style="font-size: 0.5rem; border-bottom:1px dotted;" ><strong style="font-size:0.5rem">O.-</strong> {{ $order->nurse->o }}</td>
             </tr>
 
             <tr>
-                <td colspan="10" style="font-size: 0.5rem; border-bottom:1px dotted;" ><strong style="font-size:0.6rem">A.-</strong> {{ $order->nurse->a }}</td>
+                <td colspan="10" style="font-size: 0.5rem; border-bottom:1px dotted;" ><strong style="font-size:0.5rem">A.-</strong> {{ $order->nurse->a }}</td>
             </tr>
 
             <tr>
-                <td colspan="10" style="font-size: 0.5rem; border-bottom:1px dotted;" ><strong style="font-size:0.6rem">P.-</strong> {{ $order->nurse->p }}</td>
+                <td colspan="10" style="font-size: 0.5rem; border-bottom:1px dotted;" ><strong style="font-size:0.5rem">P.-</strong> {{ $order->nurse->p }}</td>
             </tr>
 
           <tr>
@@ -431,16 +431,16 @@
 
         <table width="100%" style="text-align:center; margin-top:0px">
       <tr>
-        <td style="font-size: 0.5rem">ENFERMERA(O) QUE INICIA LA DIALISIS</td>
+        <td style="font-size: 0.4rem">ENFERMERA(O) QUE INICIA LA DIALISIS</td>
 
-        <td style="font-size: 0.5rem">ENFERMERA(O) QUE FINALIZA LA DIALISIS</td>
+        <td style="font-size: 0.4rem">ENFERMERA(O) QUE FINALIZA LA DIALISIS</td>
 
       </tr>
 
             <tr>
                 @if($order->nurse->user_id)
                     <td>
-                        <img src="{{ asset($order->nurse->user->image) }}" width="180" height="90" alt="">
+                        <img src="{{ asset($order->nurse->user->image) }}" width="180" height="80" alt="">
                     </td>
                 @else
                     <td>aqui va firma del licenciado</td>
@@ -449,7 +449,7 @@
 
                     @if($order->nurse->user_id)
                         <td>
-                            <img src="{{ asset($order->nurse->user->image) }}" width="180" height="90" alt="">
+                            <img src="{{ asset($order->nurse->user->image) }}" width="180" height="80" alt="">
                         </td>
                     @else
                         <td>aqui va firma del licenciado</td>
