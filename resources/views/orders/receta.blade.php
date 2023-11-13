@@ -70,6 +70,15 @@
                     </tr>
                 @endif
 
+        @if($order->medical->calci > 0)
+            <tr>
+                <td>01502</td>
+                <td>CALCITRIOL</td>
+                <td>1 MCG/ML INY</td>
+                <td>{{ $order->medical->calci }}</td>
+            </tr>
+        @endif
+
     </table>
 
 
