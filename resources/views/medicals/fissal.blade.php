@@ -1,4 +1,4 @@
-@extends('layouts.panel')
+﻿@extends('layouts.panel')
 
 @section('content')
 
@@ -102,13 +102,16 @@
                     <th scope="col">B12</th>
                     <th scope="col">Fe</th>
                     <th scope="col">Calc</th>
-                    <th scope="col">Turno</th>
+                    
                     <th scope="col">Sala</th>
-                    <th scope="col">HD</th>
                     <th scope="col">Fecha</th>
                     <th scope="col">Licenciado</th>
                     <th scope="col">FUA</th>
                     <th scope="col">Receta</th>
+		    <th scope="col">HEP</th>
+		    <th scope="col">AREA</th>
+		    <th scope="col">HD</th>
+		    <th scope="col">QB</th>
                 </tr>
                 </thead>
                 <tbody class="text-center">
@@ -152,18 +155,6 @@
                             @if (!$medical->calci) 0 @else {{ $medical->calci }} @endif
                         </td>
 
-                        <td>
-
-                            @if($medical->shift == 'TURNO 1')
-                                <span class="badge badge-lg badge-danger">1</span>
-
-                            @elseif($medical->shift == 'TURNO 2')
-                                <span class="badge badge-lg badge-danger">2</span>
-
-                            @else($medical->shift == 'TURNO 3')
-                                <span class="badge badge-lg badge-danger">3</span>
-                            @endif
-                        </td>
 
                         <td>
                             @if($medical->room == 'AMARILLA')
@@ -180,9 +171,6 @@
                             @endif
                         </td>
 
-                        <td>
-                            <button class="btn btn-info btn-sm">{{ $medical->hour_hd }}</button>
-                        </td>
                         <td>
                             {{$medical->order->created_at->format('d/m') }}
                         </td>
@@ -205,6 +193,22 @@
 
                         <td>
                             <a href="{{ url('/orders/'.$medical->order->id.'/receta') }}" class="btn btn-sm btn-info" target="_blank"><i class="fas fa-book-open"></i></a>
+                        </td>
+			
+			<td>
+                            {{$medical->heparin }}
+                        </td>
+
+			<td>
+                            {{$medical->area_filter }}
+                        </td>
+
+			<td>
+                            {{$medical->hour_hd }}
+                        </td>
+
+			<td>
+                            {{$medical->qb }}
                         </td>
 
                     </tr>
