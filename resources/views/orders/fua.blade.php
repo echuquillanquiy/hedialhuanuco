@@ -22,7 +22,7 @@
 
         <tr>
             <td></td>
-            <td style="border: #0a0c0d solid 1px; font-size: 0.9rem; font-weight: bold">8181-23-0000{{ $order->n_fua }}</td>
+            <td style="border: #0a0c0d solid 1px; font-size: 0.9rem; font-weight: bold">21247-24-0000{{ $order->n_fua }}</td>
             <td></td>
         </tr>
     </table>
@@ -36,7 +36,7 @@
         </tr>
 
         <tr>
-            <td rowspan="2" style="font-size: 0.7rem; font-weight: bold">8181</td>
+            <td rowspan="2" style="font-size: 0.7rem; font-weight: bold">21247</td>
             <td rowspan="2" style="font-size: 0.7rem; font-weight: bold">H&S OCCUPATIONAL SAC</td>
             <td colspan="2" style="font-size: 0.5rem; font-weight: bold">N° FORMATO ATENCION PARA SUBSANACION</td>
         </tr>
