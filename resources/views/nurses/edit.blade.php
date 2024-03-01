@@ -99,12 +99,12 @@
 
                     <div class="form-group col-sm-12 col-lg-2">
                         <label for="epo4000">EPO 4000</label>
-                        <input type="number" name="" class="form-control" value="{{ $nurse->order->medical->epo4000 }}" disabled>
+                        <input type="number" name="" class="form-control" value="{{ $nurse->order->medical->epo4000 }}" readonly>
                     </div>
 
                     <div class="form-group col-sm-12 col-lg-2">
                         <label for="epo4000">Hierro</label>
-                        <input type="number" name="" class="form-control" value="{{ $nurse->order->medical->iron }}" disabled>
+                        <input type="number" name="" class="form-control" value="{{ $nurse->order->medical->iron }}" readonly>
                     </div>
 
                     <div class="form-group col-sm-12 col-lg-3">
@@ -315,7 +315,7 @@
 
                 <div class="form-group col-sm-12 col-lg-2">
                   <label for="brand_model">Marca/Modelo</label>
-                  <input type="text" name="brand_model" class="form-control" value="{{ old('brand_model', 'NIPRO', $nurse->brand_model) }}">
+                  <input type="text" name="brand_model" class="form-control" value="{{ old('brand_model', 'FRESENIUS', $nurse->brand_model) }}">
                 </div>
               </div>
 
@@ -466,7 +466,7 @@
 
                 <div class="form-group col-sm-12 col-lg-1">
                   <label for="cnd">CND</label>
-                  <input type="text" name="cnd" class="form-control" value="{{ old('cnd', $nurse->cnd) }}">
+                  <input type="text" name="cnd" class="form-control" value="{{ old('cnd', $nurse->order->medical->start_na) }}">
                 </div>
 
                 <div class="form-group col-sm-12 col-lg-1">
