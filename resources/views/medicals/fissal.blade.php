@@ -98,11 +98,9 @@
                     <th scope="col">I-F HD</th>
                     <th scope="col">N° FUA</th>
                     <th scope="col">Epo2</th>
-                    <th scope="col">Epo4</th>
                     <th scope="col">B12</th>
                     <th scope="col">Fe</th>
-                    <th scope="col">Calc</th>
-                    
+
                     <th scope="col">Sala</th>
                     <th scope="col">Fecha</th>
                     <th scope="col">Licenciado</th>
@@ -140,19 +138,11 @@
                         </td>
 
                         <td>
-                            @if (!$medical->epo4000) 0 @else {{ $medical->epo4000 }} @endif
-                        </td>
-
-                        <td>
                             @if (!$medical->vitb12) 0 @else {{ $medical->vitb12 }} @endif
                         </td>
 
                         <td>
                             @if (!$medical->iron) 0 @else {{ $medical->iron }} @endif
-                        </td>
-
-                        <td>
-                            @if (!$medical->calci) 0 @else {{ $medical->calci }} @endif
                         </td>
 
 
@@ -194,7 +184,7 @@
                         <td>
                             <a href="{{ url('/orders/'.$medical->order->id.'/receta') }}" class="btn btn-sm btn-info" target="_blank"><i class="fas fa-book-open"></i></a>
                         </td>
-			
+
 			<td>
                             {{$medical->heparin }}
                         </td>
