@@ -36,8 +36,8 @@
         </tr>
 
         <tr>
-            <td rowspan="2" style="font-size: 0.7rem; font-weight: bold">21247</td>
-            <td rowspan="2" style="font-size: 0.7rem; font-weight: bold">H&S OCCUPATIONAL SAC</td>
+            <td rowspan="2" style="font-size: 0.7rem; font-weight: bold">00021247</td>
+            <td rowspan="2" style="font-size: 0.7rem; font-weight: bold">CENTRO DE DIALISIS JULIACA ALKSA INVERSIONES BIOMEDICAS</td>
             <td colspan="2" style="font-size: 0.5rem; font-weight: bold">N° FORMATO ATENCION PARA SUBSANACION</td>
         </tr>
 
