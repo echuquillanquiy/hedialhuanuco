@@ -22,7 +22,7 @@
 
         <tr>
             <td></td>
-            <td style="border: #0a0c0d solid 1px; font-size: 0.9rem; font-weight: bold">21247-24-0000{{ $order->n_fua }}</td>
+            <td style="border: #0a0c0d solid 1px; font-size: 0.9rem; font-weight: bold">00021247-24-0000{{ $order->n_fua }}</td>
             <td></td>
         </tr>
     </table>
