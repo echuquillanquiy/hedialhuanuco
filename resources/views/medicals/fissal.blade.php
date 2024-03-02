@@ -145,7 +145,6 @@
                             @if (!$medical->iron) 0 @else {{ $medical->iron }} @endif
                         </td>
 
-
                         <td>
                             @if($medical->room == 'AMARILLA')
                                 <span class="badge badge-lg bg-yellow">A</span>

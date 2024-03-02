@@ -286,7 +286,7 @@
             <th>SOL/HEMODERIVADOS</th>
             <th>OBSERVACIONES</th>
           </tr>
-          <tr style="font-size:0.6rem;">
+          <tr style="font-size:0.7rem;">
             <td height="14">{{ $order->nurse->hr }}</td>
             <td height="14">{{ $order->nurse->pa }}</td>
             <td height="14">{{ $order->nurse->fc1 }}</td>
@@ -299,7 +299,7 @@
             <td height="14" style="font-size:0.4rem !important">{{ $order->nurse->obs }}</td>
           </tr>
 
-          <tr style="font-size:0.6rem;">
+          <tr style="font-size:0.7rem;">
             <td height="14">{{ $order->nurse->hr2 }}</td>
             <td height="14">{{ $order->nurse->pa2 }}</td>
             <td height="14">{{ $order->nurse->fc2 }}</td>
@@ -312,7 +312,7 @@
             <td height="14" style="font-size:0.4rem !important">{{ $order->nurse->obs2 }}</td>
           </tr>
 
-          <tr style="font-size:0.6rem;">
+          <tr style="font-size:0.7rem;">
             <td height="14">{{ $order->nurse->hr3 }}</td>
             <td height="14">{{ $order->nurse->pa3 }}</td>
             <td height="14">{{ $order->nurse->fc3 }}</td>
@@ -325,7 +325,7 @@
             <td height="14" style="font-size:0.4rem !important">{{ $order->nurse->obs3 }}</td>
           </tr>
 
-          <tr style="font-size:0.6rem;">
+          <tr style="font-size:0.7rem;">
             <td height="14">{{ $order->nurse->hr4 }}</td>
             <td height="14">{{ $order->nurse->pa4 }}</td>
             <td height="14">{{ $order->nurse->fc4 }}</td>
@@ -338,7 +338,7 @@
             <td height="14" style="font-size:0.4rem !important">{{ $order->nurse->obs4 }}</td>
           </tr>
 
-          <tr style="font-size:0.6rem;">
+          <tr style="font-size:0.7rem;">
             <td height="14">{{ $order->nurse->hr5 }}</td>
             <td height="14">{{ $order->nurse->pa5 }}</td>
             <td height="14">{{ $order->nurse->fc5 }}</td>
@@ -351,7 +351,7 @@
             <td height="14" style="font-size:0.4rem !important">{{ $order->nurse->obs5 }}</td>
           </tr>
 
-          <tr style="font-size:0.6rem;">
+          <tr style="font-size:0.7rem;">
             <td height="14">{{ $order->nurse->hr6 }}</td>
             <td height="14">{{ $order->nurse->pa6 }}</td>
             <td height="14">{{ $order->nurse->fc6 }}</td>
@@ -364,7 +364,7 @@
             <td height="14" style="font-size:0.4rem !important">{{ $order->nurse->obs6 }}</td>
           </tr>
 
-          <tr style="font-size:0.6rem;">
+          <tr style="font-size:0.7rem;">
             <td height="14">{{ $order->nurse->hr7 }}</td>
             <td height="14">{{ $order->nurse->pa7 }}</td>
             <td height="14">{{ $order->nurse->fc7 }}</td>
@@ -377,7 +377,7 @@
             <td height="14" style="font-size:0.4rem !important">{{ $order->nurse->obs7 }}</td>
           </tr>
 
-            <tr style="font-size:0.6rem;">
+            <tr style="font-size:0.7rem;">
                 <td height="14">{{ $order->nurse->hr8 }}</td>
                 <td height="14">{{ $order->nurse->pa8 }}</td>
                 <td height="14">{{ $order->nurse->fc8 }}</td>
@@ -391,12 +391,12 @@
             </tr>
 
             <tr style="border: none">
-                <td colspan="8" style="font-size:0.5rem !important; text-align: left">P.A. Final: {{ $order->nurse->end_pa }}</td>
-                <td colspan="2" style="font-size:0.5rem !important; text-align: left">Peso Final: {{ $order->nurse->end_weight }} Kg</td>
+                <td colspan="8" style="font-size:0.7rem !important; text-align: left">P.A. Final: {{ $order->nurse->end_pa }}</td>
+                <td colspan="2" style="font-size:0.7rem !important; text-align: left">Peso Final: {{ $order->nurse->end_weight }} Kg</td>
             </tr>
 
           <tr>
-            <td colspan="10" style="font-size:0.5rem; text-align: left"><strong>E. OBSERVACION FINAL:</strong> {{ $order->nurse->end_observation }}</td>
+            <td colspan="10" style="font-size:0.7rem; text-align: left"><strong>E. OBSERVACION FINAL:</strong> {{ $order->nurse->end_observation }}</td>
           </tr>
 
           <tr>
