@@ -218,19 +218,19 @@
           </tr>
 
             <tr>
-                <td colspan="10" style="font-size: 0.7rem; border-bottom:1px dotted; text-transform: uppercase" ><strong style="font-size:0.7rem; text-transform: uppercase">S.-</strong>  {{ $order->nurse->s }}</td>
+                <td colspan="10" style="font-size: 0.6rem; border-bottom:1px dotted; text-transform: uppercase" ><strong style="font-size:0.6rem; text-transform: uppercase">S.-</strong>  {{ $order->nurse->s }}</td>
             </tr>
 
             <tr>
-                <td colspan="10" style="font-size: 0.7rem; border-bottom:1px dotted; text-transform: uppercase" ><strong style="font-size:0.7rem; text-transform: uppercase">O.-</strong> {{ $order->nurse->o }}</td>
+                <td colspan="10" style="font-size: 0.6rem; border-bottom:1px dotted; text-transform: uppercase" ><strong style="font-size:0.6rem; text-transform: uppercase">O.-</strong> {{ $order->nurse->o }}</td>
             </tr>
 
             <tr>
-                <td colspan="10" style="font-size: 0.7rem; border-bottom:1px dotted; text-transform: uppercase" ><strong style="font-size:0.7rem; text-transform: uppercase">A.-</strong> {{ $order->nurse->a }}</td>
+                <td colspan="10" style="font-size: 0.6rem; border-bottom:1px dotted; text-transform: uppercase" ><strong style="font-size:0.6rem; text-transform: uppercase">A.-</strong> {{ $order->nurse->a }}</td>
             </tr>
 
             <tr>
-                <td colspan="10" style="font-size: 0.7rem; border-bottom:1px dotted; text-transform: uppercase" ><strong style="font-size:0.7rem; text-transform: uppercase">P.-</strong> {{ $order->nurse->p }}</td>
+                <td colspan="10" style="font-size: 0.6rem; border-bottom:1px dotted; text-transform: uppercase" ><strong style="font-size:0.6rem; text-transform: uppercase">P.-</strong> {{ $order->nurse->p }}</td>
             </tr>
 
           <tr>
