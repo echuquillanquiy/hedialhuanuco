@@ -295,8 +295,8 @@
             <td height="14">{{ $order->nurse->ra }}</td>
             <td height="14">{{ $order->nurse->rv }}</td>
             <td height="14">{{ $order->nurse->ptm }}</td>
-            <td height="6" style="font-size:0.4rem !important">{{ $order->nurse->sol_hemodev }}</td>
-            <td height="14" style="font-size:0.4rem !important">{{ $order->nurse->obs }}</td>
+            <td height="6" style="font-size:0.6rem !important; text-transform: uppercase">{{ $order->nurse->sol_hemodev }}</td>
+            <td height="14" style="font-size:0.6rem !important; text-transform: uppercase">{{ $order->nurse->obs }}</td>
           </tr>
 
           <tr style="font-size:0.7rem;">
@@ -308,8 +308,8 @@
             <td height="14">{{ $order->nurse->ra2 }}</td>
             <td height="14">{{ $order->nurse->rv2 }}</td>
             <td height="14">{{ $order->nurse->ptm2 }}</td>
-            <td height="6" style="font-size:0.4rem !important">{{ $order->nurse->sol_hemodev2 }}</td>
-            <td height="14" style="font-size:0.4rem !important">{{ $order->nurse->obs2 }}</td>
+            <td height="6" style="font-size:0.6rem !important; text-transform: uppercase">{{ $order->nurse->sol_hemodev2 }}</td>
+            <td height="14" style="font-size:0.6rem !important; text-transform: uppercase">{{ $order->nurse->obs2 }}</td>
           </tr>
 
           <tr style="font-size:0.7rem;">
@@ -321,8 +321,8 @@
             <td height="14">{{ $order->nurse->ra3 }}</td>
             <td height="14">{{ $order->nurse->rv3 }}</td>
             <td height="14">{{ $order->nurse->ptm3 }}</td>
-              <td height="6" style="font-size:0.4rem !important">{{ $order->nurse->sol_hemodev3 }}</td>
-            <td height="14" style="font-size:0.4rem !important">{{ $order->nurse->obs3 }}</td>
+              <td height="6" style="font-size:0.6rem !important; text-transform: uppercase">{{ $order->nurse->sol_hemodev3 }}</td>
+            <td height="14" style="font-size:0.6rem !important; text-transform: uppercase">{{ $order->nurse->obs3 }}</td>
           </tr>
 
           <tr style="font-size:0.7rem;">
@@ -334,8 +334,8 @@
             <td height="14">{{ $order->nurse->ra4 }}</td>
             <td height="14">{{ $order->nurse->rv4 }}</td>
             <td height="14">{{ $order->nurse->ptm4 }}</td>
-              <td height="6" style="font-size:0.4rem !important">{{ $order->nurse->sol_hemodev4 }}</td>
-            <td height="14" style="font-size:0.4rem !important">{{ $order->nurse->obs4 }}</td>
+              <td height="6" style="font-size:0.6rem !important; text-transform: uppercase">{{ $order->nurse->sol_hemodev4 }}</td>
+            <td height="14" style="font-size:0.6rem !important; text-transform: uppercase">{{ $order->nurse->obs4 }}</td>
           </tr>
 
           <tr style="font-size:0.7rem;">
@@ -347,8 +347,8 @@
             <td height="14">{{ $order->nurse->ra5 }}</td>
             <td height="14">{{ $order->nurse->rv5 }}</td>
             <td height="14">{{ $order->nurse->ptm5 }}</td>
-              <td height="6" style="font-size:0.4rem !important">{{ $order->nurse->sol_hemodev5 }}</td>
-            <td height="14" style="font-size:0.4rem !important">{{ $order->nurse->obs5 }}</td>
+              <td height="6" style="font-size:0.6rem !important; text-transform: uppercase">{{ $order->nurse->sol_hemodev5 }}</td>
+            <td height="14" style="font-size:0.6rem !important; text-transform: uppercase">{{ $order->nurse->obs5 }}</td>
           </tr>
 
           <tr style="font-size:0.7rem;">
@@ -360,8 +360,8 @@
             <td height="14">{{ $order->nurse->ra6 }}</td>
             <td height="14">{{ $order->nurse->rv6 }}</td>
             <td height="14">{{ $order->nurse->ptm6 }}</td>
-              <td height="6" style="font-size:0.4rem !important">{{ $order->nurse->sol_hemodev6 }}</td>
-            <td height="14" style="font-size:0.4rem !important">{{ $order->nurse->obs6 }}</td>
+              <td height="6" style="font-size:0.6rem !important; text-transform: uppercase">{{ $order->nurse->sol_hemodev6 }}</td>
+            <td height="14" style="font-size:0.6rem !important; text-transform: uppercase">{{ $order->nurse->obs6 }}</td>
           </tr>
 
           <tr style="font-size:0.7rem;">
@@ -373,8 +373,8 @@
             <td height="14">{{ $order->nurse->ra7 }}</td>
             <td height="14">{{ $order->nurse->rv7 }}</td>
             <td height="14">{{ $order->nurse->ptm7 }}</td>
-              <td height="6" style="font-size:0.4rem !important">{{ $order->nurse->sol_hemodev7 }}</td>
-            <td height="14" style="font-size:0.4rem !important">{{ $order->nurse->obs7 }}</td>
+              <td height="6" style="font-size:0.6rem !important; text-transform: uppercase">{{ $order->nurse->sol_hemodev7 }}</td>
+            <td height="14" style="font-size:0.6rem !important; text-transform: uppercase">{{ $order->nurse->obs7 }}</td>
           </tr>
 
             <tr style="font-size:0.7rem;">
@@ -386,8 +386,8 @@
                 <td height="14">{{ $order->nurse->ra8 }}</td>
                 <td height="14">{{ $order->nurse->rv8 }}</td>
                 <td height="14">{{ $order->nurse->ptm8 }}</td>
-                <td height="6" style="font-size:0.4rem !important">{{ $order->nurse->sol_hemodev8 }}</td>
-                <td height="14" style="font-size:0.4rem !important">{{ $order->nurse->obs8 }}</td>
+                <td height="6" style="font-size:0.6rem !important; text-transform: uppercase">{{ $order->nurse->sol_hemodev8 }}</td>
+                <td height="14" style="font-size:0.6rem !important; text-transform: uppercase">{{ $order->nurse->obs8 }}</td>
             </tr>
 
             <tr style="border: none">
@@ -396,7 +396,7 @@
             </tr>
 
           <tr>
-            <td colspan="10" style="font-size:0.7rem; text-align: left"><strong>E. OBSERVACION FINAL:</strong> {{ $order->nurse->end_observation }}</td>
+            <td colspan="10" style="font-size:0.6rem; text-align: left"><strong>E. OBSERVACION FINAL:</strong> {{ $order->nurse->end_observation }}</td>
           </tr>
 
           <tr>
