@@ -315,7 +315,7 @@
 
                 <div class="form-group col-sm-12 col-lg-2">
                   <label for="brand_model">Marca/Modelo</label>
-                  <input type="text" name="brand_model" class="form-control" value="{{ old('brand_model', 'NIPRO', $nurse->brand_model) }}">
+                  <input type="text" name="brand_model" class="form-control" value="{{ old('brand_model', 'FRESENIUS', $nurse->brand_model) }}">
                 </div>
               </div>
 
@@ -370,7 +370,7 @@
 
                     <div class="form-group col-sm-12 col-lg-2">
                         <label for="epo4000">EPO 4000</label>
-                        <input type="number" name="epo4000" class="form-control" value="{{ old('epo4000', !$nurse->epo4000 ? $nurse->order->medical->epo4000 : $nurse->epo4000) }}" placeholder="COLOCAR SOLO CANTIDAD">
+                        <input type="number" name="epo4000" class="form-control" value="{{ old('epo4000', !$nurse->epo4000 ? $nurse->order->medical->epo4000 : $nurse->epo4000) }}" placeholder="COLOCAR SOLO CANTIDAD" readonly>
                     </div>
 
                     <div class="form-group col-sm-12 col-lg-2">
@@ -380,7 +380,7 @@
 
                     <div class="form-group col-sm-12 col-lg-2">
                         <label for="calcitriol">Calcitriol</label>
-                        <input type="number" name="calcitriol" class="form-control" value="{{ old('calcitriol', !$nurse->calcitriol ? $nurse->order->medical->calci : $nurse->calcitriol) }}" placeholder="COLOCAR SOLO CANTIDAD">
+                        <input type="number" name="calcitriol" class="form-control" value="{{ old('calcitriol', !$nurse->calcitriol ? $nurse->order->medical->calci : $nurse->calcitriol) }}" placeholder="COLOCAR SOLO CANTIDAD" readonly>
                     </div>
 
                     <div class="form-group col-sm-12 col-lg-4">
@@ -466,7 +466,7 @@
 
                 <div class="form-group col-sm-12 col-lg-1">
                   <label for="cnd">CND</label>
-                  <input type="text" name="cnd" class="form-control" value="{{ old('cnd', $nurse->cnd) }}">
+                  <input type="text" name="cnd" class="form-control" value="{{ old('cnd', $nurse->order->medical->start_na) }}">
                 </div>
 
                 <div class="form-group col-sm-12 col-lg-1">
