@@ -396,7 +396,7 @@
             </tr>
 
           <tr>
-            <td colspan="10" style="font-size:0.5rem; text-align: left"><strong>E. OBSERVACION FINAL:</strong> {{ $order->nurse->end_observation }}</td>
+            <td colspan="10" style="font-size:0.7rem; text-align: left"><strong>E. OBSERVACION FINAL:</strong> {{ $order->nurse->end_observation }}</td>
           </tr>
 
           <tr>
