@@ -104,6 +104,7 @@
                     <th scope="col">Sala</th>
                     <th scope="col">Fecha</th>
                     <th scope="col">Licenciado</th>
+                    <th scope="col">FUA</th>
                     <th scope="col">Receta</th>
 		    <th scope="col">HEP</th>
 		    <th scope="col">AREA</th>
