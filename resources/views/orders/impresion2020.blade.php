@@ -110,7 +110,7 @@
             <td style="font-size: 0.6rem; width: 12%">Horas de  hemodialisis:</td>
             <td style="font-size: 0.6rem; border-bottom: 1px solid; width: 10%; text-align: center">{{ $order->medical->hour_hd }} HRSS</td>
             <td style="font-size: 0.6rem; width: 5%">Qb:</td>
-            <td style="font-size: 0.6rem; border-bottom: 1px solid; width: 5%; text-align: center">{{ $order->medical->qb }} cc</td>
+            <td style="font-size: 0.6rem; border-bottom: 1px solid; width: 5%; text-align: center">{{ $order->medical->qb }}</td>
             <td style="font-size: 0.6rem; width: 5%">Conductividad:</td>
             <td style="font-size: 0.6rem; border-bottom: 1px solid; width: 8%; text-align: center">{{ $order->medical->cnd }} </td>
             <td style="font-size: 0.6rem; width: 10%">Dosis de heparina:</td>
@@ -118,7 +118,7 @@
           </tr>
           <tr>
             <td style="font-size: 0.6rem; width: 12%">Qd:</td>
-            <td style="font-size: 0.6rem; border-bottom: 1px solid; width: 10%; text-align: center">{{ $order->medical->qd }} cc</td>
+            <td style="font-size: 0.6rem; border-bottom: 1px solid; width: 10%; text-align: center">{{ $order->medical->qd }}</td>
             <td style="font-size: 0.6rem; width: 5%">Na Inicial:</td>
             <td style="font-size: 0.6rem; border-bottom: 1px solid; width: 5%; text-align: center">{{ $order->medical->start_na }} Meq/L</td>
               <td style="font-size: 0.6rem; width: 5%">Peso Seco:</td>
@@ -142,7 +142,7 @@
             <td style="font-size: 0.6rem; width: 10%"></td>
             <td style="font-size: 0.6rem; width: 10%"></td>
             <td style="font-size: 0.6rem; width: 10%">Ultrafiltrado:</td>
-            <td style="font-size: 0.5rem; border-bottom: 1px solid; width: 10%; text-align: center">{{ $order->medical->uf }} cc</td>
+            <td style="font-size: 0.5rem; border-bottom: 1px solid; width: 10%; text-align: center">{{ $order->medical->uf }}</td>
             <td style="font-size: 0.6rem; width: 5%"> Perfil de Uf:</td>
             <td style="font-size: 0.6rem; border-bottom: 1px solid; width: 8%; text-align: center">{{ $order->medical->profile_uf }} </td>
             <td style="font-size: 0.6rem; width: 6%"></td>
