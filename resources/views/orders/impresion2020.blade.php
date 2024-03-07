@@ -218,19 +218,19 @@
           </tr>
 
             <tr>
-                <td colspan="10" style="font-size: 0.5rem; border-bottom:1px dotted;" ><strong style="font-size:0.5rem;">S.-</strong>  {{ $order->nurse->s }}</td>
+                <td colspan="10" style="font-size: 0.8rem; border-bottom:1px dotted;" ><strong style="font-size:0.7rem;">S.-</strong>  {{ $order->nurse->s }}</td>
             </tr>
 
             <tr>
-                <td colspan="10" style="font-size: 0.5rem; border-bottom:1px dotted;" ><strong style="font-size:0.5rem">O.-</strong> {{ $order->nurse->o }}</td>
+                <td colspan="10" style="font-size: 0.8rem; border-bottom:1px dotted;" ><strong style="font-size:0.7rem">O.-</strong> {{ $order->nurse->o }}</td>
             </tr>
 
             <tr>
-                <td colspan="10" style="font-size: 0.5rem; border-bottom:1px dotted;" ><strong style="font-size:0.5rem">A.-</strong> {{ $order->nurse->a }}</td>
+                <td colspan="10" style="font-size: 0.8rem; border-bottom:1px dotted;" ><strong style="font-size:0.7rem">A.-</strong> {{ $order->nurse->a }}</td>
             </tr>
 
             <tr>
-                <td colspan="10" style="font-size: 0.5rem; border-bottom:1px dotted;" ><strong style="font-size:0.5rem">P.-</strong> {{ $order->nurse->p }}</td>
+                <td colspan="10" style="font-size: 0.8rem; border-bottom:1px dotted;" ><strong style="font-size:0.7rem">P.-</strong> {{ $order->nurse->p }}</td>
             </tr>
 
           <tr>
