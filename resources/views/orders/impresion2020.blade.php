@@ -114,7 +114,7 @@
             <td style="font-size: 0.6rem; width: 5%">Conductividad:</td>
             <td style="font-size: 0.6rem; border-bottom: 1px solid; width: 8%; text-align: center">{{ $order->medical->cnd }} </td>
             <td style="font-size: 0.6rem; width: 10%">Dosis de heparina:</td>
-            <td style="font-size: 0.6rem; border-bottom: 1px solid; width: 10%; text-align: center">{{ $order->medical->heparin }} </td>
+            <td style="font-size: 0.6rem; border-bottom: 1px solid; width: 10%; text-align: center">{{ $order->medical->heparin }} UI</td>
           </tr>
           <tr>
             <td style="font-size: 0.6rem; width: 12%">Qd:</td>
@@ -167,7 +167,7 @@
             <tr>
                 @if($order->medical->user_id)
                     <td colspan="4" style="text-align: center">
-                        <img src="{{ asset($order->medical->user->image) }}" width="180" height="91" alt="">
+                        <img src="{{ asset($order->medical->user->image) }}" width="140" height="65" alt="">
                     </td>
                 @else
                     <p>AQUI VA SELLO DEL MEDICO</p>
@@ -177,7 +177,7 @@
 
                     @if($order->medical->user_id)
                         <td colspan="4" style="text-align: center">
-                            <img src="{{ asset($order->medical->user->image) }}" width="180" height="91" alt="">
+                            <img src="{{ asset($order->medical->user->image) }}" width="140" height="65" alt="">
                         </td>
                     @else
                         <p>AQUI VA SELLO DEL MEDICO</p>
@@ -440,7 +440,7 @@
             <tr>
                 @if($order->nurse->user_id)
                     <td>
-                        <img src="{{ asset($order->nurse->user->image) }}" width="180" height="80" alt="">
+                        <img src="{{ asset($order->nurse->user->image) }}" width="150" height="65" alt="">
                     </td>
                 @else
                     <td>aqui va firma del licenciado</td>
@@ -449,7 +449,7 @@
 
                     @if($order->nurse->user_id)
                         <td>
-                            <img src="{{ asset($order->nurse->user->image) }}" width="180" height="80" alt="">
+                            <img src="{{ asset($order->nurse->user->image) }}" width="150" height="65" alt="">
                         </td>
                     @else
                         <td>aqui va firma del licenciado</td>

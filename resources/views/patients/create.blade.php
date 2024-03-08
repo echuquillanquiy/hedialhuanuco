@@ -1,3 +1,4 @@
+
 @extends('layouts.panel')
 
 @section('content')
@@ -100,8 +101,8 @@
       <div class="row">
 
         <div class="form-group col-lg-2">
-          <label for="phone">Telefono</label>
-          <input type="text" name="phone" class="form-control" value="{{ old('phone') }}">
+          <label for="phone">Peso Seco</label>
+          <input type="text" name="phone" class="form-control" value="{{ old('phone') }}" placeholder="Ejem: 72.5">
         </div>
 
         <div class="form-group col-lg-2">
