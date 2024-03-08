@@ -440,7 +440,7 @@
             <tr>
                 @if($order->nurse->user_id)
                     <td>
-                        <img src="{{ asset($order->nurse->user->image) }}" width="150" height="65" alt="">
+                        <img src="{{ asset($order->nurse->user->image) }}" width="145" height="65" alt="">
                     </td>
                 @else
                     <td>aqui va firma del licenciado</td>
@@ -449,7 +449,7 @@
 
                     @if($order->nurse->user_id)
                         <td>
-                            <img src="{{ asset($order->nurse->user->image) }}" width="150" height="65" alt="">
+                            <img src="{{ asset($order->nurse->user->image) }}" width="145" height="65" alt="">
                         </td>
                     @else
                         <td>aqui va firma del licenciado</td>
