@@ -166,7 +166,9 @@
         <label for="area_filtro">FILTRO</label>
         <select name="area_filtro" id="area_filtro" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
             <option value="{{ $nephrology->area_filtro }}" disabled selected>{{ $nephrology->area_filtro }}</option>
+            <option value="1.8" >1.8</option>
             <option value="1.9" >1.9</option>
+            <option value="2">2</option>
             <option value="2.1">2.1</option>
             <option value="1.4">1.4</option>
         </select>
