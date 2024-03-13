@@ -45,8 +45,14 @@
             <td style="font-weight: bold; font-size: 0.6rem;">MOTIVO DE CONSULTA: </td>
             <td style="font-size: 0.6rem; text-align: left;">{{ $nephrology->consult }}</td>
 
-            <td style="font-weight: bold; font-size: 0.6rem">TIEMPO DE ENFERMEDAD: </td>
-            <td colspan="2" style="font-size: 0.6rem; text-align: left;">{{ $nephrology->time_disease }}</td>
+            @if(!$nephrology->time_disease)
+                <td style="font-weight: bold; font-size: 0.6rem">TIEMPO DE ENFERMEDAD: </td>
+                <td colspan="2" style="font-size: 0.6rem; text-align: left;">0</td>
+            @else
+                <td style="font-weight: bold; font-size: 0.6rem">TIEMPO DE ENFERMEDAD: </td>
+                <td colspan="2" style="font-size: 0.6rem; text-align: left;">{{ $nephrology->time_disease }}</td>
+            @endif
+
         </tr>
     </table>
     <table style="width: 100%; border-collapse:collapse; margin-top:5px;">
