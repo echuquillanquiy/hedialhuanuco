@@ -6,7 +6,7 @@
 
     <div class="form-group col-sm-12 col-lg-2">
         <label for="time_disease">TIEMPO ENFERMEDAD</label>
-        <input type="text" name="time_disease" class="form-control" id="resultado">
+        <input type="text" name="time_disease" class="form-control" id="resultado" value="{{ !$nephrology->time_disease ? '0' : $nephrology->time_disease}} >
     </div>
 
     <div class="form-group col-sm-12 col-lg-6">
