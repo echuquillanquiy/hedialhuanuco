@@ -22,7 +22,7 @@
 
         <tr>
             <td></td>
-            <td style="border: #0a0c0d solid 1px; font-size: 0.9rem; font-weight: bold">8181-23-000{{ $nephrology->order->n_fua }}</td>
+            <td style="border: #0a0c0d solid 1px; font-size: 0.9rem; font-weight: bold">00021247-24-0000{{ $nephrology->order->n_fua }}</td>
             <td></td>
         </tr>
     </table>
@@ -36,8 +36,8 @@
         </tr>
 
         <tr>
-            <td rowspan="2" style="font-size: 0.7rem; font-weight: bold">8181</td>
-            <td rowspan="2" style="font-size: 0.7rem; font-weight: bold">H&S OCCUPATIONAL SAC</td>
+            <td rowspan="2" style="font-size: 0.7rem; font-weight: bold">00021247</td>
+            <td rowspan="2" style="font-size: 0.7rem; font-weight: bold">CENTRO DE DIALISIS JULIACA ALKSA INVERSIONES BIOMEDICAS</td>
             <td colspan="2" style="font-size: 0.5rem; font-weight: bold">N° FORMATO ATENCION PARA SUBSANACION</td>
         </tr>
 
