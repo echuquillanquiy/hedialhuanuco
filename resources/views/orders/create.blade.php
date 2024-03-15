@@ -129,7 +129,7 @@
               <div class="form-group col-sm-12 col-lg-2">
                   <label for="lab">¿INCLUYE LABORATORIO?</label>
                   <select name="lab" id="lab" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
-                      <option value="NO" selected>NO</option>
+                      <option value="NO">NO</option>
                       <option value="SI">SI</option>
                   </select>
               </div>

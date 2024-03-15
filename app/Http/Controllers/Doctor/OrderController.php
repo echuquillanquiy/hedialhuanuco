@@ -234,7 +234,8 @@ class OrderController extends Controller
             'shift_id',
             'covid',
             'n_fua',
-            'date_order'
+            'date_order',
+            'lab'
         ]);
         $order->fill($data);
         $order->save();
@@ -243,6 +244,17 @@ class OrderController extends Controller
             'shift' => $order->shift->name,
             'date_order' => $order->date_order
         ];
+
+        $consult_data = [
+            'order_id' => $order->id,
+            'patient_id' => $order->patient_id,
+            'date_order' => $order->date_order
+        ];
+
+        if ($order->lab == 'SI')
+        {
+            $laboratory = $order->laboratory()->create($consult_data);
+        }
 
         $order->nurse()->update($data_or);
         $order->medical()->update($data_or);
