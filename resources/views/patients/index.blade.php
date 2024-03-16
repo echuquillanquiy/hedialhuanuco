@@ -63,6 +63,7 @@
           <th scope="col">DNI</th>
           <th scope="col">Fecha de Nacimiento</th>
           <th scope="col">Autogenerado</th>
+          <th scope="col">ESTADO</th>
           <th scope="col">Opciones</th>
         </tr>
       </thead>
@@ -81,6 +82,10 @@
           <td>
             {{$patient->code}}
           </td>
+            <td>
+                {{$patient->state}}
+            </td>
+
           <td>
 
             <form action="{{ url('/patients/'.$patient->id) }}" method="POST">

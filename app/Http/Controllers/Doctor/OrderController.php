@@ -70,7 +70,7 @@ class OrderController extends Controller
         else
             $sig_fua = $ultima_fua->n_fua + 1;*/
 
-        $patients = Patient::all();
+        $patients = Patient::where('state', '=', 'ACTIVO')->get();
         $rooms = Room::all();
         $shifts = Shift::all();
         $users = User::all();

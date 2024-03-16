@@ -173,6 +173,15 @@
                 <input type="text" name="code" class="form-control" value="{{ old('code', $patient->code) }}">
             </div>
 
+            <div class="form-group col-lg-2">
+                <label for="state">ESTADO</label>
+                <select class="form-control" name="state" data-toggle="select" title="Simple select" data-placeholder="Select un estado">
+                    <option value="{{ $patient->state }}">{{ $patient->state }}</option>
+                    <option value="ACTIVO">ACTIVO</option>
+                    <option value="INACTIVO">INACTIVO</option>
+                </select>
+            </div>
+
         </div>
 
 	  	<button type="submit" class="btn btn-primary">Guardar</button>

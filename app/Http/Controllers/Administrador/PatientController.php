@@ -61,7 +61,7 @@ class PatientController extends Controller
     public function store(Request $request)
     {
         $this->performValidation($request);
-        Patient::create($request->only('name', 'dni', 'date_of_birth', 'sex', 'age', 'address', 'phone', 'civil_status', 'instruction', 'ocupation', 'condition', 'last_job', 'hosp_origin', 'code', 'firstname', 'othername', 'surname', 'lastname'));
+        Patient::create($request->only('name', 'dni', 'date_of_birth', 'sex', 'age', 'address', 'phone', 'civil_status', 'instruction', 'ocupation', 'condition', 'last_job', 'hosp_origin', 'code', 'firstname', 'othername', 'surname', 'lastname', 'state'));
 
         $notification = 'El paciente se ha registrado correctamente.';
         return redirect('patients')->with(compact('notification'));
@@ -96,7 +96,7 @@ class PatientController extends Controller
 
         $patient = Patient::findOrFail($id);
 
-        $data = $request->only('name', 'dni', 'date_of_birth', 'sex', 'age', 'address', 'phone', 'civil_status', 'instruction', 'ocupation', 'condition', 'hosp_origin', 'code', 'firstname', 'othername', 'surname', 'lastname');
+        $data = $request->only('name', 'dni', 'date_of_birth', 'sex', 'age', 'address', 'phone', 'civil_status', 'instruction', 'ocupation', 'condition', 'hosp_origin', 'code', 'firstname', 'othername', 'surname', 'lastname', 'state');
 
         $patient->fill($data);
         $patient->save();
