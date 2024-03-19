@@ -142,12 +142,12 @@
 
       <div class="row">
 
-        <div class="form-group col-lg-4">
-          <label for="condition">Condición Actual</label>
+        <div class="form-group col-lg-8">
+          <label for="condition">Justificacion de no firma</label>
           <input type="text" name="condition" class="form-control" value="{{ old('condition', $patient->condition) }}">
         </div>
 
-        <div class="form-group col-lg-3">
+        <div class="form-group col-lg-2">
             <label for="last_job">Fecha de último trabajo</label>
           <div class="input-group">
             <div class="input-group-prepend">
@@ -160,8 +160,8 @@
           </div>
         </div>
 
-        <div class="form-group col-lg-5">
-          <label for="hosp_origin">Hospital de origen</label>
+        <div class="form-group col-lg-2">
+          <label for="hosp_origin">Peso Seco</label>
           <input type="text" name="hosp_origin" class="form-control" value="{{ old('hosp_origin', $patient->hosp_origin) }}">
         </div>
 
