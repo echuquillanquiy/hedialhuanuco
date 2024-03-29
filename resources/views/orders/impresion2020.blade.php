@@ -206,7 +206,7 @@
         <tr>
             <table width="100%" style="border:2px solid; border-collapse: collapse; border-top: none; margin-top: -2px">
                 <tr>
-                    <td style="font-size: 0.5rem; margin-bottom: 1px; height: 20px" colspan="2">Condicion clinica del paciente al finalizar hemidialisis y otros: {{ $order->medical->end_evaluation }}</td>
+                    <td style="font-size: 0.5rem; margin-bottom: 1px; height: 20px" colspan="2">Condicion clinica del paciente al finalizar hemodialisis y otros: {{ $order->medical->end_evaluation }}</td>
                 </tr>
             </table>
         </tr>
@@ -416,8 +416,8 @@
 
             <tr>
                 <td style="font-size:0.6rem;">Hierro 20 mg Fe/mL INY 5 mL: <span style="border:1px solid #000; padding:10px">{{ $order->medical->iron }} </span></td>
-                <td style="font-size:0.6rem;">Epoteina alfa 2000 Ul/mL: <span style="border:1px solid #000; padding:10px">{{ $order->medical->epo }} </span></td>
-                <td style="font-size:0.6rem;">Epoteina alfa 4000 Ul/mL: <span style="border:1px solid #000; padding:10px">{{ $order->medical->epo4000 }} </span></td>
+                <td style="font-size:0.6rem;">Epoetina alfa 2000 Ul/mL: <span style="border:1px solid #000; padding:10px">{{ $order->medical->epo }} </span></td>
+                <td style="font-size:0.6rem;">Epoetina alfa 4000 Ul/mL: <span style="border:1px solid #000; padding:10px">{{ $order->medical->epo4000 }} </span></td>
             </tr>
 
             <tr>
