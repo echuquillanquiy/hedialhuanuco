@@ -48,6 +48,7 @@
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Serie FUA</th>
+                    <th scope="col">Fecha fua</th>
                     <th scope="col">Opciones</th>
 
                 </tr>
@@ -62,6 +63,9 @@
                             {{$numeration->fua}}
                         </td>
 
+                        <td>
+                            {{$numeration->created_at->format('Y-m-d')}}
+                        </td>
                         <td>
 
                             <form action="{{ url('/numerations/'.$numeration->id) }}" method="POST">
