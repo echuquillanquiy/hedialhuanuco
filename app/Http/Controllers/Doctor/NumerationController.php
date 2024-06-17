@@ -17,7 +17,7 @@ class NumerationController extends Controller
     public function index()
     {
         $numerations = Numeration::orderBy('fua', 'desc')
-        ->paginate(5);
+        ->paginate(60);
 
         return view('numerations.index', compact('numerations'));
     }
