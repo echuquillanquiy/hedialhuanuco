@@ -70,7 +70,7 @@ class OrderController extends Controller
         else
             $sig_fua = $ultima_fua->n_fua + 1;*/
 
-        $patients = Patient::all();
+        $patients = Patient::where('state', '=', 'ACTIVO')->get();
         $rooms = Room::all();
         $shifts = Shift::all();
         $users = User::all();
@@ -234,7 +234,8 @@ class OrderController extends Controller
             'shift_id',
             'covid',
             'n_fua',
-            'date_order'
+            'date_order',
+            'lab'
         ]);
         $order->fill($data);
         $order->save();
@@ -243,6 +244,17 @@ class OrderController extends Controller
             'shift' => $order->shift->name,
             'date_order' => $order->date_order
         ];
+
+        $consult_data = [
+            'order_id' => $order->id,
+            'patient_id' => $order->patient_id,
+            'date_order' => $order->date_order
+        ];
+
+        if ($order->lab == 'SI')
+        {
+            $laboratory = $order->laboratory()->create($consult_data);
+        }
 
         $order->nurse()->update($data_or);
         $order->medical()->update($data_or);

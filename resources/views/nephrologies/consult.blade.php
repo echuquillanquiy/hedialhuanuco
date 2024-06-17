@@ -47,6 +47,7 @@
 
             <td style="font-weight: bold; font-size: 0.6rem">TIEMPO DE ENFERMEDAD: </td>
             <td colspan="2" style="font-size: 0.6rem; text-align: left;">{{ $nephrology->time_disease }}</td>
+
         </tr>
     </table>
     <table style="width: 100%; border-collapse:collapse; margin-top:5px;">

@@ -313,10 +313,19 @@
                   <input type="text" name="machine" class="form-control" value="{{ old('machine', $nurse->machine) }}">
                 </div>
 
-                <div class="form-group col-sm-12 col-lg-2">
-                  <label for="brand_model">Marca/Modelo</label>
-                  <input type="text" name="brand_model" class="form-control" value="{{ old('brand_model', 'FRESENIUS', $nurse->brand_model) }}">
-                </div>
+                @if(!$nurse->brand_model)
+
+                    <div class="form-group col-sm-12 col-lg-2">
+                      <label for="brand_model">Marca/Modelo</label>
+                      <input type="text" name="brand_model" class="form-control" value="{{ old('brand_model', 'FRESENIUS', $nurse->brand_model) }}">
+                    </div>
+                @else
+                      <div class="form-group col-sm-12 col-lg-2">
+                          <label for="brand_model">Marca/Modelo</label>
+                          <input type="text" name="brand_model" class="form-control" value="{{ $nurse->brand_model }}">
+                      </div>
+                  @endif
+
               </div>
 
               <div class="row text-center">

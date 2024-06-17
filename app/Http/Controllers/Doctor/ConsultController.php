@@ -6,6 +6,8 @@ use App\Consult;
 use App\Correction;
 use App\Http\Controllers\Controller;
 use App\Medicament;
+use App\Numeration;
+use App\Order;
 use App\Patient;
 use App\User;
 use Illuminate\Http\Request;
@@ -40,10 +42,8 @@ class ConsultController extends Controller
 
         $consult = Consult::select('id', 'n_fua')->latest()->first();
 
-        if (!$consult)
-            $sig_fua = 21035;
-        else
-            $sig_fua = $consult->n_fua + 1;
+        $ultima_fua = Numeration::select('fua')->latest()->first();
+        $sig_fua = $ultima_fua->fua + 1;
 
         return view('consults.create', compact('patients', 'sig_fua', 'users', 'medicaments', 'intradialisis'));
     }
@@ -56,12 +56,17 @@ class ConsultController extends Controller
      */
     public function store(Request $request)
     {
-        $existsOrdersToday = Consult::where('patient_id', $request->input('patient_id'))
-            ->whereDate('created_at', date('Y-m-d'))->exists();
-        if ($existsOrdersToday) {
-            $notification = 'Este paciente ya tiene una orden registrada hoy. Intente nuevamente mañana.';
-            return back()->with(compact('notification'));
-        }
+        //$existsOrdersToday = Consult::where('patient_id', $request->input('patient_id'))
+        //    ->whereDate('created_at', date('Y-m-d'))->exists();
+        //if ($existsOrdersToday) {
+        //    $notification = 'Este paciente ya tiene una orden registrada hoy. Intente nuevamente mañana.';
+        //    return back()->with(compact('notification'));
+        //}
+
+        $order = Order::create($request->all());
+        $numerarion_save = Numeration::create([
+            'fua' => $request->n_fua
+        ]);
 
         $consults = Consult::create($request->all());
 

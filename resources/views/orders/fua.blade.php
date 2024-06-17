@@ -530,7 +530,7 @@
         <tr style="font-size: 0.4rem;">
 
             <td>90937</td>
-            <td style="text-align: left">HEMODIÁLISIS (2DA. SESIÓN)</td>
+            <td style="text-align: left">HEMODIÁLISIS</td>
             <td>1</td>
             <td>1</td>
             <td style="font-size: 0.4rem; height: 15px">{{ !$order->laboratory->cant21 > 0 ? '' : $order->laboratory->code21 }}</td>
@@ -710,9 +710,9 @@
             <td colspan="8" style="height: 10px; color: white;">OBSERVACIONES</td>
         </tr>
 
-        @if($order->medical->fua_observacion)
+        @if($order->patient->condition)
             <tr style="font-size: 0.5rem;">
-                <td colspan="8" style="text-align: left">{{ $order->medical->fua_observacion }}</td>
+                <td colspan="8" style="text-align: left">{{ $order->patient->condition }}</td>
             </tr>
         @else
             <tr style="font-size: 0.5rem;">
@@ -720,7 +720,7 @@
             </tr>
         @endif
 
-        @if($order->medical->fua_observacion)
+        @if($order->patient->condition)
             <tr style="font-size: 0.5rem;">
                 <td colspan="8" style="text-align: left">PACIENTE COLOCA SU HUELLA COMO SEÑAL DE CONFORMIDAD DE LA ATENCION.</td>
             </tr>

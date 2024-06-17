@@ -161,7 +161,7 @@
                         </td>
 
                         <td>
-                            {{$medical->order->created_at->format('d/m') }}
+                            {{$medical->order->date_order }}
                         </td>
 
                         <td>
