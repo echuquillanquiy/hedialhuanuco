@@ -51,7 +51,6 @@
     <table width="100%" style="border-collapse:collapse;text-align:center; margin-top:5px;" border="1px">
         <tr>
             <td colspan="3" style="height: 10px; font-size: 0.5rem; font-weight: bold; background: #A8A8A8;">FECHA DE ATENCION</td>
-            <td style="height: 10px; font-size: 0.5rem; font-weight: bold; background: #A8A8A8">HORA</td>
             <td style="height: 10px; font-size: 0.5rem; font-weight: bold; background: #A8A8A8">N° HISTORIA CLINICA</td>
             <td colspan="4" style="height: 15px; font-size: 0.5rem; font-weight: bold; background: #A8A8A8">IDENTIFICACION</td>
             <td colspan="2" style="height: 15px; font-size: 0.5rem; font-weight: bold; background: #A8A8A8">REGIMEN</td>
@@ -61,17 +60,6 @@
             <td style="height: 10px; font-size: 0.6rem; background: #BEBEBE">DIA</td>
             <td style="height: 10px; font-size: 0.6rem; background: #BEBEBE">MES</td>
             <td style="height: 10px; font-size: 0.6rem; background: #BEBEBE">AÑO</td>
-
-            @if($nephrology->order->shift_id == 1)
-                <td rowspan="2" style="font-size: 0.7rem; font-weight: bold">5:20</td>
-            @elseif($nephrology->order->shift_id == 2)
-                <td rowspan="2" style="font-size: 0.7rem; font-weight: bold">9:20</td>
-            @elseif($nephrology->order->shift_id == 3)
-                <td rowspan="2" style="font-size: 0.7rem; font-weight: bold">13:20</td>
-            @else
-                <td rowspan="2" style="font-size: 0.7rem; font-weight: bold">17:20</td>
-            @endif
-
 
             <td rowspan="2" style="font-size: 0.6rem; font-weight: bold">{{ $nephrology->order->patient->dni }}</td>
             <td rowspan="2" style="font-size: 0.5rem; background: #BEBEBE">TD</td>
