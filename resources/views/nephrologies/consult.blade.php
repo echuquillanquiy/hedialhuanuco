@@ -39,14 +39,17 @@
     <table style="width: 100%; border-collapse:collapse; margin-top:5px;">
 
         <tr>
-            <td style="font-weight: bold; font-size: 0.6rem; width: 20%">FECHA DE ATENCION: </td>
-            <td style="font-size: 0.6rem; width: 10%">{{ $nephrology->date_order }}</td>
+            <td style="font-weight: bold; font-size: 0.6rem; width: 5%">HORA: </td>
+            <td style="font-size: 0.6rem; width: 7%; text-align: left;">{{ $nephrology->timenefro }}</td>
+
+            <td style="font-weight: bold; font-size: 0.6rem; width: 15%">FECHA DE ATENCION: </td>
+            <td style="font-size: 0.6rem; width: 8%">{{ $nephrology->date_order }}</td>
 
             <td style="font-weight: bold; font-size: 0.6rem;">MOTIVO DE CONSULTA: </td>
             <td style="font-size: 0.6rem; text-align: left;">{{ $nephrology->consult }}</td>
 
             <td style="font-weight: bold; font-size: 0.6rem">TIEMPO DE ENFERMEDAD: </td>
-            <td colspan="2" style="font-size: 0.6rem; text-align: left;">{{ $nephrology->time_disease }}</td>
+            <td style="font-size: 0.6rem; text-align: left;">{{ $nephrology->time_disease }}</td>
 
         </tr>
     </table>
