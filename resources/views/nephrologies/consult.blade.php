@@ -348,7 +348,7 @@
                 </td>
             @else
                 <td>
-                    Aqui va firma del medico
+                    Aqui va firma del medico.
                 </td>
             @endif
         </tr>
