@@ -1,4 +1,15 @@
 <div class="row text-center">
+
+    <div class="form-group col-sm-12 col-lg-2">
+        <label for="consult">HORA</label>
+        <input type="time" name="timenefro" class="form-control" value="{{ $nephrology->timenefro }}">
+    </div>
+
+    <div class="form-group col-sm-12 col-lg-2">
+        <label for="date_start">FECHA INICIO</label>
+        <input type="date" name="date_start" class="form-control" id="fechaInicioDialisis" onblur="calcularDiferencia()" value="{{ !$nephrology->date_start ? '//' : $nephrology->date_start }}">
+    </div>
+
     <div class="form-group col-sm-12 col-lg-2">
         <label for="consult">MOTIVO DE CONSULTA</label>
         <input type="text" name="consult" class="form-control" value="{{ !$nephrology->consult ? 'Control mensual' : $nephrology->consult }}">
@@ -9,14 +20,9 @@
         <input type="text" name="time_disease" class="form-control" id="resultado" value="{{ !$nephrology->time_disease ? '0' : $nephrology->time_disease}}" >
     </div>
 
-    <div class="form-group col-sm-12 col-lg-6">
+    <div class="form-group col-sm-12 col-lg-4">
         <label for="anamnesis">ANAMNESIS</label>
         <input type="text" name="anamnesis"  class="form-control" value="{{ !$nephrology->anamnesis ? 'Paciente con insuficiencia renal terminal, en Hemodiálisis' : $nephrology->anamnesis }}">
-    </div>
-
-    <div class="form-group col-sm-12 col-lg-2">
-        <label for="date_start">FECHA INICIO</label>
-        <input type="date" name="date_start" class="form-control" id="fechaInicioDialisis" onblur="calcularDiferencia()" value="{{ !$nephrology->date_start ? '//' : $nephrology->date_start }}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-2">
