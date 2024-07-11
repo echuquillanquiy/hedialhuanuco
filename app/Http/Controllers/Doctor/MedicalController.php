@@ -192,15 +192,31 @@ class MedicalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    public function obtenerUltimaOrdenNoVaciaYSumar($patient, $fecha)
+    {
+        $fecha = Carbon::parse($fecha)->format('Y-m-d');
+
+        $ultimaOrdenNoVacia = Medical::where('patient', $patient)
+            ->where('date_order', '<', $fecha)
+            ->whereNotNull('hour_hd') // Asegurar que 'detalles' no esté nulo
+            ->where('hour_hd', '!=', '') // Asegurar que 'detalles' no esté vacío
+            ->orderBy('date_order', 'desc')
+            ->first();
+
+        return $ultimaOrdenNoVacia;
+    }
     public function edit($id)
     {
         $medical = Medical::findOrFail($id);
         $users = User::where('role', '=', 'doctor')->get();
-        /*$patient = $medical->patient;
-        $fecha = Carbon::now();
-        $ultimos = $medical->where('patient', $patient)->whereDate('created_at', '!=', $fecha)->latest()->first();*/
 
-        return view('medicals.edit', compact('medical', 'users'));
+        $patient = $medical->patient;
+        $fecha = $medical->date_order;
+        $ultimaOrdenNoVacia = $this->obtenerUltimaOrdenNoVaciaYSumar($patient, $fecha);
+
+
+        return view('medicals.edit', compact('medical', 'users', 'ultimaOrdenNoVacia'));
 
     }
 

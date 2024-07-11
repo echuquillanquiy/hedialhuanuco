@@ -12,6 +12,7 @@ use App\Room;
 use App\User;
 use App\Shift;
 use Monolog\Handler\IFTTTHandler;
+use PhpParser\Node\Stmt\DeclareDeclare;
 
 class NurseController extends Controller
 {
@@ -92,42 +93,30 @@ class NurseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    public function obtenerUltimaOrdenNoVaciaYSumar($patient, $fecha)
+    {
+        $fecha = Carbon::parse($fecha)->format('Y-m-d');
+
+        $ultimaOrdenNoVacia = Nurse::where('patient', $patient)
+            ->where('date_order', '<', $fecha)
+            ->whereNotNull('frequency') // Asegurar que 'detalles' no esté nulo
+            ->where('frequency', '!=', '') // Asegurar que 'detalles' no esté vacío
+            ->orderBy('date_order', 'desc')
+            ->first();
+
+        return $ultimaOrdenNoVacia;
+    }
+
     public function edit($id)
     {
         $users = User::where('role', '=', 'enfermera')->get();
 
         $nurse = Nurse::findOrFail($id);
+        $patient = $nurse->patient;
+        $fecha = $nurse->date_order;
 
-        //$generados = $nurse->where('patient', $nurse->patient)->count();
-
-        /*if ($nurse->hd == null)
-        {
-            if ($generados == 1)
-            {
-                $nurse->nhd = '';
-            }
-            else
-                $nurse->nhd = $generados;
-        } else
-        {
-            $nurse->nhd;
-        }*/
-
-        $dayWeek = Carbon::parse($nurse->date_order)->dayOfWeek;
-
-        if ($nurse->others == null)
-        {
-            if ($dayWeek == 1 || $dayWeek == 3 || $dayWeek == 5)
-            {
-                $nurse->others = "L - M - V";
-            } else
-            {
-                $nurse->others = "M - J - S";
-            }
-        } else
-        {
-            $nurse->others = $nurse->others;
-        }
+        $ultimaOrdenNoVacia = $this->obtenerUltimaOrdenNoVaciaYSumar($patient, $fecha);
 
         if (!$nurse->hr)
         {
@@ -135,78 +124,48 @@ class NurseController extends Controller
             $nurse->hr3 = $nurse->hr3;
             $nurse->hr4 = $nurse->hr4;
             $nurse->hr5 = $nurse->hr5;
-            $nurse->hr6 = $nurse->hr6;
-            $nurse->hr7 = $nurse->hr7;
-            $nurse->hr8 = $nurse->hr8;
         }
         else
         {
             if (!$nurse->hr2)
-                $nurse->hr2 = Carbon::parse($nurse->hr)->addMinutes(30)->format('H:i');
+                $nurse->hr2 = Carbon::parse($nurse->hr)->addHour(1)->format('H:i');
             else
                 $nurse->hr2 = $nurse->hr2;
 
             if (!$nurse->hr3)
-                $nurse->hr3 = Carbon::parse($nurse->hr)->addHour(1)->format('H:i');
+                $nurse->hr3 = Carbon::parse($nurse->hr)->addHour(2)->format('H:i');
             else
                 $nurse->hr3 = $nurse->hr3;
 
             if (!$nurse->hr4)
-                $nurse->hr4 = Carbon::parse($nurse->hr)->addMinutes(90)->format('H:i');
+                $nurse->hr4 = Carbon::parse($nurse->hr)->addHour(3)->format('H:i');
             else
                 $nurse->hr4 = $nurse->hr4;
 
-            if (!$nurse->hr5)
-                $nurse->hr5 = Carbon::parse($nurse->hr)->addHour(2)->format('H:i');
-            else
-                $nurse->hr5 = $nurse->hr5;
-
-            if (!$nurse->hr6)
-                $nurse->hr6 = Carbon::parse($nurse->hr)->addMinutes(150)->format('H:i');
-            else
-                $nurse->hr6 = $nurse->hr6;
-
-            if (!$nurse->hr7)
-                $nurse->hr7 = Carbon::parse($nurse->hr)->addHour(3)->format('H:i');
-            else
-                $nurse->hr7 = $nurse->hr7;
-
-            if (!$nurse->hr8)
-                if ($nurse->order->medical->hour_hd == '3.15')
+            if (!$nurse->hr5) {
+                if ($nurse->order->medical->hour_hd == '3')
                 {
-                    $nurse->hr8 = Carbon::parse($nurse->hr)->addMinutes(195)->format('H:i');
+                    $nurse->hr5 = '';
+                }
+                elseif ($nurse->order->medical->hour_hd == '3.25')
+                {
+                    $nurse->hr5 = Carbon::parse($nurse->hr)->addMinutes(195)->format('H:i');
+                }
+                elseif ($nurse->order->medical->hour_hd == '3.50')
+                {
+                    $nurse->hr5 = Carbon::parse($nurse->hr)->addMinutes(210)->format('H:i');
                 }
                 elseif ($nurse->order->medical->hour_hd == '3.75')
                 {
-                    $nurse->hr8 = Carbon::parse($nurse->hr)->addMinutes(225)->format('H:i');
+                    $nurse->hr5 = Carbon::parse($nurse->hr)->addMinutes(225)->format('H:i');
                 }
-                elseif ($nurse->order->medical->hour_hd == '3' || $nurse->order->medical->hour_hd == '3 SOLO POR HOY')
-                {
-                    $nurse->hr8 = Carbon::parse($nurse->hr)->addHour(3)->format('H:i');
+                else{
+                    $nurse->hr5 = Carbon::parse($nurse->hr)->addHour(4)->format('H:i');;
                 }
-                else
-                {
-                    $nurse->hr8 = Carbon::parse($nurse->hr)->addMinutes(210)->format('H:i');
-                }
-            else
-                $nurse->hr8 = $nurse->hr8;
+            }
         }
 
-        $patient = $nurse->patient;
-        $fecha = Carbon::now();
-        $ultimo = $nurse->where('patient', $patient)->whereDate('created_at', '!=', $fecha)->latest()->first();
-        $ult = $ultimo ? $ultimo->nhd : 0;
-
-        if (!$nurse->nhd)
-        {
-            $nurse->nhd = $ult + 1;
-        }
-        else
-        {
-            $nurse->nhd = $nurse->nhd;
-        }
-
-        return view('nurses.edit', compact('nurse', 'users'));
+        return view('nurses.edit', compact('nurse', 'users', 'ultimaOrdenNoVacia'));
     }
 
     /**
