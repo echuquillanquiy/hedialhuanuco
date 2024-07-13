@@ -51,7 +51,6 @@ class OrderController extends Controller
             ->paginate(30);
         return view('orders.index', compact('orders','patients', 'rooms', 'shifts', 'users'));
     }
-
     /**
      * Show the form for creating a new resource.
      *

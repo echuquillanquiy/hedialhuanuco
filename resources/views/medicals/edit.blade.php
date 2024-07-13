@@ -620,7 +620,7 @@
               <div class="form-group col-sm-12 col-lg-2">
                   <label for="user_id">USUARIO DE LA ATENCION</label>
                   <select class="form-control selectpicker" name="user_id" data-live-search="true" data-style="btn-info">
-                      <option value="{{ !$ultimaOrdenNoVacia->user_id ? auth()->user()->id : $ultimaOrdenNoVacia->user_id }}">{{ !$ultimaOrdenNoVacia->user_id ? auth()->user()->name : $ultimaOrdenNoVacia->user->name }}</option>
+                      <option value="{{ !$medical->user_id ? auth()->user()->id : $medical->user_id }}">{{ !$medical->user_id ? auth()->user()->name : $medical->user->name }}</option>
                       @foreach($users as $user)
                           <option value="{{ $user->id }}">{{ $user->name }}</option>
                       @endforeach
