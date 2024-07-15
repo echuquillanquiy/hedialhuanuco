@@ -74,9 +74,6 @@
                 {{$order->n_fua}}
             </td>
           <td>
-            {{$order->room->name}}
-          </td>
-          <td>
             {{$order->shift->name}}
           </td>
           <td>

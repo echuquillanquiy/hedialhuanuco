@@ -54,16 +54,24 @@
         <input type="text" name="name" class="form-control" value="{{ old('name', $order->patient->name) }}" disabled>
       </div>
 
-        <div class="form-group col-sm-12 col-lg-3">
-          <label for="room_id">Salas</label>
-          <select data-live-search="true" name="room_id" id="room_id" class="form-control selectpicker" data-style="btn-info">
-            <option value="{{ $order->room->id }}">{{ $order->room->name }}</option>
-            @foreach ($rooms as $room)
-            <option value="{{ $room->id }}">{{ $room->name }}</option>
+          <div class="form-group col-lg-2">
+              <label for="">FECHA DE CREACION</label>
+              <div class="input-group">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                  </div>
+                  <input class="form-control datepicker" placeholder="Seleccionar fecha"
+                         id="date_order" name="date_order" type="text"
+                         value="{{ $order->date_order }}"
+                         data-date-format="yyyy-mm-dd"
+                  >
+              </div>
+          </div>
 
-            @endforeach
-          </select>
-        </div>
+          <div class="form-group col-sm-12 col-lg-1">
+              <label for="hosp_origin">N° HD</label>
+              <input type="text" id="hosp_origin" name="hosp_origin" class="form-control" value="{{ $order->patient->hosp_origin }}">
+          </div>
 
         <div class="form-group col-sm-12 col-lg-3">
           <label for="shift_id">Turnos</label>
@@ -85,33 +93,34 @@
               </select>
           </div>
 
+
           <div class="form-group col-sm-12 col-lg-2">
-              <label for="n_fua">FUA</label>
-              <input type="text" name="n_fua" class="form-control" value="{{ $order->n_fua }}">
+              <label for="start_weight">Peso Inicial</label>
+              <input type="text" name="start_weight" class="form-control" value="{{ $order->medical->start_weight }}">
           </div>
 
           <div class="form-group col-sm-12 col-lg-2">
-              <label for="lab">¿INCLUYE LABORATORIO?</label>
-              <select name="lab" id="lab" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
-                  <option value="{{ $order->lab }}" readonly="">{{ $order->lab }}</option>
-                  <option value="NO">NO</option>
-                  <option value="SI">SI</option>
-              </select>
+              <label for="end_weight">Peso Final</label>
+              <input type="text" name="end_weight" class="form-control" value="{{ $order->nurse->end_weight }}">
           </div>
 
-          <div class="form-group col-lg-2">
-              <label for="">FECHA DE CREACION</label>
-              <div class="input-group">
-                  <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
-                  </div>
-                  <input class="form-control datepicker" placeholder="Seleccionar fecha"
-                         id="date_order" name="date_order" type="text"
-                         value="{{ $order->date_order }}"
-                         data-date-format="yyyy-mm-dd"
-                  >
-              </div>
+          <div class="form-group col-sm-12 col-lg-2">
+              <label for="start_hour">Hora médico Inicial</label>
+              <input type="time" name="start_hour" class="form-control">
           </div>
+
+          <div class="form-group col-sm-12 col-lg-2">
+              <label for="end_hour">Hora médico Final</label>
+              <input type="time" name="end_hour" class="form-control">
+          </div>
+
+          <input type="hidden" name="n_fua" class="form-control" value="">
+
+          <div class="form-group">
+              <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+          </div>
+
+
 
         <div class="form-group">
           <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">

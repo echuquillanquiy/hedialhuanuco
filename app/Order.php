@@ -16,7 +16,7 @@ class Order extends Model
         'n_fua',
         'date_order',
         'type',
-        'lab'
+        'lab',
 	];
 
     public function user()

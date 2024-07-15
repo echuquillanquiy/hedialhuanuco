@@ -80,20 +80,15 @@ class OrderController extends Controller
     {
         $rules = [
            'patient_id' => 'required',
-           'room_id' => 'required',
            'shift_id' => 'required',
            'covid' => 'required',
-            'n_fua' => 'required|unique:orders'
 
         ];
 
         $messages = [
             'patient_id.required' => 'Por favor seleccionar un paciente.',
-            'room_id.required' => 'Por favor seleccionar una Sala.',
             'shift_id.required' => 'Por favor seleccionar un Turno.',
             'covid.required' => 'Confirme si el paciente tiene COVID 19.',
-            'n_fua.required' => 'El numero de fua es requerido.',
-            'n_fua.unique' => 'El numero de fua es unico.'
         ];
 
         $this->validate($request, $rules, $messages);
@@ -111,24 +106,22 @@ class OrderController extends Controller
         //}
 
         $order = Order::create($request->all());
-        $numerarion_save = Numeration::create([
-            'fua' => $request->n_fua
-        ]);
 
         $orders_data = [
             'order_id' => $order->id,
             'patient' => $order->patient->name,
-            'room' => $order->room->name,
             'shift' => $order->shift->name,
-            'date_order' => $order->date_order
+            'date_order' => $order->date_order,
+            'start_weight' => $request->start_weight,
+            'end_weight' => $request->end_weight,
         ];
 
         $orders_data2 = [
             'order_id' => $order->id,
             'patient' => $order->patient->name,
-            'room' => $order->room->name,
             'shift' => $order->shift->name,
-            'hour_hd' => $request->hour_hd,
+            'start_hour' => $request->start_hour,
+            'end_hour' => $request->end_hour,
             'date_order' => $order->date_order
         ];
 
@@ -137,6 +130,13 @@ class OrderController extends Controller
             'patient_id' => $order->patient_id,
             'date_order' => $order->date_order
         ];
+
+        $patient = Patient::findOrFail($request->patient_id);
+        if ($patient)
+        {
+            $patient->hosp_origin = $request->hosp_origin;
+            $patient->save();
+        }
 
         if ($order->type == 1 && $order->lab == 'SI')
         {
@@ -210,11 +210,12 @@ class OrderController extends Controller
 
     public function edit($id)
     {
+        $order = Order::findOrFail($id);
+
         $patients = Patient::all();
         $rooms = Room::all();
         $shifts = Shift::all();
         $users = User::all();
-        $order = Order::findOrFail($id);
         return view('orders.edit', compact('order','patients', 'rooms', 'shifts', 'users'));
     }
 

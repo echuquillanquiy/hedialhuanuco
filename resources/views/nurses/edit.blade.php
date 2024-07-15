@@ -490,7 +490,7 @@
 
                           <div class="form-group col-sm-12 col-lg-2">
                               <label for="start_weight">Peso Inicial</label>
-                              <input type="text" name="start_weight" class="form-control" value="{{ $nurse->end_pa ? $nurse->end_pa : $ultimaOrdenNoVacia->order->medical->start_weight }}">
+                              <input type="text" name="start_weight" class="form-control" value="{{ $nurse->start_weight ? $nurse->start_weight : $ultimaOrdenNoVacia->order->medical->start_weight }}">
                           </div>
 
                               <div class="form-group col-sm-12 col-lg-2">

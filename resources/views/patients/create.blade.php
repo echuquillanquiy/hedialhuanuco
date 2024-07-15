@@ -160,7 +160,7 @@
         </div>
 
         <div class="form-group col-lg-2">
-          <label for="hosp_origin">Peso Seco</label>
+          <label for="hosp_origin">N° HD</label>
           <input type="text" name="hosp_origin" class="form-control" value="{{ old('hosp_origin') }}">
         </div>
 
