@@ -4,6 +4,7 @@
         <tr>
             <td colspan="10" style="font-size: 0.9rem; text-align: center">
                 <img src="{{ asset('img/brand/logo_superior.jpg') }}" width="400px">
+                <hr>
                 <h4 style="margin-top: 0px">FORMATO DE PROCEDIMIENTO DE HEMODIÁLISIS (HD)</h4>
             </td>
         </tr>
@@ -208,7 +209,28 @@
         </tr>
 
         <tr>
-            <td style="font-size: 0.7rem; text-align: left"> {{ $order->nurse->s }}</td>
+            <td style="font-size: 0.7rem; text-align: left" colspan="12" "> {{ $order->nurse->s }}</td>
+        </tr>
+    </table>
+
+    <table style="border: 1px solid; border-collapse: collapse" width="100%" border="1px">
+
+        <tr>
+            <td style="font-size: 0.7rem; margin-bottom: 5px; font-weight: bold" colspan="12">ADMINISTRACIÓN DE MEDICAMENTOS</td>
+        </tr>
+
+        <tr>
+            <td style="font-size: 0.7rem; text-align: center" colspan="2">Epoetina alfa (EPO) 2000 Ul/ml. INY 1ml. </td>
+            <td style="font-size: 0.8rem; text-align: center" colspan="1">{{ $order->nurse->epo2000 }}</td>
+
+            <td style="font-size: 0.7rem; text-align: center" colspan="2">Hierro 20 mg Fe/ml INY 5ml</td>
+            <td style="font-size: 0.8rem; text-align: center" colspan="1">{{ $order->nurse->iron }}</td>
+
+            <td style="font-size: 0.7rem; text-align: center" colspan="2">Hidroxicobalamina 1 mg/ml. INY 1 ml.</td>
+            <td style="font-size: 0.8rem; text-align: center" colspan="1">{{ $order->nurse->hidroxi }}</td>
+
+            <td style="font-size: 0.7rem; text-align: center" colspan="2">Calcitriol 1mcg/ml. INY</td>
+            <td style="font-size: 0.8rem; text-align: center" colspan="1">{{ $order->nurse->calcitriol }}</td>
         </tr>
     </table>
 
