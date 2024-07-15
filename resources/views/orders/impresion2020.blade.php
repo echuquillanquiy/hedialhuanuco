@@ -351,45 +351,6 @@
             <td height="14" style="font-size:0.7rem !important">{{ $order->nurse->obs5 }}</td>
           </tr>
 
-          <tr style="font-size:0.6rem;">
-            <td height="14">{{ $order->nurse->hr6 }}</td>
-            <td height="14">{{ $order->nurse->pa6 }}</td>
-            <td height="14">{{ $order->nurse->fc6 }}</td>
-            <td height="14">{{ $order->nurse->qb6 }}</td>
-            <td height="14">{{ $order->nurse->cnd6 }}</td>
-            <td height="14">{{ $order->nurse->ra6 }}</td>
-            <td height="14">{{ $order->nurse->rv6 }}</td>
-            <td height="14">{{ $order->nurse->ptm6 }}</td>
-              <td height="6" style="font-size:0.6rem !important">{{ $order->nurse->sol_hemodev6 }}</td>
-            <td height="14" style="font-size:0.7rem !important">{{ $order->nurse->obs6 }}</td>
-          </tr>
-
-          <tr style="font-size:0.6rem;">
-            <td height="14">{{ $order->nurse->hr7 }}</td>
-            <td height="14">{{ $order->nurse->pa7 }}</td>
-            <td height="14">{{ $order->nurse->fc7 }}</td>
-            <td height="14">{{ $order->nurse->qb7 }}</td>
-            <td height="14">{{ $order->nurse->cnd7 }}</td>
-            <td height="14">{{ $order->nurse->ra7 }}</td>
-            <td height="14">{{ $order->nurse->rv7 }}</td>
-            <td height="14">{{ $order->nurse->ptm7 }}</td>
-              <td height="6" style="font-size:0.6rem !important">{{ $order->nurse->sol_hemodev7 }}</td>
-            <td height="14" style="font-size:0.7rem !important">{{ $order->nurse->obs7 }}</td>
-          </tr>
-
-            <tr style="font-size:0.6rem;">
-                <td height="14">{{ $order->nurse->hr8 }}</td>
-                <td height="14">{{ $order->nurse->pa8 }}</td>
-                <td height="14">{{ $order->nurse->fc8 }}</td>
-                <td height="14">{{ $order->nurse->qb8 }}</td>
-                <td height="14">{{ $order->nurse->cnd8 }}</td>
-                <td height="14">{{ $order->nurse->ra8 }}</td>
-                <td height="14">{{ $order->nurse->rv8 }}</td>
-                <td height="14">{{ $order->nurse->ptm8 }}</td>
-                <td height="6" style="font-size:0.6rem !important">{{ $order->nurse->sol_hemodev8 }}</td>
-                <td height="14" style="font-size:0.7rem !important">{{ $order->nurse->obs8 }}</td>
-            </tr>
-
             <tr style="border: none">
                 <td colspan="8" style="font-size:0.5rem !important; text-align: left">P.A. Final: {{ $order->nurse->end_pa }}</td>
                 <td colspan="2" style="font-size:0.5rem !important; text-align: left">Peso Final: {{ $order->nurse->end_weight }} Kg</td>
