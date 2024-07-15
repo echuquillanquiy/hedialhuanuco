@@ -4,12 +4,12 @@
         <div class="row text-center">
             <div class="form-group col-sm-12 col-lg-2">
                 <label for="hcl">H.CL</label>
-                <input type="text" name="hcl" class="form-control" value="{{ old('hcl', $nurse->order->patient->dni) }}" readonly>
+                <input type="text" name="hcl" class="form-control" value="{{ !$nurse->hcl ? $nurse->order->patient->dni : $nurse->hcl }}">
             </div>
 
             <div class="form-group col-sm-12 col-lg-2">
                 <label for="frequency">Frecuencia HD</label>
-                <input type="text" name="frequency" class="form-control" value="{{ old('frequency', '3 VECES POR SEMANA', $nurse->frequency) }}">
+                <input type="text" name="frequency" class="form-control" value="{{ old('frequency', '3', $nurse->frequency) }}">
             </div>
 
             <div class="form-group col-sm-12 col-lg-2">
@@ -163,24 +163,9 @@
 
         <div class="row text-center">
 
-            <div class="form-group col-sm-12 col-lg-3">
-                <label for="s">S.- </label>
-                <textarea class="form-control" id="" name="s" rows="2">{{ old('s', $nurse->s) }}</textarea>
-            </div>
-
-            <div class="form-group col-sm-12 col-lg-3">
-                <label for="o">O.- </label>
-                <textarea class="form-control" id="" name="o" rows="2">{{ old('o', $nurse->o) }}</textarea>
-            </div>
-
-            <div class="form-group col-sm-12 col-lg-3">
-                <label for="a">A.- </label>
-                <textarea class="form-control" id="" name="a" rows="2">{{ old('a', $nurse->a) }}</textarea>
-            </div>
-
-            <div class="form-group col-sm-12 col-lg-3">
-                <label for="p">P.- </label>
-                <textarea class="form-control" id="" name="p" rows="2">{{ old('p', $nurse->p) }}</textarea>
+            <div class="form-group col-sm-12 col-lg-12">
+                <label for="s">VALORACION DE ENFERMERIA </label>
+                <textarea class="form-control" id="" name="s" rows="3">{{ old('s', $nurse->s) }}</textarea>
             </div>
 
         </div>
@@ -348,24 +333,9 @@
 
         <div class="row text-center">
 
-            <div class="form-group col-sm-12 col-lg-3">
-                <label for="s">S.- </label>
-                <textarea class="form-control" id="" name="s" rows="2" value="">{{ $nurse->s ? $nurse->s : $ultimaOrdenNoVacia->s }}</textarea>
-            </div>
-
-            <div class="form-group col-sm-12 col-lg-3">
-                <label for="o">O.- </label>
-                <textarea class="form-control" id="" name="o" rows="2" value="">{{ $nurse->o ? $nurse->o : $ultimaOrdenNoVacia->o }}</textarea>
-            </div>
-
-            <div class="form-group col-sm-12 col-lg-3">
-                <label for="a">A.- </label>
-                <textarea class="form-control" id="" name="a" rows="2" value="">{{ $nurse->a ? $nurse->a : $ultimaOrdenNoVacia->a }}</textarea>
-            </div>
-
-            <div class="form-group col-sm-12 col-lg-3">
-                <label for="p">P.- </label>
-                <textarea class="form-control" id="" name="p" rows="2" value="">{{ $nurse->p ? $nurse->p : $ultimaOrdenNoVacia->p }}</textarea>
+            <div class="form-group col-sm-12 col-lg-12">
+                <label for="s">VALORACION DE ENFERMERIA </label>
+                <textarea class="form-control" id="" name="s" rows="3"  value="">{{ $nurse->s ? $nurse->s : $ultimaOrdenNoVacia->s }}</textarea>
             </div>
 
         </div>

@@ -23,17 +23,15 @@ class ShiftController extends Controller
     private function performValidation(Request $request)
     {
         $rules = [
-            'name' => 'required|min:3',
-            'description' => 'min:10'
+            'name' => 'required|min:1',
         ];
 
         $messages = [
             'name.required' => 'Es necesario ingresar un nombre.',
             'name.min' => 'El nombre del turno debe tener 6 carácteres.',
-            'description.min' => 'La descripción del Turno debe tener 10 carácteres.'
         ];
 
-        $this->validate($request, $rules, $messages);  
+        $this->validate($request, $rules, $messages);
     }
 
     public function store(Request $request)
@@ -61,7 +59,7 @@ class ShiftController extends Controller
     public function update(Request $request, Shift $shift)
     {
         //dd($request->all());
-        $this->performValidation($request); 
+        $this->performValidation($request);
 
         $shift->name = $request->input('name');
         $shift->description = $request->input('description');
