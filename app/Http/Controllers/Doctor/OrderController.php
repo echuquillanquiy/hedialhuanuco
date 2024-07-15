@@ -230,7 +230,6 @@ class OrderController extends Controller
     {
         $order = Order::findOrFail($id);
         $data = $request->only([
-            'room_id',
             'shift_id',
             'covid',
             'n_fua',
@@ -240,15 +239,24 @@ class OrderController extends Controller
         $order->fill($data);
         $order->save();
         $data_or = [
-            'room' => $order->room->name,
             'shift' => $order->shift->name,
-            'date_order' => $order->date_order
+            'date_order' => $order->date_order,
+            'start_hour' => $request->start_hour,
+            'end_hour' => $request->end_hour,
+            'start_weight' => $request->start_weight,
+        ];
+
+        $data_or2 = [
+            'shift' => $order->shift->name,
+            'date_order' => $order->date_order,
+            'start_weight' => $request->start_weight,
+            'end_weight' => $request->end_weight
         ];
 
         $consult_data = [
             'order_id' => $order->id,
             'patient_id' => $order->patient_id,
-            'date_order' => $order->date_order
+            'date_order' => $order->date_order,
         ];
 
         if ($order->lab == 'SI')
@@ -256,7 +264,7 @@ class OrderController extends Controller
             $laboratory = $order->laboratory()->create($consult_data);
         }
 
-        $order->nurse()->update($data_or);
+        $order->nurse()->update($data_or2);
         $order->medical()->update($data_or);
 
         $notification = 'La ordern se ha actualizado correctamente.';

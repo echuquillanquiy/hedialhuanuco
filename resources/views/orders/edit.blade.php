@@ -106,21 +106,15 @@
 
           <div class="form-group col-sm-12 col-lg-2">
               <label for="start_hour">Hora médico Inicial</label>
-              <input type="time" name="start_hour" class="form-control">
+              <input type="time" name="start_hour" class="form-control" value="{{ $order->medical->start_hour }}">
           </div>
 
           <div class="form-group col-sm-12 col-lg-2">
               <label for="end_hour">Hora médico Final</label>
-              <input type="time" name="end_hour" class="form-control">
+              <input type="time" name="end_hour" class="form-control" value="{{ $order->medical->end_hour }}">
           </div>
 
           <input type="hidden" name="n_fua" class="form-control" value="">
-
-          <div class="form-group">
-              <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
-          </div>
-
-
 
         <div class="form-group">
           <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
