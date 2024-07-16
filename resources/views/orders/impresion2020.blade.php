@@ -49,7 +49,7 @@
 
         <table width="100%" style="border:2px solid; border-collapse: collapse;">
           <tr>
-            <td style="font-size: 0.8rem; text-align: left;" colspan="2"><strong>I. EVALUACIÓN MÉDICA </strong></td>
+            <td style="font-size: 0.8rem; text-align: left;" colspan="2"><strong>I. PARTE MÉDICO: EVALUACIÓN MÉDICA INICIAL</strong></td>
             <td style="text-align: center;font-size: 0.7rem;"> Atención en condiciones COVID 19: <strong>{{ $order->covid }}</strong> </td>
           </tr>
 
@@ -95,17 +95,17 @@
 
         <table width="100%" style="border:2px solid; border-collapse: collapse; border-top: none;">
           <tr>
-            <td style="font-size: 0.8rem; margin-bottom: 5px; font-weight: bold" colspan="12">PRESCRIPCIÓN</td>
+            <td style="font-size: 0.8rem; margin-bottom: 5px; font-weight: bold" colspan="12">PRESCRIPCIÓN DEL TRATAMIENTO DE HEMODIALISIS:</td>
           </tr>
           <tr>
             <td style="font-size: 0.7rem;" colspan="3">Hrs. HD: {{ $order->medical->hour_hd }}</td>
-            <td style="font-size: 0.7rem;" colspan="3">Qb: {{ $order->medical->qb }} ml/min</td>
+            <td style="font-size: 0.7rem;" colspan="3">QB (ml/min): {{ $order->medical->qb }}</td>
             <td style="font-size: 0.7rem;" colspan="3">CND: {{ $order->medical->cnd }}</td>
               <td style="font-size: 0.7rem;" colspan="3">Area de dializador: {{ $order->medical->area_filter }} m2</td>
           </tr>
           <tr>
               <td style="font-size: 0.7rem;" colspan="3">Heparina (Ul): {{ $order->medical->heparin }}</td>
-            <td style="font-size: 0.7rem;" colspan="3">Qd: {{ $order->medical->qd }} ml/min</td>
+            <td style="font-size: 0.7rem;" colspan="3">QD (ml/min): {{ $order->medical->qd }} ml/min</td>
             <td style="font-size: 0.7rem;" colspan="3">Na+ Inicial: {{ $order->medical->start_na }}</td>
               <td style="font-size: 0.7rem;" colspan="3"> Membrana de dializador: {{ $order->medical->membrane }}</td>
 
@@ -114,65 +114,47 @@
             <tr>
                 <td style="font-size: 0.7rem;" colspan="3">Peso Seco: {{ $order->medical->dry_weight }}</td>
                 <td style="font-size: 0.7rem;" colspan="3">Buffer: {{ $order->medical->bicarbonat }}</td>
-                <td style="font-size: 0.7rem;" colspan="3">Na Final: {{ $order->medical->end_na }}</td>
+                <td style="font-size: 0.7rem;" colspan="3">Na+ Final: {{ $order->medical->end_na }}</td>
                 <td style="font-size: 0.7rem;" colspan="3">Condición serológica: Negativo</td>
 
             </tr>
 
             <tr>
                 <td style="font-size: 0.7rem;" colspan="3">Peso Inicial (Kg): {{ $order->nurse->start_weight }}</td>
+                <td style="font-size: 0.6rem;" colspan="3">UF (ml): {{ $order->medical->uf }}</td>
                 <td style="font-size: 0.7rem;"  colspan="3"> Perfil de Uf: 0 </td>
-                <td style="font-size: 0.7rem;" colspan="3">Perfil de Na: {{ $order->medical->profile_na }}</td>
-                <td colspan="3"></td>
-            </tr>
-
-          <tr>
-              <td style="font-size: 0.6rem;" colspan="3">UF (ml): {{ $order->medical->uf }}</td>
-              <td colspan="9"></td>
-          </tr>
-
-            <tr>
-                <td style="font-size: 0.7rem;" colspan="3">Peso Final (Kg): {{ $order->nurse->end_weight }}</td>
-                <td colspan="9"></td>
+                <td style="font-size: 0.7rem;" colspan="3">Perfil Na+: {{ $order->medical->profile_na }}</td>
             </tr>
 
             <tr>
-                <td style="font-size: 0.7rem;" colspan="5">Condición clinica del paciente al finalizar HD: {{ $order->medical->end_evaluation }}</td>
-                <td colspan="7"></td>
-            </tr>
-
-            <tr>
+                <td style="font-size: 0.7rem;" colspan="8">Observaciones {{ $order->medical->fua_observacion }}</td>
                 @if($order->medical->user_id)
-                    <td colspan="6" style="text-align: center">
+                    <td colspan="4" style="text-align: center">
                         <img src="{{ asset($order->medical->user->image) }}" width="140" height="65" alt="">
                     </td>
                 @else
-                    <p>AQUI VA SELLO DEL MEDICO</p>
+                    <td colspan="4" style="text-align: center">
+                        <img src="{{ asset($order->medical->user->image) }}" width="140" height="65" alt="">
+                    </td>
                 @endif
-
-
-
-                    @if($order->medical->user_id)
-                        <td colspan="6" style="text-align: center">
-                            <img src="{{ asset($order->medical->user->image) }}" width="140" height="65" alt="">
-                        </td>
-                    @else
-                        <p>AQUI VA SELLO DEL MEDICO</p>
-                    @endif
             </tr>
-
-          <tr>
-            <td colspan="6" style="font-size: 0.6rem; text-align: center;">
-
-              Médico que Inicia HD
-            </td>
-            <td colspan="6" style="font-size: 0.6rem; text-align: center">
-
-              Médico que Finaliza HD
-            </td>
-          </tr>
-
         </table>
+
+    <table style="border: 2px solid; border-collapse: collapse; margin-top: -4px" width="100%">
+        <tr>
+            <td style="font-size: 0.7rem;" colspan="8">Condición clinica del paciente al finalizar HD: {{ $order->medical->end_evaluation }}</td>
+
+            @if($order->medical->user_id)
+                <td colspan="4" style="text-align: center">
+                    <img src="{{ asset($order->medical->user->image) }}" width="140" height="65" alt="">
+                </td>
+            @else
+                <td colspan="4" style="text-align: center">
+                    <img src="{{ asset($order->medical->user->image) }}" width="140" height="65" alt="">
+                </td>
+            @endif
+        </tr>
+    </table>
 
         <table width="100%" style="border: 2px solid ;border-collapse: collapse">
           <tr>

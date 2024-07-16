@@ -301,27 +301,14 @@
             </div>
         @endif
 
+        <div class="form-group col-sm-12 col-lg-4">
+            <label for="fua_observacion">OBSERVACIONES</label>
+            <textarea class="form-control" id="" name="fua_observacion" rows="2">{{ old('fua_observacion' ,$medical->fua_observacion) }}</textarea>
+        </div>
 
         <div class="form-group col-sm-12 col-lg-2">
             <label for="end_hour">Hora final</label>
             <input type="time" name="end_hour" class="form-control" value="{{ old('end_hour', $medical->end_hour) }}">
-        </div>
-
-        <div class="form-group col-sm-12 col-lg-4">
-            <label for="fua_observacion">SI EL PACIENTE NO PUEDE FIRMAR SELECCIONE UNA OPCION</label>
-            <select name="fua_observacion" id="fua_observacion" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
-                <option value="{{ !$medical->fua_observacion ? '' : $medical->fua_observacion }}" disabled selected>{{ !$medical->fua_observacion ? '[SELECCIONE UNA OPCION]' : $medical->fua_observacion }}</option>
-                <option value="PACIENTE PRESENTA MOVIMIENTOS INVOLUNTARIOS EN MIEMBROS SUPERIORES, IMPOSIBILITADO PARA FIRMAR">PACIENTE PRESENTA MOVIMIENTOS INVOLUNTARIOS EN MIEMBROS SUPERIORES, IMPOSIBILITADO PARA FIRMAR</option>
-                <option value="PACIENTE REFIERE DISMINUCION DE LA AGUDEZA VISUAL, IMPOSIBILITADO PARA FIRMAR">PACIENTE REFIERE DISMINUCION DE LA AGUDEZA VISUAL, IMPOSIBILITADO PARA FIRMAR</option>
-                <option value="PACIENTE PRESENTA DISTENIA POST DIALISIS, IMPOSIBILITADO AL MOMENTO DE FIRMAR">PACIENTE PRESENTA DISTENIA POST DIALISIS, IMPOSIBILITADO AL MOMENTO DE FIRMAR</option>
-                <option value="NO FIRMA, SOLO PONE HUELLA POR RETINOPATIA HIPERTENSIVA">NO FIRMA, SOLO PONE HUELLA POR RETINOPATIA HIPERTENSIVA</option>
-                <option value="NO FIRMA, SOLO PONE HUELLA POR RETINOPATIA DIABETICA">NO FIRMA, SOLO PONE HUELLA POR RETINOPATIA DIABETICA</option>
-                <option value="NO FIRMA, SOLO PONE HUELLA POR NEUROPATIA PERIFERICA">NO FIRMA, SOLO PONE HUELLA POR NEUROPATIA PERIFERICA</option>
-                <option value="NO FIRMA SOLO PONE HUELLA POR ARTRITIS REUMATOIDE ">NO FIRMA SOLO PONE HUELLA POR ARTRITIS REUMATOIDE </option>
-                <option value="NO FIRMA, POR DISFUNCION MOTORA ">NO FIRMA, POR DISFUNCION MOTORA </option>
-                <option value="NO FIRMA, SOLO PONE HUELLA POR ENFERMEDAD DE PARKINSON">NO FIRMA, SOLO PONE HUELLA POR ENFERMEDAD DE PARKINSON</option>
-                <option value="NO FIRMA, SOLO PONE HUELLA POR RETINOPATIA HIPERTENSIVA Y DIABTETES.">NO FIRMA, SOLO PONE HUELLA POR RETINOPATIA HIPERTENSIVA Y DIABTETES.</option>
-            </select>
         </div>
 
         <div class="form-group col-sm-12 col-lg-2">
@@ -601,20 +588,11 @@
               </div>
 
               <div class="form-group col-sm-12 col-lg-4">
-                  <label for="fua_observacion">SI EL PACIENTE NO PUEDE FIRMAR SELECCIONE UNA OPCION</label>
-                  <select name="fua_observacion" id="fua_observacion" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
-                      <option value="{{ !$ultimaOrdenNoVacia->fua_observacion ? '' : $ultimaOrdenNoVacia->fua_observacion }}" disabled selected>{{ !$ultimaOrdenNoVacia->fua_observacion ? '[SELECCIONE UNA OPCION]' : $ultimaOrdenNoVacia->fua_observacion }}</option>
-                      <option value="PACIENTE PRESENTA MOVIMIENTOS INVOLUNTARIOS EN MIEMBROS SUPERIORES, IMPOSIBILITADO PARA FIRMAR">PACIENTE PRESENTA MOVIMIENTOS INVOLUNTARIOS EN MIEMBROS SUPERIORES, IMPOSIBILITADO PARA FIRMAR</option>
-                      <option value="PACIENTE REFIERE DISMINUCION DE LA AGUDEZA VISUAL, IMPOSIBILITADO PARA FIRMAR">PACIENTE REFIERE DISMINUCION DE LA AGUDEZA VISUAL, IMPOSIBILITADO PARA FIRMAR</option>
-                      <option value="PACIENTE PRESENTA DISTENIA POST DIALISIS, IMPOSIBILITADO AL MOMENTO DE FIRMAR">PACIENTE PRESENTA DISTENIA POST DIALISIS, IMPOSIBILITADO AL MOMENTO DE FIRMAR</option>
-                      <option value="NO FIRMA, SOLO PONE HUELLA POR RETINOPATIA HIPERTENSIVA">NO FIRMA, SOLO PONE HUELLA POR RETINOPATIA HIPERTENSIVA</option>
-                      <option value="NO FIRMA, SOLO PONE HUELLA POR RETINOPATIA DIABETICA">NO FIRMA, SOLO PONE HUELLA POR RETINOPATIA DIABETICA</option>
-                      <option value="NO FIRMA, SOLO PONE HUELLA POR NEUROPATIA PERIFERICA">NO FIRMA, SOLO PONE HUELLA POR NEUROPATIA PERIFERICA</option>
-                      <option value="NO FIRMA SOLO PONE HUELLA POR ARTRITIS REUMATOIDE ">NO FIRMA SOLO PONE HUELLA POR ARTRITIS REUMATOIDE </option>
-                      <option value="NO FIRMA, POR DISFUNCION MOTORA ">NO FIRMA, POR DISFUNCION MOTORA </option>
-                      <option value="NO FIRMA, SOLO PONE HUELLA POR ENFERMEDAD DE PARKINSON">NO FIRMA, SOLO PONE HUELLA POR ENFERMEDAD DE PARKINSON</option>
-                      <option value="NO FIRMA, SOLO PONE HUELLA POR RETINOPATIA HIPERTENSIVA Y DIABTETES.">NO FIRMA, SOLO PONE HUELLA POR RETINOPATIA HIPERTENSIVA Y DIABTETES.</option>
-                  </select>
+
+                  <div class="form-group col-sm-12 col-lg-4">
+                      <label for="fua_observacion">Evaluación Final</label>
+                      <textarea class="form-control" id="" name="fua_observacion" rows="2">{{ old('fua_observacion' ,$ultimaOrdenNoVacia->fua_observacion) }}</textarea>
+                  </div>
               </div>
 
               <div class="form-group col-sm-12 col-lg-2">
