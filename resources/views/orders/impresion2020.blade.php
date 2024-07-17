@@ -1,4 +1,4 @@
-<div>
+<div style="font-family: 'Arial Narrow',sans-serif ">
     <table style="margin-top: -35px; width: 100%">
 
         <tr>
@@ -21,7 +21,7 @@
               <td style="font-size: 0.8rem; text-transform:uppercase; width: 80px"><strong>{{ $order->nurse->hcl }}</strong></td>
 
               <td style="font-size: 0.8rem; text-align: center">Fecha: </td>
-              <td style="font-size: 0.8rem; text-align: left" width="70px"> <strong>{{ $order->date_order }}</strong></td>
+              <td style="font-size: 0.8rem; text-align: left" width="70px"> <strong>{{ \Carbon\Carbon::createFromFormat('Y-m-d', $order->date_order)->format('d-m-Y') }}</strong></td>
 
             <td>
 
@@ -31,18 +31,14 @@
 
         <table style="margin-top:0px;">
             <tr>
+                <td colspan="5" style="font-size: 0.8rem;"><strong>N° AUTOGENERADO</strong> {{ $order->patient->code }}</td>
 
-                <td colspan="5" style="font-size: 0.8rem"><strong>N° AUTOGENERADO</strong></td>
-                <td width="170px" style="font-size: 0.8rem; text-transform:uppercase;">{{ $order->patient->code }}</td>
+                <td colspan="2" style="font-size: 0.8rem; margin-left: 15px !important; text-align: right"><strong>N° de HD: </strong> {{ $order->patient->hosp_origin }}</td>
 
-                <td style="width: 6%; font-size: 0.8rem"><strong>N° de HD: </strong></td>
-                <td style="text-align: center; font-size: 0.8rem;" width="50px">{{ $order->patient->hosp_origin }}</td>
+                <td colspan="3" style="font-size:0.8rem; margin-left: 30px !important;"><strong>Frecuencia HD (veces/sem):</strong> {{ $order->nurse->frequency }}</td>
 
-                <td style="font-size:0.8rem;"><strong>Frecuencia HD (veces/sem):</strong></td>
-                <td style="width: 30px; text-align: center; font-size:0.8rem;">{{ $order->nurse->frequency }} </td>
+                <td colspan="2" style="font-size:0.8rem; margin-left: 35px !important;"><strong>Turno: </strong> {{ $order->shift->name}}</td>
 
-                <td style="width: 1%; font-size:0.8rem;"><strong>Turno: </strong></td>
-                <td style="text-align: center; font-size:0.8rem;">{{ $order->shift->name}}</td>
 
             </tr>
         </table>
@@ -95,7 +91,7 @@
 
         <table width="100%" style="border:2px solid; border-collapse: collapse; border-top: none;">
           <tr>
-            <td style="font-size: 0.8rem; margin-bottom: 5px; font-weight: bold" colspan="12">PRESCRIPCIÓN DEL TRATAMIENTO DE HEMODIALISIS:</td>
+            <td style="font-size: 0.7rem; margin-bottom: 5px; font-weight: bold" colspan="12">PRESCRIPCIÓN DEL TRATAMIENTO DE HEMODIALISIS:</td>
           </tr>
           <tr>
             <td style="font-size: 0.7rem;" colspan="3">Hrs. HD: {{ $order->medical->hour_hd }}</td>
@@ -127,13 +123,20 @@
             </tr>
 
             <tr>
-                <td style="font-size: 0.7rem;" colspan="8">Observaciones {{ $order->medical->fua_observacion }}</td>
+                <td colspan="12">
+                    <br>
+                </td>
+            </tr>
+
+
+            <tr style="margin-top: 20px;">
+                <td style="font-size: 0.7rem;" colspan="8"> <stron style="text-decoration: underline; font-size: 0.8rem !important;">Observaciones:</stron>  {{ $order->medical->fua_observacion }}</td>
                 @if($order->medical->user_id)
-                    <td colspan="4" style="text-align: center">
+                    <td colspan="4" style="text-align: right">
                         <img src="{{ asset($order->medical->user->image) }}" width="140" height="65" alt="">
                     </td>
                 @else
-                    <td colspan="4" style="text-align: center">
+                    <td colspan="4" style="text-align: right">
                         <img src="{{ asset($order->medical->user->image) }}" width="140" height="65" alt="">
                     </td>
                 @endif
@@ -142,24 +145,29 @@
 
     <table style="border: 2px solid; border-collapse: collapse; margin-top: -4px" width="100%">
         <tr>
+            <td style="font-size: 0.8rem;font-weight: bold" colspan="12">EVALUACION MEDICA FINAL:</td>
+        </tr>
+        <tr>
             <td style="font-size: 0.7rem;" colspan="8">Condición clinica del paciente al finalizar HD: {{ $order->medical->end_evaluation }}</td>
 
             @if($order->medical->user_id)
-                <td colspan="4" style="text-align: center">
+                <td colspan="4" style="text-align: right">
                     <img src="{{ asset($order->medical->user->image) }}" width="140" height="65" alt="">
                 </td>
             @else
-                <td colspan="4" style="text-align: center">
+                <td colspan="4" style="text-align: right">
                     <img src="{{ asset($order->medical->user->image) }}" width="140" height="65" alt="">
                 </td>
             @endif
         </tr>
+
     </table>
 
-        <table width="100%" style="border: 2px solid ;border-collapse: collapse">
+        <table width="100%" style="border: solid 2px; border-collapse: collapse; margin-top: -5px">
           <tr>
-            <td style="font-size: 0.8rem; text-align: left;" colspan="12"><strong>II. PARTE DE ENFERMERIA</strong></td>
+            <th style="font-size: 0.7rem; text-align: left;"><strong>II. PARTE DE ENFERMERIA</strong></th>
           </tr>
+
         </table>
         <table style="border: 1px solid; border-collapse: collapse" width="100%">
               <tr>
@@ -184,7 +192,7 @@
             </tr>
         </table>
 
-    <table style="border: 1px solid; border-collapse: collapse" width="100%">
+    <table style="border: 1px solid; border-collapse: collapse; margin-top: -3px" width="100%">
 
         <tr>
             <td style="font-size: 0.8rem; margin-bottom: 5px; font-weight: bold" colspan="12">VALORACION DE ENFERMERIA</td>
@@ -195,24 +203,27 @@
         </tr>
     </table>
 
-    <table style="border: 1px solid; border-collapse: collapse" width="100%" border="1px">
+    <table style="border: 1px solid; border-collapse: collapse; margin-top: -3px" width="100%" border="1px">
 
         <tr>
             <td style="font-size: 0.7rem; margin-bottom: 5px; font-weight: bold" colspan="12">ADMINISTRACIÓN DE MEDICAMENTOS</td>
         </tr>
 
         <tr>
-            <td style="font-size: 0.7rem; text-align: center" colspan="2">Epoetina alfa (EPO) 2000 Ul/ml. INY 1ml. </td>
-            <td style="font-size: 0.8rem; text-align: center" colspan="1">{{ $order->nurse->epo2000 }}</td>
+            <td style="font-size: 0.6rem; text-align: center" colspan="2">Epoetina alfa (EPO) 2000 Ul/ml </td>
+            <td style="font-size: 0.7rem; text-align: center" colspan="1">{{ $order->nurse->epo2000 }}</td>
 
-            <td style="font-size: 0.7rem; text-align: center" colspan="2">Hierro 20 mg Fe/ml INY 5ml</td>
-            <td style="font-size: 0.8rem; text-align: center" colspan="1">{{ $order->nurse->iron }}</td>
+            <td style="font-size: 0.6rem; text-align: center" colspan="2">Epoetina alfa (EPO) 4000 Ul/ml </td>
+            <td style="font-size: 0.7rem; text-align: center" colspan="1">{{ $order->nurse->epo2000 }}</td>
 
-            <td style="font-size: 0.7rem; text-align: center" colspan="2">Hidroxicobalamina 1 mg/ml. INY 1 ml.</td>
-            <td style="font-size: 0.8rem; text-align: center" colspan="1">{{ $order->nurse->hidroxi }}</td>
+            <td style="font-size: 0.6rem; text-align: center" colspan="1">Hierro 20 mg Fe/ml INY 5ml</td>
+            <td style="font-size: 0.7rem; text-align: center" colspan="1">{{ $order->nurse->iron }}</td>
 
-            <td style="font-size: 0.7rem; text-align: center" colspan="2">Calcitriol 1mcg/ml. INY</td>
-            <td style="font-size: 0.8rem; text-align: center" colspan="1">{{ $order->nurse->calcitriol }}</td>
+            <td style="font-size: 0.6rem; text-align: center" colspan="1">Hidroxicobalamina 1 mg/ml. INY 1 ml.</td>
+            <td style="font-size: 0.7rem; text-align: center" colspan="1">{{ $order->nurse->hidroxi }}</td>
+
+            <td style="font-size: 0.6rem; text-align: center" colspan="1">Calcitriol 1mcg/ml. INY</td>
+            <td style="font-size: 0.7rem; text-align: center" colspan="1">{{ $order->nurse->calcitriol }}</td>
         </tr>
     </table>
 
