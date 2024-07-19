@@ -123,21 +123,30 @@
             </tr>
 
             <tr>
-                <td colspan="12">
+                <td style="font-size: 0.7rem;" colspan="8"> <stron style="text-decoration: underline; font-size: 0.8rem !important;">Observaciones:</stron>  {{ $order->medical->fua_observacion }}</td>
+                <td colspan="4">
+                    <br>
+                    <br>
                     <br>
                 </td>
             </tr>
 
 
             <tr style="margin-top: 20px;">
-                <td style="font-size: 0.7rem;" colspan="8"> <stron style="text-decoration: underline; font-size: 0.8rem !important;">Observaciones:</stron>  {{ $order->medical->fua_observacion }}</td>
+
                 @if($order->medical->user_id)
-                    <td colspan="4" style="text-align: right">
-                        <img src="{{ asset($order->medical->user->image) }}" width="140" height="65" alt="">
+                    <td colspan="8"></td>
+                    <td colspan="4" style="text-align: center; font-size: 0.6rem; font-weight: bold">
+                        Dr(a): {{ $order->medical->user->name }}
+                        <br>
+                        <strong>Médico que inicia HD</strong>
                     </td>
                 @else
-                    <td colspan="4" style="text-align: right">
-                        <img src="{{ asset($order->medical->user->image) }}" width="140" height="65" alt="">
+                    <td colspan="8"></td>
+                    <td colspan="4" style="text-align: center; font-size: 0.6rem; font-weight: bold">
+                        Dr(a): {{ $order->medical->user->name }}
+                        <br>
+                        <strong>Médico que inicia HD</strong>
                     </td>
                 @endif
             </tr>
@@ -149,14 +158,26 @@
         </tr>
         <tr>
             <td style="font-size: 0.7rem;" colspan="8">Condición clinica del paciente al finalizar HD: {{ $order->medical->end_evaluation }}</td>
+            <td colspan="4">
+                <br>
+                <br>
+            </td>
+        </tr>
 
+        <tr>
             @if($order->medical->user_id)
-                <td colspan="4" style="text-align: right">
-                    <img src="{{ asset($order->medical->user->image) }}" width="140" height="65" alt="">
+                <td colspan="8"></td>
+                <td colspan="4" style="text-align: center; font-size: 0.6rem; font-weight: bold">
+                    Dr(a): {{ $order->medical->user->name }}
+                    <br>
+                    <strong>Médico que inicia HD</strong>
                 </td>
             @else
-                <td colspan="4" style="text-align: right">
-                    <img src="{{ asset($order->medical->user->image) }}" width="140" height="65" alt="">
+                <td colspan="8"></td>
+                <td colspan="4" style="text-align: center; font-size: 0.6rem; font-weight: bold">
+                    Dr(a): {{ $order->medical->user->name }}
+                    <br>
+                    <strong>Médico que inicia HD</strong>
                 </td>
             @endif
         </tr>
@@ -169,44 +190,65 @@
           </tr>
 
         </table>
-        <table style="border: 1px solid; border-collapse: collapse" width="100%">
-              <tr>
-                  <td style="font-size: 0.7rem; text-align: left" colspan="3">PA Inicial: {{ $order->nurse->start_pa }}</td>
-                  <td style="font-size: 0.7rem; text-align: left" colspan="3">N° de puesto de HD: {{ $order->nurse->position }}</td>
-                  <td style="font-size: 0.7rem; text-align: left" colspan="3">Area/Membrana de filtro: {{ $order->medical->area_filter }} - {{ $order->medical->membrane }}</td>
-                  <td style="font-size:0.7rem; text-align: left" colspan="3">P.A. Final: {{ $order->nurse->end_pa }}</td>
-              </tr>
 
-            <tr>
-                <td style="font-size: 0.7rem; text-align: left" colspan="3">Peso Inicial: {{ $order->medical->start_weight }}</td>
-                <td style="font-size: 0.7rem; text-align: left" colspan="3">N° de máquina de HD: {{ $order->nurse->machine }}</td>
-                <td style="font-size: 0.7rem; text-align: left" colspan="3">Marca/Modelo de maquina: {{ $order->nurse->brand_model }}</td>
-                <td style="font-size: 0.7rem;" colspan="3">UF (ml): {{ $order->medical->uf }}</td>
-            </tr>
-
-            <tr>
-                <td style="font-size: 0.7rem; text-align: left" colspan="3"> Acc. Arterial: {{ $order->nurse->access_arterial }}</td>
-                <td style="font-size: 0.7rem; text-align: left" colspan="3">Acc. Venoso: {{ $order->nurse->access_venoso }}</td>
-                <td style="font-size:0.7rem; text-align: left" colspan="3">Peso Final: {{ $order->nurse->end_weight }} Kg</td>
-                <td colspan="3"></td>
-            </tr>
-        </table>
-
-    <table style="border: 1px solid; border-collapse: collapse; margin-top: -3px" width="100%">
+    <table style="border: 1px solid; border-collapse: collapse; margin-top: -4px" width="100%">
 
         <tr>
             <td style="font-size: 0.8rem; margin-bottom: 5px; font-weight: bold" colspan="12">VALORACION DE ENFERMERIA</td>
         </tr>
 
         <tr>
-            <td style="font-size: 0.7rem; text-align: left" colspan="12" "> {{ $order->nurse->s }}</td>
+            <td style="font-size: 0.7rem; text-align: left" colspan="12" > {{ $order->nurse->s }}</td>
         </tr>
     </table>
+
+        <table style="border: 1px solid; border-collapse: collapse; margin-top: -3px" width="100%">
+              <tr>
+                  <td style="font-size: 0.7rem; text-align: left" colspan="3">PA Inicial: {{ $order->nurse->start_pa }}</td>
+                  <td style="font-size: 0.7rem; text-align: left" colspan="3">N° de puesto de HD: {{ $order->nurse->position }}</td>
+                  <td style="font-size: 0.7rem; text-align: left" colspan="6">Area de dializador: {{ $order->medical->area_filter }}</td>
+              </tr>
+
+            <tr>
+                <td style="font-size: 0.7rem; text-align: left" colspan="3">Peso Inicial: {{ $order->medical->start_weight }}</td>
+                <td style="font-size: 0.7rem; text-align: left" colspan="3">N° de máquina de HD: {{ $order->nurse->machine }}</td>
+                <td style="font-size: 0.7rem; text-align: left" colspan="6">Membrana de dializador: {{ $order->nurse->membrane }}</td>
+            </tr>
+
+            <tr>
+                <td style="font-size: 0.7rem;" colspan="3">UF (ml): {{ $order->medical->uf }}</td>
+                <td style="font-size: 0.7rem; text-align: left" colspan="3">Marca/Modelo de maquina: {{ $order->nurse->brand_model }}</td>
+                <td colspan="6"></td>
+            </tr>
+
+            <tr>
+                <td style="font-size: 0.7rem; text-align: left; font-weight: bold" colspan="3"> Acceso vascular Arterial: {{ $order->nurse->access_arterial }}</td>
+                <td style="font-size: 0.7rem; text-align: left; font-weight: bold" colspan="3">Acceso vascular Venoso: {{ $order->nurse->access_venoso }}</td>
+                <td colspan="6"></td>
+            </tr>
+        </table>
 
     <table style="border: 1px solid; border-collapse: collapse; margin-top: -3px" width="100%" border="1px">
 
         <tr>
             <td style="font-size: 0.7rem; margin-bottom: 5px; font-weight: bold" colspan="12">ADMINISTRACIÓN DE MEDICAMENTOS</td>
+        </tr>
+
+        <tr>
+            <td style="font-size: 0.6rem; text-align: center; font-weight: bold" colspan="2">PRESENTACION </td>
+            <td style="font-size: 0.6rem; text-align: center; font-weight: bold" colspan="1">CANT.</td>
+
+            <td style="font-size: 0.6rem; text-align: center; font-weight: bold" colspan="2">PRESENTACION </td>
+            <td style="font-size: 0.6rem; text-align: center; font-weight: bold" colspan="1">CANT.</td>
+
+            <td style="font-size: 0.6rem; text-align: center; font-weight: bold" colspan="1">PRESENTACION</td>
+            <td style="font-size: 0.6rem; text-align: center; font-weight: bold" colspan="1">CANT.</td>
+
+            <td style="font-size: 0.6rem; text-align: center; font-weight: bold" colspan="1">PRESENTACION</td>
+            <td style="font-size: 0.6rem; text-align: center; font-weight: bold" colspan="1">CANT.</td>
+
+            <td style="font-size: 0.6rem; text-align: center; font-weight: bold" colspan="1">PRESENTACION</td>
+            <td style="font-size: 0.6rem; text-align: center; font-weight: bold" colspan="1">CANT.</td>
         </tr>
 
         <tr>
@@ -231,13 +273,13 @@
         <table width="100%" style="border-collapse:collapse;text-align:center; margin-top:0px" border="1px;">
 
           <tr>
-            <td style="font-size: 0.8rem; text-align: left;" colspan="12"><strong>EVOLUCIÓN TRATAMIENTO</strong></td>
+            <td style="font-size: 0.8rem; text-align: left;" colspan="12"><strong>EVOLUCIÓN DE TRATAMIENTO</strong></td>
           </tr>
 
           <tr style="font-size:0.7rem;">
             <th colspan="1">HORA</th>
             <th>P.A.</th>
-            <th>Pulso</th>
+            <th>FC</th>
             <th>QB</th>
             <th>CND</th>
             <th>RA</th>
@@ -254,6 +296,7 @@
             <td height="14">{{ $order->nurse->ra }}</td>
             <td height="14">{{ $order->nurse->rv }}</td>
             <td height="14">{{ $order->nurse->ptm }}</td>
+
             <td height="14" style="font-size:0.7rem !important" colspan="4">{{ $order->nurse->obs }}</td>
           </tr>
 
@@ -304,52 +347,39 @@
             <td height="14">{{ $order->nurse->ptm5 }}</td>
             <td height="14" style="font-size:0.7rem !important" colspan="4">{{ $order->nurse->obs5 }}</td>
           </tr>
-
-            <tr style="border: none">
-                <td colspan="12"></td>
-            </tr>
-
-          <tr>
-            <td colspan="12" style="font-size:0.7rem; text-align: left"><strong>E. OBSERVACION FINAL:</strong> {{ $order->nurse->end_observation }}</td>
-          </tr>
-
-          <tr>
-            <td colspan="12" style="font-size:0.7rem; text-align: left"><strong>Aspecto de filtro:</strong> {{ $order->nurse->aspect_dializer == 0 ? 'Blanco' : ''}}</td>
-          </tr>
         </table>
 
+    <table style="border: solid 1px" width="100%">
+        <tr>
+            <td style="font-size: 0.7rem; text-align: left;" colspan="12"><strong>P.A Final:</strong> {{ $order->nurse->end_pa }} mmHg  <strong style="margin-left: 25px">Peso Final (Kg):</strong>  {{ $order->nurse->end_weight }}</td>
+        </tr>
+
+        <tr>
+            <td colspan="12" style="font-size:0.7rem; text-align: left;"><strong>E. OBSERVACION FINAL:</strong> {{ $order->nurse->end_observation }}</td>
+        </tr>
+
+        <tr>
+            <td colspan="12" style="font-size:0.7rem; text-align: left"><strong>Aspecto de filtro:</strong> {{ $order->nurse->aspect_dializer == 0 ? 'Blanco' : ''}}</td>
+        </tr>
+    </table>
+
         <p style="font-size:0.5rem; margin-top:0px;margin-bottom: 10px">PA:Presión Arterial FC: Frec. Cardiaca P:Pulso UF: Ultrafiltrado QB: Flujo dializado Na: Sodio FAV: Fístula arteriovenosa CVC: Catéter venoso central CND:
-            Conductividad RA: Resistenia arterial RV: Resistencia venosa PTM: Presión transmembrana Vp: Vena periférica Bic: Bicarbonato (-):Negativo (+):Positivo PS:
-            Polisulfona PES: Polietersulfona
+            Conductividad RA: Resistenia arterial RV: Resistencia venosa PTM: Presión transmembrana <strong style="color: red; margin-right: 10px">CVCT: Catéter venoso central temporal</strong> <strong style="color: red">CVCLP: Catéter venoso central Larga permanencia</strong>
         </p>
         <br>
 
-        <table width="100%" style="text-align:center; margin-top:0px">
+        <table width="100%" style="text-align:left; margin-top:-25px">
       <tr>
-        <td style="font-size: 0.4rem">ENFERMERA(O) QUE INICIA LA DIALISIS</td>
-
-        <td style="font-size: 0.4rem">ENFERMERA(O) QUE FINALIZA LA DIALISIS</td>
-
+        <td colspan="6" style="font-size: 0.7rem">
+            ENF. Inicia HD: {{ $order->nurse->user->name }}
+            <br>
+            CEP: {{ $order->nurse->user->code_specialty }}
+        </td>
+          <td colspan="6" style="font-size: 0.7rem">
+              ENF. Finaliza HD: {{ $order->nurse->user->name }}
+              <br>
+              CEP: {{ $order->nurse->user->code_specialty }}
+          </td>
       </tr>
-
-            <tr>
-                @if($order->nurse->user_id)
-                    <td>
-                        <img src="{{ asset($order->nurse->user->image) }}" width="145" height="65" alt="">
-                    </td>
-                @else
-                    <td>aqui va firma del licenciado</td>
-                @endif
-
-
-                    @if($order->nurse->user_id)
-                        <td>
-                            <img src="{{ asset($order->nurse->user->image) }}" width="145" height="65" alt="">
-                        </td>
-                    @else
-                        <td>aqui va firma del licenciado</td>
-                    @endif
-            </tr>
-
     </table>
 </div>
