@@ -114,6 +114,7 @@ class OrderController extends Controller
             'date_order' => $order->date_order,
             'start_weight' => $request->start_weight,
             'end_weight' => $request->end_weight,
+            'user_id' => $order->user_id,
         ];
 
         $orders_data2 = [
@@ -122,13 +123,15 @@ class OrderController extends Controller
             'shift' => $order->shift->name,
             'start_hour' => $request->start_hour,
             'end_hour' => $request->end_hour,
-            'date_order' => $order->date_order
+            'date_order' => $order->date_order,
+            'user_id' => $order->user_id,
         ];
 
         $consult_data = [
             'order_id' => $order->id,
             'patient_id' => $order->patient_id,
-            'date_order' => $order->date_order
+            'date_order' => $order->date_order,
+            'user_id' => $order->user_id,
         ];
 
         $patient = Patient::findOrFail($request->patient_id);
