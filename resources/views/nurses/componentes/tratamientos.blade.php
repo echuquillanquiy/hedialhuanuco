@@ -1,6 +1,4 @@
 @if(!$ultimaOrdenNoVacia)
-    <div class="tab-pane fade" id="treatment" role="tabpanel" aria-labelledby="tabs-icons-text-3-tab">
-
         <div class="row text-center">
             <div class="form-group col-sm-12 col-lg-1">
                 <label for="hr">HR</label>
@@ -228,12 +226,7 @@
                 <textarea class="form-control" id="" name="obs5" rows="1">{{ old('obs5', $nurse->obs5) }}</textarea>
             </div>
         </div>
-
-    </div>
-
 @else
-    <div class="tab-pane fade" id="treatment" role="tabpanel" aria-labelledby="tabs-icons-text-3-tab">
-
           <div class="row text-center">
             <div class="form-group col-sm-12 col-lg-1">
               <label for="hr">HR</label>
@@ -461,5 +454,4 @@
               <textarea class="form-control" id="" name="obs5" rows="1">{{ old('obs5', $ultimaOrdenNoVacia->obs5) }}</textarea>
             </div>
           </div>
-    </div>
 @endif

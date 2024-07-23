@@ -20,7 +20,7 @@ $factory->define(Patient::class, function (Faker $faker) {
         'ocupation' => $faker->randomElement(['NINGUNA', 'OTROS']),
         'condition' => $faker->randomElement(['NINGUNA', 'OTROS']),
         'last_job' => $faker->date('Y-m-d'),
-        'hosp_origin' => $faker->randomElement(['NINGUNA', 'OTROS']),
+        'hosp_origin' => $faker->randomNumber(1, true),
         'code' => $faker->randomNumber(8,true),
     ];
 });

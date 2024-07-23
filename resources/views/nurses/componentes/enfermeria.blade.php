@@ -1,5 +1,4 @@
 @if(!$ultimaOrdenNoVacia)
-    <div class="tab-pane fade active" id="nurse" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
 
         <div class="row text-center">
             <div class="form-group col-sm-12 col-lg-2">
@@ -56,7 +55,7 @@
 
             <div class="form-group col-sm-12 col-lg-2">
                 <label for="start_weight">Peso Inicial</label>
-                <input type="text" name="start_weight" class="form-control" value="{{ old('start_weight', $nurse->order->medical->start_weight) }}">
+                <input type="text" name="start_weight" class="form-control" value="{{ old('start_weight', $nurse->start_weight) }}">
             </div>
 
             @if($nurse->end_weight)
@@ -189,10 +188,8 @@
             </div>
 
         </div>
-    </div>
-@else
-    <div class="tab-pane fade" id="nurse" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
 
+@else
         <div class="row text-center">
             <div class="form-group col-sm-12 col-lg-2">
                 <label for="hcl">H.CL</label>
@@ -357,7 +354,6 @@
 
                 </select>
             </div>
-
         </div>
-    </div>
+
 @endif

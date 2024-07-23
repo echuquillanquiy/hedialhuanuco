@@ -68,9 +68,12 @@
 
                 @include('nurses.componentes.medicina')
 
+              <div class="tab-pane fade active" id="nurse" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
                 @include('nurses.componentes.enfermeria')
-
+              </div>
+              <div class="tab-pane fade" id="treatment" role="tabpanel" aria-labelledby="tabs-icons-text-3-tab">
                 @include('nurses.componentes.tratamientos')
+              </div>
 
             <button type="submit" class="btn btn-primary" >Guardar</button>
           </div>
