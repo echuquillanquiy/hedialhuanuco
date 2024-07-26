@@ -34,7 +34,7 @@
           </tr>
         </table>
 
-        <table style="margin-top:-8px;">
+        <table style="margin-top:-3px;">
             <tr>
                 <td colspan="5" style="font-size: 0.8rem;"><strong>N° Autogenerado</strong> {{ $order->patient->code }}</td>
 
@@ -51,6 +51,11 @@
         <table width="100%" style="border:1px solid; border-collapse: collapse;margin-top: 0px">
           <tr>
             <td style="font-size: 0.8rem; text-align: left;" colspan="2"><strong>I. PARTE MÉDICO: EVALUACIÓN MÉDICA INICIAL</strong></td>
+              <td style="font-size: 0.8rem; text-align: center;" colspan="2">
+                  <strong>
+                      {{ $order->medical->start_hour }} {{ $order->medical->start_hour < '12:00' ? 'a.m' : 'p.m' }}
+                  </strong>
+              </td>
             <td style="text-align: center;font-size: 0.7rem;"> Atención en condiciones COVID 19: <strong>{{ $order->covid }}</strong> </td>
           </tr>
 
@@ -65,7 +70,7 @@
 
                 <tr>
                     <td style="font-size: 0.7rem" colspan="11">{{ $order->medical->signal }}</td>
-                    <td style="font-size: 0.7rem;text-align: left" ><strong>FC:</strong> {{ $order->medical->fc }} x'</td>
+                    <td style="font-size: 0.7rem;text-align: left" ><strong>FC:</strong> {{ $order->medical->fc }} L x min</td>
                 </tr>
 
             </table>
@@ -99,31 +104,36 @@
           </tr>
           <tr>
             <td style="font-size: 0.7rem;" colspan="3">Hrs. HD: {{ $order->medical->hour_hd }}</td>
-            <td style="font-size: 0.7rem;" colspan="3">QB (ml/min): {{ $order->medical->qb }}</td>
-            <td style="font-size: 0.7rem;" colspan="3">CND: {{ $order->medical->cnd }}</td>
-              <td style="font-size: 0.7rem;" colspan="3">Area de dializador: {{ $order->medical->area_filter }} m2</td>
+            <td style="font-size: 0.7rem;" colspan="2">QB (ml/min): {{ $order->medical->qb }}</td>
+            <td style="font-size: 0.7rem;" colspan="2">CND: {{ $order->medical->cnd }}</td>
+              <td style="font-size: 0.7rem;" colspan="5">Area de dializador: {{ $order->medical->area_filter }} m2</td>
           </tr>
           <tr>
               <td style="font-size: 0.7rem;" colspan="3">Heparina (Ul): {{ $order->medical->heparin }}</td>
-            <td style="font-size: 0.7rem;" colspan="3">QD (ml/min): {{ $order->medical->qd }}</td>
-            <td style="font-size: 0.7rem;" colspan="3">Na+ Inicial: {{ $order->medical->start_na }}</td>
-              <td style="font-size: 0.7rem;" colspan="3"> Membrana de dializador: {{ $order->medical->membrane }}</td>
+            <td style="font-size: 0.7rem;" colspan="2">QD (ml/min): {{ $order->medical->qd }}</td>
+            <td style="font-size: 0.7rem;" colspan="2">Na+ Inicial: {{ $order->medical->start_na }}</td>
+              <td style="font-size: 0.7rem;" colspan="5"> Membrana de dializador: {{ $order->medical->membrane }}</td>
 
           </tr>
 
             <tr>
-                <td style="font-size: 0.7rem;" colspan="3">Peso Seco: {{ $order->medical->dry_weight }}</td>
-                <td style="font-size: 0.7rem;" colspan="3">Buffer: {{ $order->medical->bicarbonat }}</td>
-                <td style="font-size: 0.7rem;" colspan="3">Na+ Final: {{ $order->medical->end_na }}</td>
-                <td style="font-size: 0.7rem;" colspan="3">Condición serológica: Negativo</td>
+                <td style="font-size: 0.7rem;" colspan="3">Peso Seco (Kg): {{ $order->medical->dry_weight }}</td>
+                <td style="font-size: 0.7rem;" colspan="2">Buffer: {{ $order->medical->bicarbonat }}</td>
+                <td style="font-size: 0.7rem;" colspan="2">Na+ Final: {{ $order->medical->end_na }}</td>
+                <td style="font-size: 0.7rem;" colspan="5">Condición serológica: Negativo</td>
 
             </tr>
 
             <tr>
                 <td style="font-size: 0.7rem;" colspan="3">Peso Inicial (Kg): {{ $order->nurse->start_weight }}</td>
-                <td style="font-size: 0.6rem;" colspan="3">UF (ml): {{ $order->medical->uf }}</td>
-                <td style="font-size: 0.7rem;"  colspan="3"> Perfil de Uf: 0 </td>
-                <td style="font-size: 0.7rem;" colspan="3">Perfil Na+: {{ $order->medical->profile_na }}</td>
+                <td style="font-size: 0.7rem;"  colspan="2"> Perfil de UF: 0 </td>
+                <td style="font-size: 0.7rem;" colspan="7">Perfil Na+: {{ $order->medical->profile_na }}</td>
+
+            </tr>
+
+            <tr>
+                <td style="font-size: 0.6rem;" colspan="12">UF (ml): {{ $order->medical->uf }}</td>
+
             </tr>
 
             <tr>
@@ -163,7 +173,8 @@
 
     <table style="border: 1px solid; border-collapse: collapse; margin-top: -2px" width="100%">
         <tr>
-            <td style="font-size: 0.8rem;font-weight: bold" colspan="12">EVALUACION MEDICA FINAL:</td>
+            <td style="font-size: 0.8rem;font-weight: bold" colspan="4">EVALUACION MEDICA FINAL: </td>
+            <td style="font-size: 0.8rem;font-weight: bold; text-align: left" colspan="8">{{ $order->medical->end_hour }} {{ $order->medical->end_hour < '12:00' ? 'a.m' : 'p.m' }}</td>
         </tr>
         <tr>
             <td style="font-size: 0.7rem;" colspan="8">Condición clinica del paciente al finalizar HD: {{ $order->medical->end_evaluation }}</td>
@@ -393,7 +404,7 @@
 
     <table width="100%" style="margin-top: -6px">
         <tr style="font-size: 0.5rem">
-            <td style="width: 70px">RA: Resistenia arterial</td>
+            <td style="width: 70px">RA: Resistencia arterial</td>
             <td style="width: 70px">RV: Resistencia venosa</td>
             <td style="width: 100px">PTM: Presión transmembrana</td>
             <td style="width: 120px">CVCT: Catéter venoso central temporal</td>
