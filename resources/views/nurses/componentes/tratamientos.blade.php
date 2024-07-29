@@ -47,12 +47,7 @@
                 <input type="text" name="ptm" class="form-control" value="{{ old('ptm', $nurse->ptm) }}">
             </div>
 
-            <div class="form-group col-sm-12 col-lg-2">
-                <label for="sol_hemodev">SOL/HEMODERIVADOS</label>
-                <textarea class="form-control" id="" name="sol_hemodev" rows="1">{{ old('sol_hemodev', $nurse->sol_hemodev) }}</textarea>
-            </div>
-
-            <div class="form-group col-sm-12 col-lg-2">
+            <div class="form-group col-sm-12 col-lg-4">
                 <label for="obs">Observación</label>
                 <textarea class="form-control" id="" name="obs" rows="1">{{ old('obs', $nurse->obs) }}</textarea>
             </div>
@@ -92,11 +87,7 @@
                 <input type="text" name="ptm2" class="form-control" value="{{ old('ptm2', $nurse->ptm2) }}">
             </div>
 
-            <div class="form-group col-sm-12 col-lg-2">
-                <textarea class="form-control" id="" name="sol_hemodev2" rows="1">{{ old('sol_hemodev2', $nurse->sol_hemodev2) }}</textarea>
-            </div>
-
-            <div class="form-group col-sm-12 col-lg-2">
+            <div class="form-group col-sm-12 col-lg-4">
                 <textarea class="form-control" id="" name="obs2" rows="1">{{ old('obs2', $nurse->obs2) }}</textarea>
             </div>
         </div>
@@ -134,11 +125,7 @@
                 <input type="text" name="ptm3" class="form-control" value="{{ old('ptm3', $nurse->ptm3) }}">
             </div>
 
-            <div class="form-group col-sm-12 col-lg-2">
-                <textarea class="form-control" id="" name="sol_hemodev3" rows="1">{{ old('sol_hemodev3', $nurse->sol_hemodev3) }}</textarea>
-            </div>
-
-            <div class="form-group col-sm-12 col-lg-2">
+            <div class="form-group col-sm-12 col-lg-4">
                 <textarea class="form-control" id="" name="obs3" rows="1">{{ old('obs3', $nurse->obs3) }}</textarea>
             </div>
         </div>
@@ -176,11 +163,7 @@
                 <input type="text" name="ptm4" class="form-control" value="{{ old('ptm4', $nurse->ptm4) }}">
             </div>
 
-            <div class="form-group col-sm-12 col-lg-2">
-                <textarea class="form-control" id="" name="sol_hemodev4" rows="1">{{ old('sol_hemodev4', $nurse->sol_hemodev4) }}</textarea>
-            </div>
-
-            <div class="form-group col-sm-12 col-lg-2">
+            <div class="form-group col-sm-12 col-lg-4">
                 <textarea class="form-control" id="" name="obs4" rows="1">{{ old('obs4', $nurse->obs4) }}</textarea>
             </div>
         </div>
@@ -218,11 +201,7 @@
                 <input type="text" name="ptm5" class="form-control" value="{{ old('ptm5', $nurse->ptm5) }}">
             </div>
 
-            <div class="form-group col-sm-12 col-lg-2">
-                <textarea class="form-control" id="" name="sol_hemodev5" rows="1">{{ old('sol_hemodev5', $nurse->sol_hemodev5) }}</textarea>
-            </div>
-
-            <div class="form-group col-sm-12 col-lg-2">
+            <div class="form-group col-sm-12 col-lg-4">
                 <textarea class="form-control" id="" name="obs5" rows="1">{{ old('obs5', $nurse->obs5) }}</textarea>
             </div>
         </div>
@@ -275,12 +254,7 @@
               <input type="text" name="ptm" class="form-control" value="{{ old('ptm', $ultimaOrdenNoVacia->ptm) }}">
             </div>
 
-              <div class="form-group col-sm-12 col-lg-2">
-                  <label for="sol_hemodev">SOL/HEMODERIVADOS</label>
-                  <textarea class="form-control" id="" name="sol_hemodev" rows="1">{{ old('sol_hemodev', $ultimaOrdenNoVacia->sol_hemodev) }}</textarea>
-              </div>
-
-            <div class="form-group col-sm-12 col-lg-2">
+            <div class="form-group col-sm-12 col-lg-4">
               <label for="obs">Observación</label>
               <textarea class="form-control" id="" name="obs" rows="1">{{ old('obs', $ultimaOrdenNoVacia->obs) }}</textarea>
             </div>
@@ -319,12 +293,7 @@
             <div class="form-group col-sm-12 col-lg-1">
               <input type="text" name="ptm2" class="form-control" value="{{ old('ptm2', $ultimaOrdenNoVacia->ptm2) }}">
             </div>
-
-              <div class="form-group col-sm-12 col-lg-2">
-                  <textarea class="form-control" id="" name="sol_hemodev2" rows="1">{{ old('sol_hemodev2', $ultimaOrdenNoVacia->sol_hemodev2) }}</textarea>
-              </div>
-
-            <div class="form-group col-sm-12 col-lg-2">
+            <div class="form-group col-sm-12 col-lg-4">
               <textarea class="form-control" id="" name="obs2" rows="1">{{ old('obs2', $ultimaOrdenNoVacia->obs2) }}</textarea>
             </div>
           </div>
@@ -362,11 +331,7 @@
               <input type="text" name="ptm3" class="form-control" value="{{ old('ptm3', $ultimaOrdenNoVacia->ptm3) }}">
             </div>
 
-              <div class="form-group col-sm-12 col-lg-2">
-                  <textarea class="form-control" id="" name="sol_hemodev3" rows="1">{{ old('sol_hemodev3', $ultimaOrdenNoVacia->sol_hemodev3) }}</textarea>
-              </div>
-
-            <div class="form-group col-sm-12 col-lg-2">
+            <div class="form-group col-sm-12 col-lg-4">
               <textarea class="form-control" id="" name="obs3" rows="1">{{ old('obs3', $ultimaOrdenNoVacia->obs3) }}</textarea>
             </div>
           </div>
@@ -404,11 +369,7 @@
               <input type="text" name="ptm4" class="form-control" value="{{ old('ptm4', $ultimaOrdenNoVacia->ptm4) }}">
             </div>
 
-              <div class="form-group col-sm-12 col-lg-2">
-                  <textarea class="form-control" id="" name="sol_hemodev4" rows="1">{{ old('sol_hemodev4', $ultimaOrdenNoVacia->sol_hemodev4) }}</textarea>
-              </div>
-
-            <div class="form-group col-sm-12 col-lg-2">
+            <div class="form-group col-sm-12 col-lg-4">
               <textarea class="form-control" id="" name="obs4" rows="1">{{ old('obs4', $ultimaOrdenNoVacia->obs4) }}</textarea>
             </div>
           </div>
@@ -446,11 +407,7 @@
               <input type="text" name="ptm5" class="form-control" value="{{ old('ptm5', $ultimaOrdenNoVacia->ptm5) }}">
             </div>
 
-              <div class="form-group col-sm-12 col-lg-2">
-                  <textarea class="form-control" id="" name="sol_hemodev5" rows="1">{{ old('sol_hemodev5', $ultimaOrdenNoVacia->sol_hemodev5) }}</textarea>
-              </div>
-
-            <div class="form-group col-sm-12 col-lg-2">
+            <div class="form-group col-sm-12 col-lg-4">
               <textarea class="form-control" id="" name="obs5" rows="1">{{ old('obs5', $ultimaOrdenNoVacia->obs5) }}</textarea>
             </div>
           </div>

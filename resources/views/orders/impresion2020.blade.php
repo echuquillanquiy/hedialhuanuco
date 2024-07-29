@@ -299,11 +299,11 @@
         <table width="100%" style="border-collapse:collapse;text-align:center; margin-top:-2px" border="1px;">
 
           <tr>
-            <td style="font-size: 0.8rem; text-align: left;" colspan="12"><strong>EVOLUCIÓN DE TRATAMIENTO</strong></td>
+            <th style="font-size: 0.8rem; text-align: left; width: 500px" colspan="12"><strong>EVOLUCIÓN DE TRATAMIENTO</strong></th>
           </tr>
 
           <tr style="font-size:0.7rem;">
-            <th colspan="1">HORA</th>
+            <th>HORA</th>
             <th>P.A.</th>
             <th>FC</th>
             <th>QB</th>
@@ -314,16 +314,16 @@
             <th colspan="4">SOL / HEMODERIVADOS / OBSERVACIONES</th>
           </tr>
           <tr style="font-size:0.7rem;">
-            <td height="14"  width="60px">{{ $order->nurse->hr }}</td>
-            <td height="14" width="44px">{{ $order->nurse->pa }}</td>
-            <td height="14" width="30px">{{ $order->nurse->fc1 }}</td>
+            <td height="14" style="width: 40px">{{ $order->nurse->hr }}</td>
+            <td height="14" width="24px">{{ $order->nurse->pa }}</td>
+            <td height="14" width="10px">{{ $order->nurse->fc1 }}</td>
             <td height="14" width="44px">{{ $order->nurse->qb }}</td>
             <td height="14" width="30px">{{ $order->nurse->cnd }}</td>
             <td height="14" width="40px">{{ $order->nurse->ra }}</td>
             <td height="14" width="40px">{{ $order->nurse->rv }}</td>
             <td height="14" width="40px">{{ $order->nurse->ptm }}</td>
 
-            <td height="14" style="font-size:0.7rem !important" colspan="4">{{ $order->nurse->obs }}</td>
+            <td height="14" style="font-size:0.7rem !important;" colspan="4">{{ $order->nurse->obs }}</td>
           </tr>
 
           <tr style="font-size:0.7rem;">
