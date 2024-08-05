@@ -61,9 +61,7 @@
         <tr>
           <th scope="col">Nombres</th>
           <th scope="col">DNI</th>
-          <th scope="col">Fecha de Nacimiento</th>
           <th scope="col">Autogenerado</th>
-          <th scope="col">ESTADO</th>
           <th scope="col">Opciones</th>
         </tr>
       </thead>
@@ -71,20 +69,14 @@
         @foreach ($patients as $patient)
         <tr>
           <th scope="row">
-            {{$patient->name}}
+            {{$patient->firstname}}  {{$patient->othername}}  {{$patient->surname}}  {{$patient->lastname}}
           </th>
           <td>
             {{$patient->dni}}
           </td>
-            <td>
-                {{$patient->date_of_birth}}
-            </td>
           <td>
             {{$patient->code}}
           </td>
-            <td>
-                {{$patient->state}}
-            </td>
 
           <td>
 

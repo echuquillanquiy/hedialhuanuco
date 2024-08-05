@@ -41,18 +41,12 @@ class PatientController extends Controller
         $messages = [
             'dni.unique' => 'El número de DNI ya esta en uso.',
             'dni.digits' => 'El DNI debe tener 8 digitos.',
-            'code.unique' => 'El Autogenerado ya esta en uso.',
-            'code.min' => 'El Autogenerado debe tener como mínimo 10  digitos.',
-            'address.min' => 'La dirección debe tener mínimo 15 dígitos.',
-            'ocupation.min' => 'La ocupación debe tener mínimo 5 carácteres.',
-            'age.min' => 'La edad debe tener mínimo 2 carácteres.',
-            'phone.min' => 'El telefóno debe tener mínimo 9 dígitos.'
         ];
 
         $rules = [
-            'name' => 'required|min:3',
-            'dni' => 'required|unique:patients|digits:8',
-            'code' => 'required|unique:patients|min:10',
+            'name' => 'min:3',
+            'dni' => 'unique:patients|digits:8',
+            'code' => 'unique:patients|min:10',
         ];
 
         $this->validate($request, $rules, $messages);
@@ -61,7 +55,8 @@ class PatientController extends Controller
     public function store(Request $request)
     {
         $this->performValidation($request);
-        Patient::create($request->only('name', 'dni', 'date_of_birth', 'sex', 'age', 'address', 'phone', 'civil_status', 'instruction', 'ocupation', 'condition', 'last_job', 'hosp_origin', 'code', 'firstname', 'othername', 'surname', 'lastname', 'state'));
+        Patient::create($request->only('name', 'dni', 'date_of_birth', 'sex', 'age', 'address', 'phone', 'civil_status', 'instruction', 'ocupation', 'condition', 'last_job', 'hosp_origin', 'code',
+            'firstname', 'othername', 'surname', 'lastname', 'state'));
 
         $notification = 'El paciente se ha registrado correctamente.';
         return redirect('patients')->with(compact('notification'));
@@ -87,9 +82,9 @@ class PatientController extends Controller
         ];
 
         $rules = [
-            'name' => 'required|min:3',
-            'dni' => 'required|digits:8',
-            'code' => 'required|min:10',
+            'name' => 'min:3',
+            'dni' => 'digits:8',
+            'code' => 'min:10',
         ];
 
         $this->validate($request, $rules, $messages);

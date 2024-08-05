@@ -31,22 +31,18 @@
   	<form action="{{ url('patients') }}" method="POST">
   		@csrf
       <div class="row">
-        <div class="form-group col-lg-9">
-          <label for="name">Nombres y Apellidos</label>
-          <input type="text" name="name" class="form-control" value="{{ old('name') }}" required>
-        </div>
 
-          <div class="form-group col-lg-3">
+          <div class="form-group col-lg-2">
               <label for="dni">DNI</label>
               <input type="text" name="dni" class="form-control" value="{{ old('dni') }}" required>
           </div>
 
-          <div class="form-group col-lg-3">
+          <div class="form-group col-lg-2">
               <label for="firstname">Primer Nombre</label>
               <input type="text" name="firstname" class="form-control" value="{{ old('firstname') }}" required>
           </div>
 
-          <div class="form-group col-lg-3">
+          <div class="form-group col-lg-2">
               <label for="othername">Otros Nombres</label>
               <input type="text" name="othername" class="form-control" value="{{ old('othername') }}">
           </div>
@@ -61,9 +57,14 @@
               <input type="text" name="lastname" class="form-control" value="{{ old('lastname') }}" required>
           </div>
 
+          <div class="form-group col-lg-12">
+              <label for="code">Codigo (Autogenerado)</label>
+              <input type="text" name="code" class="form-control" value="{{ old('code') }}">
+          </div>
+
       </div>
 
-      <div class="row">
+      {{--<div class="row">
 
         <div class="form-group col-lg-3">
             <label for="date_of_birth">Fecha de nacimiento</label>
@@ -165,11 +166,9 @@
         </div>
 
       </div>
+
       <div class="row">
-          <div class="form-group col-lg-6">
-            <label for="code">Codigo (Autogenerado)</label>
-            <input type="text" name="code" class="form-control" value="{{ old('code') }}">
-          </div>
+
 
           <div class="form-group col-lg-2">
               <label for="state">ESTADO</label>
@@ -178,7 +177,7 @@
                   <option value="INACTIVO">INACTIVO</option>
               </select>
           </div>
-      </div>
+      </div>--}}
 
 	  	<button type="submit" class="btn btn-primary">Guardar</button>
 	  </form>

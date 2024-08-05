@@ -31,17 +31,18 @@
   		@csrf
       @method('PUT')
 	  	<div class="row">
-            <div class="form-group col-lg-12">
-                <label for="name">Nombres y Apellidos</label>
-                <input type="text" name="name" class="form-control" value="{{ old('name', $patient->name) }}" required>
+
+            <div class="form-group col-lg-2">
+                <label for="dni">DNI</label>
+                <input type="text" name="dni" class="form-control" value="{{ old('dni', $patient->dni) }}" required>
             </div>
 
-            <div class="form-group col-lg-3">
+            <div class="form-group col-lg-2">
                 <label for="firstname">Primer Nombre</label>
                 <input type="text" name="firstname" class="form-control" value="{{ old('firstname', $patient->firstname) }}" required>
             </div>
 
-            <div class="form-group col-lg-3">
+            <div class="form-group col-lg-2">
                 <label for="othername">Otros Nombres</label>
                 <input type="text" name="othername" class="form-control" value="{{ old('othername', $patient->othername) }}">
             </div>
@@ -55,11 +56,16 @@
                 <label for="lastname">Segundo Apellido</label>
                 <input type="text" name="lastname" class="form-control" value="{{ old('lastname', $patient->lastname) }}" required>
             </div>
+
+            <div class="form-group col-lg-12">
+                <label for="code">Codigo (Autogenerado)</label>
+                <input type="text" name="code" class="form-control" value="{{ old('code', $patient->code) }}">
+            </div>
         </div>
 
 
 
-      <div class="row">
+      {{--<div class="row">
 
         <div class="form-group col-lg-2">
           <label for="dni">DNI</label>
@@ -168,10 +174,7 @@
       </div>
 
         <div class="row">
-            <div class="form-group col-lg-6">
-                <label for="code">Codigo (Autogenerado)</label>
-                <input type="text" name="code" class="form-control" value="{{ old('code', $patient->code) }}">
-            </div>
+
 
             <div class="form-group col-lg-2">
                 <label for="state">ESTADO</label>
@@ -182,7 +185,7 @@
                 </select>
             </div>
 
-        </div>
+        </div>--}}
 
 	  	<button type="submit" class="btn btn-primary">Guardar</button>
 	  </form>
