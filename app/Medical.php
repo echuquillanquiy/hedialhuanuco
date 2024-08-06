@@ -45,7 +45,9 @@ class Medical extends Model
         'fua_observacion',
         'so2',
         'fio',
-        'temp'
+        'temp',
+        'medico_final',
+        'serology'
 
     ];
 

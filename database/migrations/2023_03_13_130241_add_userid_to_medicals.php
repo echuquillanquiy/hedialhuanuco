@@ -16,6 +16,7 @@ class AddUseridToMedicals extends Migration
         Schema::table('medicals', function (Blueprint $table) {
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
+            $table->string('medico_final')->nullable();
         });
     }
 
