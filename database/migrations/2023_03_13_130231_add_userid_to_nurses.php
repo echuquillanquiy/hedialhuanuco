@@ -16,6 +16,8 @@ class AddUseridToNurses extends Migration
         Schema::table('nurses', function (Blueprint $table) {
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
+
+            $table->string('enfermero_final')->nullable();
         });
     }
 

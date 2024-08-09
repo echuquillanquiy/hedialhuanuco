@@ -325,7 +325,7 @@
             <input type="time" name="end_hour" class="form-control" value="{{ old('end_hour', $medical->end_hour) }}">
         </div>
 
-        <div class="form-group col-sm-12 col-lg-2">
+        <div class="form-group col-sm-12 col-lg-3">
             <label for="medico_final">MEDICO QUE FINALIZA</label>
             <select class="form-control selectpicker" name="medico_final" data-live-search="true" data-style="btn-info">
                 <option value="{{ !$medical->user_id ? auth()->user()->name : $medical->user->name }}">{{ !$medical->user_id ? auth()->user()->name : $medical->user->name }}</option>
@@ -611,12 +611,12 @@
                   <input type="time" name="end_hour" class="form-control" value="{{ old('end_hour', $ultimaOrdenNoVacia->end_hour) }}">
               </div>
 
-              <div class="form-group col-sm-12 col-lg-2">
-                  <label for="user_id">USUARIO DE LA ATENCION</label>
-                  <select class="form-control selectpicker" name="user_id" data-live-search="true" data-style="btn-info">
-                      <option value="{{ !$medical->user_id ? auth()->user()->id : $medical->user_id }}">{{ !$medical->user_id ? auth()->user()->name : $medical->user->name }}</option>
+              <div class="form-group col-sm-12 col-lg-3">
+                  <label for="medico_final">MEDICO QUE FINALIZA</label>
+                  <select class="form-control selectpicker" name="medico_final" data-live-search="true" data-style="btn-info">
+                      <option value="{{ $medical->medico_final }}">{{ $medical->medico_final }}</option>
                       @foreach($users as $user)
-                          <option value="{{ $user->id }}">{{ $user->name }}</option>
+                          <option value="{{ $user->name }}">{{ $user->name }}</option>
                       @endforeach
 
                   </select>

@@ -35,6 +35,7 @@ class Nurse extends Model
      'end_observation',
      'aspect_dializer',
       'date_order',
+      'enfermero_final',
 
       's',
       'o',
