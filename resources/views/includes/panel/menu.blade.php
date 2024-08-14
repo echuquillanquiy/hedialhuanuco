@@ -28,11 +28,11 @@
       </a>
     </li>
 
-    <li class="nav-item">
+    {{--<li class="nav-item">
       <a class="nav-link" href="/rooms">
         <i class="ni ni-building text-danger"></i> Salas
       </a>
-    </li>
+    </li>--}}
 
     <li class="nav-item">
       <a class="nav-link" href="/shifts">
@@ -40,7 +40,7 @@
       </a>
     </li>
 
-    <li class="nav-item acordion" id="atenciones">
+    {{--<li class="nav-item acordion" id="atenciones">
 
       <div class="nav-link card-header" id="headingOne" data-toggle="collapse" data-target="#procedimientos" aria-expanded="true" aria-controls="collapseOne">
         <i class="ni ni-archive-2 text-red"></i> Procedimientos
@@ -72,37 +72,48 @@
           </ul>
         </a>-->
 
-        <a class="nav-link" href="/medicals">
-          <ul class="text-gray">
-            <i class="ni ni-bold-right text-Secondary"></i> Medicina
-          </ul>
-        </a>
 
-        <a class="nav-link" href="/nurses">
-          <ul class="text-gray">
-            <i class="ni ni-bold-right text-Secondary"></i> Enfermeria
-          </ul>
-        </a>
       </div>
-    </li>
+    </li>--}}
 
-    <li class="nav-item">
+    {{--<li class="nav-item">
         <a class="nav-link" href="/format006s">
             <i class="ni ni-curved-next text-dark"></i> Formato006
         </a>
-    </li>
+    </li>--}}
+
+
+        <li class="nav-item" href="/orders">
+            <a class="nav-link">
+                <i class="ni ni-curved-next text-dark"></i> Generar Historia
+            </a>
+        </li>
+
+        <li class="nav-item" href="/medicals">
+            <a class="nav-link">
+                <i class="ni ni-curved-next text-dark"></i> Medicina
+            </a>
+        </li>
+
+        <li class="nav-item" href="/nurses">
+            <a class="nav-link">
+                <i class="ni ni-curved-next text-dark"></i> Enfermeria
+            </a>
+        </li>
 
         <li class="nav-item">
+            <a class="nav-link" href="{{ route('medical.fissalweb') }}">
+                <i class="ni ni-curved-next text-dark"></i> Revisión Online
+            </a>
+        </li>
+
+        {{--<li class="nav-item">
             <a class="nav-link" href="/numerations">
                 <i class="ni ni-curved-next text-dark"></i> Numeracion FUA
             </a>
         </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('medical.fissalweb') }}">
-                    <i class="ni ni-curved-next text-dark"></i> FISSAL
-                </a>
-            </li>
+
 
             <li class="nav-item">
                 <a class="nav-link" href="/nephrologies">
@@ -120,7 +131,7 @@
                 <a class="nav-link" href="/laboratories">
                     <i class="ni ni-curved-next text-dark"></i> LABORATORIOS
                 </a>
-            </li>
+            </li>--}}
 
 
 
