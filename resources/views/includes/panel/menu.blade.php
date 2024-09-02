@@ -82,24 +82,24 @@
         </a>
     </li>--}}
 
+        <a class="nav-link" href="/orders">
+            <ul class="text-gray">
+                <i class="ni ni-bold-right text-Secondary"></i> Generar Historia
+            </ul>
+        </a>
 
-        <li class="nav-item" href="/orders">
-            <a class="nav-link">
-                <i class="ni ni-curved-next text-dark"></i> Generar Historia
-            </a>
-        </li>
+        <a class="nav-link" href="/medicals">
+            <ul class="text-gray">
+                <i class="ni ni-bold-right text-Secondary"></i> Medicina
+            </ul>
+        </a>
 
-        <li class="nav-item" href="/medicals">
-            <a class="nav-link">
-                <i class="ni ni-curved-next text-dark"></i> Medicina
-            </a>
-        </li>
 
-        <li class="nav-item" href="/nurses">
-            <a class="nav-link">
-                <i class="ni ni-curved-next text-dark"></i> Enfermeria
-            </a>
-        </li>
+        <a class="nav-link" href="/nurses">
+            <ul class="text-gray">
+                <i class="ni ni-bold-right text-Secondary"></i> Enfermeria
+            </ul>
+        </a>
 
         <li class="nav-item">
             <a class="nav-link" href="{{ route('medical.fissalweb') }}">
@@ -205,7 +205,7 @@
             <i class="ni ni-curved-next text-dark"></i> Formato006
         </a>
     </li>
-    </li>
+
   @elseif (auth()->user()->role == 'logistica')
 
   <!--ALMACEN -->
