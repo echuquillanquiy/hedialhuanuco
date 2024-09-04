@@ -5,7 +5,7 @@
 
     body {
         margin: 0;
-        padding: 10px; /* Ajustar según sea necesario */
+        padding: 15px; /* Ajustar según sea necesario */
         font-family: Arial, sans-serif;
     }
 
@@ -20,7 +20,7 @@
 </style>
 
 <div style="font-family: 'Arial Narrow',sans-serif ">
-    <table style="margin-top: -25px; width: 100%">
+    <table style="margin-top: 0px; width: 100%">
         <tr>
             <td colspan="10" style="font-size: 0.9rem; text-align: center">
                 <img src="{{ asset('img/brand/logo_superior.jpg') }}" width="400px">
@@ -41,7 +41,7 @@
         <table style="margin-top:-22px;">
           <tr>
             <th style="font-size: 0.8rem; text-align: right;"><strong>Paciente: </strong></th>
-            <td style="font-size: 0.8rem; text-transform:uppercase; width: 340px"><strong>{{ $order->patient->name }}</strong></td>
+            <td style="font-size: 0.8rem; text-transform:uppercase; width: 340px"><strong>{{$order->patient->firstname}} {{$order->patient->othername}} {{$order->patient->surname}} {{$order->patient->lastname}}</strong></td>
 
               <td style="font-size: 0.8rem; text-align: right;"><strong>H.CL N°: </strong></td>
               <td style="font-size: 0.8rem; text-transform:uppercase; width: 80px"><strong>{{ $order->nurse->hcl }}</strong></td>

@@ -64,7 +64,7 @@
             {{$order->id}}
           </th>
           <td>
-            {{$order->patient->name}}
+            {{$order->patient->firstname}} {{$order->patient->othername}} {{$order->patient->surname}} {{$order->patient->lastname}}
           </td>
           <td>
             {{$order->shift->name}}

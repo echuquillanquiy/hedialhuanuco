@@ -109,7 +109,7 @@ class OrderController extends Controller
 
         $orders_data = [
             'order_id' => $order->id,
-            'patient' => $order->patient->name,
+            'patient' => $order->patient->firstname . ' ' . $order->patient->othername . ' ' . $order->patient->surname . ' ' . $order->patient->lastname,
             'shift' => $order->shift->name,
             'date_order' => $order->date_order,
             'start_weight' => $request->start_weight,
@@ -119,7 +119,7 @@ class OrderController extends Controller
 
         $orders_data2 = [
             'order_id' => $order->id,
-            'patient' => $order->patient->name,
+            'patient' => $order->patient->firstname . ' ' . $order->patient->othername . ' ' . $order->patient->surname . ' ' . $order->patient->lastname,
             'shift' => $order->shift->name,
             'start_hour' => $request->start_hour,
             'end_hour' => $request->end_hour,
