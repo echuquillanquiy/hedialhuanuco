@@ -191,8 +191,35 @@ class NurseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    public function performValidation (Request $request) {
+        $rules = [
+            'cnd' => 'required|numeric|between:13.2,14.7',
+            'cnd2' => 'required|numeric|between:13.2,14.7',
+            'cnd3' => 'required|numeric|between:13.2,14.7',
+            'cnd4' => 'required|numeric|between:13.2,14.7',
+            'cnd5' => 'required|numeric|between:13.2,14.7'
+        ];
+
+        $messages = [
+            'cnd.required' => 'El primer CND es requerido',
+            'cnd2.required' => 'El segundo CND es requerido',
+            'cnd3.required' => 'El tercer CND es requerido',
+            'cnd4.required' => 'El cuarto CND es requerido',
+            'cnd5.required' => 'El quinto CND es requerido',
+
+            'cnd.between' => '1er CND valores aceptados son desde 13.2 a 14.7',
+            'cnd2.between' => '2do CND valores aceptados son desde 13.2 a 14.7',
+            'cnd3.between' => '3er CND valores aceptados son desde 13.2 a 14.7',
+            'cnd4.between' => '4to CND valores aceptados son desde 13.2 a 14.7',
+            'cnd5.between' => '5to CND valores aceptados son desde 13.2 a 14.7'
+        ];
+
+        $this->validate($request, $rules, $messages);
+    }
     public function update(Request $request, $id)
     {
+        $this->performValidation($request);
         $nurse = Nurse::findOrFail($id);
 
         $data = $request->all();
