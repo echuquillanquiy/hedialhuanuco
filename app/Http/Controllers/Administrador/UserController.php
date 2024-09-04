@@ -74,20 +74,19 @@ class UserController extends Controller
             'dni' => 'required|unique:users|digits:8',
             'code_specialty' => 'unique:users||min:3',
             'role' => 'required|min:3',
-            'image' => 'image|max:2048'
         ];
 
         $this->validate($request, $rules, $messages);
 
-        $firmas = $request->file('image')->store('public/firmas');
-        $url = Storage::url($firmas);
+        //$firmas = $request->file('image')->store('public/firmas');
+        //$url = Storage::url($firmas);
 
         User::create(
 
             $request->only('name', 'email', 'dni', 'code_specialty', 'rne', 'role')
             + [
                 'password' => bcrypt($request->input('password')),
-                'image' => $url
+                //'image' => $url
             ]
         );
 

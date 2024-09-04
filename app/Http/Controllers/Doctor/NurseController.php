@@ -116,6 +116,22 @@ class NurseController extends Controller
         $patient = $nurse->patient;
         $fecha = $nurse->date_order;
 
+        $dayWeek = Carbon::parse($nurse->date_order)->dayOfWeek;
+
+        if ($nurse->others == null)
+        {
+            if ($dayWeek == 1 || $dayWeek == 3 || $dayWeek == 5)
+            {
+                $nurse->others = "L - M - V";
+            } else
+            {
+                $nurse->others = "M - J - S";
+            }
+        } else
+        {
+            $nurse->others = $nurse->others;
+        }
+
         $ultimaOrdenNoVacia = $this->obtenerUltimaOrdenNoVaciaYSumar($patient, $fecha);
 
         if (!$nurse->hr)

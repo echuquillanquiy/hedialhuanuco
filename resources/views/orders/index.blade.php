@@ -52,12 +52,8 @@
         <tr>
             <th scope="col">ID</th>
             <th scope="col">Paciente</th>
-            <th scope="col">N° FUA</th>
-            <th scope="col">Sala</th>
             <th scope="col">Turno</th>
-            <th scope="col">Paciente con COVID</th>
             <th scope="col">Fecha de orden</th>
-            <th scope="col">Fecha y hora de creación</th>
             <th>Opciones</th>
         </tr>
       </thead>
@@ -70,22 +66,13 @@
           <td>
             {{$order->patient->name}}
           </td>
-            <td>
-                {{$order->n_fua}}
-            </td>
           <td>
             {{$order->shift->name}}
           </td>
-          <td>
-            {{$order->covid}}
-          </td>
+
           <td>
             {{$order->date_order}}
           </td>
-
-            <td>
-                {{$order->created_at}}
-            </td>
 
           <td>
 
@@ -95,10 +82,6 @@
                 <button class="btn btn-sm btn-danger" onclick="return confirm('¿Seguro que desea eliminar la orden del paciente {{ $order->patient->name }}?, ya que al borrarlo eliminara los registros que tenga del día {{ $order->created_at }}');" type="submit">Eliminar</button>
 
                 <a href="{{ url('/orders/'.$order->id.'/edit') }}" class="btn btn-sm btn-primary">Editar</a>
-
-                @if(\Illuminate\Support\Facades\Auth::user()->id == 1)
-                    <a href="{{ url('/orders/'.$order->id.'/fua') }}" class="btn btn-sm btn-outline-success" target="_blank"><i class="fas fa-file-alt fa-lg"></i></a>
-                @endif
 
             </form>
           </td>

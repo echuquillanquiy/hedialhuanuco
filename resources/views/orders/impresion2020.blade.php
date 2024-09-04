@@ -1,3 +1,24 @@
+<style>
+    @page {
+        margin: 0cm;
+    }
+
+    body {
+        margin: 0;
+        padding: 10px; /* Ajustar según sea necesario */
+        font-family: Arial, sans-serif;
+    }
+
+    .contenido {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        page-break-inside: avoid;
+        transform: scale(0.9); /* Ajustar el contenido para que quepa en una página */
+        transform-origin: top left;
+    }
+</style>
+
 <div style="font-family: 'Arial Narrow',sans-serif ">
     <table style="margin-top: -25px; width: 100%">
         <tr>
@@ -78,7 +99,7 @@
             <table width="100%" style="border:1px solid; border-collapse: collapse; margin-top: -2px;">
 
                 <tr>
-                    <td style="font-size: 0.7rem; width: 95%; text-transform:uppercase;" colspan="12"> <strong>PROBLEMAS CLINICOS:</strong> {{ $order->medical->clinical_trouble }} </td>
+                    <td style="font-size: 0.7rem; width: 95%; " colspan="12"> <strong>PROBLEMAS CLINICOS:</strong> {{ $order->medical->clinical_trouble }} </td>
                 </tr>
 
                 <tr>

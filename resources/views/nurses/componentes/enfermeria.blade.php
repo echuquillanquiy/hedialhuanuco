@@ -8,15 +8,8 @@
 
                 <input type="hidden" name="nhd" class="form-control" value="{{ $nurse->nhd }}">
 
+                <input type="hidden" name="others" value="{{ $nurse->others }}">
 
-            <div class="form-group col-sm-12 col-lg-2">
-                <label for="others">Frecuencia</label>
-                <select class="form-control" name="others" data-toggle="select" title="Simple select" data-placeholder="Select a state">
-                    <option value="{{$nurse->others}}">{{$nurse->others}}</option>
-                    <option value="L - M - V">L - M - V</option>
-                    <option value="M - J - S">M - J - S</option>
-                </select>
-            </div>
 
             <div class="form-group col-sm-12 col-lg-2">
                 <label for="start_weight">Peso Inicial</label>
@@ -36,15 +29,15 @@
 
             <div class="form-group col-sm-12 col-lg-2">
                 <label for="position">Puesto</label>
-                <input type="text" name="position" class="form-control" value="{{ old('position', $nurse->position) }}">
+                <input type="text" name="position" id="position" class="form-control" value="{{ old('position', $nurse->position) }}" oninput="syncFields()">
             </div>
 
             <div class="form-group col-sm-12 col-lg-2">
                 <label for="machine">N° de Maquina</label>
-                <input type="text" name="machine" class="form-control" value="{{ old('machine', $nurse->machine) }}">
+                <input type="text" name="machine" id="machine" class="form-control" value="{{ old('machine', $nurse->machine) }}">
             </div>
 
-            <div class="form-group col-sm-12 col-lg-2">
+            <div class="form-group col-sm-12 col-lg-3">
                 <label for="">Área del dializador</label>
                 <input type="text" name="" class="form-control" value="{{ $nurse->order->medical->area_filter }}">
             </div>
@@ -74,7 +67,7 @@
                 </div>
             @endif
 
-            <div class="form-group col-sm-12 col-lg-3">
+            <div class="form-group col-sm-12 col-lg-4">
                 <label for="">Membrana del dializador</label>
                 <input type="text" name="" class="form-control" value="{{ $nurse->order->medical->membrane }}">
             </div>
@@ -93,11 +86,11 @@
                 <label for="access_arterial">ACCESO ARTERIAL</label>
                 <select class="form-control" name="access_arterial" data-toggle="select" title="Simple select" data-placeholder="Select a state">
                     <option value="{{ $nurse->access_arterial }}">{{ old('access_arterial',$nurse->access_arterial) }}</option>
-                    <option value="FAV">FAV</option>
-                    <option value="INJ">INJ</option>
-                    <option value="CVCL">CVCL</option>
-                    <option value="CVCLP">CVCLP</option>
                     <option value="CVCT">CVCT</option>
+                    <option value="CVC-LP">CVC-LP</option>
+                    <option value="FAV">FAV</option>
+                    <option value="Vp">Vp</option>
+                    <option value="Injerto">Injerto</option>
                 </select>
             </div>
 
@@ -105,12 +98,11 @@
                 <label for="access_venoso">ACCESO VENOSO</label>
                 <select class="form-control" name="access_venoso" data-toggle="select" title="Simple select" data-placeholder="Select a state">
                     <option value="{{ $nurse->access_venoso }}">{{ old('access_venoso', $nurse->access_venoso) }}</option>
-                    <option value="FAV">FAV</option>
-                    <option value="VP">VP</option>
-                    <option value="INJ">INJ</option>
-                    <option value="CVCL">CVCL</option>
-                    <option value="CVCLP">CVCLP</option>
                     <option value="CVCT">CVCT</option>
+                    <option value="CVC-LP">CVC-LP</option>
+                    <option value="FAV">FAV</option>
+                    <option value="Vp">Vp</option>
+                    <option value="Injerto">Injerto</option>
                 </select>
             </div>
 
@@ -365,3 +357,10 @@
         </div>
 
 @endif
+
+<script>
+    function syncFields() {
+        var position = document.getElementById('position').value;
+        document.getElementById('machine').value = position;
+    }
+</script>

@@ -13,19 +13,19 @@ class ShiftsTableSeeder extends Seeder
     public function run()
     {
         Shift::create([
-    		'name' => 'TURNO 1',
+    		'name' => 'I',
     	]);
 
     	Shift::create([
-    		'name' => 'TURNO 2',
+    		'name' => 'II',
     	]);
 
     	Shift::create([
-    		'name' => 'TURNO 3',
+    		'name' => 'III',
     	]);
 
     	Shift::create([
-    		'name' => 'TURNO 4',
+    		'name' => 'IV',
     	]);
     }
 }

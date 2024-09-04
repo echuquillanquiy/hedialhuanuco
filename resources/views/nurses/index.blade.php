@@ -80,12 +80,8 @@
         <tr>
           <th scope="col">Nombres y Apellidos</th>
 	        <th scope="col">Opciones</th>
-            <th scope="col">HB</th>
-            <th scope="col">TGO</th>
-            <th scope="col">TGP</th>
 	     <th scope="col">HD Inicio</th>
 	     <th scope="col">HD Fin</th>
-          <th scope="col">Sala</th>
           <th scope="col">Turno</th>
           <th>Fecha</th>
             <th>Licenciado</th>
@@ -118,19 +114,6 @@
             </form>
           </td>
 
-            <td>
-                {{ $nurse->order->laboratory->result3 }}
-            </td>
-
-            <td>
-                {{ $nurse->order->laboratory->result7 }}
-            </td>
-
-            <td>
-                {{ $nurse->order->laboratory->result8 }}
-            </td>
-
-
           <th scope="row">
             {{$nurse->hr}}
           </th>
@@ -143,20 +126,6 @@
                   {{$nurse->hr8}}
               @endif
           </th>
-
-          <td>
-              @if($nurse->room == 'AMARILLA')
-                  <span class="badge badge-lg bg-yellow">A</span>
-
-              @elseif($nurse->room == 'VERDE')
-                  <span class="badge badge-lg badge-success">V</span>
-
-              @elseif($nurse->room == 'AZUL')
-                  <span class="badge badge-lg bg-blue text-white">A</span>
-              @else($nurse->room == 'NARANJA')
-                  <span class="badge badge-lg bg-orange text-white">N</span>
-              @endif
-          </td>
           <td>
               @if($nurse->shift == 'TURNO 1')
                   1

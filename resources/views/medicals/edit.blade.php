@@ -83,7 +83,7 @@
               @if ($medical->clinical_trouble == null)
                   <div class="form-group col-sm-12 col-lg-4">
                       <label for="clinical_trouble">Problemas Clínicos:</label>
-                      <textarea class="form-control" id="" name="clinical_trouble" rows="2">{{ old('clinical_trouble', '1) INSUFICIENCIA RENAL TERMINAL (N18.0)  2) ANEMIA CRONICA (D63.8)') }}</textarea>
+                      <textarea class="form-control" id="" name="clinical_trouble" rows="2">{{ old('clinical_trouble', '1) Insuficiencia renal terminal (N18.0)  2) Anemia cronica (D63.8)') }}</textarea>
                   </div>
               @else
                   <div class="form-group col-sm-12 col-lg-4">

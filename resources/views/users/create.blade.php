@@ -72,13 +72,13 @@
 
         <div class="form-group col-sm-12 col-lg-3">
           <label for="password">Contraseña</label>
-          <input type="text" name="password" class="form-control" value="{{ str_random(8) }}" >
+          <input type="text" name="password" class="form-control" value="12345678" >
         </div>
 
-          <div class="form-group col-sm-12 col-lg-4">
+          {{--<div class="form-group col-sm-12 col-lg-4">
               <label for="image">SUBIR FIRMA</label>
               <input type="file" name="image" class="form-control" value="{{ old('image') }}" accept=".jpg, .jpeg, .png">
-          </div>
+          </div>--}}
 
       </div>
 	  	<button type="submit" class="btn btn-primary">Guardar</button>
