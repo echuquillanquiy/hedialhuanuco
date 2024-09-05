@@ -21,7 +21,7 @@ class PatientController extends Controller
         $dni = $request->get('dni');
         $code = $request->get('code');
 
-        $patients = Patient::orderBy('surname', 'desc')
+        $patients = Patient::orderBy('surname', 'asc')
             ->name($name)
             ->dni($dni)
             ->code($code)
