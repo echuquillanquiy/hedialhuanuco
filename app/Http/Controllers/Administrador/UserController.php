@@ -31,7 +31,7 @@ class UserController extends Controller
         $email = $request->get('email');
         $dni = $request->get('dni');
 
-        $users = User::orderBy('id', 'desc')
+        $users = User::orderBy('name', 'asc')
             ->name($name)
             ->email($email)
             ->dni($dni)
