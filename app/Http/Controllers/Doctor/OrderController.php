@@ -124,6 +124,7 @@ class OrderController extends Controller
             'start_hour' => $request->start_hour,
             'end_hour' => $request->end_hour,
             'date_order' => $order->date_order,
+            'start_weight' => $request->start_weight,
             'user_id' => $order->user_id,
         ];
 

@@ -1,6 +1,6 @@
 @if(!$ultimaOrdenNoVacia)
         <div class="row text-center">
-            <div class="form-group col-sm-12 col-lg-1">
+            <div class="form-group col-sm-12 col-lg-2">
                 <label for="hr">HR</label>
                 <input type="time" name="hr" id="hr" class="form-control" value="{{ old('hr', $nurse->hr) }}">
             </div>
@@ -47,7 +47,7 @@
                 <input type="text" name="ptm" class="form-control" value="{{ old('ptm', $nurse->ptm) }}">
             </div>
 
-            <div class="form-group col-sm-12 col-lg-4">
+            <div class="form-group col-sm-12 col-lg-3">
                 <label for="obs">Observación</label>
                 <textarea class="form-control" id="" name="obs" rows="1">{{ old('obs', $nurse->obs) }}</textarea>
             </div>
@@ -55,7 +55,7 @@
 
         <div class="row text-center">
 
-            <div class="form-group col-sm-12 col-lg-1">
+            <div class="form-group col-sm-12 col-lg-2">
                 <input type="time" name="hr2" class="form-control" value="{{ $nurse->hr2 }}">
             </div>
 
@@ -87,13 +87,13 @@
                 <input type="text" name="ptm2" class="form-control" value="{{ old('ptm2', $nurse->ptm2) }}">
             </div>
 
-            <div class="form-group col-sm-12 col-lg-4">
+            <div class="form-group col-sm-12 col-lg-3">
                 <textarea class="form-control" id="" name="obs2" rows="1">{{ old('obs2', $nurse->obs2) }}</textarea>
             </div>
         </div>
 
         <div class="row text-center">
-            <div class="form-group col-sm-12 col-lg-1">
+            <div class="form-group col-sm-12 col-lg-2">
                 <input type="time" name="hr3" class="form-control" value="{{ $nurse->hr3 }}">
             </div>
 
@@ -125,13 +125,13 @@
                 <input type="text" name="ptm3" class="form-control" value="{{ old('ptm3', $nurse->ptm3) }}">
             </div>
 
-            <div class="form-group col-sm-12 col-lg-4">
+            <div class="form-group col-sm-12 col-lg-3">
                 <textarea class="form-control" id="" name="obs3" rows="1">{{ old('obs3', $nurse->obs3) }}</textarea>
             </div>
         </div>
 
         <div class="row text-center">
-            <div class="form-group col-sm-12 col-lg-1">
+            <div class="form-group col-sm-12 col-lg-2">
                 <input type="time" name="hr4" class="form-control" value="{{ old('hr4', $nurse->hr4) }}">
             </div>
 
@@ -163,13 +163,13 @@
                 <input type="text" name="ptm4" class="form-control" value="{{ old('ptm4', $nurse->ptm4) }}">
             </div>
 
-            <div class="form-group col-sm-12 col-lg-4">
+            <div class="form-group col-sm-12 col-lg-3">
                 <textarea class="form-control" id="" name="obs4" rows="1">{{ old('obs4', $nurse->obs4) }}</textarea>
             </div>
         </div>
 
         <div class="row text-center">
-            <div class="form-group col-sm-12 col-lg-1">
+            <div class="form-group col-sm-12 col-lg-2">
                 <input type="time" name="hr5" class="form-control" value="{{ old('hr5', $nurse->hr5) }}">
             </div>
 
@@ -201,13 +201,13 @@
                 <input type="text" name="ptm5" class="form-control" value="{{ old('ptm5', $nurse->ptm5) }}">
             </div>
 
-            <div class="form-group col-sm-12 col-lg-4">
+            <div class="form-group col-sm-12 col-lg-3">
                 <textarea class="form-control" id="" name="obs5" rows="1">{{ old('obs5', $nurse->obs5) }}</textarea>
             </div>
         </div>
 @else
           <div class="row text-center">
-            <div class="form-group col-sm-12 col-lg-1">
+            <div class="form-group col-sm-12 col-lg-2">
               <label for="hr">HR</label>
               <input type="time" name="hr" id="hr" class="form-control" value="{{ old('hr', $ultimaOrdenNoVacia->hr) }}">
             </div>
@@ -254,7 +254,7 @@
               <input type="text" name="ptm" class="form-control" value="{{ old('ptm', $ultimaOrdenNoVacia->ptm) }}">
             </div>
 
-            <div class="form-group col-sm-12 col-lg-4">
+            <div class="form-group col-sm-12 col-lg-3">
               <label for="obs">Observación</label>
               <textarea class="form-control" id="" name="obs" rows="1">{{ old('obs', $ultimaOrdenNoVacia->obs) }}</textarea>
             </div>
@@ -262,7 +262,7 @@
 
           <div class="row text-center">
 
-                <div class="form-group col-sm-12 col-lg-1">
+                <div class="form-group col-sm-12 col-lg-2">
                   <input type="time" name="hr2" class="form-control" value="{{ $ultimaOrdenNoVacia->hr2 }}">
                 </div>
 
@@ -293,13 +293,13 @@
             <div class="form-group col-sm-12 col-lg-1">
               <input type="text" name="ptm2" class="form-control" value="{{ old('ptm2', $ultimaOrdenNoVacia->ptm2) }}">
             </div>
-            <div class="form-group col-sm-12 col-lg-4">
+            <div class="form-group col-sm-12 col-lg-3">
               <textarea class="form-control" id="" name="obs2" rows="1">{{ old('obs2', $ultimaOrdenNoVacia->obs2) }}</textarea>
             </div>
           </div>
 
           <div class="row text-center">
-                  <div class="form-group col-sm-12 col-lg-1">
+                  <div class="form-group col-sm-12 col-lg-2">
                       <input type="time" name="hr3" class="form-control" value="{{ $ultimaOrdenNoVacia->hr3 }}">
                   </div>
 
@@ -331,13 +331,13 @@
               <input type="text" name="ptm3" class="form-control" value="{{ old('ptm3', $ultimaOrdenNoVacia->ptm3) }}">
             </div>
 
-            <div class="form-group col-sm-12 col-lg-4">
+            <div class="form-group col-sm-12 col-lg-3">
               <textarea class="form-control" id="" name="obs3" rows="1">{{ old('obs3', $ultimaOrdenNoVacia->obs3) }}</textarea>
             </div>
           </div>
 
           <div class="row text-center">
-                  <div class="form-group col-sm-12 col-lg-1">
+                  <div class="form-group col-sm-12 col-lg-2">
                       <input type="time" name="hr4" class="form-control" value="{{ old('hr4', $ultimaOrdenNoVacia->hr4) }}">
                   </div>
 
@@ -369,13 +369,13 @@
               <input type="text" name="ptm4" class="form-control" value="{{ old('ptm4', $ultimaOrdenNoVacia->ptm4) }}">
             </div>
 
-            <div class="form-group col-sm-12 col-lg-4">
+            <div class="form-group col-sm-12 col-lg-3">
               <textarea class="form-control" id="" name="obs4" rows="1">{{ old('obs4', $ultimaOrdenNoVacia->obs4) }}</textarea>
             </div>
           </div>
 
           <div class="row text-center">
-                  <div class="form-group col-sm-12 col-lg-1">
+                  <div class="form-group col-sm-12 col-lg-2">
                       <input type="time" name="hr5" class="form-control" value="{{ old('hr5', $ultimaOrdenNoVacia->hr5) }}">
                   </div>
 
@@ -407,7 +407,7 @@
               <input type="text" name="ptm5" class="form-control" value="{{ old('ptm5', $ultimaOrdenNoVacia->ptm5) }}">
             </div>
 
-            <div class="form-group col-sm-12 col-lg-4">
+            <div class="form-group col-sm-12 col-lg-3">
               <textarea class="form-control" id="" name="obs5" rows="1">{{ old('obs5', $ultimaOrdenNoVacia->obs5) }}</textarea>
             </div>
           </div>

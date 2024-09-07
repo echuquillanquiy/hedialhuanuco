@@ -24,23 +24,13 @@
     <form action="{{ url('nurses') }}" method="GET">
       <div class="row">
 
-        <div class="col-lg-4">
+        <div class="col-lg-6">
           <div class="form-group">
             <label for="patient">Nombres y Apellidos</label>
             <input type="text" name="patient" class="form-control" value="{{ old('patient') }}" autofocus>
           </div>
         </div>
 
-        <div class="form-group col-sm-12 col-lg-2">
-          <label for="room">Salas</label>
-          <select data-live-search="true" name="room" id="room" class="form-control selectpicker" data-style="btn-info">
-            <option></option>
-            @foreach ($rooms as $room)
-            <option value="{{ $room->name }}">{{ $room->name }}</option>
-
-            @endforeach
-          </select>
-        </div>
 
         <div class="form-group col-sm-12 col-lg-3">
           <label for="shift">Turnos</label>
