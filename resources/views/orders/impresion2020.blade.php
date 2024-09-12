@@ -5,7 +5,7 @@
 
     body {
         margin: 0;
-        padding: 15px; /* Ajustar según sea necesario */
+        padding: 30px; /* Ajustar según sea necesario */
         font-family: Arial, sans-serif;
     }
 
