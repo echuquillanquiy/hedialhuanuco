@@ -37,22 +37,10 @@
                 <input type="text" name="machine" id="machine" class="form-control" value="{{ old('machine', $nurse->machine) }}">
             </div>
 
-            <div class="form-group col-sm-12 col-lg-3">
+            <div class="form-group col-sm-12 col-lg-4">
                 <label for="">Área del dializador</label>
                 <input type="text" name="" class="form-control" value="{{ $nurse->order->medical->area_filter }}">
             </div>
-
-            @if($nurse->end_weight)
-                <div class="form-group col-sm-12 col-lg-1">
-                    <label for="end_weight">Peso Final</label>
-                    <input type="text" name="end_weight" class="form-control" value="{{ old('end_weight', $nurse->end_weight) }}">
-                </div>
-            @else
-                <div class="form-group col-sm-12 col-lg-1">
-                    <label for="end_weight">Peso Final</label>
-                    <input type="text" name="end_weight" class="form-control" value="{{ old('end_weight', $nurse->order->medical->dry_weight) }}">
-                </div>
-            @endif
 
             @if(!$nurse->brand_model)
 
@@ -141,20 +129,32 @@
                 <textarea class="form-control" id="" name="s" rows="3">{{ old('s', $nurse->s) }}</textarea>
             </div>
 
-            <div class="form-group col-sm-12 col-lg-7">
+            <div class="form-group col-sm-12 col-lg-6">
                 <label for="end_observation">Observación Final</label>
                 <textarea class="form-control" id="" name="end_observation" rows="3">{{ old('end_observation', $nurse->end_observation) }}</textarea>
             </div>
 
             <div class="form-group col-sm-12 col-lg-2">
                 <label for="end_pa">P.A. Final</label>
-                <input type="text" name="end_pa" class="form-control" value="{{ old('end_pa', $nurse->end_pa) }}">
+                <input type="text" name="end_pa" class="form-control" value="{{ !$nurse->end_pa ? $nurse->pa5 : $nurse->end_pa }}">
             </div>
 
             <div class="form-group col-sm-12 col-lg-2">
                 <label for="aspect_dializer">Aspecto del dializador</label>
                 <input type="text" name="aspect_dializer" class="form-control" value="{{ !$nurse->aspect_dializer ? "0" : $nurse->aspect_dializer }}">
             </div>
+
+            @if($nurse->end_weight)
+                <div class="form-group col-sm-12 col-lg-2">
+                    <label for="end_weight">Peso Final</label>
+                    <input type="text" name="end_weight" class="form-control" value="{{ old('end_weight', $nurse->end_weight) }}">
+                </div>
+            @else
+                <div class="form-group col-sm-12 col-lg-2">
+                    <label for="end_weight">Peso Final</label>
+                    <input type="text" name="end_weight" class="form-control" value="{{ old('end_weight', $nurse->order->medical->dry_weight) }}">
+                </div>
+            @endif
 
             <div class="form-group col-sm-12 col-lg-4">
                 <label for="user_id">ENFERMERO(A) QUE INICIA</label>
@@ -191,29 +191,14 @@
 
 @else
         <div class="row text-center">
-            <div class="form-group col-sm-12 col-lg-2">
-                <label for="hcl">H.CL</label>
-                <input type="text" name="hcl" class="form-control" value="{{ old('hcl', $nurse->order->patient->dni) }}" >
-            </div>
 
-            <div class="form-group col-sm-12 col-lg-2">
-                <label for="frequency">Frecuencia HD</label>
-                <input type="text" name="frequency" class="form-control" value="{{ $nurse->frequency ? $nurse->frequency : $ultimaOrdenNoVacia->frequency }}">
-            </div>
+            <input type="hidden" name="hcl" class="form-control" value="{{ !$nurse->hcl ? $nurse->order->patient->dni : $nurse->hcl }}">
 
-            <div class="form-group col-sm-12 col-lg-2">
-                <label for="nhd">N° HD</label>
-                <input type="text" name="nhd" class="form-control" value="{{ $nurse->nhd ? $nurse->nhd : $ultimaOrdenNoVacia->nhd + 1 }}">
-            </div>
+            <input type="hidden" name="frequency" class="form-control" value="{{ old('frequency', '3', $nurse->frequency) }}">
 
-            <div class="form-group col-sm-12 col-lg-2">
-                <label for="others">Otros</label>
-                <select class="form-control" name="others" data-toggle="select" title="Simple select" data-placeholder="Select a state">
-                    <option value="{{$nurse->others ? $nurse->others : $ultimaOrdenNoVacia->others}}">{{$nurse->others ? $nurse->others : $ultimaOrdenNoVacia->others}}</option>
-                    <option value="L - M - V">L - M - V</option>
-                    <option value="M - J - S">M - J - S</option>
-                </select>
-            </div>
+            <input type="hidden" name="nhd" class="form-control" value="{{ $nurse->nhd }}">
+
+            <input type="hidden" name="others" value="{{ $nurse->others }}">
 
             <div class="form-group col-sm-12 col-lg-2">
                 <label for="position">Puesto</label>
@@ -304,27 +289,27 @@
         <div class="row text-center">
             <div class="form-group col-sm-12 col-lg-2">
                 <label for="epo2000">EPO 2000</label>
-                <input type="number" name="epo2000" class="form-control" value="{{ $nurse->epo2000 ? $nurse->epo2000 : $ultimaOrdenNoVacia->epo2000 }}">
+                <input type="number" name="epo2000" class="form-control" value="{{ !$nurse->epo2000 ? $nurse->epo2000 : 0 }}">
             </div>
 
             <div class="form-group col-sm-12 col-lg-2">
                 <label for="epo4000">EPO 4000</label>
-                <input type="number" name="epo4000" class="form-control" value="{{ $nurse->epo4000 ? $nurse->epo4000 : $ultimaOrdenNoVacia->epo4000 }}">
+                <input type="number" name="epo4000" class="form-control" value="{{ !$nurse->epo4000 ? $nurse->epo4000 : 0 }}">
             </div>
 
             <div class="form-group col-sm-12 col-lg-2">
                 <label for="hidroxi">Hidroxicobalamina</label>
-                <input type="number" name="hidroxi" class="form-control" value="{{ $nurse->hidroxi ? $nurse->hidroxi : $ultimaOrdenNoVacia->hidroxi }}">
+                <input type="number" name="hidroxi" class="form-control" value="{{ !$nurse->hidroxi ? $nurse->hidroxi : 0}}">
             </div>
 
             <div class="form-group col-sm-12 col-lg-2">
                 <label for="calcitriol">Calcitriol</label>
-                <input type="number" name="calcitriol" class="form-control" value="{{ $nurse->calcitriol ? $nurse->calcitriol : $ultimaOrdenNoVacia->calcitriol }}">
+                <input type="number" name="calcitriol" class="form-control" value="{{ !$nurse->calcitriol ? $nurse->calcitriol : 0 }}">
             </div>
 
             <div class="form-group col-sm-12 col-lg-4">
                 <label for="others_med">Otros Medicamentos</label>
-                <input type="text" name="others_med" class="form-control" value="{{ $nurse->others_med ? $nurse->others_med : $ultimaOrdenNoVacia->others_med }}">
+                <input type="text" name="others_med" class="form-control" value="{{ !$nurse->others_med ? $nurse->others_med : 0 }}">
             </div>
         </div>
 

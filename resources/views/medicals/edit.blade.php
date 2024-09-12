@@ -343,7 +343,7 @@
 
               <div class="form-group col-sm-12 col-lg-3">
                   <label for="start_hour">Hora Inicial</label>
-                  <input type="time" name="start_hour" class="form-control" value="{{ old('start_hour', $ultimaOrdenNoVacia->start_hour) }}">
+                  <input type="time" name="start_hour" class="form-control" value="{{ old('start_hour', $nurse->start_hour) }}">
               </div>
 
               <div class="form-group col-sm-12 col-lg-3">
@@ -406,12 +406,12 @@
 
                   <div class="form-group col-sm-12 col-lg-4">
                       <label for="start_pa">PA Inicial</label>
-                      <input type="text" name="start_pa" class="form-control" value="{{ old('start_pa', $ultimaOrdenNoVacia->start_pa) }}">
+                      <input type="text" name="start_pa" class="form-control" value="{{ old('start_pa', $nurse->start_pa) }}">
                   </div>
 
                   <div class="form-group col-sm-12 col-lg-4">
                       <label for="fc">Frecuencia Cardiaca</label>
-                      <input type="text" name="fc" class="form-control" value="{{ old('fc', $ultimaOrdenNoVacia->fc) }}">
+                      <input type="text" name="fc" class="form-control" value="{{ old('fc', $nurse->fc) }}">
                   </div>
 
                   <div class="form-group col-sm-12 col-lg-4">
@@ -466,7 +466,7 @@
 
               <div class="form-group col-sm-12 col-lg-2">
                   <label for="start_weight">Peso Inicial</label>
-                  <input type="text" name="start_weight" class="form-control" value="{{ old('start_weight', $ultimaOrdenNoVacia->start_weight) }}">
+                  <input type="text" name="start_weight" class="form-control" value="{{ old('start_weight', $nurse->start_weight) }}">
               </div>
 
               <div class="form-group col-sm-12 col-lg-2">
@@ -476,7 +476,7 @@
 
               <div class="form-group col-sm-12 col-lg-1">
                   <label for="uf">UF</label>
-                  <input type="text" name="uf" class="form-control" value="{{ old('uf', $ultimaOrdenNoVacia->uf) }}">
+                  <input type="text" name="uf" class="form-control" value="{{ old('uf', $nurse->uf) }}">
               </div>
 
               <div class="form-group col-sm-12 col-lg-1">
@@ -608,7 +608,7 @@
 
               <div class="form-group col-sm-12 col-lg-2">
                   <label for="end_hour">Hora final</label>
-                  <input type="time" name="end_hour" class="form-control" value="{{ old('end_hour', $ultimaOrdenNoVacia->end_hour) }}">
+                  <input type="time" name="end_hour" class="form-control" value="{{ old('end_hour', $nurse->end_hour) }}">
               </div>
 
               <div class="form-group col-sm-12 col-lg-3">

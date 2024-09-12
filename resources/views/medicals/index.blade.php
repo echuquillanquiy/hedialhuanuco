@@ -177,7 +177,7 @@
           </td>
 
             <td>
-                {{$medical->start_weight}}
+                {{$medical->order->nurse->start_weight}}
             </td>
             <td>
                 {{$medical->order->nurse->end_weight}}

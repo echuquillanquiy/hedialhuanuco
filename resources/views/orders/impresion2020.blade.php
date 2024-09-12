@@ -344,7 +344,7 @@
             <td height="14" width="40px">{{ $order->nurse->rv }}</td>
             <td height="14" width="40px">{{ $order->nurse->ptm }}</td>
 
-            <td height="14" style="font-size:0.7rem !important;" colspan="4">{{ $order->nurse->obs }}</td>
+            <td height="14" style="font-size:0.7rem !important; text-align: left" colspan="4">{{ $order->nurse->obs }}</td>
           </tr>
 
           <tr style="font-size:0.7rem;">
@@ -356,7 +356,7 @@
             <td height="14">{{ $order->nurse->ra2 }}</td>
             <td height="14">{{ $order->nurse->rv2 }}</td>
             <td height="14">{{ $order->nurse->ptm2 }}</td>
-            <td height="14" style="font-size:0.7rem !important" colspan="4">{{ $order->nurse->obs2 }}</td>
+            <td height="14" style="font-size:0.7rem !important; text-align: left" colspan="4">{{ $order->nurse->obs2 }}</td>
           </tr>
 
           <tr style="font-size:0.7rem;">
@@ -368,7 +368,7 @@
             <td height="14">{{ $order->nurse->ra3 }}</td>
             <td height="14">{{ $order->nurse->rv3 }}</td>
             <td height="14">{{ $order->nurse->ptm3 }}</td>
-              <td height="14" style="font-size:0.7rem !important" colspan="4">{{ $order->nurse->obs3 }}</td>
+              <td height="14" style="font-size:0.7rem !important; text-align: left" colspan="4">{{ $order->nurse->obs3 }}</td>
           </tr>
 
           <tr style="font-size:0.7rem;">
@@ -380,7 +380,7 @@
             <td height="14">{{ $order->nurse->ra4 }}</td>
             <td height="14">{{ $order->nurse->rv4 }}</td>
             <td height="14">{{ $order->nurse->ptm4 }}</td>
-            <td height="14" style="font-size:0.7rem !important" colspan="4">{{ $order->nurse->obs4 }}</td>
+            <td height="14" style="font-size:0.7rem !important; text-align: left" colspan="4">{{ $order->nurse->obs4 }}</td>
           </tr>
 
           <tr style="font-size:0.7rem;">
@@ -392,7 +392,7 @@
             <td height="14">{{ $order->nurse->ra5 }}</td>
             <td height="14">{{ $order->nurse->rv5 }}</td>
             <td height="14">{{ $order->nurse->ptm5 }}</td>
-            <td height="14" style="font-size:0.7rem !important" colspan="4">{{ $order->nurse->obs5 }}</td>
+            <td height="14" style="font-size:0.7rem !important; text-align: left" colspan="4">{{ $order->nurse->obs5 }}</td>
           </tr>
         </table>
 
