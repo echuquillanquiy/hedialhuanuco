@@ -215,7 +215,6 @@ class MedicalController extends Controller
         $fecha = $medical->date_order;
         $ultimaOrdenNoVacia = $this->obtenerUltimaOrdenNoVaciaYSumar($patient, $fecha);
 
-
         return view('medicals.edit', compact('medical', 'users', 'ultimaOrdenNoVacia'));
 
     }
@@ -236,6 +235,8 @@ class MedicalController extends Controller
 
         $medical->fill($data);
         $medical->save();
+
+
 
         $notification = 'El Parte Médico se ha actualizado correctamente.';
         return back()->with(compact('notification'));

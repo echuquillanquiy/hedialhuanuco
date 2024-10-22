@@ -47,7 +47,8 @@ class Medical extends Model
         'fio',
         'temp',
         'medico_final',
-        'serology'
+        'serology',
+        'perfil_uf'
 
     ];
 

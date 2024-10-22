@@ -47,7 +47,6 @@ class CreateMedicalsTable extends Migration
             $table->string('end_hour')->nullable();
             $table->text('indications')->nullable();
             $table->string('serology')->nullable();
-            $table->string('perfil_uf')->nullable();
 
             /*
 

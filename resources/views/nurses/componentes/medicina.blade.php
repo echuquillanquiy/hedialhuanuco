@@ -1,4 +1,4 @@
-<div class="tab-pane fade show active" id="medical" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
+
 
 
 
@@ -189,5 +189,5 @@
 
         </div>
 
-    </div>
+
 
