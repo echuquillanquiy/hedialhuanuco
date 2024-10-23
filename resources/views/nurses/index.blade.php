@@ -83,7 +83,7 @@
         <tr>
 
 	        <th scope="row">
-                {{ $nurse->patient }}
+                {{ $nurse->order->patient->surname }} {{ $nurse->order->patient->lastname }} {{ $nurse->order->patient->firstname }} {{ $nurse->order->patient->othername }}
             </th>
 
         <td>

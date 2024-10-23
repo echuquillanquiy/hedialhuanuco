@@ -17,7 +17,7 @@
     <div class="row align-items-center">
       <div class="col">
         <h1 class="mb-0">PARTE DE ATENCIÓN MEDICA</h1>
-        <h3>Paciente: {{ $medical->patient }}</h3>
+        <h3>Paciente: {{ $medical->order->patient->surname }} {{ $medical->order->patient->lastname }} {{ $medical->order->patient->firstname }} {{ $medical->order->patient->othername }}</h3>
       </div>
       <div class="col text-right">
         <a href="{{ url('medicals') }}" class="btn btn-sm btn-default">

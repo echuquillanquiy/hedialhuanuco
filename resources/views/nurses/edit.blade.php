@@ -20,8 +20,8 @@
   <div class="card-header border-0">
     <div class="row align-items-center">
       <div class="col">
-        <h3 class="mb-0">Parte de enfermeria</h3>
-        <h3>Paciente: {{ $nurse->patient }}</h3>
+        <h1 class="mb-0">PARTE DE ATENCIÓN DE ENFERMERIA</h1>
+        <h3>Paciente: {{ $nurse->order->patient->surname }} {{ $nurse->order->patient->lastname }} {{ $nurse->order->patient->firstname }} {{ $nurse->order->patient->othername }}</h3>
       </div>
       <div class="col text-right">
         <a href="{{ url('nurses') }}" class="btn btn-sm btn-default">
@@ -71,12 +71,12 @@
                 @include('nurses.componentes.medicina')
               </div>
 
-              <div class="tab-pane fade active" id="nurse" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
-                @include('nurses.componentes.enfermeria')
+              <div class="tab-pane fade" id="nurse" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
+                  @include('nurses.componentes.enfermeria')
               </div>
 
               <div class="tab-pane fade" id="treatment" role="tabpanel" aria-labelledby="tabs-icons-text-3-tab">
-                @include('nurses.componentes.tratamientos')
+                  @include('nurses.componentes.tratamientos')
               </div>
 
             <button type="submit" class="btn btn-primary" >Guardar</button>
@@ -93,5 +93,10 @@
 
     <script src="{{ asset('vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
-
+    <script>
+        function syncFields() {
+            var position = document.getElementById('position').value;
+            document.getElementById('machine').value = position;
+        }
+    </script>
 @endsection

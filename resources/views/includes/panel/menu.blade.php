@@ -90,7 +90,7 @@
 
         <a class="nav-link" href="/medicals">
             <ul class="text-gray">
-                <i class="ni ni-bold-right text-Secondary"></i> Medicina
+                <i class="ni ni-bold-right text-Secondary"></i> Medica
             </ul>
         </a>
 

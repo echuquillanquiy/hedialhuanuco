@@ -102,7 +102,7 @@
         @foreach ($medicals as $medical)
         <tr>
           <td scope="row">
-            {{$medical->patient}} {{$medical->order->patient->dni}}
+              {{ $medical->order->patient->surname }} {{ $medical->order->patient->lastname }} {{ $medical->order->patient->firstname }} {{ $medical->order->patient->othername }} {{$medical->order->patient->dni}}
           </td>
 
             <td>
