@@ -137,8 +137,8 @@
                   </div>
 
                   <div class="form-group col-sm-12 col-lg-3">
-                      <label for="bicarbonat">Bicarbonato</label>
-                      <input type="text" name="bicarbonat" class="form-control" value="{{ !$medical->bicarbonat ? optional($ultimaOrdenNoVacia)->bicarbonat : $medical->bicarbonat }}">
+                      <label for="bicarbonat">Buffer</label>
+                      <input type="text" name="bicarbonat" class="form-control" value="{{ old("Bicarbonato", !$medical->bicarbonat ? optional($ultimaOrdenNoVacia)->bicarbonat : $medical->bicarbonat) }}">
                   </div>
 
           </div>

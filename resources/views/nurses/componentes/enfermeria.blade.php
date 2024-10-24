@@ -42,7 +42,7 @@
 
     <div class="form-group col-sm-12 col-lg-2">
         <label for="brand_model">Marca/Modelo</label>
-        <input type="text" name="brand_model" class="form-control" value="{{ !$nurse->brand_model ? optional($ultimaOrdenNoVacia)->brand_model : $nurse->brand_model }}">
+        <input type="text" name="brand_model" class="form-control" value="{{ !$nurse->brand_model ? optional($ultimaOrdenNoVacia)->brand_model : $nurse->brand_model}}" >
     </div>
 
     <div class="form-group col-sm-12 col-lg-4">
