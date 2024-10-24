@@ -32,7 +32,7 @@ class CreateNursesTable extends Migration
             $table->string('start_weight')->nullable();
             $table->string('end_weight')->nullable();
             $table->string('machine')->nullable();
-            $table->string('brand_model')->nullable();
+            $table->string('brand_model')->default('FRESENIUS/4008S');
             $table->string('position', 25)->nullable();
             $table->string('filter')->nullable();
             $table->string('uf')->nullable();
