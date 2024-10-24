@@ -185,19 +185,19 @@
     </div>
 
     <div class="form-group col-sm-12 col-lg-1">
-        <input type="text" name="cnd5" class="form-control" value="{{ old('-', $nurse->cnd5) }}">
+        <input type="text" name="cnd5" class="form-control" value="{{ old('cnd5', !$nurse->cnd5 ? "-" : $nurse->cnd5) }}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-1">
-        <input type="text" name="ra5" class="form-control" value="{{ old('-', $nurse->ra5) }}">
+        <input type="text" name="ra5" class="form-control" value="{{ old('ra5', $nurse->ra5 ? "-" : $nurse->ra5) }}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-1">
-        <input type="text" name="rv5" class="form-control" value="{{ old('-', $nurse->rv5) }}">
+        <input type="text" name="rv5" class="form-control" value="{{ old('rv5', $nurse->rv5 ? "-" : $nurse->rv5) }}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-1">
-        <input type="text" name="ptm5" class="form-control" value="{{ old('-', $nurse->ptm5) }}">
+        <input type="text" name="ptm5" class="form-control" value="{{ old('ptm5', $nurse->ptm5 ? "-" : $nurse->ptm5) }}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-4">
