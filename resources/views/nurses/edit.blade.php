@@ -32,18 +32,6 @@
   </div>
   <div class="card-body">
 
-    @if ($errors->any())
-    <div class="alert alert-danger" role="alert">
-      <ul>
-        @foreach ($errors->all() as $error)
-        <li>{{ $error }}</li>
-        @endforeach
-      </ul>
-    </div>
-    @endif
-
-
-
     <form action="{{ url('nurses/'.$nurse->id) }}" method="POST">
       @csrf
       @method('PUT')

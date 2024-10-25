@@ -27,12 +27,18 @@
 
     <div class="form-group col-sm-12 col-lg-2">
         <label for="position">Puesto</label>
-        <input type="text" name="position" id="position" class="form-control" value="{{ !$nurse->position ? optional($ultimaOrdenNoVacia)->position : $nurse->position }}" oninput="syncFields()">
+        <input type="text" name="position" id="position" class="form-control @error('position') border border-danger @enderror" value="{{ !$nurse->position ? optional($ultimaOrdenNoVacia)->position : $nurse->position }}" oninput="syncFields()">
+        @error('position')
+        <div class="text-danger text-center text-sm">{{ $message }}</div>
+        @enderror
     </div>
 
     <div class="form-group col-sm-12 col-lg-2">
         <label for="machine">N° de Maquina</label>
-        <input type="text" name="machine" id="machine" class="form-control" value="{{ !$nurse->machine ? optional($ultimaOrdenNoVacia)->machine : $nurse->machine }}">
+        <input type="text" name="machine" id="machine" class="form-control @error('machine') border border-danger @enderror" value="{{ !$nurse->machine ? optional($ultimaOrdenNoVacia)->machine : $nurse->machine }}">
+        @error('machine')
+        <div class="text-danger text-center text-sm">{{ $message }}</div>
+        @enderror
     </div>
 
     <div class="form-group col-sm-12 col-lg-4">
@@ -62,7 +68,7 @@
 
     <div class="form-group col-sm-12 col-lg-2">
         <label for="access_arterial">ACCESO ARTERIAL</label>
-        <select class="form-control" name="access_arterial" data-toggle="select" title="Simple select" data-placeholder="Select a state">
+        <select class="form-control @error('access_arterial') border border-danger @enderror" name="access_arterial" data-toggle="select" title="Simple select" data-placeholder="Select a state">
             <option value="{{ $nurse->access_arterial }}">{{ !$nurse->access_arterial ? optional($ultimaOrdenNoVacia)->access_arterial : $nurse->access_arterial }}</option>
             <option value="CVCT">CVCT</option>
             <option value="CVC-LP">CVC-LP</option>
@@ -70,11 +76,14 @@
             <option value="Vp">Vp</option>
             <option value="Injerto">Injerto</option>
         </select>
+        @error('access_arterial')
+        <div class="text-danger text-center text-sm">{{ $message }}</div>
+        @enderror
     </div>
 
     <div class="form-group col-sm-12 col-lg-2">
         <label for="access_venoso">ACCESO VENOSO</label>
-        <select class="form-control" name="access_venoso" data-toggle="select" title="Simple select" data-placeholder="Select a state">
+        <select class="form-control @error('access_venoso') border border-danger @enderror" name="access_venoso" data-toggle="select" title="Simple select" data-placeholder="Select a state">
             <option value="{{ $nurse->access_venoso }}">{{ !$nurse->access_venoso ? optional($ultimaOrdenNoVacia)->access_venoso : $nurse->access_venoso }}</option>
             <option value="CVCT">CVCT</option>
             <option value="CVC-LP">CVC-LP</option>
@@ -82,6 +91,9 @@
             <option value="Vp">Vp</option>
             <option value="Injerto">Injerto</option>
         </select>
+        @error('access_venoso')
+        <div class="text-danger text-center text-sm">{{ $message }}</div>
+        @enderror
     </div>
 
     <div class="form-group col-sm-12 col-lg-2">
@@ -116,33 +128,49 @@
 
     <div class="form-group col-sm-12 col-lg-12">
         <label for="s">VALORACION DE ENFERMERIA </label>
-        <textarea class="form-control" id="" name="s" rows="3">{{ old('s', !$nurse->s ? optional($ultimaOrdenNoVacia)->s : $nurse->s) }}</textarea>
+        <textarea class="form-control @error('s') border border-danger @enderror" id="" name="s" rows="3">{{ old('s', !$nurse->s ? optional($ultimaOrdenNoVacia)->s : $nurse->s) }}</textarea>
+        @error('s')
+            <div class="text-danger text-center text-sm">{{ $message }}</div>
+        @enderror
     </div>
 
     <div class="form-group col-sm-12 col-lg-6">
         <label for="end_observation">Observación Final</label>
-        <textarea class="form-control" id="" name="end_observation" rows="3">{{ old('end_observation', !$nurse->end_observation ? optional($ultimaOrdenNoVacia)->end_observation : $nurse->end_observation) }}</textarea>
+        <textarea class="form-control @error('end_observation') border border-danger @enderror" id="" name="end_observation" rows="3">{{ old('end_observation', !$nurse->end_observation ? optional($ultimaOrdenNoVacia)->end_observation : $nurse->end_observation) }}</textarea>
+        @error('end_observation')
+        <div class="text-danger text-center text-sm">{{ $message }}</div>
+        @enderror
     </div>
 
     <div class="form-group col-sm-12 col-lg-2">
         <label for="end_pa">P.A. Final</label>
-        <input type="text" name="end_pa" class="form-control" value="{{ !$nurse->end_pa ? $nurse->pa5 : $nurse->end_pa }}">
+        <input type="text" name="end_pa" class="form-control @error('end_pa') border border-danger @enderror" value="{{ !$nurse->end_pa ? $nurse->pa5 : $nurse->end_pa }}">
+        @error('end_pa')
+        <div class="text-danger text-center text-sm">{{ $message }}</div>
+        @enderror
     </div>
 
     <div class="form-group col-sm-12 col-lg-2">
         <label for="aspect_dializer">Aspecto del dializador</label>
         <input type="text" name="aspect_dializer" class="form-control" value="{{ !$nurse->aspect_dializer ? "0" : $nurse->aspect_dializer }}">
+
     </div>
 
     @if($nurse->end_weight)
         <div class="form-group col-sm-12 col-lg-2">
             <label for="end_weight">Peso Final</label>
-            <input type="text" name="end_weight" class="form-control" value="{{ old('end_weight', $nurse->end_weight) }}">
+            <input type="text" name="end_weight" class="form-control @error('end_weight') border border-danger @enderror" value="{{ old('end_weight', $nurse->end_weight) }}">
+            @error('end_weight')
+            <div class="text-danger text-center text-sm">{{ $message }}</div>
+            @enderror
         </div>
     @else
         <div class="form-group col-sm-12 col-lg-2">
             <label for="end_weight">Peso Final</label>
-            <input type="text" name="end_weight" class="form-control" value="{{ old('end_weight', $nurse->order->medical->end_weight) }}">
+            <input type="text" name="end_weight" class="form-control @error('end_weight') border border-danger @enderror" value="{{ old('end_weight', $nurse->order->medical->end_weight) }}">
+            @error('end_weight')
+            <div class="text-danger text-center text-sm">{{ $message }}</div>
+            @enderror
         </div>
     @endif
 
