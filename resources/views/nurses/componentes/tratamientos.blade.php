@@ -131,7 +131,7 @@
 
 <div class="row text-center">
     <div class="form-group col-sm-12 col-lg-1">
-        <input type="time" name="hr4" class="form-control" value="{{ old('hr4', $nurse->hr4) }}">
+        <input type="time" name="hr4" class="form-control" value="{{  $nurse->hr4 }}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-1">
@@ -169,7 +169,7 @@
 
 <div class="row text-center">
     <div class="form-group col-sm-12 col-lg-1">
-        <input type="time" name="hr5" class="form-control" value="{{ old('hr5', $nurse->hr5) }}">
+        <input type="time" name="hr5" class="form-control" value="{{  $nurse->hr5 }}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-1">

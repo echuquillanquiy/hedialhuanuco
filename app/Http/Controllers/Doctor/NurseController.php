@@ -253,7 +253,7 @@ class NurseController extends Controller
             'rv5' => 'required',
             'ptm5' => 'required',
             'sol_hemodev5' => 'required',
-            'obs5' => 'required',*/
+            'obs5' => 'required'*/
         ];
 
         $messages = [
@@ -271,7 +271,7 @@ class NurseController extends Controller
     }
     public function update(Request $request, $id)
     {
-        //$this->performValidation($request);
+        $this->performValidation($request);
         $nurse = Nurse::findOrFail($id);
 
         $data = $request->all();
