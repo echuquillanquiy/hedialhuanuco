@@ -27,7 +27,7 @@
 
     <div class="form-group col-sm-12 col-lg-2">
         <label for="position">Puesto</label>
-        <input type="text" name="position" id="position" class="form-control @error('position') border border-danger @enderror" value="{{ !$nurse->position ? optional($ultimaOrdenNoVacia)->position : $nurse->position }}" oninput="syncFields()">
+        <input type="text" name="position" id="position" class="form-control @error('position') border border-danger @enderror" value="{{ old('position',  !$nurse->position ? optional($ultimaOrdenNoVacia)->position : $nurse->position) }}" oninput="syncFields()">
         @error('position')
         <div class="text-danger text-center text-sm">{{ $message }}</div>
         @enderror
@@ -35,7 +35,7 @@
 
     <div class="form-group col-sm-12 col-lg-2">
         <label for="machine">N° de Maquina</label>
-        <input type="text" name="machine" id="machine" class="form-control @error('machine') border border-danger @enderror" value="{{ !$nurse->machine ? optional($ultimaOrdenNoVacia)->machine : $nurse->machine }}">
+        <input type="text" name="machine" id="machine" class="form-control @error('machine') border border-danger @enderror" value="{{ old('machine', !$nurse->machine ? optional($ultimaOrdenNoVacia)->machine : $nurse->machine) }}">
         @error('machine')
         <div class="text-danger text-center text-sm">{{ $message }}</div>
         @enderror
@@ -68,29 +68,47 @@
 
     <div class="form-group col-sm-12 col-lg-2">
         <label for="access_arterial">ACCESO ARTERIAL</label>
-        <select class="form-control @error('access_arterial') border border-danger @enderror" name="access_arterial" data-toggle="select" title="Simple select" data-placeholder="Select a state">
-            <option value="{{ $nurse->access_arterial }}">{{ !$nurse->access_arterial ? optional($ultimaOrdenNoVacia)->access_arterial : $nurse->access_arterial }}</option>
-            <option value="CVCT">CVCT</option>
-            <option value="CVC-LP">CVC-LP</option>
-            <option value="FAV">FAV</option>
-            <option value="Vp">Vp</option>
-            <option value="Injerto">Injerto</option>
+        <select class="form-control @error('access_arterial') border border-danger @enderror"
+                name="access_arterial"
+                data-toggle="select"
+                title="Simple select"
+                data-placeholder="Select a state">
+
+            <option value="" disabled {{ old('access_arterial', $nurse->access_arterial) === null ? 'selected' : '' }}>
+                {{ !$nurse->access_arterial ? optional($ultimaOrdenNoVacia)->access_arterial : $nurse->access_arterial }}
+            </option>
+
+            <option value="CVCT" {{ old('access_arterial', $nurse->access_arterial) == 'CVCT' ? 'selected' : '' }}>CVCT</option>
+            <option value="CVC-LP" {{ old('access_arterial', $nurse->access_arterial) == 'CVC-LP' ? 'selected' : '' }}>CVC-LP</option>
+            <option value="FAV" {{ old('access_arterial', $nurse->access_arterial) == 'FAV' ? 'selected' : '' }}>FAV</option>
+            <option value="Vp" {{ old('access_arterial', $nurse->access_arterial) == 'Vp' ? 'selected' : '' }}>Vp</option>
+            <option value="Injerto" {{ old('access_arterial', $nurse->access_arterial) == 'Injerto' ? 'selected' : '' }}>Injerto</option>
         </select>
+
         @error('access_arterial')
-        <div class="text-danger text-center text-sm">{{ $message }}</div>
+            <div class="text-danger text-center text-sm">{{ $message }}</div>
         @enderror
     </div>
 
     <div class="form-group col-sm-12 col-lg-2">
         <label for="access_venoso">ACCESO VENOSO</label>
-        <select class="form-control @error('access_venoso') border border-danger @enderror" name="access_venoso" data-toggle="select" title="Simple select" data-placeholder="Select a state">
-            <option value="{{ $nurse->access_venoso }}">{{ !$nurse->access_venoso ? optional($ultimaOrdenNoVacia)->access_venoso : $nurse->access_venoso }}</option>
-            <option value="CVCT">CVCT</option>
-            <option value="CVC-LP">CVC-LP</option>
-            <option value="FAV">FAV</option>
-            <option value="Vp">Vp</option>
-            <option value="Injerto">Injerto</option>
+        <select class="form-control @error('access_venoso') border border-danger @enderror"
+                name="access_venoso"
+                data-toggle="select"
+                title="Simple select"
+                data-placeholder="Select a state">
+
+            <option value="" disabled {{ old('access_venoso', $nurse->access_venoso) === null ? 'selected' : '' }}>
+                {{ !$nurse->access_venoso ? optional($ultimaOrdenNoVacia)->access_venoso : $nurse->access_venoso }}
+            </option>
+
+            <option value="CVCT" {{ old('access_venoso', $nurse->access_venoso) == 'CVCT' ? 'selected' : '' }}>CVCT</option>
+            <option value="CVC-LP" {{ old('access_venoso', $nurse->access_venoso) == 'CVC-LP' ? 'selected' : '' }}>CVC-LP</option>
+            <option value="FAV" {{ old('access_venoso', $nurse->access_venoso) == 'FAV' ? 'selected' : '' }}>FAV</option>
+            <option value="Vp" {{ old('access_venoso', $nurse->access_venoso) == 'Vp' ? 'selected' : '' }}>Vp</option>
+            <option value="Injerto" {{ old('access_venoso', $nurse->access_venoso) == 'Injerto' ? 'selected' : '' }}>Injerto</option>
         </select>
+
         @error('access_venoso')
         <div class="text-danger text-center text-sm">{{ $message }}</div>
         @enderror
@@ -144,7 +162,7 @@
 
     <div class="form-group col-sm-12 col-lg-2">
         <label for="end_pa">P.A. Final</label>
-        <input type="text" name="end_pa" class="form-control @error('end_pa') border border-danger @enderror" value="{{ !$nurse->end_pa ? $nurse->pa5 : $nurse->end_pa }}">
+        <input type="text" name="end_pa" class="form-control @error('end_pa') border border-danger @enderror" value="{{ old('end_pa', !$nurse->end_pa ? $nurse->pa5 : $nurse->end_pa) }}">
         @error('end_pa')
         <div class="text-danger text-center text-sm">{{ $message }}</div>
         @enderror
