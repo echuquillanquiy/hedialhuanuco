@@ -203,7 +203,7 @@ class NurseController extends Controller
             'end_pa' => 'required',
             'end_weight' => 'required',
 
-            /*VALIDACION TRATAMIENTOS*/
+            /*VALIDACION TRATAMIENTOS
             'hr' => 'required',
             'pa' => 'required',
             'fc1' => 'required',
@@ -253,7 +253,7 @@ class NurseController extends Controller
             'rv5' => 'required',
             'ptm5' => 'required',
             'sol_hemodev5' => 'required',
-            'obs5' => 'required',
+            'obs5' => 'required',*/
         ];
 
         $messages = [
