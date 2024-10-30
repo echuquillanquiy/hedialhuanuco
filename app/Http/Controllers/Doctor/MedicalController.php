@@ -58,10 +58,8 @@ class MedicalController extends Controller
             'start_hour' => 'required',
             'clinical_trouble' => 'required',
             'signal' => 'required',
-            'fua_observacion' => 'required',
             'start_pa' => 'required',
             'fc' => 'required',
-            'serology' => 'required',
             'hour_hd' => 'required',
 
             'start_weight' => 'required',
@@ -78,7 +76,6 @@ class MedicalController extends Controller
             'area_filter' => 'required',
             'membrane' => 'required',
             'end_evaluation' => 'required',
-            'end_hour' => 'required',
             'heparin' => 'required',
         ];
 
@@ -86,10 +83,8 @@ class MedicalController extends Controller
             'start_hour.required' => 'Obligatorio',
             'clinical_trouble.required' => 'Obligatorio',
             'signal.required' => 'Obligatorio',
-            'fua_observacion.required' => 'Obligatorio',
             'start_pa.required' => 'Obligatorio',
             'fc.required' => 'Obligatorio',
-            'serology.required' => 'Obligatorio',
             'hour_hd.required' => 'Obligatorio',
 
             'start_weight.required' => 'Obligatorio',
@@ -106,7 +101,6 @@ class MedicalController extends Controller
             'area_filter.required' => 'Obligatorio',
             'membrane.required' => 'Obligatorio',
             'end_evaluation.required' => 'Obligatorio',
-            'end_hour.required' => 'Obligatorio',
             'heparin.required' => 'Este campo es Obligatorio',
         ];
 
