@@ -146,7 +146,7 @@
 
               <div class="form-group col-sm-12 col-lg-1">
                   <label for="uf">UF</label>
-                  <input type="text" name="uf" class="form-control @error('uf') border border-danger @enderror" value="{{ old('uf', !$medical->uf ? "" : $medical->uf) }}">
+                  <input type="text" name="uf" class="form-control @error('uf') border border-danger @enderror" value="{{ old('uf', $medical->uf ? $medical->uf : "") }}">
                   @error('uf')
                   <div class="text-danger text-center text-sm">{{ $message }}</div>
                   @enderror
