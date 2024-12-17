@@ -59,11 +59,6 @@
 											<span class="h2 font-weight-bold mb-0">{{ $room_yellow }}</span>
 											<p>Pacientes</p>
 										</div>
-										<div class="col-auto">
-											<div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
-												<i class="fas fa-door-open"></i>
-											</div>
-										</div>
 									</div>
 								</div>
 							</div>
@@ -80,11 +75,6 @@
 											<span class="h2 font-weight-bold mb-0">{{ $room_green }}</span>
 											<p>Pacientes</p>
 										</div>
-										<div class="col-auto">
-											<div class="icon icon-shape bg-success text-white rounded-circle shadow">
-												<i class="fas fa-door-open"></i>
-											</div>
-										</div>
 									</div>
 								</div>
 							</div>
@@ -100,11 +90,6 @@
 											<h5 class="card-title text-uppercase text-muted mb-0">SALA AZUL</h5>
 											<span class="h2 font-weight-bold mb-0">{{ $room_blue }}</span>
 											<p>Pacientes</p>
-										</div>
-										<div class="col-auto">
-											<div class="icon icon-shape bg-default text-white rounded-circle shadow">
-												<i class="fas fa-door-open"></i>
-											</div>
 										</div>
 									</div>
 								</div>

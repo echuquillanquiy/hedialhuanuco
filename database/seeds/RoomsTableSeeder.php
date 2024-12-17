@@ -13,15 +13,19 @@ class RoomsTableSeeder extends Seeder
     public function run()
     {
         Room::create([
-    		'name' => 'AMARILLA',
+    		'name' => 'I',
     	]);
 
     	Room::create([
-    		'name' => 'VERDE',
+    		'name' => 'II',
     	]);
 
     	Room::create([
-    		'name' => 'AZUL',
+    		'name' => 'III',
+    	]);
+
+        Room::create([
+    		'name' => 'IV',
     	]);
     }
 }
