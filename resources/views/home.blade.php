@@ -55,7 +55,7 @@
 								<div class="card-body">
 									<div class="row">
 										<div class="col">
-											<h5 class="card-title text-uppercase text-muted mb-0">SALA AMARILLA</h5>
+											<h5 class="card-title text-uppercase text-muted mb-0">SALA 1</h5>
 											<span class="h2 font-weight-bold mb-0">{{ $room_yellow }}</span>
 											<p>Pacientes</p>
 										</div>
@@ -71,7 +71,7 @@
 								<div class="card-body">
 									<div class="row">
 										<div class="col">
-											<h5 class="card-title text-uppercase text-muted mb-0">SALA VERDE</h5>
+											<h5 class="card-title text-uppercase text-muted mb-0">SALA 2</h5>
 											<span class="h2 font-weight-bold mb-0">{{ $room_green }}</span>
 											<p>Pacientes</p>
 										</div>
@@ -87,7 +87,7 @@
 								<div class="card-body">
 									<div class="row">
 										<div class="col">
-											<h5 class="card-title text-uppercase text-muted mb-0">SALA AZUL</h5>
+											<h5 class="card-title text-uppercase text-muted mb-0">SALA 3</h5>
 											<span class="h2 font-weight-bold mb-0">{{ $room_blue }}</span>
 											<p>Pacientes</p>
 										</div>
