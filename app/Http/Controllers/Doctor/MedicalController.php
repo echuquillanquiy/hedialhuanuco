@@ -55,7 +55,6 @@ class MedicalController extends Controller
     public function performValidation (Request $request) {
 
         $rules = [
-            'start_hour' => 'required',
             'clinical_trouble' => 'required',
             'signal' => 'required',
             'start_pa' => 'required',
@@ -80,7 +79,6 @@ class MedicalController extends Controller
         ];
 
         $messages = [
-            'start_hour.required' => 'Obligatorio',
             'clinical_trouble.required' => 'Obligatorio',
             'signal.required' => 'Obligatorio',
             'start_pa.required' => 'Obligatorio',

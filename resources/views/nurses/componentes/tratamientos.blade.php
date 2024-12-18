@@ -1,5 +1,5 @@
 <div class="row text-center">
-    <div class="form-group col-sm-12 col-lg-1">
+    <div class="form-group col-sm-12 col-lg-2">
         <label for="hr">HR</label>
         <input type="time" name="hr" id="hr" class="form-control" value="{{ old('hr', $nurse->hr) }}">
     </div>
@@ -33,7 +33,7 @@
 
     <div class="form-group col-sm-12 col-lg-1">
         <label for="ra">RA</label>
-        <input type="text" name="ra" class="form-control @error('ra') border border-danger @enderror" value="{{ old('ra', $nurse->ra) }}">
+        <input type="text" name="ra" class="form-control @error('ra') border border-danger @enderror" value="{{ old('ra', !$nurse->ra ? '-' : $nurse->ra) }}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-1">
@@ -46,7 +46,7 @@
         <input type="text" name="ptm" class="form-control @error('ptm') border border-danger @enderror" value="{{ old('ptm', $nurse->ptm) }}">
     </div>
 
-    <div class="form-group col-sm-12 col-lg-4">
+    <div class="form-group col-sm-12 col-lg-3">
         <label for="obs">Observación</label>
         <textarea class="form-control @error('obs') border border-danger @enderror" id="" name="obs" rows="1">{{ old('obs', $nurse->obs) }}</textarea>
     </div>
@@ -54,7 +54,7 @@
 
 <div class="row text-center">
 
-    <div class="form-group col-sm-12 col-lg-1">
+    <div class="form-group col-sm-12 col-lg-2">
         <input type="time" name="hr2" class="form-control" value="{{ $nurse->hr2 }}">
     </div>
 
@@ -75,7 +75,7 @@
     </div>
 
     <div class="form-group col-sm-12 col-lg-1">
-        <input type="text" name="ra2" class="form-control @error('ra2') border border-danger @enderror" value="{{ old('ra2', $nurse->ra2) }}">
+        <input type="text" name="ra2" class="form-control @error('ra2') border border-danger @enderror" value="{{ old('ra2', !$nurse->ra2 ? '-' : $nurse->ra2) }}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-1">
@@ -86,13 +86,13 @@
         <input type="text" name="ptm2" class="form-control @error('ptm2') border border-danger @enderror" value="{{ old('ptm2', $nurse->ptm2) }}">
     </div>
 
-    <div class="form-group col-sm-12 col-lg-4">
+    <div class="form-group col-sm-12 col-lg-3">
         <textarea class="form-control @error('obs2') border border-danger @enderror" id="" name="obs2" rows="1">{{ old('obs2', $nurse->obs2) }}</textarea>
     </div>
 </div>
 
 <div class="row text-center">
-    <div class="form-group col-sm-12 col-lg-1">
+    <div class="form-group col-sm-12 col-lg-2">
         <input type="time" name="hr3" class="form-control" value="{{ $nurse->hr3 }}">
     </div>
 
@@ -113,7 +113,7 @@
     </div>
 
     <div class="form-group col-sm-12 col-lg-1">
-        <input type="text" name="ra3" class="form-control @error('ra3') border border-danger @enderror" value="{{ old('ra3', $nurse->ra3) }}">
+        <input type="text" name="ra3" class="form-control @error('ra3') border border-danger @enderror" value="{{ old('ra3', !$nurse->ra3 ? '-' : $nurse->ra3) }}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-1">
@@ -124,13 +124,13 @@
         <input type="text" name="ptm3" class="form-control @error('ptm3') border border-danger @enderror" value="{{ old('ptm3', $nurse->ptm3) }}">
     </div>
 
-    <div class="form-group col-sm-12 col-lg-4">
+    <div class="form-group col-sm-12 col-lg-3">
         <textarea class="form-control @error('obs3') border border-danger @enderror" id="" name="obs3" rows="1">{{ old('obs3', $nurse->obs3) }}</textarea>
     </div>
 </div>
 
 <div class="row text-center">
-    <div class="form-group col-sm-12 col-lg-1">
+    <div class="form-group col-sm-12 col-lg-2">
         <input type="time" name="hr4" class="form-control" value="{{  $nurse->hr4 }}">
     </div>
 
@@ -151,7 +151,7 @@
     </div>
 
     <div class="form-group col-sm-12 col-lg-1">
-        <input type="text" name="ra4" class="form-control @error('ra4') border border-danger @enderror" value="{{ old('ra4', $nurse->ra4) }}">
+        <input type="text" name="ra4" class="form-control @error('ra4') border border-danger @enderror" value="{{ old('ra4', !$nurse->ra4 ? '-' : $nurse->ra4) }}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-1">
@@ -162,13 +162,13 @@
         <input type="text" name="ptm4" class="form-control @error('ptm4') border border-danger @enderror" value="{{ old('ptm4', $nurse->ptm4) }}">
     </div>
 
-    <div class="form-group col-sm-12 col-lg-4">
+    <div class="form-group col-sm-12 col-lg-3">
         <textarea class="form-control @error('obs4') border border-danger @enderror" id="" name="obs4" rows="1">{{ old('obs4', $nurse->obs4) }}</textarea>
     </div>
 </div>
 
 <div class="row text-center">
-    <div class="form-group col-sm-12 col-lg-1">
+    <div class="form-group col-sm-12 col-lg-2">
         <input type="time" name="hr5" class="form-control" value="{{  $nurse->hr5 }}">
     </div>
 
@@ -200,7 +200,7 @@
         <input type="text" name="ptm5" class="form-control @error('ptm5') border border-danger @enderror" value="{{ old('ptm5', !$nurse->ptm5 ? "-" : $nurse->ptm5) }}">
     </div>
 
-    <div class="form-group col-sm-12 col-lg-4">
+    <div class="form-group col-sm-12 col-lg-3">
         <textarea class="form-control @error('obs5') border border-danger @enderror" id="" name="obs5" rows="1">{{ old('obs5', $nurse->obs5) }}</textarea>
     </div>
 </div>

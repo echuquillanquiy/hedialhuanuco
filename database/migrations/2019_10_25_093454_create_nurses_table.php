@@ -45,7 +45,7 @@ class CreateNursesTable extends Migration
             $table->string('calcitriol')->nullable();
             $table->string('others_med')->nullable();
             $table->text('end_observation')->nullable();
-            $table->integer('aspect_dializer')->nullable();
+            $table->string('aspect_dializer')->nullable();
 
             //Valoracion de enfermeria
             $table->text('s')->nullable();

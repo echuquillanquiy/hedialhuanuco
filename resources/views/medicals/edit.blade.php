@@ -37,11 +37,7 @@
 
               <div class="form-group col-sm-12 col-lg-3">
                   <label for="start_hour">Hora Inicial</label>
-                  <input type="time" name="start_hour" class="form-control @error('start_hour') border border-danger @enderror" value="{{ old('start_hour', $medical->start_hour) }}">
-
-                  @error('start_hour')
-                  <div class="text-danger text-center text-sm">{{ $message }}</div>
-                  @enderror
+                  <input type="time" name="start_hour" class="form-control" value="{{ old('start_hour', $medical->start_hour) }}">
               </div>
 
               <div class="form-group col-sm-12 col-lg-3">

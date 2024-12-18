@@ -84,7 +84,7 @@
 
         <a class="nav-link" href="/orders">
             <ul class="text-gray">
-                <i class="ni ni-bold-right text-Secondary"></i> Generar Historia
+                <i class="ni ni-bold-right text-Secondary"></i> Historia
             </ul>
         </a>
 

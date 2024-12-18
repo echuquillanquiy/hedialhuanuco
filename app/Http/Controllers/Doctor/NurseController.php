@@ -194,14 +194,47 @@ class NurseController extends Controller
 
     public function performValidation (Request $request) {
         $rules = [
-            'position' => 'required',
+            /*'position' => 'required',
             'machine' => 'required',
             'access_arterial' => 'required',
             'access_venoso' => 'required',
             's' => 'required',
             'end_observation' => 'required',
             'end_pa' => 'required',
-            'end_weight' => 'required',
+            'end_weight' => 'required',*/
+            'cnd' => [
+                'numeric',
+                function ($attribute, $value, $fail) {
+                    if ($value <= 12.1 || $value >= 15) {
+                        $fail("El campo $attribute debe estar entre 12.1 y 15.");
+                    }
+                },
+            ],
+            'cnd2' => [
+                'numeric',
+                function ($attribute, $value, $fail) {
+                    if ($value <= 12.1 || $value >=15) {
+                        $fail("El campo $attribute debe estar entre 12.1 y 15.");
+                    }
+                },
+            ],
+            'cnd3' => [
+                'numeric',
+                function ($attribute, $value, $fail) {
+                    if ($value <= 12.1 || $value >=15) {
+                        $fail("El campo $attribute debe estar entre 12.1 y 15.");
+                    }
+                },
+            ],
+            'cnd4' => [
+                'numeric',
+                function ($attribute, $value, $fail) {
+                    if ($value <= 12.1 || $value >=15) {
+                        $fail("El campo $attribute debe estar entre 12.1 y 15.");
+                    }
+                },
+            ],
+
 
             /*VALIDACION TRATAMIENTOS
             'hr' => 'required',
@@ -265,13 +298,14 @@ class NurseController extends Controller
             'end_observation.required' => 'Obligatorio',
             'end_pa.required' => 'Obligatorio',
             'end_weight.required' => 'Obligatorio',
+            'cnd.numeric' => 'La conductividad debe estar entre 12.1 hasta 15'
         ];
 
         $this->validate($request, $rules, $messages);
     }
     public function update(Request $request, $id)
     {
-        //$this->performValidation($request);
+        $this->performValidation($request);
         $nurse = Nurse::findOrFail($id);
 
         $data = $request->all();

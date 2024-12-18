@@ -84,10 +84,6 @@
             <th scope="col">I-F HD</th>
           <th scope="col">Sala</th>
           <th scope="col">Turno</th>
-            <th scope="col">Epo2</th>
-            <th scope="col">Epo4</th>
-            <th scope="col">B12</th>
-            <th scope="col">Fe</th>
           <th scope="col">HD</th>
           <th scope="col">Fecha</th>
           <th scope="col">Editar</th>
@@ -145,21 +141,6 @@
               @endif
           </td>
 
-            <td>
-                @if (!$medical->epo) 0 @else {{ $medical->epo }} @endif
-            </td>
-
-            <td>
-                @if (!$medical->epo4000) 0 @else {{ $medical->epo4000 }} @endif
-            </td>
-
-            <td>
-                @if (!$medical->vitb12) 0 @else {{ $medical->vitb12 }} @endif
-            </td>
-
-            <td>
-                @if (!$medical->iron) 0 @else {{ $medical->iron }} @endif
-            </td>
 
             <td>
                 <button class="btn btn-info btn-sm">{{ $medical->hour_hd }}</button>

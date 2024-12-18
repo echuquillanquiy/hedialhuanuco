@@ -73,6 +73,11 @@
 	     <th scope="col">HD Inicio</th>
 	     <th scope="col">HD Fin</th>
           <th scope="col">Turno</th>
+            <th scope="col">Maquina / Puesto</th>
+            <th scope="col">Epo2000</th>
+            <th scope="col">Epo4000</th>
+            <th scope="col">Vit b12</th>
+            <th scope="col">Hierro</th>
           <th>Fecha</th>
             <th>Licenciado</th>
 
@@ -127,8 +132,18 @@
                   3
               @endif
           </td>
+
+            <td>
+                {{ $nurse->position }} / {{ $nurse->machine }}
+            </td>
+
+            <td>{{ $nurse->epo2000 }}</td>
+            <td>{{ $nurse->epo4000 }}</td>
+            <td>{{ $nurse->hidroxi }}</td>
+            <td>{{ $nurse->iron }}</td>
+
           <td>
-	    {{ $nurse->date_order}}
+	        {{ $nurse->date_order}}
           </td>
             @if($nurse->user_id)
                 <td>

@@ -170,8 +170,22 @@
 
     <div class="form-group col-sm-12 col-lg-2">
         <label for="aspect_dializer">Aspecto del dializador</label>
-        <input type="text" name="aspect_dializer" class="form-control" value="{{ !$nurse->aspect_dializer ? "0" : $nurse->aspect_dializer }}">
+        <select class="form-control @error('aspect_dializer') border border-danger @enderror"
+                name="aspect_dializer"
+                data-toggle="select"
+                title="Simple select"
+                data-placeholder="Select a state">
 
+            <option value="Aspecto 0 - Dializador blanco, escasa fibras oscuras." {{ old('aspect_dializer', $nurse->aspect_dializer) == 'Aspecto 0 - Dializador blanco, escasa fibras oscuras.' ? 'selected' : '' }}>Aspecto 0</option>
+            <option value="Aspecto 1 - Dializador con múltiple líneas coaguladas." {{ old('aspect_dializer', $nurse->aspect_dializer) == 'Aspecto 1 - Dializador con múltiple líneas coaguladas.' ? 'selected' : '' }}>Aspecto 1</option>
+            <option value="Aspecto 2 - Dializador con franjas coaguladas." {{ old('aspect_dializer', $nurse->aspect_dializer) == 'Aspecto 2 - Dializador con franjas coaguladas.' ? 'selected' : '' }}>Aspecto 2</option>
+            <option value="Aspecto 3 - Dializador totalmente oscuro." {{ old('aspect_dializer', $nurse->aspect_dializer) == 'Aspecto 3 - Dializador totalmente oscuro.' ? 'selected' : '' }}>Aspecto 3</option>
+            <option value="Aspecto 4 -  Dializador de coloración amarillenta." {{ old('aspect_dializer', $nurse->aspect_dializer) == 'Aspecto 4 -  Dializador de coloración amarillenta.' ? 'selected' : '' }}>Aspecto 4</option>
+        </select>
+
+        @error('aspect_dializer')
+        <div class="text-danger text-center text-sm">{{ $message }}</div>
+        @enderror
     </div>
 
     @if($nurse->end_weight)
