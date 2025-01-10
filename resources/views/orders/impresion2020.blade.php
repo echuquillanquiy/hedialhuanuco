@@ -1,11 +1,12 @@
 <style>
     @page {
         margin: 0cm;
+        margin-left: 35px; /* Mueve todo hacia la derecha */
     }
 
     body {
         margin: 0;
-        padding: 30px; /* Ajustar según sea necesario */
+        padding: 20px; /* Ajustar según sea necesario */
         font-family: Arial, sans-serif;
     }
 
@@ -14,7 +15,7 @@
         height: 100%;
         overflow: hidden;
         page-break-inside: avoid;
-        transform: scale(0.9); /* Ajustar el contenido para que quepa en una página */
+        transform: scale(0.8); /* Ajustar el contenido para que quepa en una página */
         transform-origin: top left;
     }
 </style>
