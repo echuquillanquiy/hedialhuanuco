@@ -87,4 +87,75 @@
             document.getElementById('machine').value = position;
         }
     </script>
+
+    <script>
+        // Función para calcular las horas en tiempo real
+        function calcularHoras() {
+            const hr = document.getElementById('hr').value; // Hora inicial
+
+            if (!hr) {
+                return; // Si no hay hora inicial, no hacer nada
+            }
+
+            const [hours, minutes] = hr.split(':').map(Number);
+
+            // Cálculos para las horas adicionales (hr2, hr3, hr4, hr5)
+            const hr2 = new Date();
+            hr2.setHours(hours + 1, minutes);
+
+            const hr3 = new Date();
+            hr3.setHours(hours + 2, minutes);
+
+            const hr4 = new Date();
+            hr4.setHours(hours + 3, minutes);
+
+            // Para hr5 se debe sumar el valor de hourHd correctamente
+            const hr5 = new Date();
+            hr5.setHours(hours, minutes); // Empezamos con la hora inicial
+
+            // Asignamos un valor por defecto de 3.5 si no se tiene hourHd
+            const hourHd = {{ $nurse->order->medical->hour_hd ?? 3.5 }}; // Usamos 3.5 por defecto si no existe hour_hd
+
+            // Verifica si el valor es de tipo número (si es cadena, convertimos)
+            const hourHdValue = parseFloat(hourHd);
+
+            switch (hourHdValue) {
+                case 3: // Si hour_hd es 3, hr5 se deja vacío
+                    document.getElementById('hr5').value = '';
+                    break;
+                case 3.25: // Si hour_hd es 3.25, se agrega 195 minutos (3 horas y 15 minutos)
+                    hr5.setMinutes(hr5.getMinutes() + 195); // 3 horas y 15 minutos
+                    document.getElementById('hr5').value = formatTime(hr5);
+                    break;
+                case 3.5: // Si hour_hd es 3.5, se agrega 210 minutos (3 horas y 30 minutos)
+                    hr5.setMinutes(hr5.getMinutes() + 210); // 3 horas y 30 minutos
+                    document.getElementById('hr5').value = formatTime(hr5);
+                    break;
+                case 3.75: // Si hour_hd es 3.75, se agrega 225 minutos (3 horas y 45 minutos)
+                    hr5.setMinutes(hr5.getMinutes() + 225); // 3 horas y 45 minutos
+                    document.getElementById('hr5').value = formatTime(hr5);
+                    break;
+                default: // Por defecto, se agregan 4 horas (240 minutos)
+                    hr5.setMinutes(hr5.getMinutes() + 240); // 4 horas
+                    document.getElementById('hr5').value = formatTime(hr5);
+                    break;
+            }
+
+            // Asignar los valores calculados a los campos
+            document.getElementById('hr2').value = formatTime(hr2);
+            document.getElementById('hr3').value = formatTime(hr3);
+            document.getElementById('hr4').value = formatTime(hr4);
+        }
+
+        // Función para formatear la hora a 'HH:mm'
+        function formatTime(date) {
+            const hours = date.getHours().toString().padStart(2, '0');
+            const minutes = date.getMinutes().toString().padStart(2, '0');
+            return `${hours}:${minutes}`;
+        }
+    </script>
+
+
+
+
 @endsection

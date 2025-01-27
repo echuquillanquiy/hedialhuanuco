@@ -134,7 +134,7 @@ class NurseController extends Controller
 
         $ultimaOrdenNoVacia = $this->obtenerUltimaOrdenNoVaciaYSumar($patient, $fecha);
 
-        if (!$nurse->hr)
+        /*if (!$nurse->hr)
         {
             $nurse->hr2 = $nurse->hr2;
             $nurse->hr3 = $nurse->hr3;
@@ -179,7 +179,7 @@ class NurseController extends Controller
                     $nurse->hr5 = Carbon::parse($nurse->hr)->addHour(4)->format('H:i');;
                 }
             }
-        }
+        }*/
 
         return view('nurses.edit', compact('nurse', 'users', 'ultimaOrdenNoVacia'));
     }
@@ -305,8 +305,8 @@ class NurseController extends Controller
     }
     public function update(Request $request, $id)
     {
-        $this->performValidation($request);
         $nurse = Nurse::findOrFail($id);
+        $this->performValidation($request);
 
         $data = $request->all();
 

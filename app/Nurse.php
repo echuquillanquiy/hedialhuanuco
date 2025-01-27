@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Nurse extends Model
@@ -166,5 +167,4 @@ class Nurse extends Model
         if($date_order)
             return $query->where('date_order', 'LIKE', "%$date_order%");
     }
-
 }

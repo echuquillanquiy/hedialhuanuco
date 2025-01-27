@@ -1,7 +1,7 @@
 <div class="row text-center">
     <div class="form-group col-sm-12 col-lg-2">
         <label for="hr">HR</label>
-        <input type="time" name="hr" id="hr" class="form-control" value="{{ old('hr', $nurse->hr) }}">
+        <input type="time" name="hr" id="hr" class="form-control" value="{{ old('hr', $nurse->hr) }}" onblur="calcularHoras()">
     </div>
 
     @if($nurse->pa == null)
@@ -55,7 +55,7 @@
 <div class="row text-center">
 
     <div class="form-group col-sm-12 col-lg-2">
-        <input type="time" name="hr2" class="form-control" value="{{ $nurse->hr2 }}">
+        <input type="time" name="hr2" id="hr2" class="form-control" value="{{ $nurse->hr2 }}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-1">
@@ -93,7 +93,7 @@
 
 <div class="row text-center">
     <div class="form-group col-sm-12 col-lg-2">
-        <input type="time" name="hr3" class="form-control" value="{{ $nurse->hr3 }}">
+        <input type="time" name="hr3" id="hr3" class="form-control" value="{{ $nurse->hr3 }}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-1">
@@ -131,7 +131,7 @@
 
 <div class="row text-center">
     <div class="form-group col-sm-12 col-lg-2">
-        <input type="time" name="hr4" class="form-control" value="{{  $nurse->hr4 }}">
+        <input type="time" name="hr4" id="hr4" class="form-control" value="{{  $nurse->hr4 }}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-1">
@@ -169,7 +169,7 @@
 
 <div class="row text-center">
     <div class="form-group col-sm-12 col-lg-2">
-        <input type="time" name="hr5" class="form-control" value="{{  $nurse->hr5 }}">
+        <input type="time" name="hr5" id="hr5" class="form-control" value="{{  $nurse->hr5 }}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-1">
