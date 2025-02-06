@@ -210,7 +210,7 @@
 
                   <div class="form-group col-sm-12 col-lg-2">
                       <label for="profile_uf">Perfil UF:</label>
-                      <input type="text" name="profile_uf" class="form-control @error('profile_uf') border border-danger @enderror" value="{{ old('profile_uf', $medical->profile_uf) }}">
+                      <input type="text" name="profile_uf" class="form-control @error('profile_uf') border border-danger @enderror" value="{{ old('profile_uf', !$medical->profile_uf ? 0 : $medical->profile_uf) }}">
                       @error('profile_uf')
                       <div class="text-danger text-center text-sm">{{ $message }}</div>
                       @enderror
