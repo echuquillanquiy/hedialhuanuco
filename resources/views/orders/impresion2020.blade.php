@@ -317,97 +317,51 @@
         </tr>
     </table>
 
-
-        <table width="100%" style="border-collapse:collapse;text-align:center; margin-top:-2px" border="1px;">
-
-          <tr>
+    <table width="100%" style="border-collapse: collapse; text-align: center; margin-top: -2px; table-layout: fixed;" border="1">
+        <tr>
             <th style="font-size: 0.8rem; text-align: left; width: 500px" colspan="12"><strong>EVOLUCIÓN DE TRATAMIENTO</strong></th>
-          </tr>
+        </tr>
 
-          <tr style="font-size:0.7rem;">
-            <th>HORA</th>
-            <th>P.A.</th>
-            <th>FC</th>
-            <th>QB</th>
-            <th>CND</th>
-            <th>RA</th>
-            <th>RV</th>
-            <th>PTM</th>
-            <th colspan="4">SOL / HEMODERIVADOS / OBSERVACIONES</th>
-          </tr>
-          <tr style="font-size:0.7rem;">
-            <td height="14" style="width: 40px">{{ $order->nurse->hr }}</td>
-            <td height="14" width="24px">{{ $order->nurse->pa }}</td>
-            <td height="14" width="10px">{{ $order->nurse->fc1 }}</td>
-            <td height="14" width="44px">{{ $order->nurse->qb }}</td>
-            <td height="14" width="30px">{{ $order->nurse->cnd }}</td>
-            <td height="14" width="40px">{{ $order->nurse->ra }}</td>
-            <td height="14" width="40px">{{ $order->nurse->rv }}</td>
-            <td height="14" width="40px">{{ $order->nurse->ptm }}</td>
+        <tr style="font-size: 0.7rem;">
+            <th style="width: 10%;">HORA</th>
+            <th style="width: 10%;">P.A.</th>
+            <th style="width: 8%;">FC</th>
+            <th style="width: 8%;">QB</th>
+            <th style="width: 8%;">CND</th>
+            <th style="width: 8%;">RA</th>
+            <th style="width: 8%;">RV</th>
+            <th style="width: 8%;">PTM</th>
+            <th style="width: 60%;" colspan="4">SOL / HEMODERIVADOS / OBSERVACIONES</th>
+        </tr>
 
-            <td height="14" style="font-size:0.7rem !important; text-align: left" colspan="4">{{ $order->nurse->obs }}</td>
-          </tr>
-
-          <tr style="font-size:0.7rem;">
-            <td height="14">{{ $order->nurse->hr2 }}</td>
-            <td height="14">{{ $order->nurse->pa2 }}</td>
-            <td height="14">{{ $order->nurse->fc2 }}</td>
-            <td height="14">{{ $order->nurse->qb2 }}</td>
-            <td height="14">{{ $order->nurse->cnd2 }}</td>
-            <td height="14">{{ $order->nurse->ra2 }}</td>
-            <td height="14">{{ $order->nurse->rv2 }}</td>
-            <td height="14">{{ $order->nurse->ptm2 }}</td>
-            <td height="14" style="font-size:0.7rem !important; text-align: left" colspan="4">{{ $order->nurse->obs2 }}</td>
-          </tr>
-
-          <tr style="font-size:0.7rem;">
-            <td height="14">{{ $order->nurse->hr3 }}</td>
-            <td height="14" width="24px">{{ $order->nurse->pa3 }}</td>
-            <td height="14">{{ $order->nurse->fc3 }}</td>
-            <td height="14">{{ $order->nurse->qb3 }}</td>
-            <td height="14">{{ $order->nurse->cnd3 }}</td>
-            <td height="14">{{ $order->nurse->ra3 }}</td>
-            <td height="14">{{ $order->nurse->rv3 }}</td>
-            <td height="14">{{ $order->nurse->ptm3 }}</td>
-              <td height="14" style="font-size:0.7rem !important; text-align: left" colspan="4">{{ $order->nurse->obs3 }}</td>
-          </tr>
-
-          <tr style="font-size:0.7rem;">
-            <td height="14">{{ $order->nurse->hr4 }}</td>
-            <td height="14" width="24px">{{ $order->nurse->pa4 }}</td>
-            <td height="14">{{ $order->nurse->fc4 }}</td>
-            <td height="14">{{ $order->nurse->qb4 }}</td>
-            <td height="14">{{ $order->nurse->cnd4 }}</td>
-            <td height="14">{{ $order->nurse->ra4 }}</td>
-            <td height="14">{{ $order->nurse->rv4 }}</td>
-            <td height="14">{{ $order->nurse->ptm4 }}</td>
-            <td height="14" style="font-size:0.7rem !important; text-align: left" colspan="4">{{ $order->nurse->obs4 }}</td>
-          </tr>
-
-          <tr style="font-size:0.7rem;">
-            <td height="14">{{ $order->nurse->hr5 }}</td>
-            <td height="14" width="24px">{{ $order->nurse->pa5 }}</td>
-            <td height="14">{{ $order->nurse->fc5 }}</td>
-            <td height="14">{{ $order->nurse->qb5 }}</td>
-            <td height="14">{{ $order->nurse->cnd5 }}</td>
-            <td height="14">{{ $order->nurse->ra5 }}</td>
-            <td height="14">{{ $order->nurse->rv5 }}</td>
-            <td height="14">{{ $order->nurse->ptm5 }}</td>
-            <td height="14" style="font-size:0.7rem !important; text-align: left" colspan="4">{{ $order->nurse->obs5 }}</td>
-          </tr>
-        </table>
+        @for ($i = 1; $i <= 5; $i++)
+            <tr style="font-size: 0.7rem;">
+                <td style="height: 14px; white-space: nowrap; overflow: hidden;">{{ $order->nurse->{'hr' . $i} }}</td>
+                <td style="height: 14px; white-space: nowrap; overflow: hidden;">{{ $order->nurse->{'pa' . $i} }}</td>
+                <td style="height: 14px; white-space: nowrap; overflow: hidden;">{{ $order->nurse->{'fc' . $i} }}</td>
+                <td style="height: 14px; white-space: nowrap; overflow: hidden;">{{ $order->nurse->{'qb' . $i} }}</td>
+                <td style="height: 14px; white-space: nowrap; overflow: hidden;">{{ $order->nurse->{'cnd' . $i} }}</td>
+                <td style="height: 14px; white-space: nowrap; overflow: hidden;">{{ $order->nurse->{'ra' . $i} }}</td>
+                <td style="height: 14px; white-space: nowrap; overflow: hidden;">{{ $order->nurse->{'rv' . $i} }}</td>
+                <td style="height: 14px; white-space: nowrap; overflow: hidden;">{{ $order->nurse->{'ptm' . $i} }}</td>
+                <td style="height: 14px; font-size: 0.7rem !important; text-align: left; white-space: nowrap; overflow: hidden;" colspan="4">
+                    {{ $order->nurse->{'obs' . $i} }}
+                </td>
+            </tr>
+        @endfor
+    </table>
 
     <table style="border: solid 1px; margin-top: -2px;" width="100%">
         <tr>
-            <td style="font-size: 0.6rem; text-align: left;" colspan="12"><strong>P.A Final:</strong> {{ $order->nurse->end_pa }} mmHg  <strong style="margin-left: 25px">Peso Final (Kg):</strong>  {{ $order->nurse->end_weight }}</td>
+            <td style="font-size: 0.7rem; text-align: left;" colspan="12"><strong>P.A Final:</strong> {{ $order->nurse->pa5 }} mmHg  <strong style="margin-left: 25px">Peso Final (Kg):</strong>  {{ $order->nurse->end_weight }}</td>
         </tr>
 
         <tr>
-            <td colspan="12" style="font-size:0.6rem; text-align: left;"><strong>OBSERVACION FINAL:</strong> {{ $order->nurse->end_observation }}</td>
+            <td colspan="12" style="font-size:0.7rem; text-align: left;"><strong>OBSERVACION FINAL:</strong> {{ $order->nurse->end_observation }}</td>
         </tr>
 
         <tr>
-            <td colspan="12" style="font-size:0.6rem; text-align: left"><strong>Aspecto de filtro:</strong> {{ $order->nurse->aspect_dializer == 0 ? 'Blanco' : ''}}</td>
+            <td colspan="12" style="font-size:0.7rem; text-align: left"><strong>Aspecto de filtro:</strong> {{ $order->nurse->aspect_dializer == 0 ? 'Aspecto 0 - Dializador blanco, escasa fibras oscuras.' : ''}}</td>
         </tr>
     </table>
 

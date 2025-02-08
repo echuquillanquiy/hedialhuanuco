@@ -74,7 +74,7 @@
                 title="Simple select"
                 data-placeholder="Select a state">
 
-            <option value="" disabled {{ old('access_arterial', $nurse->access_arterial) === null ? 'selected' : '' }}>
+            <option value="" disabled {{ old('access_arterial', $nurse->access_arterial) == null ? 'selected' : 'Seleccione' }}>
                 {{ !$nurse->access_arterial ? optional($ultimaOrdenNoVacia)->access_arterial : $nurse->access_arterial }}
             </option>
 
@@ -98,7 +98,7 @@
                 title="Simple select"
                 data-placeholder="Select a state">
 
-            <option value="" disabled {{ old('access_venoso', $nurse->access_venoso) === null ? 'selected' : '' }}>
+            <option value="" disabled {{ old('access_venoso', $nurse->access_venoso) == null ? 'selected' : 'Seleccione' }}>
                 {{ !$nurse->access_venoso ? optional($ultimaOrdenNoVacia)->access_venoso : $nurse->access_venoso }}
             </option>
 
