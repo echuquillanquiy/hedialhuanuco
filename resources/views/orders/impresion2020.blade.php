@@ -406,9 +406,11 @@
             CEP: {{ $order->nurse->user->code_specialty }}
         </td>
 
-          <td colspan="4"></td>
-
           <td colspan="4" style="font-size: 0.5rem">
+
+          </td>
+
+          <td colspan="4" style="font-size: 0.5rem; text-align: right">
               ENF. Finaliza HD: {{ $order->nurse->user->name }}
               <br>
               CEP: {{ $order->nurse->user->code_specialty }}
