@@ -304,7 +304,7 @@
             <td style="font-size: 0.7rem; text-align: center" colspan="1">{{ $order->nurse->epo2000 }}</td>
 
             <td style="font-size: 0.6rem; text-align: center" colspan="2">Epoetina alfa (EPO) 4000 Ul/ml </td>
-            <td style="font-size: 0.7rem; text-align: center" colspan="1">{{ $order->nurse->epo2000 }}</td>
+            <td style="font-size: 0.7rem; text-align: center" colspan="1">{{ $order->nurse->epo4000 }}</td>
 
             <td style="font-size: 0.6rem; text-align: center" colspan="1">Hierro 20 mg Fe/ml INY 5ml</td>
             <td style="font-size: 0.7rem; text-align: center" colspan="1">{{ $order->nurse->iron }}</td>

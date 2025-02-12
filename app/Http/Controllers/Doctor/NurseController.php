@@ -290,14 +290,14 @@ class NurseController extends Controller
         ];
 
         $messages = [
-            'position.required' => 'Obligatorio',
-            'machine.required' => 'Obligatorio',
-            'access_arterial.required' => 'Obligatorio',
-            'access_venoso.required' => 'Obligatorio',
-            's.required' => 'Obligatorio',
-            'end_observation.required' => 'Obligatorio',
-            'end_pa.required' => 'Obligatorio',
-            'end_weight.required' => 'Obligatorio',
+            //'position.required' => 'Obligatorio',
+            //'machine.required' => 'Obligatorio',
+            //'access_arterial.required' => 'Obligatorio',
+            //'access_venoso.required' => 'Obligatorio',
+            //'s.required' => 'Obligatorio',
+            //'end_observation.required' => 'Obligatorio',
+            //'end_pa.required' => 'Obligatorio',
+            //'end_weight.required' => 'Obligatorio',
             'cnd.numeric' => 'La conductividad debe estar entre 12.1 hasta 15'
         ];
 
