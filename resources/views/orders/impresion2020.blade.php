@@ -400,17 +400,17 @@
 
     <table width="100%" style="text-align:left; margin-top:-3px">
       <tr>
-        <td colspan="4" style="font-size: 0.5rem">
+        <td colspan="4" style="font-size: 0.5rem; text-align: center">
             ENF. Inicia HD: {{ $order->nurse->user->name }}
             <br>
             CEP: {{ $order->nurse->user->code_specialty }}
         </td>
 
-          <td colspan="4" style="font-size: 0.5rem">
+          <td colspan="4" style="font-size: 0.5rem; text-align: center">
 
           </td>
 
-          <td colspan="4" style="font-size: 0.5rem; text-align: right">
+          <td colspan="4" style="font-size: 0.5rem; text-align: center">
               ENF. Finaliza HD: {{ $order->nurse->user->name }}
               <br>
               CEP: {{ $order->nurse->user->code_specialty }}
