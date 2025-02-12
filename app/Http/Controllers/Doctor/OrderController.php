@@ -114,6 +114,7 @@ class OrderController extends Controller
             'date_order' => $order->date_order,
             'start_weight' => $request->start_weight,
             'end_weight' => $request->end_weight,
+            'nhd' => $request->nhd,
             'user_id' => $order->user_id,
         ];
 

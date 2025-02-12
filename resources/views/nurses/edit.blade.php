@@ -91,13 +91,13 @@
     <script>
         // Función para calcular las horas en tiempo real
         function calcularHoras() {
-            const hr = document.getElementById('hr').value; // Hora inicial
+            const hr1 = document.getElementById('hr1').value; // Hora inicial
 
-            if (!hr) {
+            if (!hr1) {
                 return; // Si no hay hora inicial, no hacer nada
             }
 
-            const [hours, minutes] = hr.split(':').map(Number);
+            const [hours, minutes] = hr1.split(':').map(Number);
 
             // Cálculos para las horas adicionales (hr2, hr3, hr4, hr5)
             const hr2 = new Date();

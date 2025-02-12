@@ -60,7 +60,7 @@
             <tr>
                 <td colspan="5" style="font-size: 0.8rem;"><strong>N° Autogenerado</strong> {{ $order->patient->code }}</td>
 
-                <td colspan="2" style="font-size: 0.8rem; margin-left: 15px !important; text-align: right"><strong>N° de HD: </strong> {{ $order->patient->hosp_origin }}</td>
+                <td colspan="2" style="font-size: 0.8rem; margin-left: 15px !important; text-align: right"><strong>N° de HD: </strong> {{ $order->nurse->nhd }}</td>
 
                 <td colspan="3" style="font-size:0.8rem; margin-left: 30px !important;"><strong>Frecuencia HD (veces/sem):</strong> {{ $order->nurse->frequency }}</td>
 
@@ -400,12 +400,15 @@
 
     <table width="100%" style="text-align:left; margin-top:-3px">
       <tr>
-        <td colspan="6" style="font-size: 0.5rem">
+        <td colspan="4" style="font-size: 0.5rem">
             ENF. Inicia HD: {{ $order->nurse->user->name }}
             <br>
             CEP: {{ $order->nurse->user->code_specialty }}
         </td>
-          <td colspan="6" style="font-size: 0.5rem">
+
+          <td colspan="4"></td>
+
+          <td colspan="4" style="font-size: 0.5rem">
               ENF. Finaliza HD: {{ $order->nurse->user->name }}
               <br>
               CEP: {{ $order->nurse->user->code_specialty }}

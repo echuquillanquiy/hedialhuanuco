@@ -33,7 +33,7 @@
       <div class="row">
 
           <div class="form-group col-lg-2">
-              <label for="dni">DNI</label>
+              <label for="dni">HCL N°</label>
               <input type="text" name="dni" class="form-control" value="{{ old('dni') }}" required>
           </div>
 

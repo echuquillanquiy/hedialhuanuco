@@ -68,8 +68,8 @@
 
 
           <div class="form-group col-sm-12 col-lg-1">
-              <label for="hosp_origin">N° HD</label>
-              <input type="text" id="hosp_origin" name="hosp_origin" class="form-control">
+              <label for="nhd">N° HD</label>
+              <input type="text" id="nhd" name="nhd" class="form-control">
           </div>
 
           <div class="form-group col-sm-12 col-lg-2">
