@@ -62,6 +62,11 @@
               <input type="text" name="code" class="form-control" value="{{ old('code') }}">
           </div>
 
+          <div class="form-group col-lg-2">
+              <label for="hosp_origin">CORRELATIVO</label>
+              <input type="hidden" name="hosp_origin">
+          </div>
+
       </div>
 
       {{--<div class="row">
@@ -160,10 +165,7 @@
           </div>
         </div>
 
-        <div class="form-group col-lg-2">
-          <label for="hosp_origin">N° HD</label>
-          <input type="text" name="hosp_origin" class="form-control" value="{{ old('hosp_origin') }}">
-        </div>
+
 
       </div>
 

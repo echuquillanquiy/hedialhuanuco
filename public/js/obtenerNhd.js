@@ -1,8 +1,8 @@
 $(document).ready(function() {
     $('#obtenerNhd').change(function() {
         var selectElement = document.getElementById('obtenerNhd');
-        var nhd = parseInt(selectElement.options[selectElement.selectedIndex].text) + 1 ;
+        var hosp_origin = parseInt(selectElement.options[selectElement.selectedIndex].text) + 1 ;
 
-        $('#nhd').val(nhd);
+        $('#hosp_origin').val(hosp_origin);
     });
 });
