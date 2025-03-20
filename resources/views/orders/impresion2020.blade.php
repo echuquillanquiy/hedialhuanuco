@@ -175,9 +175,9 @@
             <tr style="margin-top: 60px !important;">
 
                 @if($order->medical->user_id)
-                    <td colspan="8">
+                    <td colspan="9">
                     </td>
-                    <td colspan="4" style="text-align: center; font-size: 0.6rem; font-weight: bold;">
+                    <td colspan="3" style="text-align: center; font-size: 0.6rem; font-weight: bold;">
                         Dr(a): {{ $order->medical->user->name }}
                         <br>
                         <strong>Médico que inicia HD</strong>
@@ -185,7 +185,7 @@
                 @else
                     <td colspan="8"></td>
                     <td colspan="4" style="text-align: center; font-size: 0.6rem; font-weight: bold">
-                        Dr(a): {{ $order->medical->user->name }}
+                         <p>ha</p>Dr(a): {{ $order->medical->user->name }}
                         <br>
                         <strong>Médico que inicia HD</strong>
                     </td>
@@ -398,23 +398,24 @@
 
 
 
-    <table width="100%" style="text-align:left; margin-top:-3px">
+    <table width="100%" style="margin-top:-3px">
       <tr>
-        <td colspan="4" style="font-size: 0.5rem; text-align: center">
+        <td colspan="4" style="font-size: 0.5rem; text-align: left">
             ENF. Inicia HD: {{ $order->nurse->user->name }}
             <br>
             CEP: {{ $order->nurse->user->code_specialty }}
         </td>
 
-          <td colspan="4" style="font-size: 0.5rem; text-align: center">
-
+          <td colspan="4" style="font-size: 0.5rem; text-align: center; color:white">
+            sjdhjksdhjksfhjkdshfjkdshfjkhdsjfhsdjkfdasd
           </td>
 
-          <td colspan="4" style="font-size: 0.5rem; text-align: center">
+          <td colspan="4" style="font-size: 0.5rem; text-align: left">
               ENF. Finaliza HD: {{ $order->nurse->user->name }}
               <br>
               CEP: {{ $order->nurse->user->code_specialty }}
           </td>
+
       </tr>
     </table>
 
