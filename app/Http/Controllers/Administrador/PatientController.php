@@ -77,13 +77,13 @@ class PatientController extends Controller
     {
 
         $messages = [
-            'dni.digits' => 'El DNI debe tener 8 digitos.',
+            'dni.digits' => 'El DNI debe tener 1 digitos.',
             'code.min' => 'El Autogenerado debe tener como mínimo 10 digitos.'
         ];
 
         $rules = [
             'name' => 'min:3',
-            'dni' => 'digits:8',
+            'dni' => 'digits:1',
             'code' => 'min:10',
         ];
 
