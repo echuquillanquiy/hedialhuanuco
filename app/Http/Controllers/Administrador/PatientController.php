@@ -40,12 +40,12 @@ class PatientController extends Controller
     {
         $messages = [
             'dni.unique' => 'El número de DNI ya esta en uso.',
-            'dni.digits' => 'El DNI debe tener 8 digitos.',
+            'dni.digits' => 'El DNI debe tener 1 digitos.',
         ];
 
         $rules = [
             'name' => 'min:3',
-            'dni' => 'unique:patients|digits:8',
+            'dni' => 'unique:patients|digits:1',
             'code' => 'unique:patients|min:10',
         ];
 
