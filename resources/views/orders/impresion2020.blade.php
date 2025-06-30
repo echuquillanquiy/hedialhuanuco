@@ -411,11 +411,19 @@
             sjdhjksdhjksfhjkdshfjkdshfjkhdsjfhsdjkfdasd
           </td>
 
-          <td colspan="4" style="font-size: 0.5rem; text-align: left">
-              ENF. Finaliza HD: {{ $order->nurse->user->name }}
-              <br>
-              CEP: {{ $order->nurse->user->code_specialty }}
-          </td>
+          @if($order->nurse->user_id2)
+              <td colspan="4" style="font-size: 0.5rem; text-align: left">
+                  ENF. Finaliza HD: {{ $order->nurse->user2->name }}
+                  <br>
+                  CEP: {{ $order->nurse->user2->code_specialty }}
+              </td>
+          @else
+              <td colspan="4" style="font-size: 0.5rem; text-align: left">
+                  ENF. Inicia HD: {{ $order->nurse->user->name }}
+                  <br>
+                  CEP: {{ $order->nurse->user->code_specialty }}
+              </td>
+          @endif
 
       </tr>
     </table>

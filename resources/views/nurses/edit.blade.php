@@ -88,7 +88,7 @@
         }
     </script>
 
-    <script>
+    {{--<script>
         // Función para calcular las horas en tiempo real
         function calcularHoras() {
             const hr1 = document.getElementById('hr1').value; // Hora inicial
@@ -153,9 +153,123 @@
             const minutes = date.getMinutes().toString().padStart(2, '0');
             return `${hours}:${minutes}`;
         }
+    </script>--}}
+
+    <script>
+        // Función para calcular las horas en tiempo real
+        function calcularHoras() {
+            const hr1Input = document.getElementById('hr1'); // Input del campo hr1
+            const hr1Value = hr1Input.value; // Valor de la hora inicial (hr1)
+
+            if (!hr1Value) {
+                // Si no hay hora inicial, limpiar todos los campos y salir
+                document.getElementById('hr2').value = '';
+                document.getElementById('hr3').value = '';
+                document.getElementById('hr4').value = '';
+                document.getElementById('hr5').value = '';
+                return;
+            }
+
+            const [hours, minutes] = hr1Value.split(':').map(Number);
+
+            // Crear una fecha base a partir de hr1 para cálculos consistentes
+            const baseDate = new Date();
+            baseDate.setHours(hours, minutes, 0, 0); // Establecer la hora inicial, limpiar segundos y milisegundos
+
+            // Cálculos para las horas adicionales: hr2 y hr3 siempre son +1 hora
+            const hr2 = new Date(baseDate);
+            hr2.setHours(baseDate.getHours() + 1);
+
+            const hr3 = new Date(hr2); // hr3 se basa en hr2
+            hr3.setHours(hr2.getHours() + 1);
+
+            // Para hr4 y hr5, la lógica es condicional
+            let hr4CalculatedDate = new Date(); // Variable temporal para hr4
+            let hr5CalculatedDate = new Date(); // Variable temporal para hr5
+
+            // Asignamos un valor por defecto de 3.5 si no se tiene hourHd
+            const hourHd = {{ $nurse->order->medical->hour_hd ?? 3.5 }}; // Usamos 3.5 por defecto si no existe hour_hd
+
+            // Verifica si el valor es de tipo número (si es cadena, convertimos)
+            const hourHdValue = parseFloat(hourHd);
+
+            // Lógica condicional para hr4 y hr5
+            switch (hourHdValue) {
+                case 3: // Si hour_hd es 3
+                    // HR4 (HR3 + 30 MIN)
+                    hr4CalculatedDate = new Date(hr3);
+                    hr4CalculatedDate.setMinutes(hr3.getMinutes() + 30);
+
+                    // HR5 (HR4 + 30 MIN)
+                    hr5CalculatedDate = new Date(hr4CalculatedDate); // Basado en el hr4 recién calculado
+                    hr5CalculatedDate.setMinutes(hr4CalculatedDate.getMinutes() + 30);
+                    break;
+
+                case 3.25: // Si hour_hd es 3.25
+                    // Tu lógica original: hr5 se agrega 195 minutos (3 horas y 15 minutos) desde la hora inicial (hr1)
+                    hr5CalculatedDate = new Date(baseDate); // Base en hr1
+                    hr5CalculatedDate.setMinutes(baseDate.getMinutes() + 195);
+
+                    // HR4 (HR3 + 1 HORA) - ya que la condición de 30 min solo aplica para hourHdValue = 3
+                    hr4CalculatedDate = new Date(hr3);
+                    hr4CalculatedDate.setHours(hr3.getHours() + 1);
+                    break;
+
+                case 3.5: // Si hour_hd es 3.5
+                    // Tu lógica original: hr5 se agrega 210 minutos (3 horas y 30 minutos) desde la hora inicial (hr1)
+                    hr5CalculatedDate = new Date(baseDate); // Base en hr1
+                    hr5CalculatedDate.setMinutes(baseDate.getMinutes() + 210);
+
+                    // HR4 (HR3 + 1 HORA)
+                    hr4CalculatedDate = new Date(hr3);
+                    hr4CalculatedDate.setHours(hr3.getHours() + 1);
+                    break;
+
+                case 3.75: // Si hour_hd es 3.75
+                    // Tu lógica original: hr5 se agrega 225 minutos (3 horas y 45 minutos) desde la hora inicial (hr1)
+                    hr5CalculatedDate = new Date(baseDate); // Base en hr1
+                    hr5CalculatedDate.setMinutes(baseDate.getMinutes() + 225);
+
+                    // HR4 (HR3 + 1 HORA)
+                    hr4CalculatedDate = new Date(hr3);
+                    hr4CalculatedDate.setHours(hr3.getHours() + 1);
+                    break;
+
+                default: // Por defecto, si hour_hd no es 3, 3.25, 3.5 o 3.75
+                    // HR4 (HR3 + 1 HORA)
+                    hr4CalculatedDate = new Date(hr3);
+                    hr4CalculatedDate.setHours(hr3.getHours() + 1);
+
+                    // HR5 (HR4 + 1 HORA)
+                    hr5CalculatedDate = new Date(hr4CalculatedDate); // Basado en el hr4 recién calculado
+                    hr5CalculatedDate.setHours(hr4CalculatedDate.getHours() + 1);
+                    break;
+            }
+
+            // Asignar los valores calculados a los campos
+            document.getElementById('hr2').value = formatTime(hr2);
+            document.getElementById('hr3').value = formatTime(hr3);
+            document.getElementById('hr4').value = formatTime(hr4CalculatedDate);
+            document.getElementById('hr5').value = formatTime(hr5CalculatedDate);
+        }
+
+        // Función para formatear la hora a 'HH:mm'
+        function formatTime(date) {
+            const hours = date.getHours().toString().padStart(2, '0');
+            const minutes = date.getMinutes().toString().padStart(2, '0');
+            return `${hours}:${minutes}`;
+        }
+
+        // Añadir un event listener al input de hr1 para disparar el cálculo al cambiar
+        document.addEventListener('DOMContentLoaded', () => {
+            const hr1Input = document.getElementById('hr1');
+            if (hr1Input) {
+                hr1Input.addEventListener('input', calcularHoras);
+                // Ejecutar el cálculo una vez al cargar la página si ya hay un valor en hr1
+                calcularHoras();
+            }
+        });
     </script>
-
-
 
 
 @endsection
