@@ -45,7 +45,7 @@
             <td style="font-size: 0.8rem; text-transform:uppercase; width: 340px"><strong>{{$order->patient->firstname}} {{$order->patient->othername}} {{$order->patient->surname}} {{$order->patient->lastname}}</strong></td>
 
               <td style="font-size: 0.8rem; text-align: right;"><strong>H.CL N°: </strong></td>
-              <td style="font-size: 0.8rem; text-transform:uppercase; width: 80px"><strong>{{ $order->nurse->hcl }}</strong></td>
+              <td style="font-size: 0.8rem; text-transform:uppercase; width: 80px"><strong>{{ $order->nurse->dni }}</strong></td>
 
               <td style="font-size: 0.8rem; text-align: center">Fecha: </td>
               <td style="font-size: 0.8rem; text-align: left" width="70px"> <strong>{{ \Carbon\Carbon::createFromFormat('Y-m-d', $order->date_order)->format('d-m-Y') }}</strong></td>
