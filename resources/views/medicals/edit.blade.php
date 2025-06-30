@@ -202,7 +202,7 @@
 
                   <div class="form-group col-sm-12 col-lg-1">
                       <label for="profile_na">Perfil Na</label>
-                      <input type="text" name="profile_na" class="form-control @error('profile_na') border border-danger @enderror" value="{{ old('profile_na', !$medical->profile_na ? optional($ultimaOrdenNoVacia)->profile_na : $medical->profile_na) }}">
+                      <input type="text" name="profile_na" class="form-control @error('profile_na') border border-danger @enderror" value="{{ old('profile_na', !$medical->profile_na ? optional($ultimaOrdenNoVacia)->profile_na : $medical->profile_na || 0) }}">
                       @error('profile_na')
                       <div class="text-danger text-center text-sm">{{ $message }}</div>
                       @enderror
