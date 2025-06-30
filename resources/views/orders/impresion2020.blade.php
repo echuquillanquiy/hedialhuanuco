@@ -75,7 +75,7 @@
             <td style="font-size: 0.8rem; text-align: left;" colspan="2"><strong>I. PARTE MÉDICO: EVALUACIÓN MÉDICA INICIAL</strong></td>
               <td style="font-size: 0.8rem; text-align: center;" colspan="2">
                   <strong>
-                      {{ $order->medical->start_hour }} {{ $order->medical->start_hour < '12:00' ? 'a.m' : 'p.m' }}
+                      {{ $order->medical->start_hour }}
                   </strong>
               </td>
             <td style="text-align: center;font-size: 0.7rem;"> Atención en condiciones COVID 19: <strong>{{ $order->covid }}</strong> </td>
@@ -196,7 +196,7 @@
     <table style="border: 1px solid; border-collapse: collapse; margin-top: -2px" width="100%">
         <tr>
             <td style="font-size: 0.8rem;font-weight: bold" colspan="4">EVALUACION MEDICA FINAL: </td>
-            <td style="font-size: 0.8rem;font-weight: bold; text-align: left" colspan="8">{{ $order->medical->end_hour }} {{ $order->medical->end_hour < '12:00' ? 'a.m' : 'p.m' }}</td>
+            <td style="font-size: 0.8rem;font-weight: bold; text-align: left" colspan="8">{{ $order->medical->end_hour }} </td>
         </tr>
         <tr>
             <td style="font-size: 0.7rem;" colspan="8">Condición clinica del paciente al finalizar HD: {{ $order->medical->end_evaluation }}</td>
