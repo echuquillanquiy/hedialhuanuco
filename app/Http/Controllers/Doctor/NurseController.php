@@ -202,7 +202,7 @@ class NurseController extends Controller
             'end_observation' => 'required',
             'end_pa' => 'required',
             'end_weight' => 'required',*/
-            'cnd' => [
+            /*'cnd' => [
                 'numeric',
                 function ($attribute, $value, $fail) {
                     if ($value <= 12.1 || $value >= 15) {
@@ -233,7 +233,7 @@ class NurseController extends Controller
                         $fail("El campo $attribute debe estar entre 12.1 y 15.");
                     }
                 },
-            ],
+            ],*/
 
 
             /*VALIDACION TRATAMIENTOS
@@ -298,7 +298,7 @@ class NurseController extends Controller
             //'end_observation.required' => 'Obligatorio',
             //'end_pa.required' => 'Obligatorio',
             //'end_weight.required' => 'Obligatorio',
-            'cnd.numeric' => 'La conductividad debe estar entre 12.1 hasta 15'
+            //'cnd.numeric' => 'La conductividad debe estar entre 12.1 hasta 15'
         ];
 
         $this->validate($request, $rules, $messages);
