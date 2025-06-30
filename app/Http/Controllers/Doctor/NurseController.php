@@ -306,7 +306,7 @@ class NurseController extends Controller
     public function update(Request $request, $id)
     {
         $nurse = Nurse::findOrFail($id);
-        $this->performValidation($request);
+        //$this->performValidation($request);
 
         $data = $request->all();
 

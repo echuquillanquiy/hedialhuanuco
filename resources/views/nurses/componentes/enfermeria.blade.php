@@ -220,7 +220,7 @@
     <div class="form-group col-sm-12 col-lg-4">
         <label for="enfermero_final">ENFERMERO(A) QUE FINALIZA</label>
         <select class="form-control selectpicker" name="enfermero_final" data-live-search="true" data-style="btn-info">
-            <option value="{{ $nurse->enfermero_final }}">{{ $nurse->enfermero_final }}</option>
+            <option value="{{ !$nurse->enfermero_final ? auth()->$user()->name : $nurse->enfermero_final }}">{{ !$nurse->enfermero_final ? auth()->$user()->name : $nurse->enfermero_final }}</option>
             @foreach($users as $user)
                 <option value="{{ $user->name }}">{{ $user->name }}</option>
             @endforeach
