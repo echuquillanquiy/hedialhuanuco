@@ -28,7 +28,7 @@
 
     <div class="form-group col-sm-12 col-lg-1">
         <label for="cnd1">CND</label>
-        <input type="text" name="cnd1" class="form-control @error('cnd1') border border-danger @enderror" value="{{ old('cnd1', $nurse->cn1) }}">
+        <input type="text" name="cnd1" class="form-control @error('cnd1') border border-danger @enderror" value="{{ old('cnd1', $nurse->cnd1) }}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-1">
