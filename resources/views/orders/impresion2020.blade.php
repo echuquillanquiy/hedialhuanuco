@@ -42,7 +42,7 @@
         <table style="margin-top:-22px;">
           <tr>
             <th style="font-size: 0.8rem; text-align: right;"><strong>Paciente: </strong></th>
-            <td style="font-size: 0.8rem; text-transform:uppercase; width: 340px"><strong>{{$order->patient->firstname}} {{$order->patient->othername}} {{$order->patient->surname}} {{$order->patient->lastname}}</strong></td>
+            <td style="font-size: 0.8rem; text-transform:uppercase; width: 340px"><strong>{{$order->patient->surname}} {{$order->patient->lastname}}, {{$order->patient->firstname}} {{$order->patient->othername}}</strong></td>
 
               <td style="font-size: 0.8rem; text-align: right;"><strong>H.CL N°: </strong></td>
               <td style="font-size: 0.8rem; text-transform:uppercase; width: 80px"><strong>{{ $order->patient->dni }}</strong></td>
@@ -222,7 +222,7 @@
             @else
                 <td colspan="8"></td>
                 <td colspan="4" style="text-align: center; font-size: 0.6rem; font-weight: bold">
-                    Dr(a): {{ $order->medical->user->name }}
+                    Dr(a): {{ $order->medical->medico_final }}
                     <br>
                     <strong>Médico que finaliza HD</strong>
                 </td>
