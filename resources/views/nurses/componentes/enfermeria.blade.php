@@ -217,16 +217,18 @@
         </select>
     </div>
 
-    <div class="form-group col-sm-12 col-lg-4">
-        <label for="enfermero_final">ENFERMERO(A) QUE FINALIZA</label>
-        <select class="form-control selectpicker" name="enfermero_final" data-live-search="true" data-style="btn-info">
-            <option value="{{ $nurse->enfermero_final }}">{{ $nurse->enfermero_final }}</option>
+    <div class="form-group col-sm-12 col-lg-3">
+        <label for="user_id2">USUARIO QUE FINALIZA HD</label>
+        <select class="form-control selectpicker" name="user_id2" data-live-search="true" data-style="btn-info">
+            <option value="{{ !$nurse->user_id2 ? auth()->user()->id : $nurse->user_id2 }}">{{ !$nurse->user_id2 ? auth()->user()->name : $nurse->user2->name }}</option>
             @foreach($users as $user)
-                <option value="{{ $user->name }}">{{ $user->name }}</option>
+                <option value="{{ $user->id }}">{{ $user->name }}</option>
             @endforeach
 
         </select>
     </div>
+
+    <input type="hidden" name="enfermero_final">
 
 </div>
 

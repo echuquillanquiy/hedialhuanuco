@@ -42,10 +42,10 @@
         <table style="margin-top:-22px;">
           <tr>
             <th style="font-size: 0.8rem; text-align: right;"><strong>Paciente: </strong></th>
-            <td style="font-size: 0.8rem; text-transform:uppercase; width: 340px"><strong>{{$order->patient->firstname}} {{$order->patient->othername}} {{$order->patient->surname}} {{$order->patient->lastname}}</strong></td>
+            <td style="font-size: 0.8rem; text-transform:uppercase; width: 340px"><strong>{{$order->patient->surname}} {{$order->patient->lastname}}, {{$order->patient->firstname}} {{$order->patient->othername}}</strong></td>
 
               <td style="font-size: 0.8rem; text-align: right;"><strong>H.CL N°: </strong></td>
-              <td style="font-size: 0.8rem; text-transform:uppercase; width: 80px"><strong>{{ $order->nurse->hcl }}</strong></td>
+              <td style="font-size: 0.8rem; text-transform:uppercase; width: 80px"><strong>{{ $order->patient->dni }}</strong></td>
 
               <td style="font-size: 0.8rem; text-align: center">Fecha: </td>
               <td style="font-size: 0.8rem; text-align: left" width="70px"> <strong>{{ \Carbon\Carbon::createFromFormat('Y-m-d', $order->date_order)->format('d-m-Y') }}</strong></td>
@@ -75,7 +75,7 @@
             <td style="font-size: 0.8rem; text-align: left;" colspan="2"><strong>I. PARTE MÉDICO: EVALUACIÓN MÉDICA INICIAL</strong></td>
               <td style="font-size: 0.8rem; text-align: center;" colspan="2">
                   <strong>
-                      {{ $order->medical->start_hour }} {{ $order->medical->start_hour < '12:00' ? 'a.m' : 'p.m' }}
+                      {{ $order->medical->start_hour }}
                   </strong>
               </td>
             <td style="text-align: center;font-size: 0.7rem;"> Atención en condiciones COVID 19: <strong>{{ $order->covid }}</strong> </td>
@@ -196,7 +196,7 @@
     <table style="border: 1px solid; border-collapse: collapse; margin-top: -2px" width="100%">
         <tr>
             <td style="font-size: 0.8rem;font-weight: bold" colspan="4">EVALUACION MEDICA FINAL: </td>
-            <td style="font-size: 0.8rem;font-weight: bold; text-align: left" colspan="8">{{ $order->medical->end_hour }} {{ $order->medical->end_hour < '12:00' ? 'a.m' : 'p.m' }}</td>
+            <td style="font-size: 0.8rem;font-weight: bold; text-align: left" colspan="8">{{ $order->medical->end_hour }} </td>
         </tr>
         <tr>
             <td style="font-size: 0.7rem;" colspan="8">Condición clinica del paciente al finalizar HD: {{ $order->medical->end_evaluation }}</td>
@@ -212,10 +212,11 @@
         </tr>
 
         <tr>
-            @if($order->medical->user_id)
+            @if($order->medical->medico_final)
                 <td colspan="8"></td>
+
                 <td colspan="4" style="text-align: center; font-size: 0.6rem; font-weight: bold">
-                    Dr(a): {{ $order->medical->user->name }}
+                    Dr(a): {{ $order->medical->medico_final }}
                     <br>
                     <strong>Médico que finaliza HD</strong>
                 </td>
@@ -410,11 +411,19 @@
             sjdhjksdhjksfhjkdshfjkdshfjkhdsjfhsdjkfdasd
           </td>
 
-          <td colspan="4" style="font-size: 0.5rem; text-align: left">
-              ENF. Finaliza HD: {{ $order->nurse->user->name }}
-              <br>
-              CEP: {{ $order->nurse->user->code_specialty }}
-          </td>
+          @if($order->nurse->user_id2)
+              <td colspan="4" style="font-size: 0.5rem; text-align: left">
+                  ENF. Finaliza HD: {{ $order->nurse->user2->name }}
+                  <br>
+                  CEP: {{ $order->nurse->user2->code_specialty }}
+              </td>
+          @else
+              <td colspan="4" style="font-size: 0.5rem; text-align: left">
+                  ENF. Inicia HD: {{ $order->nurse->user->name }}
+                  <br>
+                  CEP: {{ $order->nurse->user->code_specialty }}
+              </td>
+          @endif
 
       </tr>
     </table>

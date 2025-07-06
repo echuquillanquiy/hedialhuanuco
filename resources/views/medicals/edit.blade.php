@@ -118,7 +118,7 @@
 
               <div class="form-group col-sm-12 col-lg-1">
                   <label for="heparin">Heparina</label>
-                      <input type="text" name="heparin" class="form-control @error('heparin') border border-danger @enderror" value="{{old('heparin', !$medical->heparin ? optional($ultimaOrdenNoVacia)->heparin : $medical->heparin) }}">
+                      <input type="text" name="heparin" class="form-control @error('heparin') border border-danger @enderror" value="{{ old('heparin', (isset($medical->heparin) && $medical->heparin !== null) ? $medical->heparin : optional($ultimaOrdenNoVacia)->heparin) }}">
                       @error('heparin')
                         <div class="text-danger text-center text-sm">{{ $message }}</div>
                       @enderror
@@ -202,7 +202,7 @@
 
                   <div class="form-group col-sm-12 col-lg-1">
                       <label for="profile_na">Perfil Na</label>
-                      <input type="text" name="profile_na" class="form-control @error('profile_na') border border-danger @enderror" value="{{ old('profile_na', !$medical->profile_na ? optional($ultimaOrdenNoVacia)->profile_na : $medical->profile_na) }}">
+                      <input type="text" name="profile_na" class="form-control @error('profile_na') border border-danger @enderror" value="{{ old('profile_na', (isset($medical->profile_na) && $medical->profile_na !== '') ? $medical->profile_na : optional($ultimaOrdenNoVacia)->profile_na) }}">
                       @error('profile_na')
                       <div class="text-danger text-center text-sm">{{ $message }}</div>
                       @enderror
@@ -262,7 +262,6 @@
                       @foreach($users as $user)
                           <option value="{{ $user->name }}">{{ $user->name }}</option>
                       @endforeach
-
                   </select>
               </div>
         </div>

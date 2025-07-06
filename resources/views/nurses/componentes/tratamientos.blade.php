@@ -18,7 +18,7 @@
 
     <div class="form-group col-sm-12 col-lg-1">
         <label for="fc1">FC</label>
-        <input type="text" name="fc1" class="form-control @error('fc1') border border-danger @enderror" value="{{ !$nurse->fc1 ? $nurse->order->medical->fc : $nurse->fc1 }}">
+        <input type="text" name="fc1" class="form-control @error('fc1') border border-danger @enderror" value="{{ !$nurse->fc1 ? $nurse->order->medical->fc1 : $nurse->fc1 }}">
     </div>
 
     <div class="form-group col-sm-12 col-lg-1">
