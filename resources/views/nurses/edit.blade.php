@@ -91,60 +91,194 @@
     <script>
         // Función para calcular las horas en tiempo real
         function calcularHoras() {
-            const hr1 = document.getElementById('hr1').value; // Hora inicial
+            const hr1Input = document.getElementById('hr1'); // Input del campo hr1
+            const hr1Value = hr1Input.value; // Valor de la hora inicial (hr1)
 
-            if (!hr1) {
-                return; // Si no hay hora inicial, no hacer nada
+            if (!hr1Value) {
+                // Si no hay hora inicial, limpiar todos los campos y salir
+                document.getElementById('hr2').value = '';
+                document.getElementById('hr3').value = '';
+                document.getElementById('hr4').value = '';
+                document.getElementById('hr5').value = '';
+                return;
             }
 
-            const [hours, minutes] = hr1.split(':').map(Number);
+            const [hours, minutes] = hr1Value.split(':').map(Number);
 
-            // Cálculos para las horas adicionales (hr2, hr3, hr4, hr5)
-            const hr2 = new Date();
-            hr2.setHours(hours + 1, minutes);
+            // Crear una fecha base a partir de hr1 para cálculos consistentes
+            const baseDate = new Date();
+            baseDate.setHours(hours, minutes, 0, 0); // Establecer la hora inicial, limpiar segundos y milisegundos
 
-            const hr3 = new Date();
-            hr3.setHours(hours + 2, minutes);
-
-            const hr4 = new Date();
-            hr4.setHours(hours + 3, minutes);
-
-            // Para hr5 se debe sumar el valor de hourHd correctamente
-            const hr5 = new Date();
-            hr5.setHours(hours, minutes); // Empezamos con la hora inicial
+            // Variables para las fechas calculadas
+            let hr2CalculatedDate = new Date();
+            let hr3CalculatedDate = new Date();
+            let hr4CalculatedDate = new Date();
+            let hr5CalculatedDate = new Date();
 
             // Asignamos un valor por defecto de 3.5 si no se tiene hourHd
-            const hourHd = {{ $nurse->order->medical->hour_hd ?? 3.5 }}; // Usamos 3.5 por defecto si no existe hour_hd
+            // Si $nurse->order->medical->hour_hd es null o vacío, usará 3.5
+            const hourHd = {{ $nurse->order->medical->hour_hd ?? 3.5 }};
 
             // Verifica si el valor es de tipo número (si es cadena, convertimos)
             const hourHdValue = parseFloat(hourHd);
 
+            // Lógica condicional para todas las horas (hr2, hr3, hr4, hr5)
             switch (hourHdValue) {
-                case 3: // Si hour_hd es 3, hr5 se deja vacío
-                    document.getElementById('hr5').value = '';
+                case 1: // Si hour_hd es 1 (1 hora = 60 minutos, dividido en 4x15min)
+                case 1.0:
+                    hr2CalculatedDate = new Date(baseDate);
+                    hr2CalculatedDate.setMinutes(baseDate.getMinutes() + 15);
+
+                    hr3CalculatedDate = new Date(hr2CalculatedDate);
+                    hr3CalculatedDate.setMinutes(hr2CalculatedDate.getMinutes() + 15);
+
+                    hr4CalculatedDate = new Date(hr3CalculatedDate);
+                    hr4CalculatedDate.setMinutes(hr3CalculatedDate.getMinutes() + 15);
+
+                    hr5CalculatedDate = new Date(hr4CalculatedDate);
+                    hr5CalculatedDate.setMinutes(hr4CalculatedDate.getMinutes() + 15);
                     break;
-                case 3.25: // Si hour_hd es 3.25, se agrega 195 minutos (3 horas y 15 minutos)
-                    hr5.setMinutes(hr5.getMinutes() + 195); // 3 horas y 15 minutos
-                    document.getElementById('hr5').value = formatTime(hr5);
+
+                case 2: // Si hour_hd es 2 (2 horas = 120 minutos, dividido en 4x30min)
+                case 2.0:
+                    hr2CalculatedDate = new Date(baseDate);
+                    hr2CalculatedDate.setMinutes(baseDate.getMinutes() + 30);
+
+                    hr3CalculatedDate = new Date(hr2CalculatedDate);
+                    hr3CalculatedDate.setMinutes(hr2CalculatedDate.getMinutes() + 30);
+
+                    hr4CalculatedDate = new Date(hr3CalculatedDate);
+                    hr4CalculatedDate.setMinutes(hr3CalculatedDate.getMinutes() + 30);
+
+                    hr5CalculatedDate = new Date(hr4CalculatedDate);
+                    hr5CalculatedDate.setMinutes(hr4CalculatedDate.getMinutes() + 30);
                     break;
-                case 3.5: // Si hour_hd es 3.5, se agrega 210 minutos (3 horas y 30 minutos)
-                    hr5.setMinutes(hr5.getMinutes() + 210); // 3 horas y 30 minutos
-                    document.getElementById('hr5').value = formatTime(hr5);
+
+                case 2.5: // Si hour_hd es 2.5 (2.5 horas = 150 minutos: 1h, 30min, 30min, 30min)
+                    hr2CalculatedDate = new Date(baseDate);
+                    hr2CalculatedDate.setHours(baseDate.getHours() + 1); // +1 hora
+
+                    hr3CalculatedDate = new Date(hr2CalculatedDate);
+                    hr3CalculatedDate.setMinutes(hr2CalculatedDate.getMinutes() + 30); // +30 min
+
+                    hr4CalculatedDate = new Date(hr3CalculatedDate);
+                    hr4CalculatedDate.setMinutes(hr3CalculatedDate.getMinutes() + 30); // +30 min
+
+                    hr5CalculatedDate = new Date(hr4CalculatedDate);
+                    hr5CalculatedDate.setMinutes(hr4CalculatedDate.getMinutes() + 30); // +30 min
                     break;
-                case 3.75: // Si hour_hd es 3.75, se agrega 225 minutos (3 horas y 45 minutos)
-                    hr5.setMinutes(hr5.getMinutes() + 225); // 3 horas y 45 minutos
-                    document.getElementById('hr5').value = formatTime(hr5);
+
+                case 3: // Si hour_hd es 3 (HR4 = HR3 + 30min, HR5 = HR4 + 30min)
+                    // Primero calculamos hr2 y hr3 de forma estándar (hr1 +1h, hr2+1h)
+                    hr2CalculatedDate = new Date(baseDate);
+                    hr2CalculatedDate.setHours(baseDate.getHours() + 1);
+
+                    hr3CalculatedDate = new Date(hr2CalculatedDate);
+                    hr3CalculatedDate.setHours(hr2CalculatedDate.getHours() + 1);
+
+                    // Ahora aplicamos la lógica específica para hr4 y hr5
+                    hr4CalculatedDate = new Date(hr3CalculatedDate);
+                    hr4CalculatedDate.setMinutes(hr3CalculatedDate.getMinutes() + 30); // HR4 = HR3 + 30 min
+
+                    hr5CalculatedDate = new Date(hr4CalculatedDate);
+                    hr5CalculatedDate.setMinutes(hr4CalculatedDate.getMinutes() + 30); // HR5 = HR4 + 30 min
                     break;
-                default: // Por defecto, se agregan 4 horas (240 minutos)
-                    hr5.setMinutes(hr5.getMinutes() + 240); // 4 horas
-                    document.getElementById('hr5').value = formatTime(hr5);
+
+                case 3.25: // Si hour_hd es 3.25 (lógica original para hr5, hr4 es +1hr)
+                    // Primero calculamos hr2 y hr3 de forma estándar
+                    hr2CalculatedDate = new Date(baseDate);
+                    hr2CalculatedDate.setHours(baseDate.getHours() + 1);
+
+                    hr3CalculatedDate = new Date(hr2CalculatedDate);
+                    hr3CalculatedDate.setHours(hr2CalculatedDate.getHours() + 1);
+
+                    // HR4 es HR3 + 1 hora (lógica default)
+                    hr4CalculatedDate = new Date(hr3CalculatedDate);
+                    hr4CalculatedDate.setHours(hr3CalculatedDate.getHours() + 1);
+
+                    // HR5 es hr1 + 195 minutos (3 horas y 15 minutos)
+                    hr5CalculatedDate = new Date(baseDate);
+                    hr5CalculatedDate.setMinutes(baseDate.getMinutes() + 195);
+                    break;
+
+                case 3.5: // Si hour_hd es 3.5 (Lógica: HR2, HR3, HR4 son +1h, y HR5 es hr1 + 3h 30min)
+                    // hr2 (hr1 + 1 hora)
+                    hr2CalculatedDate = new Date(baseDate);
+                    hr2CalculatedDate.setHours(baseDate.getHours() + 1);
+
+                    // hr3 (hr2 + 1 hora)
+                    hr3CalculatedDate = new Date(hr2CalculatedDate);
+                    hr3CalculatedDate.setHours(hr2CalculatedDate.getHours() + 1);
+
+                    // HR4 (HR3 + 1 HORA)
+                    hr4CalculatedDate = new Date(hr3CalculatedDate);
+                    hr4CalculatedDate.setHours(hr3CalculatedDate.getHours() + 1);
+
+                    // HR5 es hr1 + 210 minutos (3 horas y 30 minutos) - Lógica original para 3.5
+                    hr5CalculatedDate = new Date(baseDate);
+                    hr5CalculatedDate.setMinutes(baseDate.getMinutes() + 210);
+                    break;
+
+                case 3.75: // Si hour_hd es 3.75 (lógica original para hr5, hr4 es +1hr)
+                    // Primero calculamos hr2 y hr3 de forma estándar
+                    hr2CalculatedDate = new Date(baseDate);
+                    hr2CalculatedDate.setHours(baseDate.getHours() + 1);
+
+                    hr3CalculatedDate = new Date(hr2CalculatedDate);
+                    hr3CalculatedDate.setHours(hr2CalculatedDate.getHours() + 1);
+
+                    // HR4 es HR3 + 1 hora (lógica default)
+                    hr4CalculatedDate = new Date(hr3CalculatedDate);
+                    hr4CalculatedDate.setHours(hr3CalculatedDate.getHours() + 1);
+
+                    // HR5 es hr1 + 225 minutos (3 horas y 45 minutos)
+                    hr5CalculatedDate = new Date(baseDate);
+                    hr5CalculatedDate.setMinutes(baseDate.getMinutes() + 225);
+                    break;
+
+                case 4: // Si hour_hd es 4 (4 horas = 240 minutos)
+                case 4.0:
+                    // hr2 (hr1 + 1 hora)
+                    hr2CalculatedDate = new Date(baseDate);
+                    hr2CalculatedDate.setHours(baseDate.getHours() + 1);
+
+                    // hr3 (hr2 + 1 hora)
+                    hr3CalculatedDate = new Date(hr2CalculatedDate);
+                    hr3CalculatedDate.setHours(hr2CalculatedDate.getHours() + 1);
+
+                    // HR4 (HR3 + 1 HORA)
+                    hr4CalculatedDate = new Date(hr3CalculatedDate);
+                    hr4CalculatedDate.setHours(hr3CalculatedDate.getHours() + 1);
+
+                    // HR5 (HR4 + 1 HORA)
+                    hr5CalculatedDate = new Date(hr4CalculatedDate);
+                    hr5CalculatedDate.setHours(hr4CalculatedDate.getHours() + 1);
+                    break;
+
+                default: // Por defecto, para cualquier otro valor de hour_hd no especificado
+                    // hr2 (hr1 + 1 hora)
+                    hr2CalculatedDate = new Date(baseDate);
+                    hr2CalculatedDate.setHours(baseDate.getHours() + 1);
+
+                    // hr3 (hr2 + 1 hora)
+                    hr3CalculatedDate = new Date(hr2CalculatedDate);
+                    hr3CalculatedDate.setHours(hr2CalculatedDate.getHours() + 1);
+
+                    // HR4 (HR3 + 1 HORA)
+                    hr4CalculatedDate = new Date(hr3CalculatedDate);
+                    hr4CalculatedDate.setHours(hr3CalculatedDate.getHours() + 1);
+
+                    // HR5 (HR4 + 30 MINUTOS)
+                    hr5CalculatedDate = new Date(hr4CalculatedDate);
+                    hr5CalculatedDate.setMinutes(hr4CalculatedDate.getMinutes() + 30);
                     break;
             }
 
-            // Asignar los valores calculados a los campos
-            document.getElementById('hr2').value = formatTime(hr2);
-            document.getElementById('hr3').value = formatTime(hr3);
-            document.getElementById('hr4').value = formatTime(hr4);
+            // Asignar los valores calculados a los campos correspondientes
+            document.getElementById('hr2').value = formatTime(hr2CalculatedDate);
+            document.getElementById('hr3').value = formatTime(hr3CalculatedDate);
+            document.getElementById('hr4').value = formatTime(hr4CalculatedDate);
+            document.getElementById('hr5').value = formatTime(hr5CalculatedDate);
         }
 
         // Función para formatear la hora a 'HH:mm'
@@ -153,6 +287,16 @@
             const minutes = date.getMinutes().toString().padStart(2, '0');
             return `${hours}:${minutes}`;
         }
+
+        // Añadir un event listener al input de hr1 para disparar el cálculo al cambiar
+        document.addEventListener('DOMContentLoaded', () => {
+            const hr1Input = document.getElementById('hr1');
+            if (hr1Input) {
+                hr1Input.addEventListener('input', calcularHoras);
+                // Ejecutar el cálculo una vez al cargar la página si ya hay un valor en hr1
+                calcularHoras();
+            }
+        });
     </script>
 
 
