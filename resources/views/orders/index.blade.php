@@ -69,7 +69,7 @@
   <div class="table-responsive">
     <!-- Projects table -->
     <table class="table align-items-center table-flush table-hover">
-      <thead class="thead-light text-left">
+      <thead class="thead-light text-center">
         <tr>
             <th scope="col">ID</th>
             <th scope="col">Paciente</th>
@@ -84,9 +84,10 @@
           <th scope="row">
             {{$order->id}}
           </th>
-          <td>
+          <td class="text-start">
+            {{-- Mostrar el nombre completo del paciente --}}
             {{$order->patient->surname}} {{$order->patient->lastname}}, {{$order->patient->firstname}} {{$order->patient->othername}}
-          </td>
+        </td>
           <td>
             {{$order->shift->name}}
           </td>
