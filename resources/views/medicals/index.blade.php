@@ -51,7 +51,7 @@
             <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
             </div>
             <input class="form-control datepicker" placeholder="Seleccionar fecha"
-                id="date_order" name="date_order" type="text"
+                id="date_order" name="date_order" type="date"
                 value="{{ old('date') }}"
                 data-date-format="yyyy-mm-dd"
                 >
