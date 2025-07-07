@@ -122,14 +122,16 @@
               @endif
           </th>
           <td>
-              @if($nurse->shift == 'TURNO 1')
+              @if($nurse->shift == 'I')
                   1
 
-              @elseif($nurse->shift == 'TURNO 2')
+              @elseif($nurse->shift == 'II')
                   2
 
-              @else($nurse->shift == 'TURNO 3')
+              @else($nurse->shift == 'III')
                   3
+              @else
+                  4
               @endif
           </td>
 
