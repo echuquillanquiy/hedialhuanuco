@@ -30,13 +30,15 @@ class NurseController extends Controller
         $room = $request->get('room');
         $shift = $request->get('shift');
         $date_order = $request->get('date_order');
+        $date_filter = $date_order ?? now()->toDateString();
 
-        $nurses = Nurse::orderBy('created_at', 'desc')
+        $nurses = Nurse::whereDate('date_order', $date_filter)
             ->patient($patient)
             ->room($room)
             ->shift($shift)
-            ->date_order($date_order)
+            ->orderBy('created_at', 'desc')
             ->paginate(15);
+
         return view('nurses.index', compact('nurses','shifts', 'rooms'));
     }
 
