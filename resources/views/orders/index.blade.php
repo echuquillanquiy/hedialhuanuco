@@ -69,7 +69,7 @@
   <div class="table-responsive">
     <!-- Projects table -->
     <table class="table align-items-center table-flush table-hover">
-      <thead class="thead-light text-center">
+      <thead class="thead-light text-left">
         <tr>
             <th scope="col">ID</th>
             <th scope="col">Paciente</th>
