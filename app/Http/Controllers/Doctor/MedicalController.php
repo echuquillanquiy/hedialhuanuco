@@ -19,44 +19,28 @@ class MedicalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-public function index(Request $request)
-{
-    $order = Order::all();
-    $rooms = Room::all();
-    $shifts = Shift::all();
+    public function index(Request $request)
+    {
+        $order = Order::all();
+        $rooms = Room::all();
+        $shifts = Shift::all();
 
-    $patient = $request->get('patient');
-    $room = $request->get('room');
-    $shift = $request->get('shift');
-    $date_order = $request->get('date_order', date('Y-m-d')); // Por defecto, hoy
-    $hour_hd = $request->get('hour_hd');
+        $patient = $request->get('patient');
+        $room = $request->get('room');
+        $shift = $request->get('shift');
+        $date_order = $request->get('date_order');
+        $hour_hd = $request->get('hour_hd');
 
-    $medicals = Medical::query()
-        ->where('date_order', $date_order)
-        ->when($patient, function ($query, $patient) {
-            $query->whereHas('patient', function ($q) use ($patient) {
-                $q->whereRaw("CONCAT(surname, ' ', lastname, ' ', firstname, ' ', othername) LIKE ?", ["%$patient%"]);
-            });
-        })
-        ->when($room, function ($query, $room) {
-            $query->where('room', $room);
-        })
-        ->when($shift, function ($query, $shift) {
-            $query->where('shift', $shift);
-        })
-        ->when($hour_hd, function ($query, $hour_hd) {
-            $query->where('hour_hd', $hour_hd);
-        })
-        ->join('patients', 'medicals.patient', '=', 'patients.id')
-        ->orderBy('patients.surname', 'asc')
-        ->orderBy('patients.lastname', 'asc')
-        ->orderBy('patients.firstname', 'asc')
-        ->orderBy('patients.othername', 'asc')
-        ->select('medicals.*')
-        ->paginate(15);
-
-    return view('medicals.index', compact('medicals', 'order', 'rooms', 'shifts'));
-}
+        $medicals = Medical::orderBy('created_at', 'desc')
+            ->orderBy('patient', 'asc')
+            ->patient($patient)
+            ->room($room)
+            ->shift($shift)
+            ->date_order($date_order)
+            ->hour_hd($hour_hd)
+            ->paginate(15);
+        return view('medicals.index', compact('medicals', 'order', 'rooms', 'shifts'));
+    }
 
     /**
      * Show the form for creating a new resource.
