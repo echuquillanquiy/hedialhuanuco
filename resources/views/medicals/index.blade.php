@@ -136,7 +136,7 @@
               @elseif($medical->shift == 'II')
                   2
 
-              @else($medical->shift == 'III')
+              @elseif($medical->shift == 'III')
                   3
               @else
                   4

@@ -128,7 +128,7 @@
               @elseif($nurse->shift == 'II')
                   2
 
-              @else($nurse->shift == 'III')
+              @elseif($nurse->shift == 'III')
                   3
               @else
                   4
