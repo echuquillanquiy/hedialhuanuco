@@ -34,12 +34,12 @@ class MedicalController extends Controller
         $date_filter = $request->get('date_order') ?? Carbon::today()->toDateString();
 
         $medicals = Medical::whereDate('date_order', $date_filter)
-            ->orderBy('patient', 'asc')
             ->patient($patient)
             ->room($room)
             ->shift($shift)
             ->date_order($date_order)
             ->hour_hd($hour_hd)
+            ->orderBy('patient', 'asc')
             ->paginate(15);
         return view('medicals.index', compact('medicals', 'order', 'rooms', 'shifts'));
     }
