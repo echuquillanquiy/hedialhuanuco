@@ -33,7 +33,7 @@ class MedicalController extends Controller
         $hour_hd = $request->get('hour_hd');
         $dateToday = Carbon::today()->toDateString();
 
-        $medicals = Medical::orderBy('date_order', $dateToday)
+        $medicals = Medical::whereDate('date_order', $dateToday)
             ->orderBy('patient', 'asc')
             ->patient($patient)
             ->room($room)
