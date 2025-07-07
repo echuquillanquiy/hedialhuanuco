@@ -20,7 +20,6 @@ class MedicalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
     public function index(Request $request)
     {
         $order = Order::all();
@@ -40,11 +39,8 @@ class MedicalController extends Controller
             ->shift($shift)
             ->date_order($date_order)
             ->hour_hd($hour_hd)
-            ->join('patients', 'medicals.patient', '=', 'patients.id')
-            ->orderBy('patients.name', 'asc')
-            ->select('medicals.*') // importante para paginación
+            ->orderBy('patient', 'asc')
             ->paginate(15);
-
         return view('medicals.index', compact('medicals', 'order', 'rooms', 'shifts'));
     }
 
