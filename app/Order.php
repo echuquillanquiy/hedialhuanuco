@@ -5,10 +5,9 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
-
 {
-	protected $fillable = [
-		'patient_id',
+    protected $fillable = [
+        'patient_id',
         'room_id',
         'shift_id',
         'user_id',
@@ -17,8 +16,9 @@ class Order extends Model
         'date_order',
         'type',
         'lab',
-	];
+    ];
 
+    // Relaciones
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -28,7 +28,6 @@ class Order extends Model
     {
         return $this->belongsTo(Patient::class);
     }
-
 
     public function room()
     {
@@ -65,16 +64,37 @@ class Order extends Model
         return $this->hasOne(Recipe::class)->withDefault();
     }
 
-    /*public function scopePatient($query, $patient)
-    {
-        if($patient)
-            return $query->where('patient_id', 'LIKE', "%$patient%");
-    }*/
-
+    // Query Scope para filtrar por fecha
     public function scopeDate_order($query, $date_order)
     {
-        if($date_order)
-            return $query->where('date_order', 'LIKE', "%$date_order%");
+        // Usar whereDate para una coincidencia exacta de fecha (columna DATE)
+        if ($date_order) {
+            return $query->whereDate('date_order', $date_order);
+        }
+        return $query; // Es importante retornar el query si no se aplica el filtro
     }
 
+    // Nuevo Query Scope para filtrar por nombre/apellido del paciente
+    public function scopePatientName($query, $patientName)
+    {
+        if ($patientName) {
+            // Unir con la tabla de pacientes y buscar en sus campos de nombre/apellido
+            return $query->whereHas('patient', function ($q) use ($patientName) {
+                $q->where('firstname', 'LIKE', "%{$patientName}%")
+                  ->orWhere('othername', 'LIKE', "%{$patientName}%")
+                  ->orWhere('surname', 'LIKE', "%{$patientName}%")
+                  ->orWhere('lastname', 'LIKE', "%{$patientName}%");
+            });
+        }
+        return $query;
+    }
+
+    // Nuevo Query Scope para filtrar por turno
+    public function scopeShiftId($query, $shiftId)
+    {
+        if ($shiftId) {
+            return $query->where('shift_id', $shiftId);
+        }
+        return $query;
+    }
 }

@@ -37,8 +37,31 @@
                 >
           </div>
         </div>
+
+        {{-- Campo de filtro por paciente (apellidos y nombres) --}}
+                <div class="form-group col-lg-4">
+                    <label for="patient_name">Paciente (Apellidos y Nombres)</label> {{-- Etiqueta añadida --}}
+                    <input type="text" name="patient_name" id="patient_name" class="form-control"
+                           placeholder="Buscar por apellido o nombre" value="{{ old('patient_name', $request->input('patient_name')) }}">
+                </div>
+
+                {{-- Campo de filtro por turno --}}
+                <div class="form-group col-lg-2">
+                    <label for="shift_id">Turno</label> {{-- Etiqueta añadida --}}
+                    <select name="shift_id" id="shift_id" class="form-control">
+                        <option value="">Todos</option> {{-- Opción para no filtrar por turno --}}
+                        @foreach ($shifts as $shift)
+                            <option value="{{ $shift->id }}"
+                                {{ (string) $shift->id === (string) $request->input('shift_id') ? 'selected' : '' }}>
+                                {{ $shift->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+
         <div class="col-lg-3">
           <button class="btn btn-info btn-md" type="submit">Buscar</button>
+           <a href="{{ url('orders') }}" class="btn btn-sm btn-secondary">Limpiar</a>
         </div>
       </div>
 
@@ -64,7 +87,7 @@
             {{$order->id}}
           </th>
           <td>
-            {{$order->patient->firstname}} {{$order->patient->othername}} {{$order->patient->surname}} {{$order->patient->lastname}}
+            {{$order->patient->surname}} {{$order->patient->lastname}}, {{$order->patient->firstname}} {{$order->patient->othername}}
           </td>
           <td>
             {{$order->shift->name}}

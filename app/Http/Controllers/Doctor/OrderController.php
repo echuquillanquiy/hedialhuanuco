@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\OrdersExport;
 use App\Order;
-use App\Patient;
+use App\Patient; // Asegúrate de importar Patient
 use App\Room;
 use App\Shift;
 use App\User;
@@ -37,20 +37,34 @@ class OrderController extends Controller
 
     public function index(Request $request)
     {
-        $patients = Patient::all();
-        $rooms = Room::all();
-        $shifts = Shift::all();
-        $users = User::all();
-
-        /*$patient = $request->get('patient');*/
+        // Obtener los valores de los filtros desde la solicitud
         $date_order = $request->get('date_order');
+        $patient_name = $request->get('patient_name');
+        $shift_id = $request->get('shift_id');
 
-        $orders = Order::orderBy('date_order', 'desc')
-            ->orderBy('n_fua','desc')
-            ->date_order($date_order)
+        // Construir la consulta de órdenes
+        $orders = Order::query()
+            ->with(['patient', 'shift']) // Cargar eager load las relaciones para evitar N+1 queries
+            ->date_order($date_order)   // Aplicar filtro por fecha
+            ->patientName($patient_name) // Aplicar filtro por nombre de paciente
+            ->shiftId($shift_id)       // Aplicar filtro por turno
+            // Unir con la tabla patients para ordenar por sus campos
+            ->join('patients', 'orders.patient_id', '=', 'patients.id')
+            ->orderBy('patients.surname', 'asc') // Ordenar por apellido paterno
+            ->orderBy('patients.lastname', 'asc') // Luego por apellido materno
+            ->orderBy('patients.firstname', 'asc') // Luego por primer nombre
+            ->orderBy('patients.othername', 'asc') // Finalmente por segundo nombre
+            ->select('orders.*') // Seleccionar solo las columnas de la tabla orders para evitar conflictos
             ->paginate(30);
-        return view('orders.index', compact('orders','patients', 'rooms', 'shifts', 'users'));
+
+        // Pasamos el request a la vista para mantener los valores de los filtros en los campos
+        // También pasamos los shifts para poblar el select de turnos
+        $shifts = Shift::all();
+
+
+        return view('orders.index', compact('orders', 'shifts', 'request')); // Pasar $request a la vista
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -62,10 +76,10 @@ class OrderController extends Controller
         //$ultima_fua= Order::select('n_fua', 'date_order')->whereDate('date_order', '>=', $fecha)->latest()->first();
 
         $ultima_fua = Numeration::select('fua')->latest()->first();
-        $sig_fua = $ultima_fua->fua + 1;
+        $sig_fua = $ultima_fua ? ($ultima_fua->fua + 1) : 5000; // Si no hay numeración, empezar en 5000
 
         /*if ($ultima_fua == null)
-           $sig_fua = 5000;
+            $sig_fua = 5000;
         else
             $sig_fua = $ultima_fua->n_fua + 1;*/
 
@@ -79,9 +93,9 @@ class OrderController extends Controller
     private function performValidation(Request $request)
     {
         $rules = [
-           'patient_id' => 'required',
-           'shift_id' => 'required',
-           'covid' => 'required',
+            'patient_id' => 'required',
+            'shift_id' => 'required',
+            'covid' => 'required',
 
         ];
 
@@ -227,8 +241,8 @@ class OrderController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param   \Illuminate\Http\Request  $request
+     * @param   int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -279,12 +293,12 @@ class OrderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param   int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(Order $order)
     {
-        $orderName = $order->patient->name;
+        $orderName = $order->patient->fullname; // Usar el accesor fullname
         $order->nurse->delete();
         $order->medical->delete();
         $order->laboratory->delete();
