@@ -40,14 +40,12 @@
 
         {{-- Campo de filtro por paciente (apellidos y nombres) --}}
                 <div class="form-group col-lg-4">
-                    <label for="patient_name">Paciente (Apellidos y Nombres)</label> {{-- Etiqueta añadida --}}
                     <input type="text" name="patient_name" id="patient_name" class="form-control"
                            placeholder="Buscar por apellido o nombre" value="{{ old('patient_name', $request->input('patient_name')) }}">
                 </div>
 
                 {{-- Campo de filtro por turno --}}
                 <div class="form-group col-lg-2">
-                    <label for="shift_id">Turno</label> {{-- Etiqueta añadida --}}
                     <select name="shift_id" id="shift_id" class="form-control">
                         <option value="">Todos</option> {{-- Opción para no filtrar por turno --}}
                         @foreach ($shifts as $shift)
