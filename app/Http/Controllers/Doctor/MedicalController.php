@@ -31,9 +31,9 @@ class MedicalController extends Controller
         $shift = $request->get('shift');
         $date_order = $request->get('date_order');
         $hour_hd = $request->get('hour_hd');
-        $dateToday = Carbon::today()->toDateString();
+        $date_filter = $request->get('date_order') ?? Carbon::today()->toDateString();
 
-        $medicals = Medical::whereDate('date_order', $dateToday)
+        $medicals = Medical::whereDate('date_order', $date_filter)
             ->orderBy('patient', 'asc')
             ->patient($patient)
             ->room($room)
