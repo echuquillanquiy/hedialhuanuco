@@ -9,6 +9,7 @@ use App\Medical;
 use App\Order;
 use App\Room;
 use App\Shift;
+use Carbon\Carbon;
 
 use App\Http\Controllers\Controller;
 
@@ -30,8 +31,9 @@ class MedicalController extends Controller
         $shift = $request->get('shift');
         $date_order = $request->get('date_order');
         $hour_hd = $request->get('hour_hd');
+        $dateToday = Carbon::today()->toDateString();
 
-        $medicals = Medical::orderBy('created_at', 'desc')
+        $medicals = Medical::orderBy('date_order', $dateToday)
             ->orderBy('patient', 'asc')
             ->patient($patient)
             ->room($room)
