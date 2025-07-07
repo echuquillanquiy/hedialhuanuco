@@ -81,7 +81,6 @@
       <thead class="thead-light text-center">
         <tr>
           <th scope="col">Nombres y Apellidos DNI</th>
-            <th scope="col">I-F HD</th>
           <th scope="col">Sala</th>
           <th scope="col">Turno</th>
           <th scope="col">HD</th>
@@ -100,16 +99,6 @@
           <td scope="row">
               {{ $medical->order->patient->surname }} {{ $medical->order->patient->lastname }} {{ $medical->order->patient->firstname }} {{ $medical->order->patient->othername }} {{$medical->order->patient->dni}}
           </td>
-
-            <td>
-                {{$medical->order->nurse->hr}} -
-
-                @if($medical->order->nurse->hr8 == '-' || $medical->order->nurse->hr8 == null)
-                    {{$medical->order->nurse->hr7}}
-                @else
-                    {{$medical->order->nurse->hr8}}
-                @endif
-            </td>
 
           <td>
 
