@@ -19,7 +19,6 @@ class MedicalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    <?php
 public function index(Request $request)
 {
     $order = Order::all();
