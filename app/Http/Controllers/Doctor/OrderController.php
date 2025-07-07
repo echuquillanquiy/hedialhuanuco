@@ -37,32 +37,33 @@ class OrderController extends Controller
 
     public function index(Request $request)
     {
-        // Obtener los valores de los filtros desde la solicitud
-        $date_order = $request->get('date_order');
+        // Si no se envía fecha, usar la fecha actual
+        $date_order = $request->get('date_order', date('Y-m-d'));
         $patient_name = $request->get('patient_name');
         $shift_id = $request->get('shift_id');
 
-        // Construir la consulta de órdenes
         $orders = Order::query()
-            ->with(['patient', 'shift']) // Cargar eager load las relaciones para evitar N+1 queries
-            ->date_order($date_order)   // Aplicar filtro por fecha
-            ->patientName($patient_name) // Aplicar filtro por nombre de paciente
-            ->shiftId($shift_id)       // Aplicar filtro por turno
-            // Unir con la tabla patients para ordenar por sus campos
+            ->with(['patient', 'shift'])
+            ->where('date_order', $date_order) // Solo órdenes del día
+            ->when($patient_name, function ($query, $patient_name) {
+                $query->whereHas('patient', function ($q) use ($patient_name) {
+                    $q->whereRaw("CONCAT(surname, ' ', lastname, ' ', firstname, ' ', othername) LIKE ?", ["%$patient_name%"]);
+                });
+            })
+            ->when($shift_id, function ($query, $shift_id) {
+                $query->where('shift_id', $shift_id);
+            })
             ->join('patients', 'orders.patient_id', '=', 'patients.id')
-            ->orderBy('patients.surname', 'asc') // Ordenar por apellido paterno
-            ->orderBy('patients.lastname', 'asc') // Luego por apellido materno
-            ->orderBy('patients.firstname', 'asc') // Luego por primer nombre
-            ->orderBy('patients.othername', 'asc') // Finalmente por segundo nombre
-            ->select('orders.*') // Seleccionar solo las columnas de la tabla orders para evitar conflictos
+            ->orderBy('patients.surname', 'asc')
+            ->orderBy('patients.lastname', 'asc')
+            ->orderBy('patients.firstname', 'asc')
+            ->orderBy('patients.othername', 'asc')
+            ->select('orders.*')
             ->paginate(30);
 
-        // Pasamos el request a la vista para mantener los valores de los filtros en los campos
-        // También pasamos los shifts para poblar el select de turnos
         $shifts = Shift::all();
 
-
-        return view('orders.index', compact('orders', 'shifts', 'request')); // Pasar $request a la vista
+        return view('orders.index', compact('orders', 'shifts', 'request'));
     }
 
     /**
