@@ -109,27 +109,6 @@ class CreateNursesTable extends Migration
             $table->text('sol_hemodev5')->nullable();
             $table->text('obs5')->nullable();
 
-            $table->string('hr6', 25)->nullable();
-            $table->string('pa6', 25)->nullable();
-            $table->string('fc6', 25)->nullable();
-            $table->string('qb6', 25)->nullable();
-            $table->string('cnd6', 25)->nullable();
-            $table->string('ra6', 25)->nullable();
-            $table->string('rv6', 25)->nullable();
-            $table->string('ptm6', 25)->nullable();
-            $table->text('sol_hemodev6')->nullable();
-            $table->text('obs6')->nullable();
-
-            $table->string('hr7', 25)->nullable();
-            $table->string('pa7', 25)->nullable();
-            $table->string('fc7', 25)->nullable();
-            $table->string('qb7', 25)->nullable();
-            $table->string('cnd7', 25)->nullable();
-            $table->string('ra7', 25)->nullable();
-            $table->string('rv7', 25)->nullable();
-            $table->string('ptm7', 25)->nullable();
-            $table->text('sol_hemodev7')->nullable();
-            $table->text('obs7')->nullable();
 
             $table->timestamps();
         });
