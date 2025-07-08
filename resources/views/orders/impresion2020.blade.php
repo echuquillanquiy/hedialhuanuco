@@ -335,21 +335,27 @@
             <th style="width: 60%;" colspan="4">SOL / HEMODERIVADOS / OBSERVACIONES</th>
         </tr>
 
-        @for ($i = 1; $i <= 5; $i++)
-            <tr style="font-size: 0.7rem;">
-                <td style="height: 14px; white-space: nowrap; overflow: hidden;">{{ $order->nurse->{'hr' . $i} }}</td>
-                <td style="height: 14px; white-space: nowrap; overflow: hidden;">{{ $order->nurse->{'pa' . $i} }}</td>
-                <td style="height: 14px; white-space: nowrap; overflow: hidden;">{{ $order->nurse->{'fc' . $i} }}</td>
-                <td style="height: 14px; white-space: nowrap; overflow: hidden;">{{ $order->nurse->{'qb' . $i} }}</td>
-                <td style="height: 14px; white-space: nowrap; overflow: hidden;">{{ $order->nurse->{'cnd' . $i} }}</td>
-                <td style="height: 14px; white-space: nowrap; overflow: hidden;">{{ $order->nurse->{'ra' . $i} }}</td>
-                <td style="height: 14px; white-space: nowrap; overflow: hidden;">{{ $order->nurse->{'rv' . $i} }}</td>
-                <td style="height: 14px; white-space: nowrap; overflow: hidden;">{{ $order->nurse->{'ptm' . $i} }}</td>
-                <td style="height: 14px; font-size: 0.7rem !important; text-align: left; white-space: nowrap; overflow: hidden;" colspan="4">
-                    {{ $order->nurse->{'obs' . $i} }}
-                </td>
-            </tr>
-        @endfor
+        ---
+@for ($i = 1; $i <= 5; $i++)
+    <tr style="font-size: 0.7rem;">
+        {{-- Determina el sufijo para la propiedad --}}
+        @php
+            $suffix = ($i === 1) ? '' : $i;
+        @endphp
+
+        <td style="height: 14px; white-space: nowrap; overflow: hidden;">{{ $order->nurse->{'hr' . $suffix} }}</td>
+        <td style="height: 14px; white-space: nowrap; overflow: hidden;">{{ $order->nurse->{'pa' . $suffix} }}</td>
+        <td style="height: 14px; white-space: nowrap; overflow: hidden;">{{ $order->nurse->{'fc' . $suffix} }}</td>
+        <td style="height: 14px; white-space: nowrap; overflow: hidden;">{{ $order->nurse->{'qb' . $suffix} }}</td>
+        <td style="height: 14px; white-space: nowrap; overflow: hidden;">{{ $order->nurse->{'cnd' . $suffix} }}</td>
+        <td style="height: 14px; white-space: nowrap; overflow: hidden;">{{ $order->nurse->{'ra' . $suffix} }}</td>
+        <td style="height: 14px; white-space: nowrap; overflow: hidden;">{{ $order->nurse->{'rv' . $suffix} }}</td>
+        <td style="height: 14px; white-space: nowrap; overflow: hidden;">{{ $order->nurse->{'ptm' . $suffix} }}</td>
+        <td style="height: 14px; font-size: 0.7rem !important; text-align: left; white-space: nowrap; overflow: hidden;" colspan="4">
+            {{ $order->nurse->{'obs' . $suffix} }}
+        </td>
+    </tr>
+@endfor
     </table>
 
     <table style="border: solid 1px; margin-top: -2px;" width="100%">
