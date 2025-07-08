@@ -10,38 +10,38 @@
             <input type="text" name="pa" class="form-control @error('pa') border border-danger @enderror" value="{{ old('pa', $nurse->order->medical->start_pa) }}">
         </div>
     @else
-        <div class="form-group col-sm-2 col-lg-">
+        <div class="form-group col-sm-2 col-lg-1">
             <label for="pa">PA</label>
             <input type="text" name="pa" class="form-control @error('pa') border border-danger @enderror" value="{{ old('pa', $nurse->pa) }}">
         </div>
     @endif
 
-    <div class="form-group col-sm-2 col-lg-">
+    <div class="form-group col-sm-2 col-lg-1">
         <label for="fc">FC</label>
         <input type="text" name="fc" class="form-control @error('fc') border border-danger @enderror" value="{{ !$nurse->fc ? $nurse->order->medical->fc : $nurse->fc }}">
     </div>
 
-    <div class="form-group col-sm-2 col-lg-">
+    <div class="form-group col-sm-2 col-lg-1">
         <label for="qb">QB</label>
         <input type="text" name="qb" class="form-control @error('qb') border border-danger @enderror" value="{{ old('qb', $nurse->qb) }}">
     </div>
 
-    <div class="form-group col-sm-2 col-lg-">
+    <div class="form-group col-sm-2 col-lg-1">
         <label for="cnd">CND</label>
         <input type="text" name="cnd" class="form-control @error('cnd') border border-danger @enderror" value="{{ old('cnd', $nurse->cnd) }}">
     </div>
 
-    <div class="form-group col-sm-2 col-lg-">
+    <div class="form-group col-sm-2 col-lg-1">
         <label for="ra">RA</label>
         <input type="text" name="ra" class="form-control @error('ra') border border-danger @enderror" value="{{ old('ra', !$nurse->ra ? '-' : $nurse->ra) }}">
     </div>
 
-    <div class="form-group col-sm-2 col-lg-">
+    <div class="form-group col-sm-2 col-lg-1">
         <label for="rv">RV</label>
         <input type="text" name="rv" class="form-control @error('rv') border border-danger @enderror" value="{{ old('rv', $nurse->rv) }}">
     </div>
 
-    <div class="form-group col-sm-2 col-lg-">
+    <div class="form-group col-sm-2 col-lg-1">
         <label for="ptm">PTM</label>
         <input type="text" name="ptm" class="form-control @error('ptm') border border-danger @enderror" value="{{ old('ptm', $nurse->ptm) }}">
     </div>
