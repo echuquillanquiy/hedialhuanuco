@@ -1,7 +1,7 @@
 <div class="row text-center">
     <div class="form-group col-sm-12 col-lg-2">
         <label for="hr">HR</label>
-        <input type="time" name="hr" id="hr" class="form-control" value="{{ old('hr', $nurse->hr) }}" onblur="calcularHoras()">
+        <input type="time" name="hr" id="hr1" class="form-control" value="{{ old('hr', $nurse->hr) }}" onblur="calcularHoras()">
     </div>
 
     @if($nurse->pa1 == null)
