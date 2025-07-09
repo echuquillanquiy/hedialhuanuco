@@ -33,7 +33,7 @@ class MedicalController extends Controller
         $hour_hd = $request->get('hour_hd');
         $date_filter = $request->get('date_order') ?? Carbon::today()->toDateString();
 
-        <?php
+
 $medicals = Medical::whereDate('date_order', $date_filter);
 
 if ($patient) {
