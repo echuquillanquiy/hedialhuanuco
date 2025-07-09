@@ -80,7 +80,7 @@
     <table class="table align-items-center table-flush">
       <thead class="thead-light text-center">
         <tr>
-          <th scope="col">Nombres y Apellidos DNI</th>
+          <th scope="col">Nombres y Apellidos</th>
           <th scope="col">Sala</th>
           <th scope="col">Turno</th>
           <th scope="col">HD</th>
@@ -97,7 +97,7 @@
         @foreach ($medicals as $medical)
         <tr>
           <td scope="row">
-              {{ $medical->order->patient->surname }} {{ $medical->order->patient->lastname }} {{ $medical->order->patient->firstname }} {{ $medical->order->patient->othername }} {{$medical->order->patient->dni}}
+              {{ $medical->order->patient->surname }} {{ $medical->order->patient->lastname }} {{ $medical->order->patient->firstname }} {{ $medical->order->patient->othername }}
           </td>
 
           <td>
