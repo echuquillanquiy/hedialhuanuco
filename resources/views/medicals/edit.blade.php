@@ -91,7 +91,7 @@
 
                   <div class="form-group col-sm-12 col-lg-4">
                       <label for="fc">Frecuencia Cardiaca</label>
-                      <input type="text" name="fc" class="form-control @error('fc') border border-danger @enderror" value="{{old('fc', !$medical->order->nurse->fc ? $medical->fc : "") }}">
+                      <input type="text" name="fc" class="form-control @error('fc') border border-danger @enderror" value="{{ old('fc', $medical->order->nurse->fc ?? $medical->fc ?? '') }}">
                       @error('fc')
                       <div class="text-danger text-center text-sm">{{ $message }}</div>
                       @enderror
