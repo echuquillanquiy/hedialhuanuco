@@ -33,26 +33,15 @@ class MedicalController extends Controller
         $hour_hd = $request->get('hour_hd');
         $date_filter = $request->get('date_order') ?? Carbon::today()->toDateString();
 
-
-$medicals = Medical::whereDate('date_order', $date_filter);
-
-if ($patient) {
-    $medicals->where('patient', $patient);
-}
-if ($room) {
-    $medicals->where('room', $room);
-}
-if ($shift) {
-    $medicals->where('shift', $shift);
-}
-if ($hour_hd) {
-    $medicals->where('hour_hd', $hour_hd);
-}
-
-// Ordenar ignorando mayúsculas y espacios iniciales/finales
-$medicals = $medicals->orderByRaw('LTRIM(RTRIM(LOWER(patient))) asc')->paginate(15);
-
-return view('medicals.index', compact('medicals', 'order', 'rooms', 'shifts'));
+        $medicals = Medical::whereDate('date_order', $date_filter)
+            ->patient($patient)
+            ->room($room)
+            ->shift($shift)
+            ->date_order($date_order)
+            ->hour_hd($hour_hd)
+            ->orderBy('patient', 'asc')
+            ->paginate(15);
+        return view('medicals.index', compact('medicals', 'order', 'rooms', 'shifts'));
     }
 
     /**
