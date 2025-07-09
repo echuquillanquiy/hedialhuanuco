@@ -62,7 +62,7 @@ $medicals = $medicals
     ->orderBy('patients.lastname', 'asc')
     ->orderBy('patients.firstname', 'asc')
     ->orderBy('patients.othername', 'asc')
-    ->paginate(15);
+    ->paginate(30);
 
 return view('medicals.index', compact('medicals', 'order', 'rooms', 'shifts'));
     }
