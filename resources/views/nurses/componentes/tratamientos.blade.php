@@ -4,7 +4,7 @@
         <input type="time" name="hr" id="hr1" class="form-control" value="{{ old('hr', $nurse->hr) }}" onblur="calcularHoras()">
     </div>
 
-    @if($nurse->pa1 == null)
+    @if($nurse->pa == null)
         <div class="form-group col-sm-12 col-lg-1">
             <label for="pa">PA</label>
             <input type="text" name="pa" class="form-control @error('pa') border border-danger @enderror" value="{{ old('pa', $nurse->order->medical->start_pa) }}">
