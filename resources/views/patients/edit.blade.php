@@ -64,7 +64,7 @@
 
             <div class="form-group col-lg-3">
               <label for="hosp_origin">Origen</label>
-              <select class="form-control" name="hosp_origin" data-toggle="select" title="Simple select" data-placeholder="Seleccione un aopción">
+              <select class="form-control" name="hosp_origin" data-toggle="select" title="Simple select" data-placeholder="Seleccione una opción">
                   <option value="ESSALUD" {{ ($medical->hosp_origin ?? '') == 'ESSALUD' ? 'selected' : '' }}>ESSALUD</option>
                   <option value="SALUDPOL" {{ ($medical->hosp_origin ?? '') == 'SALUDPOL' ? 'selected' : '' }}>SALUDPOL</option>
                   <option value="PARTICULAR" {{ ($medical->hosp_origin ?? '') == 'PARTICULAR' ? 'selected' : '' }}>PARTICULAR</option>

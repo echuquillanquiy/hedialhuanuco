@@ -98,12 +98,15 @@
                   </div>
 
                   <div class="form-group col-sm-12 col-lg-4">
-                      <label for="serology">Serologia</label>
-                      <input type="text" name="serology" class="form-control @error('serology') border border-danger @enderror" value="{{old('serology', !$medical->serology ? optional($ultimaOrdenNoVacia)->serology : $medical->serology) }}">
-                      @error('serology')
-                      <div class="text-danger text-center text-sm">{{ $message }}</div>
-                      @enderror
-                  </div>
+                    <label for="serology">Serología</label>
+                    <input type="text" name="serology" 
+                        class="form-control @error('serology') border border-danger @enderror"
+                        value="{{ old('serology', $medical->serology ?? optional($ultimaOrdenNoVacia)->serology ?? 'Negativo') }}">
+                    @error('serology')
+                        <div class="text-danger text-center text-sm">{{ $message }}</div>
+                    @enderror
+                </div>
+
 
           </div>
 
