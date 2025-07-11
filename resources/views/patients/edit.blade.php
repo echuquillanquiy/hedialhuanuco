@@ -57,10 +57,19 @@
                 <input type="text" name="lastname" class="form-control" value="{{ old('lastname', $patient->lastname) }}" required>
             </div>
 
-            <div class="form-group col-lg-12">
+            <div class="form-group col-lg-9">
                 <label for="code">Codigo (Autogenerado)</label>
                 <input type="text" name="code" class="form-control" value="{{ old('code', $patient->code) }}">
             </div>
+
+            <div class="form-group col-lg-3">
+              <label for="hosp_origin">Origen</label>
+              <select class="form-control" name="hosp_origin" data-toggle="select" title="Simple select" data-placeholder="Seleccione un aopción">
+                  <option value="ESSALUD" {{ ($medical->hosp_origin ?? '') == 'ESSALUD' ? 'selected' : '' }}>ESSALUD</option>
+                  <option value="SALUDPOL" {{ ($medical->hosp_origin ?? '') == 'SALUDPOL' ? 'selected' : '' }}>SALUDPOL</option>
+                  <option value="PARTICULAR" {{ ($medical->hosp_origin ?? '') == 'PARTICULAR' ? 'selected' : '' }}>PARTICULAR</option>
+              </select>
+          </div>
         </div>
 
 

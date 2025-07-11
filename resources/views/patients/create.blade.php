@@ -57,10 +57,19 @@
               <input type="text" name="lastname" class="form-control" value="{{ old('lastname') }}" required>
           </div>
 
-          <div class="form-group col-lg-12">
+          <div class="form-group col-lg-9">
               <label for="code">Codigo (Autogenerado)</label>
               <input type="text" name="code" class="form-control" value="{{ old('code') }}">
           </div>
+
+          <div class="form-group col-lg-3">
+              <label for="hosp_origin">Origen</label>
+              <select class="form-control" name="hosp_origin" data-toggle="select" title="Simple select" data-placeholder="Select un origen" value="{{ old('hosp_origin') }}">
+                  <option value="ESSALUD">ESSALUD</option>
+                  <option value="SALUDPOL">SALUDPOL</option>
+                  <option value="PARTICULAR">PARTICULAR</option>
+              </select>
+            </div>
 
           <div class="form-group col-lg-2">
               <label for="hosp_origin">CORRELATIVO</label>
