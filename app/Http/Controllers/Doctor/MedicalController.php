@@ -29,15 +29,26 @@ class MedicalController extends Controller
         $patient = $request->get('patient');
         $room = $request->get('room');
         $shift = $request->get('shift');
-        $date_order = $request->get('date_order');
         $hour_hd = $request->get('hour_hd');
-        $date_filter = $request->get('date_order') ?? Carbon::today()->toDateString();
+        $date_order = $request->get('date_order');
+
+        $hasFilters = $patient || $room || $shift || $hour_hd || $date_order;
 
         $medicals = Medical::select('medicals.*')
             ->join('orders', 'medicals.order_id', '=', 'orders.id')
-            ->join('patients', 'orders.patient_id', '=', 'patients.id')
-            ->whereDate('medicals.date_order', $date_filter);
+            ->join('patients', 'orders.patient_id', '=', 'patients.id');
 
+        // Si se aplicó algún filtro por fecha, se respeta
+        if ($date_order) {
+            $medicals->whereDate('medicals.date_order', $date_order);
+        }
+
+        // Si no hay ningún filtro, mostrar solo los de hoy
+        if (!$hasFilters) {
+            $medicals->whereDate('medicals.date_order', Carbon::today()->toDateString());
+        }
+
+        // Filtro por paciente
         if ($patient) {
             $medicals->where(function($query) use ($patient) {
                 $query->where('patients.surname', 'like', "%$patient%")
@@ -46,26 +57,31 @@ class MedicalController extends Controller
                     ->orWhere('patients.othername', 'like', "%$patient%");
             });
         }
-            if ($room) {
-                $medicals->where('medicals.room', $room);
-            }
-            if ($shift) {
-                $medicals->where('medicals.shift', $shift);
-            }
-            if ($hour_hd) {
-                $medicals->where('medicals.hour_hd', $hour_hd);
-            }
 
-            // Ordena por apellido paterno, materno y nombres
-            $medicals = $medicals
-                ->orderBy('patients.surname', 'asc')
-                ->orderBy('patients.lastname', 'asc')
-                ->orderBy('patients.firstname', 'asc')
-                ->orderBy('patients.othername', 'asc')
-                ->paginate(30);
-
-            return view('medicals.index', compact('medicals', 'order', 'rooms', 'shifts'));
+        // Filtros adicionales
+        if ($room) {
+            $medicals->where('medicals.room', $room);
         }
+
+        if ($shift) {
+            $medicals->where('medicals.shift', $shift);
+        }
+
+        if ($hour_hd) {
+            $medicals->where('medicals.hour_hd', $hour_hd);
+        }
+
+        // Ordenar por nombres
+        $medicals = $medicals
+            ->orderBy('patients.surname', 'asc')
+            ->orderBy('patients.lastname', 'asc')
+            ->orderBy('patients.firstname', 'asc')
+            ->orderBy('patients.othername', 'asc')
+            ->paginate(30);
+
+        return view('medicals.index', compact('medicals', 'order', 'rooms', 'shifts'));
+    }
+
 
     /**
      * Show the form for creating a new resource.
