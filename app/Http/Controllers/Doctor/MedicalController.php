@@ -33,39 +33,39 @@ class MedicalController extends Controller
         $hour_hd = $request->get('hour_hd');
         $date_filter = $request->get('date_order') ?? Carbon::today()->toDateString();
 
-$medicals = Medical::select('medicals.*')
-    ->join('orders', 'medicals.order_id', '=', 'orders.id')
-    ->join('patients', 'orders.patient_id', '=', 'patients.id')
-    ->whereDate('medicals.date_order', $date_filter);
+        $medicals = Medical::select('medicals.*')
+            ->join('orders', 'medicals.order_id', '=', 'orders.id')
+            ->join('patients', 'orders.patient_id', '=', 'patients.id')
+            ->whereDate('medicals.date_order', $date_filter);
 
-if ($patient) {
-    $medicals->where(function($query) use ($patient) {
-        $query->where('patients.surname', 'like', "%$patient%")
-              ->orWhere('patients.lastname', 'like', "%$patient%")
-              ->orWhere('patients.firstname', 'like', "%$patient%")
-              ->orWhere('patients.othername', 'like', "%$patient%");
-    });
-}
-if ($room) {
-    $medicals->where('medicals.room', $room);
-}
-if ($shift) {
-    $medicals->where('medicals.shift', $shift);
-}
-if ($hour_hd) {
-    $medicals->where('medicals.hour_hd', $hour_hd);
-}
+        if ($patient) {
+            $medicals->where(function($query) use ($patient) {
+                $query->where('patients.surname', 'like', "%$patient%")
+                    ->orWhere('patients.lastname', 'like', "%$patient%")
+                    ->orWhere('patients.firstname', 'like', "%$patient%")
+                    ->orWhere('patients.othername', 'like', "%$patient%");
+            });
+        }
+            if ($room) {
+                $medicals->where('medicals.room', $room);
+            }
+            if ($shift) {
+                $medicals->where('medicals.shift', $shift);
+            }
+            if ($hour_hd) {
+                $medicals->where('medicals.hour_hd', $hour_hd);
+            }
 
-// Ordena por apellido paterno, materno y nombres
-$medicals = $medicals
-    ->orderBy('patients.surname', 'asc')
-    ->orderBy('patients.lastname', 'asc')
-    ->orderBy('patients.firstname', 'asc')
-    ->orderBy('patients.othername', 'asc')
-    ->paginate(30);
+            // Ordena por apellido paterno, materno y nombres
+            $medicals = $medicals
+                ->orderBy('patients.surname', 'asc')
+                ->orderBy('patients.lastname', 'asc')
+                ->orderBy('patients.firstname', 'asc')
+                ->orderBy('patients.othername', 'asc')
+                ->paginate(30);
 
-return view('medicals.index', compact('medicals', 'order', 'rooms', 'shifts'));
-    }
+            return view('medicals.index', compact('medicals', 'order', 'rooms', 'shifts'));
+        }
 
     /**
      * Show the form for creating a new resource.

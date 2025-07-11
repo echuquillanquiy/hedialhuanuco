@@ -86,21 +86,22 @@
           <th scope="col">HD</th>
           <th scope="col">Fecha</th>
           <th scope="col">Editar</th>
+          <th scope="col">P.Sec</th>
           <th scope="col">P.Ini</th>
             <th scope="col">P.Fin</th>
             <th scope="col">UF</th>
-            <th scope="col">P.Sec</th>
+          
 
         </tr>
       </thead>
-      <tbody class="text-center">
+      <tbody>
         @foreach ($medicals as $medical)
         <tr>
           <td scope="row">
               {{ $medical->order->patient->surname }} {{ $medical->order->patient->lastname }} {{ $medical->order->patient->firstname }} {{ $medical->order->patient->othername }}
           </td>
 
-          <td>
+          <td class="text-center">
 
              @if($medical->room == 'AMARILLA')
                   <span class="badge badge-lg bg-yellow">A</span>
@@ -117,7 +118,7 @@
 
 
           </td>
-          <td>
+          <td class="text-center">
 
               @if($medical->shift == 'I')
                   1
@@ -133,13 +134,13 @@
           </td>
 
 
-            <td>
+            <td class="text-center">
                 <button class="btn btn-info btn-sm">{{ $medical->hour_hd }}</button>
             </td>
-          <td>
+          <td class="text-center">
             {{$medical->date_order}}
           </td>
-          <td>
+          <td class="text-center">
 
             <form action="{{ url('/medicals/'.$medical->id) }}" method="POST">
               @csrf
@@ -148,18 +149,20 @@
             </form>
           </td>
 
-            <td>
-                {{$medical->order->nurse->start_weight}}
-            </td>
-            <td>
-                {{$medical->order->nurse->end_weight}}
-            </td>
-            <td>
-                {{ preg_match('/(-?\d+)/', $medical->uf, $matches) ? $valor_num = intval($matches[0]) / 1000 : 0 }}
-            </td>
-            <td>
+          <td class="text-center">
                 {{$medical->dry_weight}}
             </td>
+
+            <td class="text-center">
+                {{$medical->order->nurse->start_weight}}
+            </td>
+            <td class="text-center">
+                {{$medical->order->nurse->end_weight}}
+            </td>
+            <td class="text-center">
+                {{ preg_match('/(-?\d+)/', $medical->uf, $matches) ? $valor_num = intval($matches[0]) / 1000 : 0 }}
+            </td>
+            
 
         </tr>
         @endforeach

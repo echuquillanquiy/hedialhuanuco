@@ -83,7 +83,7 @@
 
         </tr>
       </thead>
-      <tbody class="text-center">
+      <tbody>
         @foreach ($nurses as $nurse)
         <tr>
 
@@ -91,7 +91,7 @@
                 {{ $nurse->order->patient->surname }} {{ $nurse->order->patient->lastname }} {{ $nurse->order->patient->firstname }} {{ $nurse->order->patient->othername }}
             </th>
 
-        <td>
+        <td class="text-center">
 
             <form action="{{ url('/nurses/'.$nurse->id) }}" method="POST">
               @csrf
@@ -109,7 +109,7 @@
             </form>
           </td>
 
-          <th scope="row">
+          <th scope="row" class="text-center">
             {{$nurse->hr}}
           </th>
 
@@ -121,7 +121,7 @@
                   {{$nurse->hr8}}
               @endif
           </th>
-          <td>
+          <td class="text-center">
               @if($nurse->shift == 'I')
                   1
 
@@ -135,24 +135,24 @@
               @endif
           </td>
 
-            <td>
+            <td class="text-center">
                 {{ $nurse->position }} / {{ $nurse->machine }}
             </td>
 
-            <td>{{ $nurse->epo2000 }}</td>
-            <td>{{ $nurse->epo4000 }}</td>
-            <td>{{ $nurse->hidroxi }}</td>
-            <td>{{ $nurse->iron }}</td>
+            <td class="text-center">{{ $nurse->epo2000 }}</td>
+            <td class="text-center">{{ $nurse->epo4000 }}</td>
+            <td class="text-center">{{ $nurse->hidroxi }}</td>
+            <td class="text-center">{{ $nurse->iron }}</td>
 
-          <td>
+          <td class="text-center">
 	        {{ $nurse->date_order}}
           </td>
             @if($nurse->user_id)
-                <td>
+                <td class="text-center">
                     {{ $nurse->user->name}}
                 </td>
             @else
-                <td>actualizar orden</td>
+                <td class="text-center">actualizar orden</td>
             @endif
 
 

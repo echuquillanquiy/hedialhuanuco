@@ -125,14 +125,6 @@
               </div>
 
               <div class="form-group col-sm-12 col-lg-2">
-                  <label for="start_weight">Peso Inicial</label>
-                  <input type="text" name="start_weight" class="form-control @error('start_weight') border border-danger @enderror" value="{{ old('start_weight', $medical->order->nurse->start_weight) }}">
-                  @error('start_weight')
-                  <div class="text-danger text-center text-sm">{{ $message }}</div>
-                  @enderror
-              </div>
-
-              <div class="form-group col-sm-12 col-lg-2">
                   <label for="dry_weight">Peso Seco</label>
                   <input type="text" name="dry_weight" class="form-control @error('dry_weight') border border-danger @enderror" value="{{ old('dry_weight', !$medical->dry_weight ? optional($ultimaOrdenNoVacia)->dry_weight : $medical->dry_weight) }}">
                   @error('dry_weight')
@@ -140,13 +132,23 @@
                   @enderror
               </div>
 
-              <div class="form-group col-sm-12 col-lg-1">
-                  <label for="uf">UF</label>
-                  <input type="text" name="uf" class="form-control @error('uf') border border-danger @enderror" value="{{ old('uf', $medical->uf ? $medical->uf : "") }}">
-                  @error('uf')
+              <div class="form-group col-sm-12 col-lg-2">
+                  <label for="start_weight">Peso Inicial</label>
+                  <input type="text" name="start_weight" class="form-control @error('start_weight') border border-danger @enderror" value="{{ old('start_weight', $medical->order->nurse->start_weight) }}">
+                  @error('start_weight')
                   <div class="text-danger text-center text-sm">{{ $message }}</div>
                   @enderror
               </div>
+
+              <div class="form-group col-sm-12 col-lg-1">
+                <label for="uf">UF</label>
+                <input type="text" name="uf" class="form-control @error('uf') border border-danger @enderror"
+                    value="{{ old('uf', $medical->uf ?? '') }}">
+                @error('uf')
+                <div class="text-danger text-center text-sm">{{ $message }}</div>
+                @enderror
+            </div>
+
 
               <div class="form-group col-sm-12 col-lg-1">
                   <label for="qb">QB</label>

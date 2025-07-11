@@ -27,19 +27,46 @@ class NurseController extends Controller
         $shifts = Shift::all();
 
         $patient = $request->get('patient');
-        $room = $request->get('room');
-        $shift = $request->get('shift');
-        $date_order = $request->get('date_order');
-        $date_filter = $date_order ?? now()->toDateString();
+    $room = $request->get('room');
+    $shift = $request->get('shift');
+    $hour_hd = $request->get('hour_hd');
+    $date_order = $request->get('date_order');
+    $date_filter = $date_order ?? Carbon::today()->toDateString();
 
-        $nurses = Nurse::whereDate('date_order', $date_filter)
-            ->patient($patient)
-            ->room($room)
-            ->shift($shift)
-            ->orderBy('created_at', 'desc')
-            ->paginate(15);
+    $nurses = Nurse::select('nurses.*')
+        ->join('orders', 'nurses.order_id', '=', 'orders.id')
+        ->join('patients', 'orders.patient_id', '=', 'patients.id')
+        ->whereDate('nurses.date_order', $date_filter);
 
-        return view('nurses.index', compact('nurses','shifts', 'rooms'));
+    if ($patient) {
+        $nurses->where(function ($query) use ($patient) {
+            $query->where('patients.surname', 'like', "%$patient%")
+                  ->orWhere('patients.lastname', 'like', "%$patient%")
+                  ->orWhere('patients.firstname', 'like', "%$patient%")
+                  ->orWhere('patients.othername', 'like', "%$patient%");
+        });
+    }
+
+    if ($room) {
+        $nurses->where('nurses.room', $room);
+    }
+
+    if ($shift) {
+        $nurses->where('nurses.shift', $shift);
+    }
+
+    if ($hour_hd) {
+        $nurses->where('nurses.hour_hd', $hour_hd);
+    }
+
+    $nurses = $nurses
+        ->orderBy('patients.surname', 'asc')
+        ->orderBy('patients.lastname', 'asc')
+        ->orderBy('patients.firstname', 'asc')
+        ->orderBy('patients.othername', 'asc')
+        ->paginate(30);
+
+    return view('nurses.index', compact('nurses', 'rooms', 'shifts'));
     }
 
     /**
