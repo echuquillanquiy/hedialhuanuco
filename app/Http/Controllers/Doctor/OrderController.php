@@ -247,49 +247,84 @@ class OrderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        $order = Order::findOrFail($id);
-        $data = $request->only([
-            'shift_id',
-            'covid',
-            'n_fua',
-            'date_order',
-            'lab'
-        ]);
-        $order->fill($data);
-        $order->save();
-        $data_or = [
-            'shift' => $order->shift->name,
-            'date_order' => $order->date_order,
-            'start_hour' => $request->start_hour,
-            'end_hour' => $request->end_hour,
-            'start_weight' => $request->start_weight,
-        ];
+{
+    $order = Order::findOrFail($id);
 
-        $data_or2 = [
-            'shift' => $order->shift->name,
-            'date_order' => $order->date_order,
-            'start_weight' => $request->start_weight,
-            'end_weight' => $request->end_weight
-        ];
+    $data = $request->only([
+        'shift_id',
+        'covid',
+        'n_fua',
+        'date_order',
+        'lab'
+    ]);
+    $order->fill($data);
+    $order->user_id = auth()->id(); // opcional, si deseas actualizar el usuario
+    $order->save();
 
-        $consult_data = [
-            'order_id' => $order->id,
-            'patient_id' => $order->patient_id,
-            'date_order' => $order->date_order,
-        ];
+    $data_or = [
+        'shift' => $order->shift->name,
+        'date_order' => $order->date_order,
+        'start_hour' => $request->start_hour,
+        'end_hour' => $request->end_hour,
+        'start_weight' => $request->start_weight,
+    ];
 
-        if ($order->lab == 'SI')
-        {
-            $laboratory = $order->laboratory()->create($consult_data);
+    $data_or2 = [
+        'shift' => $order->shift->name,
+        'date_order' => $order->date_order,
+        'start_weight' => $request->start_weight,
+        'end_weight' => $request->end_weight
+    ];
+
+    $consult_data = [
+        'order_id' => $order->id,
+        'patient_id' => $order->patient_id,
+        'date_order' => $order->date_order,
+        'user_id' => $order->user_id,
+    ];
+
+    // Actualizar hospital de origen del paciente
+    $patient = Patient::findOrFail($order->patient_id);
+    if ($patient) {
+        $patient->hosp_origin = $request->hosp_origin;
+        $patient->save();
+    }
+
+    // Actualizar/crear según tipo de orden
+    if ($order->type == 1) {
+        if ($order->nurse) {
+            $order->nurse()->update($data_or2);
         }
 
-        $order->nurse()->update($data_or2);
-        $order->medical()->update($data_or);
+        if ($order->medical) {
+            $order->medical()->update($data_or);
+        }
 
-        $notification = 'La ordern se ha actualizado correctamente.';
-        return redirect('/orders')->with(compact('notification'));
+        if ($order->lab == 'SI') {
+            if ($order->laboratory) {
+                $order->laboratory()->update($consult_data);
+            } else {
+                $order->laboratory()->create($consult_data);
+            }
+        }
+    } else {
+        if ($order->nephrology) {
+            $order->nephrology()->update($consult_data);
+        } else {
+            $order->nephrology()->create($consult_data);
+        }
+
+        if ($order->recipe) {
+            $order->recipe()->update($consult_data);
+        } else {
+            $order->recipe()->create($consult_data);
+        }
     }
+
+    $notification = 'La orden se ha actualizado correctamente.';
+    return redirect('/orders')->with(compact('notification'));
+}
+
 
     /**
      * Remove the specified resource from storage.
