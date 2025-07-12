@@ -63,11 +63,11 @@
             </div>
 
             <div class="form-group col-lg-3">
-              <label for="hosp_origin">Origen</label>
-              <select class="form-control" name="hosp_origin" data-toggle="select" title="Simple select" data-placeholder="Seleccione una opción">
-                  <option value="ESSALUD" {{ ($medical->hosp_origin ?? '') == 'ESSALUD' ? 'selected' : '' }}>ESSALUD</option>
-                  <option value="SALUDPOL" {{ ($medical->hosp_origin ?? '') == 'SALUDPOL' ? 'selected' : '' }}>SALUDPOL</option>
-                  <option value="PARTICULAR" {{ ($medical->hosp_origin ?? '') == 'PARTICULAR' ? 'selected' : '' }}>PARTICULAR</option>
+              <label for="last_job">Origen</label>
+              <select class="form-control" name="last_job" data-toggle="select" title="Simple select" data-placeholder="Seleccione una opción">
+                  <option value="ESSALUD" {{ ($medical->last_job ?? '') == 'ESSALUD' ? 'selected' : '' }}>ESSALUD</option>
+                  <option value="SALUDPOL" {{ ($medical->last_job ?? '') == 'SALUDPOL' ? 'selected' : '' }}>SALUDPOL</option>
+                  <option value="PARTICULAR" {{ ($medical->last_job ?? '') == 'PARTICULAR' ? 'selected' : '' }}>PARTICULAR</option>
               </select>
           </div>
         </div>

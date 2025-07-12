@@ -63,8 +63,8 @@
           </div>
 
           <div class="form-group col-lg-3">
-              <label for="hosp_origin">Origen</label>
-              <select class="form-control" name="hosp_origin" data-toggle="select" title="Simple select" data-placeholder="Select un origen" value="{{ old('hosp_origin') }}">
+              <label for="last_job">Origen</label>
+              <select class="form-control" name="last_job" data-toggle="select" title="Simple select" data-placeholder="Select un origen" value="{{ old('hosp_origin') }}">
                   <option value="ESSALUD">ESSALUD</option>
                   <option value="SALUDPOL">SALUDPOL</option>
                   <option value="PARTICULAR">PARTICULAR</option>
