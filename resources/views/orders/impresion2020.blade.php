@@ -189,7 +189,6 @@
                     </td>
                 @endif
 
-                <td colspan="6"></td>
             </tr>
 
         </table>
