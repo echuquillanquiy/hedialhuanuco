@@ -190,6 +190,8 @@
                         <strong>Médico que inicia HD</strong>
                     </td>
                 @endif
+
+                <td></td>
             </tr>
 
         </table>
