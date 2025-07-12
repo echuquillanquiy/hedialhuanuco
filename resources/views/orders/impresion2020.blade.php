@@ -232,8 +232,6 @@
             @endif
         </tr>
 
-        <td colspan="4"></td>
-
     </table>
 
         <table width="100%" style="border: solid 1px; border-collapse: collapse; margin-top: -2px">
