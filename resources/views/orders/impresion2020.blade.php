@@ -164,15 +164,6 @@
             </tr>
 
             <tr>
-                <td colspan="8"></td>
-                <td colspan="4">
-                    <br>
-                    <br>
-                </td>
-            </tr>
-
-
-            <tr style="margin-top: 60px !important;">
 
                 @if($order->medical->user_id)
                     <td colspan="9">
@@ -190,13 +181,6 @@
                         <strong>Médico que inicia HD</strong>
                     </td>
                 @endif
-            </tr>
-            <tr>
-                <td colspan="8"></td>
-                <td colspan="4">
-                    <br>
-                    <br>
-                </td>
             </tr>
 
             <tr>
