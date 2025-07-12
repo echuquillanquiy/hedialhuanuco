@@ -175,7 +175,8 @@
             <tr style="margin-top: 60px !important;">
 
                 @if($order->medical->user_id)
-
+                    <td>
+                    </td>
                     <td style="text-align: center; font-size: 0.6rem; font-weight: bold;">
                         Dr(a): {{ $order->medical->user->name }}
                         <br>
