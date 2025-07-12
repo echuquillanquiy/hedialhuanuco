@@ -6,7 +6,7 @@
 
     body {
         margin: 0;
-        padding: 20px; /* Ajustar según sea necesario */
+        padding: 15px; /* Ajustar según sea necesario */
         font-family: Arial, sans-serif;
     }
 
@@ -15,7 +15,7 @@
         height: 100%;
         overflow: hidden;
         page-break-inside: avoid;
-        transform: scale(0.8); /* Ajustar el contenido para que quepa en una página */
+        transform: scale(0.7); /* Ajustar el contenido para que quepa en una página */
         transform-origin: top left;
     }
 </style>
