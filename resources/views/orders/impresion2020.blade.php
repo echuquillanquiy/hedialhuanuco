@@ -1,7 +1,7 @@
 <style>
     @page {
         margin: 0cm;
-        margin-left: 40px; /* Mueve todo hacia la derecha */
+        margin-left: 35px; /* Mueve todo hacia la derecha */
     }
 
     body {
