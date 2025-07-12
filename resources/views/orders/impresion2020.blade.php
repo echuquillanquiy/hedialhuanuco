@@ -192,14 +192,6 @@
         </tr>
 
         <tr>
-            <td colspan="8"></td>
-            <td colspan="4">
-                <br>
-                <br>
-            </td>
-        </tr>
-
-        <tr>
             @if($order->medical->medico_final)
                 <td colspan="8"></td>
 
