@@ -164,11 +164,20 @@
             </tr>
 
             <tr>
+                <td colspan="8"></td>
+                <td colspan="4">
+                    <br>
+                    <br>
+                </td>
+            </tr>
 
-            @if($order->medical->user_id)
-                    <td colspan="8">
+
+            <tr style="margin-top: 60px !important;">
+
+                @if($order->medical->user_id)
+                    <td colspan="9">
                     </td>
-                    <td colspan="4" style="text-align: center; font-size: 0.6rem; font-weight: bold;">
+                    <td colspan="3" style="text-align: center; font-size: 0.6rem; font-weight: bold;">
                         Dr(a): {{ $order->medical->user->name }}
                         <br>
                         <strong>Médico que inicia HD</strong>
@@ -181,17 +190,6 @@
                         <strong>Médico que inicia HD</strong>
                     </td>
                 @endif
-                
-            </tr>
-
-
-            <tr style="margin-top: 60px !important;">
-                <td colspan="9"></td>
-                <td colspan="3">
-                    <br>
-                    <br>
-                </td>
-                
             </tr>
         </table>
 
