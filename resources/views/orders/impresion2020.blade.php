@@ -191,7 +191,7 @@
                     </td>
                 @endif
 
-                <td></td>
+                <td colspan="2"></td>
             </tr>
 
         </table>
