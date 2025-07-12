@@ -159,29 +159,18 @@
             </tr>
 
             <tr>
-                <td style="font-size: 0.7rem;" colspan="8"> <stron style="text-decoration: underline; font-size: 0.8rem !important;">Observaciones:</stron>  {{ $order->medical->fua_observacion }}</td>
-                <td colspan="4"></td>
+                <td style="font-size: 0.7rem;" colspan="8">
+        <strong style="text-decoration: underline; font-size: 0.8rem !important;">Observaciones:</strong>  
+        {{ $order->medical->fua_observacion }}
+    </td>
+    <td colspan="4" rowspan="2" style="text-align: center; vertical-align: middle; font-size: 0.6rem; font-weight: bold;">
+        @if($order->medical->user_id)
+            Dr(a): {{ $order->medical->user->name }}<br>
+            <strong>Médico que inicia HD</strong>
+        @endif
+    </td>
             </tr>
 
-            <tr style="margin-right: -70px">
-
-                @if($order->medical->user_id)
-                    <td colspan="9">
-                    </td>
-                    <td colspan="3" style="text-align: center; font-size: 0.6rem; font-weight: bold;">
-                        Dr(a): {{ $order->medical->user->name }}
-                        <br>
-                        <strong>Médico que inicia HD</strong>
-                    </td>
-                @else
-                    <td colspan="8"></td>
-                    <td colspan="4" style="text-align: center; font-size: 0.6rem; font-weight: bold">
-                         <p>ha</p>Dr(a): {{ $order->medical->user->name }}
-                        <br>
-                        <strong>Médico que inicia HD</strong>
-                    </td>
-                @endif
-            </tr>
 
             <tr>
                 <td colspan="8"></td>
