@@ -164,17 +164,8 @@
             </tr>
 
             <tr>
-                <td colspan="8"></td>
-                <td colspan="4">
-                    <br>
-                    <br>
-                </td>
-            </tr>
 
-
-            <tr style="margin-top: 60px !important;">
-
-                @if($order->medical->user_id)
+            @if($order->medical->user_id)
                     <td colspan="9">
                     </td>
                     <td colspan="3" style="text-align: center; font-size: 0.6rem; font-weight: bold;">
@@ -190,6 +181,17 @@
                         <strong>Médico que inicia HD</strong>
                     </td>
                 @endif
+                
+            </tr>
+
+
+            <tr style="margin-top: 60px !important;">
+<td colspan="8"></td>
+                <td colspan="4">
+                    <br>
+                    <br>
+                </td>
+                
             </tr>
         </table>
 
@@ -201,6 +203,14 @@
         <tr>
             <td style="font-size: 0.7rem;" colspan="8">Condición clinica del paciente al finalizar HD: {{ $order->medical->end_evaluation }}</td>
             <td colspan="4"></td>
+        </tr>
+
+        <tr>
+            <td colspan="8"></td>
+            <td colspan="4">
+                <br>
+                <br>
+            </td>
         </tr>
 
         <tr>
@@ -221,15 +231,6 @@
                 </td>
             @endif
         </tr>
-
-        <tr>
-            <td colspan="8"></td>
-            <td colspan="4">
-                <br>
-                <br>
-            </td>
-        </tr>
-
 
     </table>
 
