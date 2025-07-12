@@ -172,7 +172,7 @@
             </tr>
 
 
-            <tr style="margin-top: 60px !important;">
+            <tr>
 
                 @if($order->medical->user_id)
                     <td colspan="5">
