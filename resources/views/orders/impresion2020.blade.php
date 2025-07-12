@@ -174,16 +174,15 @@
             <tr>
 
                 @if($order->medical->user_id)
-                    <td colspan="5">
-                    </td>
-                    <td style="text-align: center; font-size: 0.6rem; font-weight: bold;">
+
+                    <td colspan="12" style="text-align: center; font-size: 0.6rem; font-weight: bold;">
                         Dr(a): {{ $order->medical->user->name }}
                         <br>
                         <strong>Médico que inicia HD</strong>
                     </td>
                 @else
-                    <td colspan="5"></td>
-                    <td style="text-align: center; font-size: 0.6rem; font-weight: bold">
+
+                    <td colspan="12" style="text-align: center; font-size: 0.6rem; font-weight: bold">
                          <p>ha</p>Dr(a): {{ $order->medical->user->name }}
                         <br>
                         <strong>Médico que inicia HD</strong>
