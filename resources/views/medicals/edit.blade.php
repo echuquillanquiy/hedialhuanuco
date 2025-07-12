@@ -82,15 +82,12 @@
 
 
                   <div class="form-group col-sm-12 col-lg-4">
-    <label for="start_pa">PA Inicial</label>
-    <input type="text" name="start_pa"
-        class="form-control @error('start_pa') border border-danger @enderror"
-        value="{{ old('start_pa', (isset($medical->order->nurse->start_pa) || $medical->start_pa !== null) ? $medical->order->nurse->start_pa : $medical->start_pa) }}">
-    @error('start_pa')
-        <div class="text-danger text-center text-sm">{{ $message }}</div>
-    @enderror
-</div>
-
+                      <label for="start_pa">PA Inicial</label>
+                      <input type="text" name="start_pa" class="form-control @error('start_pa') border border-danger @enderror" value="{{ old('start_pa', !$medical->order->nurse->start_pa ? $medical->start_pa : $medical->order->nurse->start_pa) }}">
+                      @error('start_pa')
+                        <div class="text-danger text-center text-sm">{{ $message }}</div>
+                      @enderror
+                  </div>
 
                   <div class="form-group col-sm-12 col-lg-4">
                       <label for="fc">Frecuencia Cardiaca</label>
