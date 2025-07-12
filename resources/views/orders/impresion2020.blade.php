@@ -215,22 +215,24 @@
 
         <tr>
             @if($order->medical->medico_final)
-                <td colspan="8"></td>
+                <td colspan="5"></td>
 
-                <td colspan="4" style="text-align: center; font-size: 0.6rem; font-weight: bold">
+                <td style="text-align: center; font-size: 0.6rem; font-weight: bold">
                     Dr(a): {{ $order->medical->medico_final }}
                     <br>
                     <strong>Médico que finaliza HD</strong>
                 </td>
             @else
-                <td colspan="8"></td>
-                <td colspan="4" style="text-align: center; font-size: 0.6rem; font-weight: bold">
+                <td colspan="5"></td>
+                <td style="text-align: center; font-size: 0.6rem; font-weight: bold">
                     Dr(a): {{ $order->medical->user->name }}
                     <br>
                     <strong>Médico que finaliza HD</strong>
                 </td>
             @endif
         </tr>
+
+        <td colspan="6"></td>
 
     </table>
 
