@@ -28,8 +28,8 @@
                             <option value="">[SELECCIONE UN PACIENTE]</option>
                             @foreach ($patients as $patient)
                             <option 
-                                value="{{ $patient->name }}" 
-                                {{ $patient->name }}
+                                value="{{ $patient->surname }} {{ $patient->lastname }} {{ $patient->firstname }} {{ $patient->othername }}" 
+                                {{ $patient->surname }} {{ $patient->lastname }} {{ $patient->firstname }} {{ $patient->othername }}
                             </option>
                             @endforeach
                         </select>
