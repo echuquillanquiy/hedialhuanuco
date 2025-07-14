@@ -270,7 +270,7 @@ class MedicalController extends Controller
             ->orderBy('patients.othername')
             ->paginate(30);
 
-        return view('medicals.fissal', compact('paginated', 'order', 'patients'));
+        return view('medicals.fissal', compact('order', 'patients'));
     }
 
     /**
