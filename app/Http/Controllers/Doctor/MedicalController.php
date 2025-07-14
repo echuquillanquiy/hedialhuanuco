@@ -258,7 +258,7 @@ class MedicalController extends Controller
             ->created_at($created_at)
             ->date_order($date_order)
             ->paginate(30);
-        return view('medicals.fissal', compact('medicals', 'order', 'rooms', 'shifts', 'patients'));
+        return view('medicals.fissal', compact('medicals', 'order', 'patients'));
     }
 
     /**
