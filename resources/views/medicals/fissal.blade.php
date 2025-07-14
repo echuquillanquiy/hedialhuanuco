@@ -22,6 +22,19 @@
                         </div>
                     </div>
 
+                    <div class="form-group col-sm-12 col-lg-4">
+                        <label for="patient">Pacientes</label>          
+                        <select name="patient" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
+                            <option value="">[SELECCIONE UN PACIENTE]</option>
+                            @foreach ($patients as $patient)
+                            <option 
+                                value="{{ $medical->patient }}" 
+                                {{ $medical->patient}}
+                            </option>
+                            @endforeach
+                        </select>
+                    </div>
+
 
                     <div class="form-group col-lg-2">
                         <label for="created_at">FECHA CREACION</label>
@@ -64,6 +77,7 @@
                     <tr>
                         <th scope="col">Nombres y Apellidos DNI</th>
                         <th scope="col">Fecha</th>
+                        <th scope="col">IMPRIMIR</th>
                     </tr>
                 </thead>
                 <tbody class="text-center">
