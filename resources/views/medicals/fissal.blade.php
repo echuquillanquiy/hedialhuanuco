@@ -58,12 +58,12 @@
 
         <div class="table-responsive">
             <!-- Projects table -->
-            <table class="table align-items-center table-flush">
+           <table class="table table-sm align-items-center table-flush">
                 <thead class="thead-light text-center">
                     <tr>
                         <th>Nombres y Apellidos</th>
                         <th>Fecha</th>
-                        <th>IMPRIMIR</th>
+                        <th>Imprimir</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -72,22 +72,17 @@
                         <td>
                             {{ $medical->order->patient->surname }} {{ $medical->order->patient->lastname }} {{ $medical->order->patient->firstname }} {{ $medical->order->patient->othername }}
                         </td>
-
-                        </td>
-
                         <td class="text-center">
-                            {{$medical->order->date_order }}
+                            {{ $medical->order->date_order }}
                         </td>
-
                         <td class="text-center">
                             <a href="{{ url('/orders/'.$medical->order->id.'/impresion2020') }}" class="btn btn-sm btn-danger" target="_blank">Historia</a>
                         </td>
-
-
                     </tr>
                 @endforeach
                 </tbody>
             </table>
+
         </div>
         <div class="card-body">
             {{ $medicals->appends($_GET)->links() }}
