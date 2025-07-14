@@ -80,7 +80,7 @@ class MedicalController extends Controller
             ->orderBy('patients.othername', 'asc')
             ->paginate(30);
 
-        return view('medicals.index', compact('medicals', 'order', 'rooms', 'shifts'));
+        return view('medicals.index', compact('medicals', 'order', 'rooms', 'shifts', 'patients'));
     }
 
 
