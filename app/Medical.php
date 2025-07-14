@@ -62,6 +62,11 @@ class Medical extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function patient()
+    {
+        return $this->belongsTo(Patient::class);
+    }
+
     public function scopePatient($query, $patient)
     {
         if($patient)
