@@ -80,7 +80,7 @@ class MedicalController extends Controller
             ->orderBy('patients.othername', 'asc')
             ->paginate(30);
 
-        return view('medicals.index', compact('medicals', 'order', 'rooms', 'shifts', 'patients'));
+        return view('medicals.index', compact('medicals', 'order', 'rooms', 'shifts'));
     }
 
 
@@ -267,7 +267,7 @@ class MedicalController extends Controller
             ->date_order($date_order)
             ->hour_hd($hour_hd)
             ->paginate(30);
-        return view('medicals.fissal', compact('medicals', 'order', 'rooms', 'shifts'));
+        return view('medicals.fissal', compact('medicals', 'order', 'rooms', 'shifts', 'patients'));
     }
 
     /**
