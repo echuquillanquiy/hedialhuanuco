@@ -252,31 +252,23 @@ class MedicalController extends Controller
         $date_order = $request->get('date_order');
 
 
-        $medicals = Medical::with('order.patient')
-            ->when($patient, fn ($q) => $q->where('patient_id', $patient))
-            ->when($created_at, fn ($q) => $q->whereDate('created_at', $created_at))
-            ->when($date_order, fn ($q) => $q->whereDate('date_order', $date_order))
-            ->get()
-            ->sortBy(function ($medical) {
-                $patient = $medical->order->patient;
-                return sprintf('%s %s %s %s',
-                    $patient->surname,
-                    $patient->lastname,
-                    $patient->firstname,
-                    $patient->othername
-                );
-            })->values(); // reindexar la colección
-
-        // Si quieres paginar manualmente (simulando la paginación):
-        $page = request()->get('page', 1);
-        $perPage = 30;
-        $paginated = new \Illuminate\Pagination\LengthAwarePaginator(
-            $medicals->forPage($page, $perPage),
-            $medicals->count(),
-            $perPage,
-            $page,
-            ['path' => request()->url(), 'query' => request()->query()]
-        );
+        $medicals = Medical::select('medicals.*')
+            ->join('orders', 'medicals.order_id', '=', 'orders.id')
+            ->join('patients', 'orders.patient_id', '=', 'patients.id')
+            ->when($patient, function ($q) use ($patient) {
+                return $q->where('patients.id', $patient);
+            })
+            ->when($created_at, function ($q) use ($created_at) {
+                return $q->whereDate('medicals.created_at', $created_at);
+            })
+            ->when($date_order, function ($q) use ($date_order) {
+                return $q->whereDate('medicals.date_order', $date_order);
+            })
+            ->orderBy('patients.surname')
+            ->orderBy('patients.lastname')
+            ->orderBy('patients.firstname')
+            ->orderBy('patients.othername')
+            ->paginate(30);
 
         return view('medicals.fissal', compact('paginated', 'order', 'patients'));
     }
