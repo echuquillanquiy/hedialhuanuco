@@ -93,22 +93,10 @@
             <!-- Projects table -->
             <table class="table align-items-center table-flush">
                 <thead class="thead-light text-center">
-                <tr>
-                    <th scope="col">Nombres y Apellidos DNI</th>
-                    <th scope="col">I-F HD</th>
-                    <th scope="col">N° FUA</th>
-                    <th scope="col">Epo2</th>
-                    <th scope="col">B12</th>
-                    <th scope="col">Fe</th>
-
-                    <th scope="col">Sala</th>
-                    <th scope="col">Fecha</th>
-                    <th scope="col">Licenciado</th>
-		    <th scope="col">HEP</th>
-		    <th scope="col">AREA</th>
-		    <th scope="col">HD</th>
-		    <th scope="col">QB</th>
-                </tr>
+                    <tr>
+                        <th scope="col">Nombres y Apellidos DNI</th>
+                        <th scope="col">Fecha</th>
+                    </tr>
                 </thead>
                 <tbody class="text-center">
                 @foreach ($medicals as $medical)
@@ -116,46 +104,7 @@
                         <td scope="row">
                             {{$medical->patient}} {{$medical->order->patient->dni}}
                         </td>
-
-                        <td>
-                            {{$medical->order->nurse->hr}} -
-
-                            @if($medical->order->nurse->hr8 == '-' || $medical->order->nurse->hr8 == null)
-                                {{$medical->order->nurse->hr7}}
-                            @else
-                                {{$medical->order->nurse->hr8}}
-                            @endif
-                        </td>
-
-                        <td scope="row">
-                            {{ $medical->order->n_fua }}
-                        </td>
-
-                        <td>
-                            @if (!$medical->epo) 0 @else {{ $medical->epo }} @endif
-                        </td>
-
-                        <td>
-                            @if (!$medical->vitb12) 0 @else {{ $medical->vitb12 }} @endif
-                        </td>
-
-                        <td>
-                            @if (!$medical->iron) 0 @else {{ $medical->iron }} @endif
-                        </td>
-
-                        <td>
-                            @if($medical->room == 'AMARILLA')
-                                <span class="badge badge-lg bg-yellow">A</span>
-
-                            @elseif($medical->room == 'VERDE')
-                                <span class="badge badge-lg badge-success">V</span>
-
-                            @elseif($medical->room == 'AZUL')
-                                <span class="badge badge-lg bg-blue text-white">A</span>
-
-                            @else($medical->room == 'NARANJA')
-                                <span class="badge badge-lg bg-orange text-white">N</span>
-                            @endif
+dif
                         </td>
 
                         <td>
@@ -163,29 +112,9 @@
                         </td>
 
                         <td>
-                            @if($medical->order->nurse->user_id)
-                                {{ $medical->order->nurse->user->name }}
-                            @else
-                                actualizar orden
-                            @endif
-
+                            <a href="{{ url('/orders/'.$medical->order->id.'/impresion2020') }}" class="btn btn-sm btn-danger" target="_blank">Historia</a>
                         </td>
 
-			<td>
-                            {{$medical->heparin }}
-                        </td>
-
-			<td>
-                            {{$medical->area_filter }}
-                        </td>
-
-			<td>
-                            {{$medical->hour_hd }}
-                        </td>
-
-			<td>
-                            {{$medical->qb }}
-                        </td>
 
                     </tr>
                 @endforeach
