@@ -22,27 +22,6 @@
                         </div>
                     </div>
 
-                    <div class="form-group col-sm-12 col-lg-2">
-                        <label for="room">Salas</label>
-                        <select data-live-search="true" name="room" id="room" class="form-control selectpicker" data-style="btn-info">
-                            <option></option>
-                            @foreach ($rooms as $room)
-                                <option value="{{ $room->name }}">{{ $room->name }}</option>
-
-                            @endforeach
-                        </select>
-                    </div>
-
-                    <div class="form-group col-sm-12 col-lg-2">
-                        <label for="shift">Turnos</label>
-                        <select name="shift" id="shift" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
-                            <option></option>
-                            @foreach ($shifts as $shift)
-                                <option value="{{ $shift->name }}">{{ $shift->name }}</option>
-
-                            @endforeach
-                        </select>
-                    </div>
 
                     <div class="form-group col-lg-2">
                         <label for="created_at">FECHA CREACION</label>
@@ -66,21 +45,10 @@
                             </div>
                             <input class="form-control datepicker" placeholder="Seleccionar fecha"
                                    id="date_order" name="date_order" type="text"
-                                   value="{{ old('date', date('Y-m-d')) }}"
+                                   value=""
                                    data-date-format="yyyy-mm-dd"
                             >
                         </div>
-                    </div>
-
-                    <div class="form-group col-sm-12 col-lg-1">
-                        <label for="hour_hd">HORAS</label>
-                        <select name="hour_hd" id="hour_hd" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
-                            <option value=""></option>
-                            <option value="3.0">3.0</option>
-                            <option value="3.25">3.25</option>
-                            <option value="3.5">3.5</option>
-                            <option value="3.75">3.75</option>
-                        </select>
                     </div>
 
 
@@ -102,9 +70,9 @@
                 @foreach ($medicals as $medical)
                     <tr>
                         <td scope="row">
-                            {{$medical->patient}} {{$medical->order->patient->dni}}
+                            {{$medical->patient}}
                         </td>
-dif
+
                         </td>
 
                         <td>
