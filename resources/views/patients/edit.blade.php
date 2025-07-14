@@ -60,7 +60,7 @@
             <div class="form-group col-lg-3">
                 <label for="documento">DNI</label>
                 <input type="text" name="documento" class="form-control" value="{{ old('documento', $patient->documento) }}" required>
-            </div
+            </div>
 
             <div class="form-group col-lg-9">
                 <label for="code">Codigo (Autogenerado)</label>
