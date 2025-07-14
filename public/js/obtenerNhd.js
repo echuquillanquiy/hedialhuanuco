@@ -1,6 +1,12 @@
 $(document).ready(function () {
     $('#obtenerNhd').change(function () {
-        var hospOrigin = $(this).find('option:selected').data('hosp'); // accede a data-hosp
-        $('#hosp_origin').val(hospOrigin || ''); // si es undefined, pone vacío
+        var hospOrigin = $(this).find('option:selected').data('hosp');
+
+        // Sumarle 1 si es numérico
+        var newValue = (hospOrigin !== undefined && !isNaN(hospOrigin)) 
+            ? parseInt(hospOrigin) + 1 
+            : '';
+
+        $('#hosp_origin').val(newValue);
     });
 });
