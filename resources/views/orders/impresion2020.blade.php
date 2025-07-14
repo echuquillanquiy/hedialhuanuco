@@ -60,7 +60,7 @@
             <tr>
                 <td colspan="5" style="font-size: 0.8rem;"><strong>N° Autogenerado</strong> {{ $order->patient->code }}</td>
 
-                <td colspan="2" style="font-size: 0.8rem; margin-left: 15px !important; text-align: right"><strong>N° de HD: </strong> {{ $order->nurse->nhd }}</td>
+                <td colspan="2" style="font-size: 0.8rem; margin-left: 15px !important; text-align: right"><strong>N° de HD: </strong> {{ $order->patient->hosp_origin }}</td>
 
                 <td colspan="3" style="font-size:0.8rem; margin-left: 30px !important;"><strong>Frecuencia HD (veces/sem):</strong> {{ $order->nurse->frequency }}</td>
 
