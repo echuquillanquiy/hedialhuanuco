@@ -61,15 +61,15 @@
             <table class="table align-items-center table-flush">
                 <thead class="thead-light text-center">
                     <tr>
-                        <th scope="col">Nombres y Apellidos</th>
-                        <th scope="col">Fecha</th>
-                        <th scope="col">IMPRIMIR</th>
+                        <th>Nombres y Apellidos</th>
+                        <th>Fecha</th>
+                        <th>IMPRIMIR</th>
                     </tr>
                 </thead>
                 <tbody>
                 @foreach ($medicals as $medical)
                     <tr>
-                        <td scope="row">
+                        <td>
                             {{ $medical->order->patient->surname }} {{ $medical->order->patient->lastname }} {{ $medical->order->patient->firstname }} {{ $medical->order->patient->othername }}
                         </td>
 
