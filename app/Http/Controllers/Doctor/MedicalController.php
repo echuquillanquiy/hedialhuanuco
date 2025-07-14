@@ -245,25 +245,18 @@ class MedicalController extends Controller
     public function fissalweb(Request $request)
     {
         $order = Order::all();
-        $rooms = Room::all();
-        $shifts = Shift::all();
         $patients = Patient::all();
 
         $patient = $request->get('patient');
-        $room = $request->get('room');
-        $shift = $request->get('shift');
         $created_at = $request->get('created_at');
         $date_order = $request->get('date_order');
-        $hour_hd = $request->get('hour_hd');
 
-        $medicals = Medical::orderBy('created_at', 'asc')
-            ->orderBy('patient', 'asc')
+
+        $medicals = Medical::orderBy('patient', 'asc')
+            ->orderBy('date_order', 'asc')
             ->patient($patient)
-            ->room($room)
-            ->shift($shift)
             ->created_at($created_at)
             ->date_order($date_order)
-            ->hour_hd($hour_hd)
             ->paginate(30);
         return view('medicals.fissal', compact('medicals', 'order', 'rooms', 'shifts', 'patients'));
     }
