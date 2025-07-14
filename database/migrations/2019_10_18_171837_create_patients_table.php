@@ -27,7 +27,7 @@ class CreatePatientsTable extends Migration
             $table->string('instruction')->nullable();
             $table->string('ocupation')->nullable();
             $table->string('condition')->nullable();
-            $table->date('last_job')->nullable();
+            $table->string('last_job')->nullable();
             $table->string('hosp_origin')->nullable();
             $table->string('code')->nullable(); //15 digitos
 
