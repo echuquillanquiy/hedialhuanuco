@@ -22,20 +22,6 @@
                         </div>
                     </div>
 
-                    <div class="form-group col-sm-12 col-lg-4">
-                        <label for="patient">Pacientes</label>          
-                        <select name="patient" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
-                            <option value="">[SELECCIONE UN PACIENTE]</option>
-                            @foreach ($patients as $patient)
-                            <option 
-                                value="{{ $patient->surname }} {{ $patient->lastname }} {{ $patient->firstname }} {{ $patient->othername }}" 
-                                {{ $patient->surname }} {{ $patient->lastname }} {{ $patient->firstname }} {{ $patient->othername }}
-                            </option>
-                            @endforeach
-                        </select>
-                    </div>
-
-
                     <div class="form-group col-lg-2">
                         <label for="created_at">FECHA CREACION</label>
                         <div class="input-group">
