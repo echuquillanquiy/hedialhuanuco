@@ -252,13 +252,33 @@ class MedicalController extends Controller
         $date_order = $request->get('date_order');
 
 
-        $medicals = Medical::orderBy('patient', 'asc')
-            ->orderBy('date_order', 'asc')
-            ->patient($patient)
-            ->created_at($created_at)
-            ->date_order($date_order)
-            ->paginate(30);
-        return view('medicals.fissal', compact('medicals', 'order', 'patients'));
+        $medicals = Medical::with('order.patient')
+            ->when($patient, fn ($q) => $q->where('patient_id', $patient))
+            ->when($created_at, fn ($q) => $q->whereDate('created_at', $created_at))
+            ->when($date_order, fn ($q) => $q->whereDate('date_order', $date_order))
+            ->get()
+            ->sortBy(function ($medical) {
+                $patient = $medical->order->patient;
+                return sprintf('%s %s %s %s',
+                    $patient->surname,
+                    $patient->lastname,
+                    $patient->firstname,
+                    $patient->othername
+                );
+            })->values(); // reindexar la colección
+
+        // Si quieres paginar manualmente (simulando la paginación):
+        $page = request()->get('page', 1);
+        $perPage = 30;
+        $paginated = new \Illuminate\Pagination\LengthAwarePaginator(
+            $medicals->forPage($page, $perPage),
+            $medicals->count(),
+            $perPage,
+            $page,
+            ['path' => request()->url(), 'query' => request()->query()]
+        );
+
+        return view('medicals.fissal', compact('paginated', 'order', 'patients'));
     }
 
     /**
