@@ -77,7 +77,6 @@
             </div>
 
           <div class="form-group col-lg-2">
-              <label for="hosp_origin">CORRELATIVO</label>
               <input type="hidden" name="hosp_origin">
           </div>
 
