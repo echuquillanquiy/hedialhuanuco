@@ -9,6 +9,7 @@ use App\Medical;
 use App\Order;
 use App\Room;
 use App\Shift;
+use App\Patient;
 
 
 use App\Http\Controllers\Controller;
@@ -246,6 +247,7 @@ class MedicalController extends Controller
         $order = Order::all();
         $rooms = Room::all();
         $shifts = Shift::all();
+        $patients = Patient::all();
 
         $patient = $request->get('patient');
         $room = $request->get('room');
