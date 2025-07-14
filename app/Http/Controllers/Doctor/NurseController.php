@@ -74,6 +74,7 @@ class NurseController extends Controller
 
         // Ordenar por nombres
         $nurses = $nurses
+            ->orderBy('nurses.position', 'asc')
             ->orderBy('patients.surname', 'asc')
             ->orderBy('patients.lastname', 'asc')
             ->orderBy('patients.firstname', 'asc')
