@@ -74,7 +74,7 @@ class NurseController extends Controller
 
         // Ordenar por nombres
         $nurses = $nurses
-            ->orderBy('nurses.position', 'asc')
+            ->orderByRaw('CAST(nurses.position AS UNSIGNED)')
             ->orderBy('patients.surname', 'asc')
             ->orderBy('patients.lastname', 'asc')
             ->orderBy('patients.firstname', 'asc')
