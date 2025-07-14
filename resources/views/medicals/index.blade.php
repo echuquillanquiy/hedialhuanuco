@@ -88,9 +88,8 @@
           <th scope="col">Editar</th>
           <th scope="col">P.Sec</th>
           <th scope="col">P.Ini</th>
-            <th scope="col">P.Fin</th>
-            <th scope="col">UF</th>
-          
+          <th scope="col">UF</th>
+          <th scope="col">P.Fin</th>         
 
         </tr>
       </thead>
@@ -157,11 +156,12 @@
                 {{$medical->order->nurse->start_weight}}
             </td>
             <td class="text-center">
-                {{$medical->order->nurse->end_weight}}
-            </td>
-            <td class="text-center">
                 {{ preg_match('/(-?\d+)/', $medical->uf, $matches) ? $valor_num = intval($matches[0]) / 1000 : 0 }}
             </td>
+            <td class="text-center">
+                {{$medical->order->nurse->end_weight}}
+            </td>
+            
             
 
         </tr>

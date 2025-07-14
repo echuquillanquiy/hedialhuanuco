@@ -47,7 +47,11 @@
 >          <select name="patient_id" id="obtenerNhd" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
                 <option value="">[SELECCIONE UN PACIENTE]</option>
             @foreach ($patients as $patient)
-            <option value="{{ $patient->id }}">{{ $patient->hosp_origin }} - {{ $patient->surname }} {{ $patient->lastname }} {{ $patient->firstname }} {{$patient->othername }}</option>
+              <option 
+                  value="{{ $patient->id }}" 
+                  data-hosp="{{ $patient->hosp_origin }}">
+                  {{ $patient->surname }} {{ $patient->lastname }} {{ $patient->firstname }} {{ $patient->othername }}
+              </option>
             @endforeach
           </select>
         </div>
