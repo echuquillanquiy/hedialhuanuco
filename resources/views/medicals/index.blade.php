@@ -81,7 +81,6 @@
       <thead class="thead-light text-center">
         <tr>
           <th scope="col">Nombres y Apellidos</th>
-          <th scope="col">Sala</th>
           <th scope="col">Turno</th>
           <th scope="col">HD</th>
           <th scope="col">Fecha</th>
@@ -100,23 +99,6 @@
               {{ $medical->order->patient->surname }} {{ $medical->order->patient->lastname }} {{ $medical->order->patient->firstname }} {{ $medical->order->patient->othername }}
           </td>
 
-          <td class="text-center">
-
-             @if($medical->room == 'AMARILLA')
-                  <span class="badge badge-lg bg-yellow">A</span>
-
-              @elseif($medical->room == 'VERDE')
-                      <span class="badge badge-lg badge-success">V</span>
-
-              @elseif($medical->room == 'AZUL')
-                          <span class="badge badge-lg bg-blue text-white">A</span>
-
-              @else($medical->room == 'NARANJA')
-                  <span class="badge badge-lg bg-orange text-white">N</span>
-              @endif
-
-
-          </td>
           <td class="text-center">
 
               @if($medical->shift == 'I')
