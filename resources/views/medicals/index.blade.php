@@ -89,6 +89,8 @@
           <th scope="col">P.Ini</th>
           <th scope="col">UF</th>
           <th scope="col">P.Fin</th>         
+          <th scope="col">Medico Inicio</th>    
+          <th scope="col">Medico Fin</th>    
 
         </tr>
       </thead>
@@ -143,6 +145,22 @@
             <td class="text-center">
                 {{$medical->order->nurse->end_weight}}
             </td>
+
+            @if($medical->user_id)
+                <td class="text-center">
+                    {{ $medical->user->name}}
+                </td>
+            @else
+                <td class="text-center">sin selección</td>
+            @endif
+
+            @if($medical->medico_final)
+                <td class="text-center">
+                    {{ $medical->medico_final}}
+                </td>
+            @else
+                <td class="text-center">sin selección</td>
+            @endif
             
             
 

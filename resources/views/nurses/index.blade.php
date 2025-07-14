@@ -78,8 +78,9 @@
             <th scope="col">Epo4000</th>
             <th scope="col">Vit b12</th>
             <th scope="col">Hierro</th>
-          <th>Fecha</th>
-            <th>Licenciado</th>
+            <th>Fecha</th>
+            <th>Enf. Inicia</th>
+            <th>Enf. Finaliza</th>
 
         </tr>
       </thead>
@@ -152,10 +153,16 @@
                     {{ $nurse->user->name}}
                 </td>
             @else
-                <td class="text-center">actualizar orden</td>
+                <td class="text-center">sin Seleccionar</td>
             @endif
 
-
+            @if($nurse->user_id2)
+                <td class="text-center">
+                    {{ $nurse->user2->name}}
+                </td>
+            @else
+                <td class="text-center">Sin seleccionar</td>
+            @endif
         </tr>
         @endforeach
       </tbody>
