@@ -128,7 +128,7 @@
             <form action="{{ url('/medicals/'.$medical->id) }}" method="POST">
               @csrf
 
-              <a href="{{ url('/medicals/'.$medical->id.'/edit') }}" class="btn btn-sm btn-primary" target="_blank"><i class="fas fa-edit"></i></a>
+              <a href="{{ url('/medicals/'.$medical->id.'/edit') }}" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
             </form>
           </td>
 
