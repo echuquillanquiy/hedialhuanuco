@@ -61,12 +61,12 @@
             <table class="table align-items-center table-flush">
                 <thead class="thead-light text-center">
                     <tr>
-                        <th scope="col">Nombres y Apellidos DNI</th>
+                        <th scope="col">Nombres y Apellidos</th>
                         <th scope="col">Fecha</th>
                         <th scope="col">IMPRIMIR</th>
                     </tr>
                 </thead>
-                <tbody class="text-center">
+                <tbody>
                 @foreach ($medicals as $medical)
                     <tr>
                         <td scope="row">
@@ -75,11 +75,11 @@
 
                         </td>
 
-                        <td>
+                        <td class="text-center">
                             {{$medical->order->date_order }}
                         </td>
 
-                        <td>
+                        <td class="text-center">
                             <a href="{{ url('/orders/'.$medical->order->id.'/impresion2020') }}" class="btn btn-sm btn-danger" target="_blank">Historia</a>
                         </td>
 
