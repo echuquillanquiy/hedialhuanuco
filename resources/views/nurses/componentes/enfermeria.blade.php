@@ -4,7 +4,7 @@
 
     <input type="hidden" name="frequency" class="form-control" value="{{ old('frequency', '3', $nurse->frequency) }}">
 
-    <input type="hidden" name="nhd" class="form-control" value="{{ $nurse->order->hosp_origin }}">
+    <input type="hidden" name="nhd" class="form-control" value="{{ $nurse->nhd }}">
 
     <input type="hidden" name="others" value="{{ $nurse->others }}">
 
