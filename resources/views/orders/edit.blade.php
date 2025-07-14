@@ -51,7 +51,7 @@
       <div class="row">
         <div class="form-group col-sm-12 col-lg-4">
         <label for="name">Nombres y Apellidos</label>
-        <input type="text" name="name" class="form-control" value="{{ old('name', $order->patient->name) }}" disabled>
+        <input type="text" name="name" class="form-control" value="{{ $order->patient->surname $order->patient->lastname $order->patient->firstname $order->patient->othername }}" disabled>
       </div>
 
           <div class="form-group col-lg-2">
