@@ -57,6 +57,11 @@
                 <input type="text" name="lastname" class="form-control" value="{{ old('lastname', $patient->lastname) }}" required>
             </div>
 
+            <div class="form-group col-lg-3">
+                <label for="documento">DNI</label>
+                <input type="text" name="documento" class="form-control" value="{{ old('documento', $patient->documento) }}" required>
+            </div
+
             <div class="form-group col-lg-9">
                 <label for="code">Codigo (Autogenerado)</label>
                 <input type="text" name="code" class="form-control" value="{{ old('code', $patient->code) }}">

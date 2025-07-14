@@ -60,7 +60,7 @@
       <thead class="thead-light">
         <tr>
           <th scope="col">Nombres</th>
-          <th scope="col">DNI</th>
+          <th scope="col">N° HCL</th>
           <th scope="col">Autogenerado</th>
           <th scope="col">Opciones</th>
         </tr>
