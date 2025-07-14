@@ -62,7 +62,7 @@
               <input type="text" name="documento" class="form-control" value="{{ old('documento') }}" required>
           </div>
 
-          <div class="form-group col-lg-9">
+          <div class="form-group col-lg-6">
               <label for="code">Codigo (Autogenerado)</label>
               <input type="text" name="code" class="form-control" value="{{ old('code') }}">
           </div>
