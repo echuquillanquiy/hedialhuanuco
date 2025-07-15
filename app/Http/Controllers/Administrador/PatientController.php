@@ -46,7 +46,7 @@ class PatientController extends Controller
         $rules = [
             'name' => 'min:3',
             'dni' => 'unique:patients',
-            'code' => 'unique:patients|min:10',
+            'code' => 'unique:patients|min:4',
         ];
 
         $this->validate($request, $rules, $messages);
