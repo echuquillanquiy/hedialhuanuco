@@ -76,6 +76,16 @@
               </select>
             </div>
 
+          <div class="form-group col-lg-6">
+              <label for="acceso1">Acceso Arterial</label>
+              <input type="text" name="acceso1" class="form-control" value="{{ old('acceso1') }}">
+          </div>
+
+          <div class="form-group col-lg-6">
+              <label for="acceso2">Acceso venoso</label>
+              <input type="text" name="acceso2" class="form-control" value="{{ old('acceso2') }}">
+          </div>
+
           <div class="form-group col-lg-2">
               <input type="hidden" name="hosp_origin">
           </div>
@@ -159,10 +169,7 @@
 
       <div class="row">
 
-        <div class="form-group col-lg-8">
-          <label for="condition">Justificacion de no firma</label>
-          <input type="text" name="condition" class="form-control" value="{{ old('condition') }}">
-        </div>
+
 
         <div class="form-group col-lg-2">
           <label for="last_job">Fecha de último trabajo</label>

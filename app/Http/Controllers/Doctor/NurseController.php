@@ -350,17 +350,40 @@ class NurseController extends Controller
     }
     public function update(Request $request, $id)
     {
+        // Buscar la enfermería
         $nurse = Nurse::findOrFail($id);
-        //$this->performValidation($request);
 
+        // Guardar los datos del formulario en nurse
         $data = $request->all();
-
         $nurse->fill($data);
         $nurse->save();
 
-        $notification = 'El Parte de enfermeria se ha actualizado correctamente.';
+        // Obtener la orden asociada
+        $order = Order::find($nurse->order_id);
+
+        // Verificar si la orden existe y tiene paciente
+        if ($order && $order->patient_id) {
+            $patient = Patient::find($order->patient_id);
+
+            if ($patient) {
+                // Asignar los valores del formulario a los campos del paciente
+                if ($request->filled('access_arterial')) {
+                    $patient->acceso1 = $request->input('access_arterial');
+                }
+
+                if ($request->filled('access_venoso')) {
+                    $patient->acceso2 = $request->input('access_venoso');
+                }
+
+                $patient->save();
+            }
+        }
+
+        // Notificación de éxito
+        $notification = 'El Parte de enfermería se ha actualizado correctamente.';
         return back()->with(compact('notification'));
     }
+
 
     /**
      * Remove the specified resource from storage.

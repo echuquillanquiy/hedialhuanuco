@@ -55,7 +55,7 @@ class PatientController extends Controller
     public function store(Request $request)
     {
         $this->performValidation($request);
-        Patient::create($request->only('name', 'dni', 'date_of_birth', 'documento', 'age', 'address', 'phone', 'civil_status', 'instruction', 'ocupation', 'condition', 'last_job', 'hosp_origin', 'code',
+        Patient::create($request->only('name', 'dni', 'date_of_birth', 'documento', 'age', 'acceso1', 'acceso2', 'civil_status', 'instruction', 'ocupation', 'condition', 'last_job', 'hosp_origin', 'code',
             'firstname', 'othername', 'surname', 'lastname', 'state'));
 
         $notification = 'El paciente se ha registrado correctamente.';
@@ -84,14 +84,14 @@ class PatientController extends Controller
         $rules = [
             'name' => 'min:3',
             //'dni' => 'digits:1',
-            'code' => 'min:10',
+            'code' => 'min:4',
         ];
 
         $this->validate($request, $rules, $messages);
 
         $patient = Patient::findOrFail($id);
 
-        $data = $request->only('name', 'dni', 'date_of_birth', 'documento', 'age', 'address', 'phone', 'civil_status', 'instruction', 'ocupation', 'condition', 'hosp_origin', 'code', 'firstname', 'othername', 'surname', 'lastname', 'state');
+        $data = $request->only('name', 'dni', 'date_of_birth', 'documento', 'age', 'acceso1', 'acceso2', 'civil_status', 'instruction', 'ocupation', 'condition', 'hosp_origin', 'code', 'firstname', 'othername', 'surname', 'lastname', 'state');
 
         $patient->fill($data);
         $patient->save();

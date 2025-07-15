@@ -75,6 +75,16 @@
                   <option value="PARTICULAR" {{ ($medical->last_job ?? '') == 'PARTICULAR' ? 'selected' : '' }}>PARTICULAR</option>
               </select>
           </div>
+
+            <div class="form-group col-lg-6">
+                <label for="acceso1">Acceso Arterial</label>
+                <input type="text" name="acceso1" class="form-control" value="{{ old('acceso1', $patient->acceso1) }}">
+            </div>
+
+            <div class="form-group col-lg-6">
+                <label for="acceso2">Acceso venoso</label>
+                <input type="text" name="acceso2" class="form-control" value="{{ old('acceso2, $patient->acceso2) }}">
+            </div>
         </div>
 
 
