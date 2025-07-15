@@ -11,6 +11,7 @@ use App\Medical;
 use App\Room;
 use App\User;
 use App\Shift;
+use App\Order;
 use Monolog\Handler\IFTTTHandler;
 use PhpParser\Node\Stmt\DeclareDeclare;
 
