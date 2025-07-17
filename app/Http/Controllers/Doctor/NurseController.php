@@ -357,27 +357,7 @@ class NurseController extends Controller
 
         $nurse->fill($data);
         $nurse->save();
-
-        // Obtener la orden asociada
-        $order = Order::find($nurse->order_id);
-
-        // Verificar si la orden existe y tiene paciente
-        if ($order && $order->patient_id) {
-            $patient = Patient::find($order->patient_id);
-
-            if ($patient) {
-                // Asignar los valores del formulario a los campos del paciente
-                if ($request->filled('access_arterial')) {
-                    $patient->acceso1 = $request->input('access_arterial');
-                }
-
-                if ($request->filled('access_venoso')) {
-                    $patient->acceso2 = $request->input('access_venoso');
-                }
-
-                $patient->save();
-            }
-        }
+        
 
         $notification = 'El Parte de enfermeria se ha actualizado correctamente.';
         return back()->with(compact('notification'));
