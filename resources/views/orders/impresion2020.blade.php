@@ -355,7 +355,7 @@
         <td style="height: 14px; white-space: nowrap; overflow: hidden;">{{ $order->nurse->{'ra' . $suffix} }}</td>
         <td style="height: 14px; white-space: nowrap; overflow: hidden;">{{ $order->nurse->{'rv' . $suffix} }}</td>
         <td style="height: 14px; white-space: nowrap; overflow: hidden;">{{ $order->nurse->{'ptm' . $suffix} }}</td>
-        <td style="height: 14px; font-size: 0.7rem !important; text-align: left; white-space: nowrap; overflow: hidden;" colspan="4">
+        <td style="height: 14px; font-size: 0.7rem !important; text-align: left;" colspan="4">
             {{ $order->nurse->{'obs' . $suffix} }}
         </td>
     </tr>
