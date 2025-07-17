@@ -269,8 +269,8 @@
             </tr>
 
             <tr>
-                <td style="font-size: 0.7rem; text-align: left;" colspan="4"> Acceso vascular Arterial: {{ $order->nurse->access_arterial }}</td>
-                <td style="font-size: 0.7rem; text-align: left;" colspan="3">Acceso vascular Venoso: {{ $order->nurse->access_venoso }}</td>
+                <td style="font-size: 0.7rem; text-align: left;" colspan="4"> Acceso vascular Arterial: {{ $order->patient->acceso1 }}</td>
+                <td style="font-size: 0.7rem; text-align: left;" colspan="3">Acceso vascular Venoso: {{ $order->patient->acceso2 }}</td>
                 <td colspan="5"></td>
             </tr>
         </table>
