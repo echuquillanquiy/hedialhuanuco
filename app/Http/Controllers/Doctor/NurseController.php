@@ -11,6 +11,8 @@ use App\Medical;
 use App\Room;
 use App\User;
 use App\Shift;
+use App\Models\Order;
+use App\Models\Patient;
 use Monolog\Handler\IFTTTHandler;
 use PhpParser\Node\Stmt\DeclareDeclare;
 
@@ -357,6 +359,18 @@ class NurseController extends Controller
 
         $nurse->fill($data);
         $nurse->save();
+
+        // Obtener paciente desde la orden relacionada
+        $order = Order::find($nurse->order_id);
+        if ($order) {
+            $patient = Patient::find($order->patient_id);
+            if ($patient) {
+                // Guardar campos en patient
+                $patient->acceso1 = $request->input('access_arterial');
+                $patient->acceso2 = $request->input('access_venoso');
+                $patient->save();
+            }
+        }
         
 
         $notification = 'El Parte de enfermeria se ha actualizado correctamente.';
