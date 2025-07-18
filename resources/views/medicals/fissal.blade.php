@@ -6,7 +6,7 @@
         <div class="card-header border-0">
             <div class="row align-items-center">
                 <div class="col">
-                    <h3 class="mb-0">DATOS FISSAL</h3>
+                    <h3 class="mb-0">HISTORIAS DE PACIENTES</h3>
                 </div>
             </div>
         </div>

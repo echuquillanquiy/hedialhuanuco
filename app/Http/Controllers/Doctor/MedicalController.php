@@ -245,18 +245,28 @@ class MedicalController extends Controller
     public function fissalweb(Request $request)
     {
         $order = Order::all();
-        $patients = Patient::all();
+
+        $patients = Patient::where('state', 'ACTIVO')
+            ->orderBy('surname')
+            ->orderBy('lastname')
+            ->orderBy('firstname')
+            ->orderBy('othername')
+            ->get();
 
         $patient = $request->get('patient');
         $created_at = $request->get('created_at');
         $date_order = $request->get('date_order');
 
-
         $medicals = Medical::select('medicals.*')
             ->join('orders', 'medicals.order_id', '=', 'orders.id')
             ->join('patients', 'orders.patient_id', '=', 'patients.id')
             ->when($patient, function ($q) use ($patient) {
-                return $q->where('patients.id', $patient);
+                return $q->where(function ($query) use ($patient) {
+                    $query->where('patients.surname', 'like', "%$patient%")
+                        ->orWhere('patients.lastname', 'like', "%$patient%")
+                        ->orWhere('patients.firstname', 'like', "%$patient%")
+                        ->orWhere('patients.othername', 'like', "%$patient%");
+                });
             })
             ->when($created_at, function ($q) use ($created_at) {
                 return $q->whereDate('medicals.created_at', $created_at);
@@ -272,6 +282,7 @@ class MedicalController extends Controller
 
         return view('medicals.fissal', compact('order', 'patients', 'medicals'));
     }
+
 
     /**
      * Remove the specified resource from storage.
