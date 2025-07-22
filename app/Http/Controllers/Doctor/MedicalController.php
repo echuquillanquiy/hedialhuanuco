@@ -74,6 +74,7 @@ class MedicalController extends Controller
 
         // Ordenar por nombres
         $medicals = $medicals
+            ->orderBy('medicals.shift', 'desc')
             ->orderBy('patients.surname', 'asc')
             ->orderBy('patients.lastname', 'asc')
             ->orderBy('patients.firstname', 'asc')
