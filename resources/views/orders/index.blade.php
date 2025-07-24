@@ -78,21 +78,24 @@
             <th>Opciones</th>
         </tr>
       </thead>
-      <tbody class="text-center">
+      <tbody>
         @foreach ($orders as $order)
         <tr>
           <th scope="row">
             {{$order->id}}
           </th>
-          <td class="text-start">
+          <td class="text-left">
+            {{-- Mostrar el nombre completo del paciente --}}
+            {{$order->patient->firstname}} {{$order->patient->othername}} {{$order->patient->lastname}} {{$order->patient->surname}}
             {{-- Mostrar el nombre completo del paciente --}}
             {{$order->patient->surname}} {{$order->patient->lastname}}, {{$order->patient->firstname}} {{$order->patient->othername}}
         </td>
-          <td>
+          <td class="text-center">
+            {{-- Mostrar el nombre del turno --}}
             {{$order->shift->name}}
           </td>
 
-          <td>
+          <td class="text-center">
             {{$order->date_order}}
           </td>
 
