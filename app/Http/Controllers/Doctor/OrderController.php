@@ -54,6 +54,7 @@ class OrderController extends Controller
                 $query->where('shift_id', $shift_id);
             })
             ->join('patients', 'orders.patient_id', '=', 'patients.id')
+            ->orderBy('shift_id', 'desc')
             ->orderBy('patients.surname', 'asc')
             ->orderBy('patients.lastname', 'asc')
             ->orderBy('patients.firstname', 'asc')
