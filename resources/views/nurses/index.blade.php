@@ -98,7 +98,7 @@
               @csrf
               @method('DELETE')
 
-              <a href="{{ url('/nurses/'.$nurse->id.'/edit') }}" class="btn btn-sm btn-success" target="_blank">
+              <a href="{{ url('/nurses/'.$nurse->id.'/edit') }}" class="btn btn-sm btn-success">
                   <i class="fas fa-edit"></i>
               </a>
 
