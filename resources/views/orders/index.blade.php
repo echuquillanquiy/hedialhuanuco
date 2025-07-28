@@ -86,7 +86,7 @@
           </th>
           <td class="text-left">
             {{-- Mostrar el nombre completo del paciente --}}
-            {{$order->patient->lastname}} {{$order->patient->surname}}, {{$order->patient->firstname}} {{$order->patient->othername}} 
+            {{$order->patient->surname}} {{$order->patient->lastname}}, {{$order->patient->firstname}} {{$order->patient->othername}} 
         </td>
           <td class="text-center">
             {{-- Mostrar el nombre del turno --}}
