@@ -24,68 +24,77 @@ class NurseController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
-    {
-        $rooms = Room::all();
-        $shifts = Shift::all();
+{
+    $rooms = Room::all();
+    $shifts = Shift::all();
 
-        $patient = $request->get('patient');
-        $room = $request->get('room');
-        $shift = $request->get('shift');
-        $hour_hd = $request->get('hour_hd');
-        $date_order = $request->get('date_order');
+    $patient = $request->get('patient');
+    $room = $request->get('room');
+    $shift = $request->get('shift');
+    $hour_hd = $request->get('hour_hd');
+    $date_order = $request->get('date_order');
+    $estado = $request->get('estado'); // 👈 nuevo
 
-        // Evaluamos si se aplicó algún filtro
-        $hasFilters = $patient || $room || $shift || $hour_hd || $date_order;
+    // Detectamos si hay filtros activos
+    $hasFilters = $patient || $room || $shift || $hour_hd || $date_order || $estado;
 
-        $nurses = Nurse::select('nurses.*')
-            ->join('orders', 'nurses.order_id', '=', 'orders.id')
-            ->join('patients', 'orders.patient_id', '=', 'patients.id');
+    $nurses = Nurse::select('nurses.*')
+        ->join('orders', 'nurses.order_id', '=', 'orders.id')
+        ->join('patients', 'orders.patient_id', '=', 'patients.id');
 
-        // Solo aplicar filtro de fecha si el usuario seleccionó una
-        if ($date_order) {
-            $nurses->whereDate('nurses.date_order', $date_order);
-        }
-
-        // Si no hay ningún filtro, mostramos solo las atenciones del día
-        if (!$hasFilters) {
-            $nurses->whereDate('nurses.date_order', Carbon::today()->toDateString());
-        }
-
-        // Filtro por nombre de paciente
-        if ($patient) {
-            $nurses->where(function ($query) use ($patient) {
-                $query->where('patients.surname', 'like', "%$patient%")
-                    ->orWhere('patients.lastname', 'like', "%$patient%")
-                    ->orWhere('patients.firstname', 'like', "%$patient%")
-                    ->orWhere('patients.othername', 'like', "%$patient%");
-            });
-        }
-
-        // Filtros adicionales
-        if ($room) {
-            $nurses->where('nurses.room', $room);
-        }
-
-        if ($shift) {
-            $nurses->where('nurses.shift', $shift);
-        }
-
-        if ($hour_hd) {
-            $nurses->where('nurses.hour_hd', $hour_hd);
-        }
-
-        // Ordenar por nombres
-        $nurses = $nurses
-            ->orderBy('nurses.shift', 'desc') // 👈 Ordena por turno en forma descendente
-            ->orderByRaw('CAST(nurses.position AS UNSIGNED)')
-            ->orderBy('patients.surname', 'asc')
-            ->orderBy('patients.lastname', 'asc')
-            ->orderBy('patients.firstname', 'asc')
-            ->orderBy('patients.othername', 'asc')
-            ->paginate(30);
-
-        return view('nurses.index', compact('nurses', 'rooms', 'shifts'));
+    // Filtro por fecha
+    if ($date_order) {
+        $nurses->whereDate('nurses.date_order', $date_order);
     }
+
+    // Mostrar solo atenciones del día y estado PENDIENTE si no hay filtros
+    if (!$hasFilters) {
+        $nurses->whereDate('nurses.date_order', Carbon::today()->toDateString())
+               ->where('nurses.estado', 'PENDIENTE');
+    }
+
+    // Filtro por estado
+    if ($estado) {
+        $nurses->where('nurses.estado', $estado);
+    }
+
+    // Filtro por paciente
+    if ($patient) {
+        $nurses->where(function ($query) use ($patient) {
+            $query->where('patients.surname', 'like', "%$patient%")
+                  ->orWhere('patients.lastname', 'like', "%$patient%")
+                  ->orWhere('patients.firstname', 'like', "%$patient%")
+                  ->orWhere('patients.othername', 'like', "%$patient%");
+        });
+    }
+
+    // Otros filtros
+    if ($room) {
+        $nurses->where('nurses.room', $room);
+    }
+
+    if ($shift) {
+        $nurses->where('nurses.shift', $shift);
+    }
+
+    if ($hour_hd) {
+        $nurses->where('nurses.hour_hd', $hour_hd);
+    }
+
+    // Ordenamiento
+    $nurses = $nurses
+        ->orderBy('nurses.shift', 'desc')
+        ->orderByRaw('CAST(nurses.position AS UNSIGNED)')
+        ->orderBy('patients.surname', 'asc')
+        ->orderBy('patients.lastname', 'asc')
+        ->orderBy('patients.firstname', 'asc')
+        ->orderBy('patients.othername', 'asc')
+        ->paginate(30)
+        ->appends($request->all()); // 👈 mantiene filtros al paginar
+
+    return view('nurses.index', compact('nurses', 'rooms', 'shifts'));
+}
+
 
 
     /**

@@ -228,6 +228,38 @@
         </select>
     </div>
 
+    @php
+        $estadoActual = old('estado', $nurse->estado ?? 'PENDIENTE');
+        $claseEstado = $estadoActual === 'FINALIZADO' ? 'btn-success' : 'btn-warning';
+    @endphp
+
+    <div class="form-group col-sm-12 col-lg-3">
+        <label for="estado">ESTADO</label>
+        <select class="form-control selectpicker @error('estado') border border-danger @enderror"
+                name="estado"
+                data-live-search="true"
+                data-style="{{ $claseEstado }}"
+                title="Seleccionar estado">
+
+            <option value="PENDIENTE"
+                {{ $estadoActual == 'PENDIENTE' ? 'selected' : '' }}>
+                PENDIENTE
+            </option>
+
+            <option value="FINALIZADO"
+                {{ $estadoActual == 'FINALIZADO' ? 'selected' : '' }}>
+                FINALIZADO
+            </option>
+
+        </select>
+
+        @error('estado')
+            <div class="text-danger text-center text-sm">{{ $message }}</div>
+        @enderror
+    </div>
+
+
+
     <input type="hidden" name="enfermero_final">
 
 </div>

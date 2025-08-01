@@ -24,7 +24,7 @@
     <form action="{{ url('nurses') }}" method="GET">
       <div class="row">
 
-        <div class="col-lg-6">
+        <div class="col-lg-4 col-sm-12">
           <div class="form-group">
             <label for="patient">Nombres y Apellidos</label>
             <input type="text" name="patient" class="form-control" value="{{ old('patient') }}" autofocus>
@@ -32,7 +32,7 @@
         </div>
 
 
-        <div class="form-group col-sm-12 col-lg-3">
+        <div class="form-group col-sm-12 col-lg-2">
           <label for="shift">Turnos</label>
           <select name="shift" id="shift" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
             <option></option>
@@ -55,6 +55,14 @@
                 data-date-format="yyyy-mm-dd"
                 >
           </div>
+        </div>
+
+        <div class="form-group col-sm-12 col-lg-2">
+          <label for="estado">Estado</label>
+          <select name="estado" id="estado" class="form-control selectpicker" data-live-search="true" data-style="btn-info">
+            <option value="PENDIENTE" {{ request('estado') == 'PENDIENTE' ? 'selected' : '' }}>PENDIENTE</option>
+            <option value="FINALIZADO" {{ request('estado') == 'FINALIZADO' ? 'selected' : '' }}>FINALIZADO</option>
+          </select>
         </div>
 
 
