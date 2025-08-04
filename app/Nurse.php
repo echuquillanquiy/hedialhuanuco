@@ -98,41 +98,10 @@ class Nurse extends Model
       'sol_hemodev5',
      'obs5',
 
-     'hr6',
-     'pa6',
-     'fc6',
-     'qb6',
-     'cnd6',
-     'ra6',
-     'rv6',
-     'ptm6',
-      'sol_hemodev6',
-     'obs6',
-
-     'hr7',
-     'pa7',
-     'fc7',
-     'qb7',
-     'cnd7',
-     'ra7',
-     'rv7',
-     'ptm7',
-      'sol_hemodev7',
-     'obs7',
-
-      'hr8',
-      'pa8',
-      'fc8',
-      'qb8',
-      'cnd8',
-      'ra8',
-      'rv8',
-      'ptm8',
-      'sol_hemodev8',
-      'obs8',
       'user_id',
       'user_id2',
       'enfermero_final',
+      'estado'
 ];
 
 

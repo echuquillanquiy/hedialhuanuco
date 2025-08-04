@@ -109,6 +109,8 @@ class CreateNursesTable extends Migration
             $table->text('sol_hemodev5')->nullable();
             $table->text('obs5')->nullable();
 
+            $table->string('estado')->default('PENDIENTE');
+
 
             $table->timestamps();
         });
