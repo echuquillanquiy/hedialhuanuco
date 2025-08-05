@@ -139,20 +139,6 @@
                     hr5CalculatedDate.setMinutes(hr4CalculatedDate.getMinutes() + 15);
                     break;
 
-                case 1.5: // Si hour_hd es 1.5 (1.5 horas = 90 minutos: 1h, 30min, 30min)
-                    hr2CalculatedDate = new Date(baseDate);
-                    hr2CalculatedDate.setHours(baseDate.getMinutes() + 30); // +1 hora
-
-                    hr3CalculatedDate = new Date(hr2CalculatedDate);
-                    hr3CalculatedDate.setMinutes(hr2CalculatedDate.getMinutes() + 30); // +30 min
-
-                    hr4CalculatedDate = new Date(hr3CalculatedDate);
-                    hr4CalculatedDate.setMinutes(hr3CalculatedDate.getMinutes() + 15); // +30 min
-
-                    hr5CalculatedDate = new Date(hr4CalculatedDate);
-                    hr5CalculatedDate.setMinutes(hr4CalculatedDate.getMinutes() + 15); // +30 min
-                    break;
-
                 case 2: // Si hour_hd es 2 (2 horas = 120 minutos, dividido en 4x30min)
                 case 2.0:
                     hr2CalculatedDate = new Date(baseDate);
@@ -267,6 +253,21 @@
                     // HR5 (HR4 + 1 HORA)
                     hr5CalculatedDate = new Date(hr4CalculatedDate);
                     hr5CalculatedDate.setHours(hr4CalculatedDate.getHours() + 1);
+                    break;
+					
+				case 5:
+                case 1.5: // Si hour_hd es 1.5 (1.5 horas = 90 minutos: 1h, 30min, 30min)
+                    hr2CalculatedDate = new Date(baseDate);
+                    hr2CalculatedDate.setMinutes(baseDate.getMinutes() + 30);
+
+                    hr3CalculatedDate = new Date(hr2CalculatedDate);
+                    hr3CalculatedDate.setMinutes(hr2CalculatedDate.getMinutes() + 30);
+
+                    hr4CalculatedDate = new Date(hr3CalculatedDate);
+                    hr4CalculatedDate.setMinutes(hr3CalculatedDate.getMinutes() + 15);
+
+                    hr5CalculatedDate = new Date(hr4CalculatedDate);
+                    hr5CalculatedDate.setMinutes(hr4CalculatedDate.getMinutes() + 15);
                     break;
 
                 default: // Por defecto, para cualquier otro valor de hour_hd no especificado
