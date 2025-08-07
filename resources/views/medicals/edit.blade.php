@@ -74,8 +74,10 @@
 
               <div class="form-group col-sm-12 col-lg-4">
                   <label for="fua_observacion">Observaciones</label>
-                  <textarea class="form-control @error('fua_observacion') border border-danger @enderror" id="" name="fua_observacion" rows="2">{{ old('fua_observacion', !$medical->fua_observacion ? optional($ultimaOrdenNoVacia)->fua_observacion : $medical->fua_observacion) }}</textarea>
-                  @error('fua_observacion')
+                    <textarea class="form-control @error('fua_observacion') border border-danger @enderror" name="fua_observacion" rows="2">
+                        {{ old('fua_observacion', $medical->fua_observacion ?? optional($ultimaOrdenNoVacia)->fua_observacion) }}
+                    </textarea>
+ @error('fua_observacion')
                   <div class="text-danger text-center text-sm">{{ $message }}</div>
                   @enderror
               </div>
