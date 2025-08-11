@@ -72,26 +72,27 @@
                           @enderror
                       </div>
 
-              <div class="form-group col-sm-12 col-lg-4">
-                  <label for="fua_observacion">Observaciones</label>
-                    <textarea class="form-control @error('fua_observacion') border border-danger @enderror" name="fua_observacion" rows="2">
-                        {{ old('fua_observacion', $medical->fua_observacion) }}
-                    </textarea>
+                <div class="form-group col-sm-12 col-lg-4">
+                    <label for="fua_observacion">Observaciones</label>
+                    <textarea class="form-control @error('fua_observacion') border border-danger @enderror"
+                        name="fua_observacion"
+                        rows="2">{{ old('fua_observacion', $medical->fua_observacion) }}</textarea>
                     @error('fua_observacion')
-                    <div class="text-danger text-center text-sm">{{ $message }}</div>
+                        <div class="text-danger text-center text-sm">{{ $message }}</div>
                     @enderror
-              </div>
+                </div>
+
 
 
                   <div class="form-group col-sm-12 col-lg-4">
                       <label for="start_pa">PA Inicial</label>
                       <input type="text" name="start_pa"
-    class="form-control @error('start_pa') border border-danger @enderror"
-    value="{{ old('start_pa', $medical->start_pa !== null ? $medical->start_pa : optional($medical->order->nurse)->start_pa) }}">
+                            class="form-control @error('start_pa') border border-danger @enderror"
+                            value="{{ old('start_pa', $medical->start_pa !== null ? $medical->start_pa : optional($medical->order->nurse)->start_pa) }}">
 
-                      @error('start_pa')
-                        <div class="text-danger text-center text-sm">{{ $message }}</div>
-                      @enderror
+                            @error('start_pa')
+                                <div class="text-danger text-center text-sm">{{ $message }}</div>
+                            @enderror
                   </div>
 
 
